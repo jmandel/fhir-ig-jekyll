@@ -1,0 +1,6 @@
+# Expected differences from the recorded Ruby output for rouge/cases.jsonl (DiffRunner --known).
+# Every other failure fails the run. Remove ids reported as FIXED.
+
+# markdown sample contains a ~~~ latex fence (TeX lexer not ported)
+markdown/sample
+markdown/sample/legacy

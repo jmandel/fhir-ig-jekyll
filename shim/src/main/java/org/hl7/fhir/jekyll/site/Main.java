@@ -157,6 +157,10 @@ public final class Main {
         System.err.printf(Locale.ROOT, "SHIM_TIMING config=%.2fs read=%.2fs prepare=%.2fs render=%.2fs write=%.2fs pages=%d static=%d%n",
             (a - t0) / 1e9, (b - a) / 1e9, (c - b) / 1e9, (d - c) / 1e9, (e - d) / 1e9, site.pages.size(), site.staticFiles.size());
       }
+      String includeStats = System.getenv("SHIM_INCLUDE_STATS");
+      if (includeStats != null && renderer instanceof JekyllRenderer) {
+        reportIncludeUse(site, (JekyllRenderer) renderer, includeStats);
+      }
     } catch (PageRenderer.RenderException e) {
       System.out.println("  Liquid Exception: " + e.getMessage());
       System.out.println("             Error: Run jekyll build --trace for more information.");
@@ -165,5 +169,37 @@ public final class Main {
     double secs = (System.nanoTime() - t0) / 1e9;
     System.out.println(String.format(Locale.ROOT, "                    done in %.3f seconds.", secs));
     System.out.println(" Auto-regeneration: disabled. Use --watch to enable.");
+  }
+
+  /**
+   * SHIM_INCLUDE_STATS=&lt;file&gt;: how many _includes files were actually included (by `include`; not
+   * include_relative), with the unused names written to the file. Measures what generating fragments
+   * on demand would save.
+   */
+  static void reportIncludeUse(Site site, JekyllRenderer r, String outFile) throws java.io.IOException {
+    java.nio.file.Path dir = site.source.resolve("_includes");
+    if (!java.nio.file.Files.isDirectory(dir)) {
+      return;
+    }
+    java.util.Set<String> used = r.inclusionsByName.keySet();
+    long[] n = new long[4]; // files, bytes, used files, used bytes
+    java.util.List<String> unused = new java.util.ArrayList<>();
+    try (java.util.stream.Stream<java.nio.file.Path> s = java.nio.file.Files.walk(dir)) {
+      for (java.nio.file.Path p : (Iterable<java.nio.file.Path>) s.filter(java.nio.file.Files::isRegularFile).sorted()::iterator) {
+        String rel = dir.relativize(p).toString().replace('\\', '/');
+        long size = java.nio.file.Files.size(p);
+        n[0]++;
+        n[1] += size;
+        if (used.contains(rel)) {
+          n[2]++;
+          n[3] += size;
+        } else {
+          unused.add(rel);
+        }
+      }
+    }
+    java.nio.file.Files.write(java.nio.file.Path.of(outFile), unused);
+    System.err.printf(Locale.ROOT, "SHIM_INCLUDES files=%d bytes=%d used_files=%d used_bytes=%d unused_files=%d unused_bytes=%d%n",
+        n[0], n[1], n[2], n[3], n[0] - n[2], n[1] - n[3]);
   }
 }

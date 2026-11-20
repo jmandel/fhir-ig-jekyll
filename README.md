@@ -31,7 +31,7 @@ them.
 | Golden corpus: real publisher + real Jekyll on real IGs from build.fhir.org, then the shim on the same input | **99 / 99 IGs identical, 493,294 files, 0 differences** (includes UTG: 259k input → 89,572 output files) |
 | Full publisher run (`-jekyll jekyll-shim`) vs a real-Jekyll publisher run (UDAP) | identical apart from per-run data (build timestamps, GUIDs, QA timing counters) |
 | Liquid 4.0.4: differential vs the real gem | 4,167 / 4,167 cases (+150 CRLF variants) |
-| kramdown 2.5.2 + GFM | 2,207 / 2,207 real IG fragments · 1,043 / 1,043 upstream test cases · 4,000 adversarial + ~35k fuzz |
+| kramdown 2.5.2 + GFM | 2,207 / 2,207 real IG fragments · 4,000 / 4,000 adversarial emphasis cases · upstream suite 702 / 1,043 exact, the other 341 being code fences in languages no IG uses, whose Rouge lexers aren't ported (they render as plain text) |
 | YAML (SafeYAML → Psych → libyaml) | 687 real IG files · 804 yaml-test-suite cases · 343k fuzz, typed values identical |
 | Rouge 4.7.0 | 2,467 / 2,467 highlighted fragments mined from real IGs |
 | Jekyll site behavior | 73 / 73 cases (filters, includes, `site.*`, static-file paths, collisions) |
@@ -117,15 +117,24 @@ such as unknown filters being ignored or warn-mode fallbacks, follows Jekyll's.
 
 ## Use it
 
+Needs Java 17+, which the IG Publisher already requires. Download the
+[latest release](https://github.com/jmandel/fhir-ig-jekyll/releases/latest):
+
 ```sh
-shim/build.sh          # → shim/build/shim.jar  (javac in the pinned reference Docker image)
+curl -LO https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/fhir-ig-jekyll.zip
+unzip fhir-ig-jekyll.zip       # fhir-ig-jekyll/{shim.jar, jekyll-shim, jekyll-shim.cmd, ...}
 
 # Drop-in: tell the publisher to run the shim instead of Jekyll
-java -jar publisher.jar -ig . -jekyll /path/to/fhir-ig-jekyll/shim/jekyll-shim     # jekyll-shim.cmd on Windows
-
-# Or directly, in a Jekyll source folder
-java -jar shim/build/shim.jar build --destination ../output
+java -jar publisher.jar -ig . -jekyll "$PWD/fhir-ig-jekyll/jekyll-shim"           # Linux / macOS
+java -jar publisher.jar -ig . -jekyll C:\path\to\fhir-ig-jekyll\jekyll-shim.cmd    # Windows
 ```
+
+Or just the jar
+([`shim.jar`](https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/shim.jar)), run in a
+Jekyll source folder: `java -jar shim.jar build --destination ../output`.
+
+From source: `shim/build.sh` builds `shim/build/shim.jar`. It uses your JDK, or the reference Docker image
+if there is no `javac`.
 
 Knobs (all optional): `SHIM_RENDER_THREADS`, `SHIM_IO_THREADS`, `SHIM_TIMING=1`.
 
@@ -155,8 +164,20 @@ Details: [`shim/INTEGRATION.md`](shim/INTEGRATION.md).
 
 ## Developing
 
-Building and running need only a JDK. The upstream sources in `third_party/` are for reading the Ruby
-beside the Java and for regenerating some test cases:
+Building and testing need only a JDK:
+
+```sh
+scripts/test-suites.sh     # differential suites vs recorded Ruby output (~22k cases)
+scripts/e2e.sh             # a fixture site through the wrapper vs real Jekyll's output
+```
+
+CI runs both on Linux, macOS and Windows, with JDK 17 and 21. A few cases have documented, expected
+differences, listed with their reason in `shim/tests/**/<cases>.jsonl.known`: lexers no IG uses, UTC
+offsets beyond ±18:00, and clock-dependent cases. Those are reported as `known`, and any other
+difference fails the run.
+
+The upstream sources in `third_party/` are for reading the Ruby beside the Java and for regenerating
+some test cases:
 
 ```sh
 git submodule update --init --depth 1     # optional, ~26 MB

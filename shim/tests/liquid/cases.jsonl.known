@@ -1,0 +1,10 @@
+# Expected differences from the recorded Ruby output for liquid/cases.jsonl (DiffRunner --known).
+# Every other failure fails the run. Remove ids reported as FIXED.
+
+# clock-dependent: time-only string resolves to today; expected was recorded on 2026-11-19, passes only on that date
+hand-616
+hand-616-bang
+hand-617
+hand-617-bang
+hand-650
+hand-650-bang

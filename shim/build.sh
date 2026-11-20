@@ -6,11 +6,12 @@
 #   module    : compile util + that module only -> shim/build-<module>/{classes,test-classes}
 #               (module = liquid | kramdown | site | yaml | rouge). Lets parallel workers build without
 #               tripping over each other's half-finished code.
-# Daemon: honors DOCKER_CONTEXT / DOCKER_HOST (docker CLI env), e.g. DOCKER_CONTEXT=igbuild for the Lima VM; unset = as before.
+# Uses a local JDK (17+) when `javac` is on PATH; otherwise the reference Docker image. Force Docker
+# with SHIM_BUILD_DOCKER=1. Docker daemon: honors DOCKER_CONTEXT / DOCKER_HOST (e.g. DOCKER_CONTEXT=igbuild).
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 MOD="${1:-}"
-docker run --rm --entrypoint bash -v "$HERE":/shim -w /shim -e MOD="$MOD" -e BUILD_OUT="${BUILD_OUT:-}" ig-publisher-localdev-ca -c '
+SCRIPT='
 set -e
 P=org/hl7/fhir/jekyll
 if [ -z "$MOD" ]; then OUT=build; MAIN="src/main/java"; TEST="src/test/java";
@@ -29,3 +30,8 @@ if [ -s $OUT/test-sources.txt ]; then javac -encoding UTF-8 -Xlint:-options --re
 if [ -z "$MOD" ]; then jar --create --file $OUT/shim.jar --main-class org.hl7.fhir.jekyll.site.Main -C $OUT/classes .; fi
 echo "built $OUT"
 '
+if [ -z "${SHIM_BUILD_DOCKER:-}" ] && command -v javac >/dev/null 2>&1 && command -v jar >/dev/null 2>&1; then
+  (cd "$HERE" && MOD="$MOD" BUILD_OUT="${BUILD_OUT:-}" bash -c "$SCRIPT")
+else
+  docker run --rm --entrypoint bash -v "$HERE":/shim -w /shim -e MOD="$MOD" -e BUILD_OUT="${BUILD_OUT:-}" ig-publisher-localdev-ca -c "$SCRIPT"
+fi

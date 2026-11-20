@@ -1,0 +1,46 @@
+# Expected differences from the recorded Ruby output for yaml/typing-cases.jsonl (DiffRunner --known).
+# Every other failure fails the run. Remove ids reported as FIXED.
+
+# timestamp UTC offset beyond +-18:00 (java.time.ZoneOffset limit); right instant, wrong offset. See NOTES-yaml.md Known gaps
+typing/scalar/211/map-value
+typing/scalar/211/seq
+typing/scalar/211/flow-seq
+typing/scalar/211/flow-map
+typing/scalar/211/key
+typing/scalar/211/top
+typing/scalar/211/str-tag
+typing/scalar/211/bang-tag
+typing/scalar/211/bang-quoted
+typing/scalar/211/local-tag-quoted
+typing/scalar/211/anchor-alias
+typing/scalar/211/quoted-anchor-alias
+typing/scalar/211/alias-of-literal
+typing/scalar/211/trailing-comment
+typing/scalar/215/map-value
+typing/scalar/215/seq
+typing/scalar/215/flow-seq
+typing/scalar/215/flow-map
+typing/scalar/215/key
+typing/scalar/215/top
+typing/scalar/215/str-tag
+typing/scalar/215/bang-tag
+typing/scalar/215/bang-quoted
+typing/scalar/215/local-tag-quoted
+typing/scalar/215/anchor-alias
+typing/scalar/215/quoted-anchor-alias
+typing/scalar/215/alias-of-literal
+typing/scalar/215/trailing-comment
+typing/scalar/233/map-value
+typing/scalar/233/seq
+typing/scalar/233/flow-seq
+typing/scalar/233/flow-map
+typing/scalar/233/key
+typing/scalar/233/top
+typing/scalar/233/str-tag
+typing/scalar/233/bang-tag
+typing/scalar/233/bang-quoted
+typing/scalar/233/local-tag-quoted
+typing/scalar/233/anchor-alias
+typing/scalar/233/quoted-anchor-alias
+typing/scalar/233/alias-of-literal
+typing/scalar/233/trailing-comment

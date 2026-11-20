@@ -15,7 +15,11 @@ import org.hl7.fhir.jekyll.util.Json;
  * Generic differential test runner: reads oracle cases + expected outputs (JSONL), renders each
  * case with a Java implementation, and compares exactly.
  *
- * usage: DiffRunner &lt;cases.jsonl&gt; &lt;expected.jsonl&gt; [--filter substr] [--show N] [--report out.jsonl] [--d7]
+ * usage: DiffRunner &lt;cases.jsonl&gt; &lt;expected.jsonl&gt; [--filter substr] [--show N] [--report out.jsonl] [--d7] [--known file]
+ * <p>
+ * <code>--known file</code>: ids expected to differ (first token of each line; lines starting with <code>#</code>
+ * give the reason; blank lines ignored). They count as <code>known</code>, are not shown, and don't fail the run; a known id that
+ * passes is reported as <code>fixed</code> so the list can be trimmed. Any other failure still fails the run.
  *
  * <code>--no-d7</code> (or env SHIM_NO_D7=1) disables the D7 rule (Rouge token spans stripped from
  * highlighted code before comparing), so outputs must be byte-identical including the spans.
@@ -57,6 +61,7 @@ public final class DiffRunner {
     String filter = null;
     int show = 10;
     Path report = null;
+    java.util.Set<String> known = new java.util.HashSet<>();
     // Exact comparison by default (D7 reversed 2026-11-19: Rouge spans are reproduced). --d7 / SHIM_D7=1
     // re-enables the old text-only rule for highlighted code (diagnostics only).
     boolean noD7 = !"1".equals(System.getenv("SHIM_D7"));
@@ -67,6 +72,14 @@ public final class DiffRunner {
         case "--report": report = Path.of(args[++k]); break;
         case "--no-d7": noD7 = true; break;
         case "--d7": noD7 = false; break;
+        case "--known":
+          for (String line : Files.readAllLines(Path.of(args[++k]), StandardCharsets.UTF_8)) {
+            String t = line.trim(); // ids may contain '#', so comments are whole lines only
+            if (!t.isEmpty() && !t.startsWith("#")) {
+              known.add(t.split("\\s+", 2)[0]);
+            }
+          }
+          break;
         default: throw new IllegalArgumentException(args[k]);
       }
     }
@@ -74,7 +87,8 @@ public final class DiffRunner {
     for (Map<String, Object> e : readJsonl(expected)) {
       exp.put((String) e.get("id"), e);
     }
-    int pass = 0, fail = 0, crash = 0, shown = 0;
+    int pass = 0, fail = 0, crash = 0, shown = 0, knownFail = 0;
+    java.util.List<String> fixed = new java.util.ArrayList<>();
     StringBuilder rep = new StringBuilder();
     for (Map<String, Object> c : readJsonl(cases)) {
       String id = (String) c.get("id");
@@ -102,6 +116,11 @@ public final class DiffRunner {
       }
       if (ok) {
         pass++;
+        if (known.contains(id)) {
+          fixed.add(id);
+        }
+      } else if (known.contains(id)) {
+        knownFail++;
       } else {
         fail++;
         Map<String, Object> r = new LinkedHashMap<>();
@@ -120,7 +139,11 @@ public final class DiffRunner {
     if (report != null) {
       Files.writeString(report, rep.toString(), StandardCharsets.UTF_8);
     }
-    System.out.printf(java.util.Locale.ROOT, "pass=%d fail=%d (crashes=%d) total=%d%n", pass, fail, crash, pass + fail);
+    for (String f : fixed) {
+      System.out.println("FIXED (listed as known, now passes) " + f);
+    }
+    System.out.printf(java.util.Locale.ROOT, "pass=%d fail=%d (crashes=%d) total=%d%s%n", pass, fail, crash, pass + fail + knownFail,
+        known.isEmpty() ? "" : " known=" + knownFail + (fixed.isEmpty() ? "" : " fixed=" + fixed.size()));
     System.exit(fail == 0 ? 0 : 1);
   }
 
