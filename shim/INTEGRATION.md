@@ -7,7 +7,7 @@ The publisher already lets you replace the Jekyll command:
 
     java -jar publisher.jar -ig . -jekyll /path/to/jekyll-shim
 
-`jekyll-shim` runs `java -XX:MaxRAMPercentage=75 -jar shim.jar "$@"` (no -Xss/-Xmx needed: the build runs on its own large-stack thread and the heap grows as needed). The publisher calls it exactly as it calls Jekyll
+`jekyll-shim` (a release copy downloads and verifies its pinned `shim.jar` on first use; see the README) runs `java -XX:MaxRAMPercentage=75 -jar shim.jar "$@"` (no -Xss/-Xmx needed: the build runs on its own large-stack thread and the heap grows as needed). The publisher calls it exactly as it calls Jekyll
 (`<cmd> build --destination <output>` with cwd = `temp/pages`), and the shim prints Jekyll's console
 lines, including `done in N seconds.`, which `PublisherGenerator#passJekyllFilter` keys on.
 Errors print `Liquid Exception: …` and exit 1, like Jekyll.

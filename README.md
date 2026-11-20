@@ -117,21 +117,29 @@ such as unknown filters being ignored or warn-mode fallbacks, follows Jekyll's.
 
 ## Use it
 
-Needs Java 17+, which the IG Publisher already requires. Download the
-[latest release](https://github.com/jmandel/fhir-ig-jekyll/releases/latest):
+Needs Java 17+, which the IG Publisher already requires. Like the Gradle wrapper, one small file is all
+you need: it pins a release, downloads that release's `shim.jar` on first use, checks its SHA-256, caches
+it in `~/.fhir-ig-jekyll/<version>/`, and runs offline from then on.
 
 ```sh
-curl -LO https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/fhir-ig-jekyll.zip
-unzip fhir-ig-jekyll.zip       # fhir-ig-jekyll/{shim.jar, jekyll-shim, jekyll-shim.cmd, ...}
-
-# Drop-in: tell the publisher to run the shim instead of Jekyll
-java -jar publisher.jar -ig . -jekyll "$PWD/fhir-ig-jekyll/jekyll-shim"           # Linux / macOS
-java -jar publisher.jar -ig . -jekyll C:\path\to\fhir-ig-jekyll\jekyll-shim.cmd    # Windows
+# Linux / macOS
+curl -fLO https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/jekyll-shim && chmod +x jekyll-shim
+java -jar publisher.jar -ig . -jekyll "$PWD/jekyll-shim"
 ```
 
-Or just the jar
-([`shim.jar`](https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/shim.jar)), run in a
-Jekyll source folder: `java -jar shim.jar build --destination ../output`.
+On Windows, download
+[`jekyll-shim.cmd`](https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/jekyll-shim.cmd)
+and pass its full path: `-jekyll C:\path\to\jekyll-shim.cmd`. You can commit the wrapper into an IG
+repository (like `gradlew`) or put it on your `PATH`. To move to a newer version, download the newer wrapper.
+
+- Offline or air-gapped:
+  [`fhir-ig-jekyll.zip`](https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/fhir-ig-jekyll.zip)
+  bundles `shim.jar` with both wrappers, which use the jar next to them. Alternatively, set
+  `FHIR_IG_JEKYLL_JAR=/path/to/shim.jar`.
+- Mirrors: `FHIR_IG_JEKYLL_URL` overrides the download URL; `FHIR_IG_JEKYLL_HOME` moves the cache.
+- Just the jar:
+  [`shim.jar`](https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/shim.jar), run in a
+  Jekyll source folder: `java -jar shim.jar build --destination ../output`.
 
 From source: `shim/build.sh` builds `shim/build/shim.jar`. It uses your JDK, or the reference Docker image
 if there is no `javac`.

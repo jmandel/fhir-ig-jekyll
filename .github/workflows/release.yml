@@ -1,9 +1,12 @@
 name: Release
 
 # Push a tag like v0.1.0 to publish a GitHub Release with:
-#   shim.jar             the shim itself (java -jar shim.jar build --destination <dir>)
-#   fhir-ig-jekyll.zip   shim.jar + jekyll-shim (Unix) + jekyll-shim.cmd (Windows) + docs and licenses
-# Asset names don't carry the version, so .../releases/latest/download/shim.jar always works.
+#   jekyll-shim, jekyll-shim.cmd   self-contained wrappers (Unix, Windows) pinned to this release's
+#                                  version and shim.jar SHA-256: on first use they download that jar
+#                                  into ~/.fhir-ig-jekyll/<version>/, verify it, and run it (like gradlew)
+#   shim.jar                       the shim itself (java -jar shim.jar build --destination <dir>)
+#   fhir-ig-jekyll.zip             offline bundle: shim.jar + both wrappers + docs and licenses
+# Asset names don't carry the version, so .../releases/latest/download/<asset> always works.
 on:
   push:
     tags: ['v*']
@@ -42,27 +45,31 @@ jobs:
         run: |
           D=dist/fhir-ig-jekyll
           mkdir -p "$D"
-          cp shim/build/shim.jar shim/jekyll-shim shim/jekyll-shim.cmd "$D/"
+          scripts/stamp-wrappers.sh "${TAG#v}" shim/build/shim.jar "$D"
+          cp shim/build/shim.jar "$D/"
           cp README.md LICENSE THIRD_PARTY_NOTICES.md shim/INTEGRATION.md "$D/"
-          chmod +x "$D/jekyll-shim"
           scripts/e2e.sh "$D"
           (cd dist && zip -qr fhir-ig-jekyll.zip fhir-ig-jekyll)
-          cp shim/build/shim.jar dist/shim.jar
-          (cd dist && sha256sum shim.jar fhir-ig-jekyll.zip > SHA256SUMS)
+          cp shim/build/shim.jar "$D/jekyll-shim" "$D/jekyll-shim.cmd" dist/
+          (cd dist && sha256sum shim.jar jekyll-shim jekyll-shim.cmd fhir-ig-jekyll.zip > SHA256SUMS)
       - name: Publish
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           notes="Drop-in for the IG Publisher's Jekyll stage. Requires Java 17+.
 
-          Quick start:
-              unzip fhir-ig-jekyll.zip
-              java -jar publisher.jar -ig . -jekyll \$PWD/fhir-ig-jekyll/jekyll-shim          # Linux/macOS
-              java -jar publisher.jar -ig . -jekyll C:\\path\\to\\fhir-ig-jekyll\\jekyll-shim.cmd   # Windows
-
+          Quick start (Linux/macOS): download the one-file wrapper; it fetches and verifies shim.jar on first use.
+              curl -fLO https://github.com/jmandel/fhir-ig-jekyll/releases/download/$TAG/jekyll-shim && chmod +x jekyll-shim
+              java -jar publisher.jar -ig . -jekyll \$PWD/jekyll-shim
+          Windows: download jekyll-shim.cmd and pass its full path as -jekyll.
+          Offline: fhir-ig-jekyll.zip bundles shim.jar with both wrappers.
           Or run it directly in a Jekyll source folder: java -jar shim.jar build --destination <dir>"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" dist/shim.jar dist/fhir-ig-jekyll.zip dist/SHA256SUMS --clobber
+            gh release upload "$TAG" dist/jekyll-shim dist/jekyll-shim.cmd dist/shim.jar dist/fhir-ig-jekyll.zip dist/SHA256SUMS --clobber
           else
-            gh release create "$TAG" dist/shim.jar dist/fhir-ig-jekyll.zip dist/SHA256SUMS --title "$TAG" --notes "$notes"
+            gh release create "$TAG" dist/jekyll-shim dist/jekyll-shim.cmd dist/shim.jar dist/fhir-ig-jekyll.zip dist/SHA256SUMS --title "$TAG" --notes "$notes"
           fi
+      - name: Verify the published wrapper (downloads shim.jar from this release)
+        run: |
+          W=$(mktemp -d); cp dist/jekyll-shim "$W/"
+          FHIR_IG_JEKYLL_HOME=$(mktemp -d) scripts/e2e.sh "$W"

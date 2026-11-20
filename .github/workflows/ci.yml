@@ -38,3 +38,5 @@ jobs:
         run: java -cp "shim/build/classes${{ runner.os == 'Windows' && ';' || ':' }}shim/build/test-classes" org.hl7.fhir.jekyll.test.site.ShimApiCheck
       - name: End to end through the wrapper (vs real Jekyll output)
         run: scripts/e2e.sh
+      - name: Wrapper bootstrap (download, verify, cache; local server stands in for Releases)
+        run: scripts/test-wrapper.sh
