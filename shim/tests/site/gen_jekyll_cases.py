@@ -98,6 +98,8 @@ add('include-param-dotted', '{% include frag.html a=site.data.fhir.ver b=page.pa
 add('include-nested-scope', '{% include nest.html x="X" %}{{ include.x }}', includes=I)
 add('include-dynamic', '{% assign p = "frag" %}{% include {{p}}.html a="d" %}', includes=I)
 add('include-dynamic-dir', '{% include {{lang}}/sub.html lang=lang %}', {'lang': 'en'}, includes=I)
+add('include-leading-slash', '{% include /frag.html a="s" %}{% include /en/sub.html lang="L" %}', includes=I)
+add('include-double-slash', '{% include //frag.html %}', includes=I)
 add('include-md-markdownify', '{% capture c %}{% include md.md t="T" %}{% endcapture %}{{ c | markdownify }}', includes=I)
 add('include-sees-page', '{% include tpl.html %}', includes=I, page={'path': 'en/x/y.html'})
 add('include-assign-leaks', '{% include tpl.html %}{{ localPage }}', includes=I, page={'path': 'q.html'})

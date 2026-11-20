@@ -129,8 +129,11 @@ final class JekyllTags {
       return slot.get(() -> {
         Site site = JekyllRenderer.site(context);
         Path includesRoot = site.source.resolve("_includes");
+        // PathManager.join(dir, file) = File.join, which never lets a leading "/" make the path
+        // absolute ({% include /menu.xml %} is _includes/menu.xml); Path.resolve would.
+        String rel = f.replaceFirst("^/+", "");
         for (Path dir : dirs) {
-          Path p = dir.resolve(f);
+          Path p = dir.resolve(rel);
           if (r.includeProvider != null && p.startsWith(includesRoot)) {
             String name = includesRoot.relativize(p).toString().replace('\\', '/');
             String content;

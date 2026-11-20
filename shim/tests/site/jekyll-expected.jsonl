@@ -71,3 +71,5 @@
 {"id":"lax-dot-bracket","output":"H","warnings":["Liquid syntax error (line 1): Expected id but found open_square in \"site.data.resources[resource_].['history']\""]}
 {"id":"lax-append-s","output":"A,B","warnings":["Liquid syntax error (line 1): Expected end_of_string but found id in \"{{t | append: \",\"s | append: \"B\" }}\""]}
 {"id":"lax-index-pipe","output":" T ","warnings":["Liquid syntax error (line 1): Expected close_square but found pipe in \"{{item[\"title\" | trim ]}}\""]}
+{"id":"include-leading-slash","output":"<s||>SUBL"}
+{"id":"include-double-slash","error":"ArgumentError: Invalid syntax for include tag. File contains invalid characters or sequences:\n\n  //frag.html\n\nValid syntax:\n\n  {% include file.ext param='value' param2='value' %}\n\n"}
