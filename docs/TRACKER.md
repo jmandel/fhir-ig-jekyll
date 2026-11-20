@@ -48,7 +48,9 @@ Subagents append milestone lines to `progress/<name>.log` (`<ISO time> | started
 | Dashboard server | `PORT=8766 tracker-app/serve.sh` | http://127.0.0.1:8766/ | serving |
 | Subagent: tracker.json watcher | background agent following `tracker-app/watcher-prompt.md` | `tracker-app/tracker.json` | running |
 | Subagent: P7.1 determinism harness + baseline (Opus) | background agent | `scripts/determinism.sh`, `work/determinism/`, `progress/determinism.log` | running |
-| Subagent: P7.2 core + publisher master toolchain (Opus) | background agent | `/srv/ig/toolchain` (VM), `scripts/toolchain.sh`, `progress/toolchain.log` | running |
+| Subagent: P7.3a ordered collections (Opus) | worktree set `ordered`, branch `determinism/ordered` | `work/determinism/fixes/ordered.md`, `progress/det-ordered.log` | running |
+| Subagent: P7.3b build clock + archives (Opus) | worktree set `clock`, branch `determinism/clock` | `work/determinism/fixes/clock.md`, `progress/det-clock.log` | running |
+| Subagent: P7.3c render-path getters (Opus) | worktree set `getters`, branch `determinism/getters` | `work/determinism/fixes/getters.md`, `progress/det-getters.log` | running |
 | Subagent: P7.5 frozen-model / phase design (Fable 5.2) | background agent | `work/consult/frozen-model-design.md`, `progress/design.log` | running |
 
 ## Plan
@@ -155,8 +157,8 @@ Subagents append milestone lines to `progress/<name>.log` (`<ISO time> | started
 
 ### P7: Publisher determinism and robustness (upstream-facing; from the P6.15 consult). Gates for every change: two builds of the same IG identical under the determinism harness; output equivalent to before (domdiff) apart from intended order fixes; publisher/core unit tests pass. Nothing goes upstream without approval.
 - [~] P7.1 Determinism harness: build an IG twice under perturbations (threads, identity-hash seed, directory order, time zone), normalize, diff, classify; baseline on ~6 IGs with the current release. (Opus subagent, `progress/determinism.log`)
-- [~] P7.2 Toolchain: build org.hl7.fhir.core and fhir-ig-publisher from upstream master on the VM (local Maven repo), so fixes target code maintainers can merge; smoke-test on UDAP. (Opus subagent, `progress/toolchain.log`)
-- [ ] P7.3 Quick wins, one commit each, each verified by P7.1: R1 ordered collections / total orders (core `CanonicalResourceManager.allResources`, publisher `pub_xref_used`, `DBBuilder` inserts, directory listings); R2 one build clock (`SOURCE_DATE_EPOCH`) and deterministic ids; R3 reproducible zips/tgz/package.db; R4 guard render-path `getTypeFirstRep()` calls, make the empty-type normalization explicit, remove `redoRenderingChanges`.
+- [x] P7.2 Toolchain (2026-11-20): core master `62b21509` (7.0.7-SNAPSHOT) and publisher master `749d8d63` (3.0.6-SNAPSHOT) built from source on the VM (`/srv/ig/toolchain`, Temurin 21, `-Dcore_version` override, no pom edits); `scripts/toolchain.sh` (sync/build/test, per-topic **worktree sets** with their own Maven repo so fix branches build in parallel; edit via get/put). Tests: core utilities 1,716 pass, core r5 6,676 (2 transient live-tx-server errors), publisher.core 690 pass; core full suite partly run (rest to do). UDAP smoke on master: OK, 1,738 files, differences vs v3.0.4 explained by release changes. Notes: `work/toolchain/README.md`.
+- [~] P7.3 Quick wins (three parallel agents: 3a ordered, 3b clock+archives, 3c getters), small commits each, each verified by P7.1: R1 ordered collections / total orders (core `CanonicalResourceManager.allResources`, publisher `pub_xref_used`, `DBBuilder` inserts, directory listings); R2 one build clock (`SOURCE_DATE_EPOCH`) and deterministic ids; R3 reproducible zips/tgz/package.db; R4 guard render-path `getTypeFirstRep()` calls, make the empty-type normalization explicit, remove `redoRenderingChanges`.
 - [ ] P7.4 Two-build determinism CI job (small IG) for the publisher project.
 - [~] P7.5 Design (Fable 5.2, started in parallel with P7.1/P7.2): frozen flag in the core model + named phase model (R5/R6) with non-creating reads (R4) and pure renderers (R7), audit mode first; rollout as reviewable PRs. Then implementation and an audit report over the corpus IGs. (`progress/design.log`)
 - [ ] P7.6 Recorded terminology answers + package lock (R9).
