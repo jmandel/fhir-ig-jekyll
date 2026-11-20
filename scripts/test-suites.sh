@@ -32,7 +32,7 @@ fail=0
 for s in "${suites[@]}"; do
   set -- $s
   known=(); [ -f "$1.known" ] && known=(--known "$1.known")   # documented expected differences
-  out=$(java -Xss16m -cp "$CP" org.hl7.fhir.jekyll.test.DiffRunner "$1" "$2" --show 3 "${known[@]}" 2>&1); rc=$?
+  out=$(java -Xss16m -cp "$CP" org.hl7.fhir.jekyll.test.DiffRunner "$1" "$2" --show 3 ${known[@]+"${known[@]}"} 2>&1); rc=$?   # bash 3.2 + set -u: empty array
   printf '%-48s %s\n' "$1" "$(echo "$out" | tail -1)"
   if [ $rc -ne 0 ]; then fail=1; echo "$out" | head -20; fi
 done

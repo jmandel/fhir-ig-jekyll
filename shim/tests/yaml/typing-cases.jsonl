@@ -5035,7 +5035,7 @@
 {"id": "typing/file/too-big", "type": "yaml-typed-file", "path": "/w/shim/tests/yaml/typing-files/too-big.yml"}
 {"id": "typing/file/incomplete", "type": "yaml-typed-file", "path": "/w/shim/tests/yaml/typing-files/incomplete.yml"}
 {"id": "typing/file/latin1", "type": "yaml-typed-file", "path": "/w/shim/tests/yaml/typing-files/latin1.yml"}
-{"id": "typing/file/nul", "type": "yaml-typed-file", "path": "/w/shim/tests/yaml/typing-files/nul.yml"}
+{"id": "typing/file/nul-byte", "type": "yaml-typed-file", "path": "/w/shim/tests/yaml/typing-files/nul-byte.yml"}
 {"id": "typing/file/control", "type": "yaml-typed-file", "path": "/w/shim/tests/yaml/typing-files/control.yml"}
 {"id": "typing/file/invalid-after-16k", "type": "yaml-typed-file", "path": "/w/shim/tests/yaml/typing-files/invalid-after-16k.yml"}
 {"id": "typing/file/invalid-in-second-doc-16k", "type": "yaml-typed-file", "path": "/w/shim/tests/yaml/typing-files/invalid-in-second-doc-16k.yml"}

@@ -5035,7 +5035,7 @@
 {"id":"typing/file/too-big","output":"ERR Psych::SyntaxError: (/w/shim/tests/yaml/typing-files/too-big.yml): invalid Unicode character at line 1 column 1"}
 {"id":"typing/file/incomplete","output":"ERR Psych::SyntaxError: (/w/shim/tests/yaml/typing-files/incomplete.yml): incomplete UTF-8 octet sequence at line 1 column 1"}
 {"id":"typing/file/latin1","output":"ERR Psych::SyntaxError: (/w/shim/tests/yaml/typing-files/latin1.yml): incomplete UTF-8 octet sequence at line 1 column 1"}
-{"id":"typing/file/nul","output":"ERR Psych::SyntaxError: (/w/shim/tests/yaml/typing-files/nul.yml): control characters are not allowed at line 1 column 1"}
+{"id":"typing/file/nul-byte","output":"ERR Psych::SyntaxError: (/w/shim/tests/yaml/typing-files/nul-byte.yml): control characters are not allowed at line 1 column 1"}
 {"id":"typing/file/control","output":"ERR Psych::SyntaxError: (/w/shim/tests/yaml/typing-files/control.yml): control characters are not allowed at line 1 column 1"}
 {"id":"typing/file/invalid-after-16k","output":"ERR Psych::SyntaxError: (/w/shim/tests/yaml/typing-files/invalid-after-16k.yml): invalid leading UTF-8 octet at line 1 column 1"}
 {"id":"typing/file/invalid-in-second-doc-16k","output":"[\"h\",[[\"s\",\"a\"],[\"i\",\"1\"]]]"}

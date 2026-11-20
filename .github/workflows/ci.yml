@@ -19,16 +19,17 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@v4   # submodules aren't needed to build or test
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v5   # submodules aren't needed to build; the YAML suite data is fetched below
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
       - name: Build
         run: shim/build.sh
-      - name: Expose the repo at /w (the YAML file-case suites hold oracle-container paths)
+      - name: YAML test-suite data + the repo at /w (the YAML file cases hold oracle-container paths)
         if: runner.os == 'Linux'
         run: |
+          git submodule update --init --depth 1 third_party/yaml-test-suite
           sudo ln -s "$GITHUB_WORKSPACE" /w
           echo "SHIM_W_SUITES=1" >> "$GITHUB_ENV"
       - name: Differential suites (vs recorded Ruby output)
