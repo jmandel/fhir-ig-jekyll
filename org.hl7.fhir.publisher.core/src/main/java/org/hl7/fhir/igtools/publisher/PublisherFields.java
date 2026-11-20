@@ -215,6 +215,8 @@ public class PublisherFields {
     boolean doTransforms;
     /** what Rapido reuses from the last build (null unless in Rapido mode) */
     RapidoTracker rapido;
+    /** -jekyll-engine shim-lazy: the fragments, held for the in-process Jekyll (null otherwise) */
+    FragmentRegistry fragmentRegistry;
     RapidoTracker.TxFailures txFailures; // Rapido: the terminology calls of this build that got no answer
     boolean allInvariants = true;
     List<String> spreadsheets = new ArrayList<String>();

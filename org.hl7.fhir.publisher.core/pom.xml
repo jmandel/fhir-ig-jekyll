@@ -20,6 +20,13 @@
     </properties>
 
     <dependencies>
+        <!-- Java port of Jekyll's stage (fhir-ig-jekyll), for -jekyll-engine shim|shim-lazy; JDK-only, no
+             transitive dependencies. Not published yet: install a built shim.jar locally (INTEGRATION-DEMO.md) -->
+        <dependency>
+            <groupId>org.hl7.fhir</groupId>
+            <artifactId>fhir-ig-jekyll</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.ant</groupId>
             <artifactId>ant</artifactId>

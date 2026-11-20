@@ -41,6 +41,17 @@ public class PublisherSettings {
     @Getter private final List<String> noValidate = new ArrayList<String>();
     @Getter @Setter String jekyllCommand = "jekyll";
     /**
+     * -jekyll-engine: how the Jekyll stage runs. "jekyll" (default): run jekyllCommand in temp/pages, as
+     * always. "shim": the Java port of Jekyll (org.hl7.fhir.jekyll, fhir-ig-jekyll) in this JVM, same
+     * output. "shim-lazy": in process, and fragments are kept in memory instead of temp/pages/_includes;
+     * the expensive fragment families are only generated when a page includes them (FragmentRegistry).
+     */
+    @Getter @Setter String jekyllEngine = "jekyll";
+
+    public boolean isJekyllInProcess() {
+      return "shim".equals(jekyllEngine) || "shim-lazy".equals(jekyllEngine);
+    }
+    /**
      * How many threads, beyond its own, the publisher may use for work that it can do in parallel
      * (-threads). 0, the default, means none: the publisher does everything on one thread, so a build
      * doesn't load more than one core unless the user asks for it. Anything that does work in parallel
