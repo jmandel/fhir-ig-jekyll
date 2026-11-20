@@ -217,6 +217,10 @@ public class PublisherFields {
     RapidoTracker rapido;
     /** -jekyll-engine shim-lazy: the fragments, held for the in-process Jekyll (null otherwise) */
     FragmentRegistry fragmentRegistry;
+    /** -Dig.fragments.verify: compares deferred fragments with their eager rendering (diagnostic; null otherwise) */
+    FragmentVerifier fragmentVerifier;
+    /** shim-lazy: lazyFragment() defers; shim-mem: fragments in memory, all generated eagerly */
+    boolean deferFragments;
     RapidoTracker.TxFailures txFailures; // Rapido: the terminology calls of this build that got no answer
     boolean allInvariants = true;
     List<String> spreadsheets = new ArrayList<String>();

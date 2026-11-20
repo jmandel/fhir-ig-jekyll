@@ -332,7 +332,11 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
               if (pf.rapido != null) {
                 pf.rapido.startRecording(f, RapidoTracker.PHASE_HTML);
               }
+              FragmentVerifier.phase = "html of "+f.getName();
               generateHtmlOutputs(f, false, db, null);
+              if (pf.fragmentVerifier != null) {
+                pf.fragmentVerifier.checkpoint("html of "+f.getName()+" (or earlier)");
+              }
               if (pf.fragmentRegistry != null && "file".equals(System.getProperty("ig.fragments.drain"))) {
                 pf.fragmentRegistry.drain(); // diagnostic: deferred fragments generated right after their file
               }
@@ -351,6 +355,7 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
         pf.fragmentRegistry.drain(); // diagnostic: deferred fragments generated at the end of the html phase
       }
 
+      verifierPhase("end of html", "spreadsheets");
       logMessage("Generate Spreadsheets");
       columnWidths = new ColumnWidthCache();
       // the files whose spreadsheets are reused from the last build: decided before the prefetcher starts, so that it
@@ -418,6 +423,7 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
       }
       columnWidths = null;
 
+      verifierPhase("spreadsheets", "summaries");
       logMessage("Generate Summaries");
 
 
@@ -436,6 +442,7 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
       }
       pf.template.rapidoSummary();
       genBasePages();
+      verifierPhase("summaries + base pages", "after generation (validation summary, npm, templates)");
     } finally {
       // close it even when generation fails, or the open file can't be deleted on Windows
       if (db != null) {
@@ -2243,7 +2250,13 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
 
     StructureDefinitionRenderer sdr = structureDefinitionRenderer(sd, lrc, lang);
     // shim-lazy: the views before -expansion render the SD as it was before the expansion (see PreExpansionView)
-    PreExpansionView pre = pf.fragmentRegistry != null && wantGen(r, "expansion") ? new PreExpansionView(sd) : null;
+    if (pf.fragmentVerifier != null) {
+      pf.fragmentVerifier.watch(r.fhirType()+"/"+r.getId(), sd);
+    }
+    if (pf.fragmentRegistry != null && pf.deferFragments && Boolean.getBoolean("ig.fragments.primeKey")) {
+      sdr.elementsForMode(StructureDefinitionRenderer.GEN_MODE_KEY); // experiment: build the renderer's key-element copies now
+    }
+    PreExpansionView pre = pf.fragmentRegistry != null && pf.deferFragments && wantGen(r, "expansion") && !"false".equals(System.getProperty("ig.fragments.preExpansion")) ? new PreExpansionView(sd) : null;
 
     if (wantGen(r, "summary")) {
       long start = System.currentTimeMillis();
@@ -2955,12 +2968,19 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
    * those that stay eager.
    */
   private void lazyFragment(String name, FragmentSource source, Set<String> outputTracker, FetchedResource r, Map<String, String> vars, String format, long start, String code, String context, String lang) throws Exception {
-    if (pf.fragmentRegistry == null) {
+    if (pf.fragmentRegistry == null || !pf.deferFragments) {
       fragment(name, source.get(), outputTracker, r, vars, format, start, code, context, lang);
       return;
     }
     String includeName = name+(lang == null ? "" : "-" + lang)+".xhtml";
     registerOutput(Utilities.path(pf.tempDir, "_includes", includeName), outputTracker);
+    if (pf.fragmentVerifier != null) {
+      // the eager rendering, at the eager point (with the source as fragment() would run it)
+      FragmentSource eager = source instanceof PreExpansionSource ? ((PreExpansionSource) source).raw : source;
+      String content = eager.get();
+      String fixed = (r==null? content : pf.igpkp.doReplacements(content, r, vars, format))+(settings.isTrackFragments() ? "<!-- fragment:"+context+"."+code+" -->" : "");
+      pf.fragmentVerifier.expect(includeName, context+"."+code, wrapLiquid(fixed));
+    }
     pf.fragmentRegistry.putLazy(includeName, () -> {
       long gstart = System.currentTimeMillis();
       String content;
@@ -2989,8 +3009,24 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
     registerUnsuffixedCopy(name, lang);
   }
 
+  /** A deferred source rendered through a PreExpansionView; raw is the source as fragment() would run it. */
+  private static final class PreExpansionSource implements FragmentSource {
+    final PreExpansionView pre;
+    final FragmentSource raw;
+
+    PreExpansionSource(PreExpansionView pre, FragmentSource raw) {
+      this.pre = pre;
+      this.raw = raw;
+    }
+
+    @Override
+    public String get() throws Exception {
+      return pre.render(raw::get);
+    }
+  }
+
   private static FragmentSource preExpansion(PreExpansionView pre, FragmentSource source) {
-    return pre == null ? source : () -> pre.render(source::get);
+    return pre == null ? source : new PreExpansionSource(pre, source);
   }
 
   /** What checkMakeFile does to record an output, without writing it (the fragment is in the registry). */
@@ -3019,16 +3055,22 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
    */
   private void initFragmentRegistry() {
     pf.fragmentRegistry = null;
-    if (!"shim-lazy".equals(settings.getJekyllEngine())) {
+    pf.deferFragments = "shim-lazy".equals(settings.getJekyllEngine());
+    if (!"shim-lazy".equals(settings.getJekyllEngine()) && !"shim-mem".equals(settings.getJekyllEngine())) {
       return;
     }
     if (pf.rapido != null || settings.isGenerationOff() || pf.txUnloadEarly) {
-      log("-jekyll-engine shim-lazy: fragments are written to files ("+(pf.rapido != null ? "rapido" : settings.isGenerationOff() ? "generation off" : "tx-unload-early")+")");
+      pf.deferFragments = false;
+      log("-jekyll-engine "+settings.getJekyllEngine()+": fragments are written to files ("+(pf.rapido != null ? "rapido" : settings.isGenerationOff() ? "generation off" : "tx-unload-early")+")");
       return;
     }
     long mb = Long.getLong("ig.fragments.memoryMB", 1024);
     pf.fragmentRegistry = new FragmentRegistry(mb * 1024 * 1024);
-    log("-jekyll-engine shim-lazy: fragments are kept in memory (up to "+mb+" MB of generated content; beyond that, files) and the deferred ones generated when a page includes them");
+    pf.fragmentVerifier = Boolean.getBoolean("ig.fragments.verify") ? new FragmentVerifier() : null;
+    if (pf.fragmentVerifier != null) {
+      log("-Dig.fragments.verify: deferred fragments are also rendered at their eager point and compared after Jekyll (temp/fragment-verify.txt)");
+    }
+    log("-jekyll-engine "+settings.getJekyllEngine()+": fragments are kept in memory (up to "+mb+" MB of generated content; beyond that, files)"+(pf.deferFragments ? " and the deferred ones generated when a page includes them" : ", all generated as they always are"));
   }
 
   private void updateImplementationGuide() throws Exception {
@@ -4585,7 +4627,15 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
    * temp/pages into output. Logged like the external Jekyll's console (the same lines, through
    * passJekyllFilter); a failure is an IOException with Jekyll's message, as when the process fails.
    */
+  private void verifierPhase(String ended, String next) {
+    if (pf.fragmentVerifier != null) {
+      pf.fragmentVerifier.checkpoint(ended);
+    }
+    FragmentVerifier.phase = next;
+  }
+
   private boolean runJekyllInProcess() throws IOException {
+    verifierPhase("after generation (validation summary, npm, templates)", "jekyll (deferred generation)");
     TimeTracker.Session tts = pf.tt.start("jekyll");
     MyFilterHandler filter = new MyFilterHandler();
     log("Run jekyll: in process (fhir-ig-jekyll), build --destination \""+ pf.outputDir +"\" (in folder "+ pf.tempDir +")");
@@ -4611,6 +4661,11 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
       tts.end();
       if (registry != null) {
         log(registry.summary());
+        if (pf.fragmentVerifier != null) {
+          verifierPhase("jekyll (deferred generation)", "verification (generating the fragments no page included)");
+          log(pf.fragmentVerifier.finish(registry, new File(Utilities.path(pf.tempDir, "fragment-verify.txt")).toPath()));
+          pf.fragmentVerifier = null;
+        }
         registry.clear();
       }
     }

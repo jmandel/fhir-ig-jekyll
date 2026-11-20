@@ -9,6 +9,7 @@
 #   CACHE_LOWER          read-only package cache under the overlay (default $VMDATA/pubint/fhir-cache-snap)
 #   PUBINT_LOGS          where logs go (default $FHIR_IG_JEKYLL_ROOT/work/pubint/runs)
 #   PUBLISHER_UID/GID    owner of the overlay's upper packages dir (default: the caller's)
+#   DOCKER_ENV           extra docker run options, e.g. "-e SHIM_RENDER_THREADS=1"
 # Build copy on the Docker host's disk: $VMDATA/pubint/runs/<name>/<mode>$TAG; the package cache is an
 # overlay of CACHE_LOWER (writes discarded). Log + memory line: $PUBINT_LOGS/<name>.<mode>$TAG.log
 set -euo pipefail
@@ -27,7 +28,7 @@ vm "rm -rf '$up' && mkdir -p '$up/upper/packages' '$up/work' && chown ${PUBLISHE
 docker volume create --driver local --opt type=overlay --opt device=overlay \
   --opt "o=lowerdir=${CACHE_LOWER:-$VMDATA/pubint/fhir-cache-snap},upperdir=$up/upper,workdir=$up/work" "$vol" >/dev/null
 args=""; [ "$MODE" != jekyll ] && args="-jekyll-engine $MODE"
-docker run --rm -v "$W":/home/publisher/ig -v "$vol":/home/publisher/.fhir -v "$VMDATA/pubint":"$VMDATA/pubint" \
+docker run --rm ${DOCKER_ENV:-} -v "$W":/home/publisher/ig -v "$vol":/home/publisher/.fhir -v "$VMDATA/pubint":"$VMDATA/pubint" \
   -v "$HERE":/opt/s -w "/home/publisher/ig/$igsub" "$IMAGE" \
   bash -c "/opt/s/treemem.sh java -Xmx$XMX ${JPROPS:-} -jar $VMDATA/pubint/${PUBJAR:-publisher-pubint.jar} -ig . -no-network-check $args > /home/publisher/ig/publisher.log 2>&1; tail -n 3 /home/publisher/ig/publisher.log" \
   > "$LOG.mem" 2>&1 || true

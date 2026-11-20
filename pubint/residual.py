@@ -15,7 +15,7 @@ def nested_same(a, b):
 res = json.load(open(sys.argv[1])); A, B = sys.argv[2], sys.argv[3]
 UUID = re.compile(rb'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
 ISO = re.compile(rb'\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?([+-]\d\d:\d\d|Z)?')
-TS = re.compile(rb'(\d{4}-\d\d-\d\d \d\d:\d\d:\d\d [+-]\d{4}|\w{3}, \w{3} \d\d?, \d{4} \d\d:\d\d[+-]\d{4}|\d{14}|\d{8}T\d{6}|\w{3}, \d\d? \w{3},? \d{4} \d\d:\d\d:\d\d [+-]\d{4}|\w{3} \w{3} \d\d? \d\d:\d\d:\d\d \w+ \d{4}|\d\d?/\d\d?/\d\d,? \d\d?:\d\d ?[AP]M|\w+ \d\d?, \d{4},? \d\d?:\d\d:\d\d ?[AP]M( \w+)?)')
+TS = re.compile(rb'(\[B@[0-9a-f]+|\d{4}-\d\d-\d\d \d\d:\d\d:\d\d[+-]\d{4}|\d{4}-\d\d-\d\d \d\d:\d\d:\d\d [+-]\d{4}|\w{3}, \w{3} \d\d?, \d{4} \d\d:\d\d[+-]\d{4}|\d{14}|\d{8}T\d{6}|\w{3}, \d\d? \w{3},? \d{4} \d\d:\d\d:\d\d [+-]\d{4}|\w{3} \w{3} \d\d? \d\d:\d\d:\d\d \w+ \d{4}|\d\d?/\d\d?/\d\d,? \d\d?:\d\d ?[AP]M|\w+ \d\d?, \d{4},? \d\d?:\d\d:\d\d ?[AP]M( \w+)?)')
 # the publisher picks the terminology.hl7.org version of a NamingSystem link nondeterministically (differs between
 # two default-mode builds of US Core)
 THO = re.compile(rb'terminology\.hl7\.org/\d+\.\d+\.\d+/')

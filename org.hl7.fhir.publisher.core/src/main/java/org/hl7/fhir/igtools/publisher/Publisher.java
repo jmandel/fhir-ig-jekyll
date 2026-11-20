@@ -1739,8 +1739,8 @@ public class Publisher extends PublisherBase implements IReferenceResolver, IVal
       }
       if (CliParams.hasNamedParam(args, "-jekyll-engine")) {
         String engine = CliParams.getNamedParam(args, "-jekyll-engine");
-        if (!Utilities.existsInList(engine, "jekyll", "shim", "shim-lazy")) {
-          throw new Error("-jekyll-engine must be one of jekyll, shim, shim-lazy (was '" + engine + "')");
+        if (!Utilities.existsInList(engine, "jekyll", "shim", "shim-mem", "shim-lazy")) {
+          throw new Error("-jekyll-engine must be one of jekyll, shim, shim-mem, shim-lazy (was '" + engine + "')");
         }
         self.settings.setJekyllEngine(engine);
       }

@@ -49,7 +49,7 @@ public class PublisherSettings {
     @Getter @Setter String jekyllEngine = "jekyll";
 
     public boolean isJekyllInProcess() {
-      return "shim".equals(jekyllEngine) || "shim-lazy".equals(jekyllEngine);
+      return "shim".equals(jekyllEngine) || "shim-mem".equals(jekyllEngine) || "shim-lazy".equals(jekyllEngine);
     }
     /**
      * How many threads, beyond its own, the publisher may use for work that it can do in parallel

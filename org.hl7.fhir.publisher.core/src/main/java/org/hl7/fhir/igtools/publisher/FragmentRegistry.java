@@ -47,6 +47,8 @@ public class FragmentRegistry implements IncludeProvider {
   }
 
   private final Map<String, Entry> entries = new ConcurrentHashMap<>();
+  /** every deferred entry, also after delivery (for FragmentVerifier) */
+  private final Map<String, Entry> deferred = new ConcurrentHashMap<>();
   private final Object generationLock = new Object();
   private final long maxEagerBytes;
   private final AtomicLong eagerBytes = new AtomicLong();
@@ -94,7 +96,9 @@ public class FragmentRegistry implements IncludeProvider {
 
   public void putLazy(String name, Generator generator) {
     lazy.incrementAndGet();
-    entries.put(name, new Entry(generator));
+    Entry e = new Entry(generator);
+    entries.put(name, e);
+    deferred.put(name, e);
   }
 
   /** name serves the same content as target (generated once). No-op when target isn't registered. */
@@ -140,6 +144,21 @@ public class FragmentRegistry implements IncludeProvider {
     return content;
   }
 
+  /** The content of a deferred entry: what Jekyll got, or generated now if no page asked for it (FragmentVerifier). */
+  String contentOf(String name) throws Exception {
+    Entry e = deferred.get(name);
+    if (e == null) {
+      return null;
+    }
+    synchronized (generationLock) {
+      if (!e.done) {
+        e.content = asWrittenToFile(e.generator.generate());
+        e.done = true;
+      }
+      return e.content;
+    }
+  }
+
   /** Diagnostic (-Dig.fragments.drain): generate every pending deferred fragment now; they stay registered. */
   public void drain() throws Exception {
     for (Entry e : entries.values()) {
@@ -183,5 +202,6 @@ public class FragmentRegistry implements IncludeProvider {
   /** Releases whatever no page included. */
   public void clear() {
     entries.clear();
+    deferred.clear();
   }
 }
