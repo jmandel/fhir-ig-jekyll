@@ -2,9 +2,10 @@
 # P1.4: build goldens for many IGs on the Lima VM in chunks, keeping disk bounded.
 # usage: scripts/corpus-run.sh <names-file> [-j N] [-m HEAP] [-c CHUNK]
 #   After each chunk: append work/batch-summary.tsv to work/corpus-summary.tsv, delete the build
-#   copies work/igs/<name> (the golden keeps jekyll-in/jekyll-out/logs), log to progress/corpus.log.
+#   copies $VMDATA/igs/<name> on the VM (the golden keeps jekyll-in/jekyll-out/logs), log to progress/corpus.log.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+. "$ROOT/scripts/lib/vmdata.sh"
 LIST="$1"; shift
 J=8; M=8g; C=32
 while getopts "j:m:c:" o; do case $o in j) J=$OPTARG;; m) M=$OPTARG;; c) C=$OPTARG;; *) exit 2;; esac; done
@@ -20,9 +21,9 @@ for ((s = 0; s < total; s += C)); do
   chunk=("${NAMES[@]:s:C}")
   "$ROOT/scripts/golden-batch.sh" -j "$J" -m "$M" "${chunk[@]}" > "$ROOT/work/logs/corpus-chunk-$s.log" 2>&1 || true
   tail -n +2 "$ROOT/work/batch-summary.tsv" >> "$ROOT/work/corpus-summary.tsv"
-  for n in "${chunk[@]}"; do rm -rf "$ROOT/work/igs/$n" "$ROOT/work/igs/$n.fhir-cache"; done
+  for n in "${chunk[@]}"; do vm "rm -rf '$VMDATA/igs/$n'"; done
   done_n=$((done_n + ${#chunk[@]}))
   valid=$(tail -n +2 "$ROOT/work/corpus-summary.tsv" | awk -F'\t' '$2=="valid"' | wc -l | tr -d ' ')
-  log milestone "chunk done: $done_n/$total built; valid so far $valid; disk free $(df -h / | tail -1 | awk '{print $4}')"
+  log milestone "chunk done: $done_n/$total built; valid so far $valid; VM disk free $(vm "df -h '$VMDATA' | tail -1" | awk '{print $4}')"
 done
 log done "corpus run finished: $done_n IGs; valid $(tail -n +2 "$ROOT/work/corpus-summary.tsv" | awk -F'\t' '$2=="valid"' | wc -l | tr -d ' ')"

@@ -46,33 +46,6 @@ provision:
     command -v docker >/dev/null 2>&1 && exit 0
     export DEBIAN_FRONTEND=noninteractive
     curl -fsSL https://get.docker.com | sh
-- mode: system
-  # virtiofs on vz keeps one HOST fd open per guest-cached inode. With 96GiB RAM the guest never
-  # evicts them, so parallel builds exhaust the Mac's kern.maxfiles (ENFILE "Too many open files
-  # in system" -- which also hits Docker Desktop and every other host process). Evict unused
-  # dentries/inodes every 10s so the host fds are released.
-  script: |
-    #!/bin/bash
-    set -eu
-    cat > /etc/systemd/system/drop-inode-cache.service <<'U'
-    [Unit]
-    Description=Evict unused dentries/inodes so virtiofs releases host file descriptors
-    [Service]
-    Type=oneshot
-    ExecStart=/bin/sh -c 'echo 2 > /proc/sys/vm/drop_caches'
-    U
-    cat > /etc/systemd/system/drop-inode-cache.timer <<'U'
-    [Unit]
-    Description=Run drop-inode-cache every 10s
-    [Timer]
-    OnBootSec=30s
-    OnUnitActiveSec=10s
-    AccuracySec=1s
-    [Install]
-    WantedBy=timers.target
-    U
-    systemctl daemon-reload
-    systemctl enable --now drop-inode-cache.timer
 - mode: yq
   path: /etc/systemd/system/docker.socket.d/override.conf
   format: ini

@@ -1,15 +1,16 @@
 #!/bin/bash
 # Run many IGs through scripts/golden-build.sh in parallel.
 #
-# usage: golden-batch.sh [-j N] [-m HEAP] [-i] [-f LIST] [name ...]
+# usage: golden-batch.sh [-j N] [-m HEAP] [-s] [-f LIST] [name ...]
 #   -j N     parallel builds (default 4)
 #   -m HEAP  per-build Java heap, "-Xmx6g" or "6g" (default -Xmx6g)
-#   -i       isolated package caches: each job gets an APFS clone (cp -c, copy-on-write) of
-#            work/fhir-cache under work/igs/<name>.fhir-cache; packages it downloads are merged back
-#            into the shared cache afterwards. Use when another daemon (e.g. Docker Desktop) is
-#            building against work/fhir-cache at the same time (file locks don't cross VMs).
+#   -s       share one package cache between jobs (default: isolated, see below)
 #   -f LIST  file with one repo name per line (# comments and blank lines ignored); may be
 #            combined with names given as arguments.
+# Package caches: by default each job sees the shared cache ($VMDATA/fhir-cache, on the VM disk)
+# through its own overlay volume (shared cache = read-only lower layer, the job's writes go to an
+# upper layer), so concurrent builds can't collide on package locks or delete each other's
+# packages. Complete packages a job downloaded are merged back afterwards (never overwriting).
 #
 # Daemon: set DOCKER_CONTEXT=igbuild (Lima VM, see lima/README.md) or DOCKER_HOST; unset =
 # current docker context. Example:
@@ -19,12 +20,13 @@
 #          work/batch-summary.tsv  (name, valid, full_build_seconds, jekyll_seconds, exit)
 set -uo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-JOBS=4; HEAP=-Xmx6g; ISOLATE=0; NAMES=()
-while getopts "j:m:if:h" o; do
+. "$ROOT/scripts/lib/vmdata.sh"
+JOBS=4; HEAP=-Xmx6g; ISOLATE=1; NAMES=()
+while getopts "j:m:sf:h" o; do
   case "$o" in
     j) JOBS="$OPTARG" ;;
     m) HEAP="$OPTARG" ;;
-    i) ISOLATE=1 ;;
+    s) ISOLATE=0 ;;
     f) while IFS= read -r l || [ -n "$l" ]; do
          l="${l%%#*}"; l="$(echo "$l" | tr -d '[:space:]')"; [ -n "$l" ] && NAMES+=("$l")
        done < "$OPTARG" ;;
@@ -52,23 +54,25 @@ one() {  # one <name>  -> runs a build, writes $LOGS/<name>.log
   t0=$(date +%s)
   echo "[$(date +%H:%M:%S)] start $n"
   if [ "$ISOLATE" = 1 ]; then
-    local jc="$ROOT/work/igs/$n.fhir-cache"
-    rm -rf "$jc"; mkdir -p "$(dirname "$jc")"
-    cp -cR "$ROOT/work/fhir-cache" "$jc" 2>/dev/null || cp -R "$ROOT/work/fhir-cache" "$jc"
-    FHIR_CACHE="$jc" "$ROOT/scripts/golden-build.sh" "$n" "$XMX" > "$log" 2>&1; rc=$?
+    local vol="igcache-$n" up="$VMDATA/tmp/cache-$n"
+    docker volume rm -f "$vol" >/dev/null 2>&1 || true
+    vm "rm -rf '$up' && mkdir -p '$up/upper' '$up/work'"
+    docker volume create --driver local --opt type=overlay --opt device=overlay \
+      --opt "o=lowerdir=$VMDATA/fhir-cache,upperdir=$up/upper,workdir=$up/work" "$vol" >/dev/null
+    FHIR_CACHE="$vol" "$ROOT/scripts/golden-build.sh" "$n" "$XMX" > "$log" 2>&1; rc=$?
+    docker volume rm -f "$vol" >/dev/null 2>&1 || true
     # merge back complete packages this job downloaded (the publisher renames a package dir into
     # place only once it is fully extracted, so a present dir is complete). Never overwrite.
-    for p in "$jc"/packages/*/; do
-      p="${p%/}"; b="$(basename "$p")"
-      [ -e "$ROOT/work/fhir-cache/packages/$b" ] && continue
-      case "$b" in *.lock|*.tmp|*-tmp*) continue ;; esac
-      cp -cR "$p" "$ROOT/work/fhir-cache/packages/.$b.merge.$$" 2>/dev/null \
-        || cp -R "$p" "$ROOT/work/fhir-cache/packages/.$b.merge.$$"
-      mv -n "$ROOT/work/fhir-cache/packages/.$b.merge.$$" "$ROOT/work/fhir-cache/packages/$b" 2>/dev/null \
-        || rm -rf "$ROOT/work/fhir-cache/packages/.$b.merge.$$"
-      rm -rf "$ROOT/work/fhir-cache/packages/.$b.merge.$$"
-    done
-    rm -rf "$jc"
+    vm "cd '$up/upper/packages' 2>/dev/null || exit 0
+        for b in *; do
+          [ -d \"\$b\" ] || continue
+          case \"\$b\" in *.lock|*.tmp|*-tmp*) continue ;; esac
+          [ -e '$VMDATA/fhir-cache/packages/'\"\$b\" ] && continue
+          t='$VMDATA/fhir-cache/packages/.'\"\$b\".merge.\$\$
+          cp -a \"\$b\" \"\$t\" && { mv -nT \"\$t\" '$VMDATA/fhir-cache/packages/'\"\$b\" 2>/dev/null || true; }
+          rm -rf \"\$t\"
+        done" || true
+    vm "rm -rf '$up'"
   else
     "$ROOT/scripts/golden-build.sh" "$n" "$XMX" > "$log" 2>&1; rc=$?
   fi
@@ -76,7 +80,7 @@ one() {  # one <name>  -> runs a build, writes $LOGS/<name>.log
   t1=$(date +%s)
   echo "[$(date +%H:%M:%S)] done  $n rc=$rc $((t1-t0))s"
 }
-export -f one; export ROOT LOGS XMX ISOLATE
+export -f one vm; export ROOT LOGS XMX ISOLATE VMDATA IMAGE
 
 printf '%s\n' "${NAMES[@]}" | xargs -P "$JOBS" -I{} bash -c 'one "$1"' _ {}
 

@@ -61,7 +61,7 @@ DOCKER_CONTEXT=igbuild shim/build.sh liquid        # shim/run.sh, shim/oracle/or
 ```
 
 `golden-batch.sh`: `-j N` parallel jobs (default 4), `-m HEAP` per-build heap (default `-Xmx6g`),
-`-f FILE` names one per line, `-i` isolated package caches (below). Per-build console in
+`-f FILE` names one per line, `-s` one shared writable package cache instead of per-job overlays (below). Per-build console in
 `work/logs/<name>.log`, summary in `work/batch-summary.tsv` (name, valid, full_build_seconds,
 jekyll_seconds, exit). Sizing: a build uses roughly its heap + ~1 GiB, so `-j 10 -m 7g` fits in 96 GiB;
 US Core-sized IGs want `-m 10g` or more.
@@ -76,25 +76,26 @@ trusts it.
 
 ## Gotchas
 
-1. **virtiofs holds one host fd per guest-cached inode** (Apple Virtualization.framework). With 96 GiB
-   the guest never evicts inodes, so the VM process accumulates host fds until the Mac hits
-   `kern.maxfiles` (491,520). The first 3-way smoke test died at ~1 min with
-   `Too many open files in system` (ENFILE) in all three builds. That limit is **system-wide**, so it
-   can also break Docker Desktop builds and other host processes. Fix (in `igbuild.yaml`): a guest
-   systemd timer `drop-inode-cache.timer` runs `echo 2 > /proc/sys/vm/drop_caches` every 10 s. With
-   it, the igbuild VM peaked at ~31k host fds over a 3-way run. Watch it with
-   `lsof -p $(pgrep -f 'Virtualization.VirtualMachine' | tail -1) | wc -l` and `sysctl kern.num_files`.
-   Docker Desktop's VM process has the same behavior (it was at ~195k fds during the US Core build;
-   per-process limit 245,760), and we can't change it. More headroom would need
-   `sudo sysctl kern.maxfiles=... kern.maxfilesperproc=...` on the host (user action, not done).
-2. **Package cache `work/fhir-cache` sharing.** The publisher locks per package with `.lock` files plus
-   fcntl locks. Tested: fcntl locks *are* enforced between containers in the VM over virtiofs (the guest
-   kernel handles them), so concurrent builds **within one daemon** sharing the cache are safe (default
-   mode). Locks do **not** cross VMs: a Docker Desktop build and igbuild builds downloading the same
-   package at the same moment could race. When Desktop is also building against the cache, use
-   `golden-batch.sh -i`. Each job then gets an APFS copy-on-write clone (`cp -c`) under
-   `work/igs/<name>.fhir-cache`, and new complete package dirs are merged back afterwards (never
-   overwriting). Cost: roughly 1–1.5 min extra per job to clone and delete the 5.7 GB / many-file cache.
+1. **Keep bulk file I/O on the VM's own disk, not the shared folder.** virtiofs (Apple
+   Virtualization.framework) keeps one macOS file handle open for every file the guest has cached,
+   and macOS caps open files system-wide (`kern.maxfiles`, 491,520). IG builds, goldens and the
+   package cache are millions of files, so doing that I/O through the shared folder exhausts the
+   Mac's file table (ENFILE, `Too many open files in system`) for every process on it, not just the
+   builds. The scripts therefore keep all heavy data on the VM disk under `/srv/ig`
+   (`scripts/lib/vmdata.sh`): build copies, golden `jekyll-in`/`jekyll-out`/`shim-out` and the
+   package cache. They stream IG sources in with tar over the Docker socket (the Mac reads them
+   natively), mount the VM dirs over the usual paths inside containers, and keep only small results
+   (logs, `VALID`, timings, diff summaries) under `work/` on the Mac. To look at a tree from the Mac,
+   copy it out with `from_vm` (same file). An earlier workaround, a guest timer that dropped the inode cache every
+   10 s, only delayed the problem under parallel load and has been removed. Verified: the full
+   exact comparison (234 goldens, 6 parallel) and corpus builds (8 parallel) left
+   `sysctl kern.num_files` flat at its idle level (~7k). On a VM created before the change, run
+   `limactl shell igbuild sudo systemctl disable --now drop-inode-cache.timer` once.
+2. **Package cache.** `$VMDATA/fhir-cache` is shared, but `golden-batch.sh` gives each job its own
+   overlay volume over it (the shared cache is the read-only lower layer; the job writes to its own
+   upper layer). Concurrent builds therefore can't collide on package locks or delete packages
+   under each other (both happened in the first corpus run). Complete packages a job downloaded are
+   merged back afterwards, never overwriting. `-s` opts out (one shared, writable cache).
 3. `ghcr.io/fhir/ig-publisher-localdev:latest` drifts (see Image). Don't `docker build --pull` blindly.
 4. Files written by containers (which run as root) show up on the host owned by your user (virtiofs
    maps them), same as with Docker Desktop.

@@ -9,7 +9,7 @@ if [ "${1:-}" = "-j" ]; then J="$2"; shift 2; fi
 B="${1:-build-site}"
 OUT="$ROOT/work/shim-summary.tsv"
 printf 'name\tsame\tdiffer\tmissing\textra\tshim_s\tjekyll_s\n' > "$OUT.tmp"
-ls -d "$ROOT"/work/golden/*/ | while read -r g; do [ -f "$g/VALID" ] && [ -d "$g/jekyll-out" ] && basename "$g"; done > "$ROOT/work/shim-all-names.txt"
+ls -d "$ROOT"/work/golden/*/ | while read -r g; do [ -f "$g/VALID" ] && basename "$g"; done > "$ROOT/work/shim-all-names.txt"
 run_one() {
   n="$1"; ROOT="$2"; B="$3"
   "$ROOT/scripts/shim-golden.sh" "$n" "$B" > "$ROOT/work/golden/$n/shim-run.txt" 2>&1 || true
