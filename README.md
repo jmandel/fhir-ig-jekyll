@@ -175,7 +175,7 @@ Details: [`shim/INTEGRATION.md`](shim/INTEGRATION.md).
 | `scripts/` | corpus sampling, golden builds, the `domdiff.py` comparator, timing / memory / locale tools |
 | `docker/` | the reference image: the autobuilder's localdev image pinned by digest, plus optional extra CAs |
 | `lima/` | Lima VM definition for large corpus runs |
-| `docs/TRACKER.md` | the plan, decisions, evidence and open items (snapshot) |
+| `docs/TRACKER.md` | the live project tracker: plan, decisions, evidence and open items |
 | `tracker-app/` | a small dashboard for the tracker |
 | `third_party/` | the upstream Ruby sources as optional shallow submodules ([details](third_party/README.md)) |
 

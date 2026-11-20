@@ -31,9 +31,9 @@ Those two `tracker.json*` paths are the only files you ever create or modify. Do
    ```bash
    cd <project-root>
    date -u +%Y-%m-%dT%H:%M:%SZ                                   # generatedAt
-   date -u -r "$(stat -f %m TRACKER.md)" +%Y-%m-%dT%H:%M:%SZ     # sourceMtime
+   date -u -r "$(stat -L -f %m TRACKER.md)" +%Y-%m-%dT%H:%M:%SZ     # sourceMtime
    shasum -a 256 TRACKER.md | cut -c1-64                         # source.sha256
-   for f in progress/*.log(N); do echo "$f $(date -u -r "$(stat -f %m "$f")" +%Y-%m-%dT%H:%M:%SZ) $(grep -c . "$f")"; tail -n 5 "$f"; done
+   for f in progress/*.log(N); do echo "$f $(date -u -r "$(stat -L -f %m "$f")" +%Y-%m-%dT%H:%M:%SZ) $(grep -c . "$f")"; tail -n 5 "$f"; done
    ```
    (The `(N)` glob qualifier is for zsh, so an empty directory isn't an error. In bash, use `shopt -s nullglob` and a plain `progress/*.log`.)
 3. **Translate from scratch**, following the schema and the rules below. Build the whole document from the current inputs every time. Don't patch or carry over anything from the previous JSON, so that the same input always gives the same output (apart from `generatedAt`).
@@ -143,7 +143,7 @@ The trigger is a change in the **content** of TRACKER.md or of any `progress/*.l
 /bin/bash -c 'cd <project-root> && shopt -s nullglob && shasum -a 256 TRACKER.md progress/*.log | shasum -a 256 | cut -c1-64'
 ```
 
-A touch with no edit doesn't change the fingerprint, so it doesn't trigger. That is intended. Hashing a few small files every 15 s is cheap. If you want an even cheaper first stage, compare `stat -f %m` of TRACKER.md and of the progress directory, and only hash when an mtime moved. The hash comparison is still what decides.
+A touch with no edit doesn't change the fingerprint, so it doesn't trigger. That is intended. Hashing a few small files every 15 s is cheap. If you want an even cheaper first stage, compare `stat -L -f %m` of TRACKER.md and of the progress directory, and only hash when an mtime moved. The hash comparison is still what decides.
 
 This is macOS. There is no `inotifywait`, and `fswatch` is probably not installed. Check with `command -v fswatch`. If it's there, you may use `fswatch -1 TRACKER.md progress` as a wake-up, but still confirm with the fingerprint. Otherwise, poll.
 
