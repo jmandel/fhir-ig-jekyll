@@ -33,5 +33,7 @@ jobs:
           echo "SHIM_W_SUITES=1" >> "$GITHUB_ENV"
       - name: Differential suites (vs recorded Ruby output)
         run: SHIM_NO_BUILD=1 scripts/test-suites.sh
+      - name: In-process API and IncludeProvider checks
+        run: java -cp "shim/build/classes${{ runner.os == 'Windows' && ';' || ':' }}shim/build/test-classes" org.hl7.fhir.jekyll.test.site.ShimApiCheck
       - name: End to end through the wrapper (vs real Jekyll output)
         run: scripts/e2e.sh

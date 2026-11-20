@@ -3,6 +3,7 @@
 #
 # usage: shim/build.sh [module]
 #   no module : compile everything            -> shim/build/{classes,test-classes}, shim/build/shim.jar
+#               (BUILD_OUT=<dir> puts a full build in shim/<dir> instead)
 #   module    : compile util + that module only -> shim/build-<module>/{classes,test-classes}
 #               (module = liquid | kramdown | site | yaml | rouge). Lets parallel workers build without
 #               tripping over each other's half-finished code.
@@ -14,7 +15,7 @@ MOD="${1:-}"
 SCRIPT='
 set -e
 P=org/hl7/fhir/jekyll
-if [ -z "$MOD" ]; then OUT=build; MAIN="src/main/java"; TEST="src/test/java";
+if [ -z "$MOD" ]; then OUT=${BUILD_OUT:-build}; MAIN="src/main/java"; TEST="src/test/java";
 else OUT=${BUILD_OUT:-build-$MOD}; MAIN="src/main/java/$P/util src/main/java/$P/$MOD"; TEST="src/test/java/$P/test/DiffRunner.java src/test/java/$P/test/$MOD";
   # site (the Jekyll glue) depends on both ports
   if [ "$MOD" = site ]; then MAIN="$MAIN src/main/java/$P/liquid src/main/java/$P/kramdown src/main/java/$P/yaml"; fi

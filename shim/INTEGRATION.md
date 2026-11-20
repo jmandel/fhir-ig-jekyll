@@ -17,18 +17,22 @@ Tunables (environment): `SHIM_RENDER_THREADS` (default = CPUs), `SHIM_IO_THREADS
 
 ## 2. In-process (recommended next step)
 Running the shim as a library inside the publisher's JVM removes the JVM startup and lets the publisher
-skip the temp/pages → output disk round trip later. Minimal change in `PublisherGenerator#runJekyll`:
+skip the temp/pages → output disk round trip later. Public API (`org.hl7.fhir.jekyll`; the CLI `Main` is a
+thin wrapper over it, with the same console lines):
 
 ```java
-if (settings.isInProcessJekyll()) {          // new flag, e.g. -jekyll-in-process
-  org.hl7.fhir.jekyll.site.Site site = new org.hl7.fhir.jekyll.site.Site(Path.of(pf.tempDir), Path.of(pf.outputDir));
-  PageRenderer r = new org.hl7.fhir.jekyll.site.JekyllRenderer();
-  site.read(); r.prepare(site); Main.renderAll(site, r); site.write();   // RenderException = Jekyll failure
-  return true;
-}
+Shim.Result r = Shim.build(Path.of(pf.tempDir), Path.of(pf.outputDir), new Shim.Options()
+    .log(line -> log("Jekyll: " + line.trim()))   // Jekyll's console lines (default System.out)
+    .includeProvider(registry)                    // optional IncludeProvider: name -> content | null
+    .rescanStaticsAfterRender(true));             // copy files that lazy generation wrote meanwhile
+// throws ShimException (isRenderFailure() = Jekyll's "Liquid Exception", exit 1); r has counts/timings
 ```
-(Wrap it in a small public `Shim.build(source, dest, log)` API before upstreaming; today these are
-package-level entry points used by `Main`.) The shim has no dependencies beyond the JDK, so it can be
+`IncludeProvider.include(name)` is consulted before the disk for `{% include %}` (and `include_relative`
+into `_includes`): non-null = the file's content, null = look on disk (missing everywhere still fails
+with Jekyll's message). Each name is asked once per build (the content is kept for later uses); calls
+come from the render threads, so a provider over non-thread-safe code serializes itself. This is what
+lets the publisher generate fragments on first use (~75–86% of `_includes` are never included).
+The build runs on its own large-stack thread. The shim has no dependencies beyond the JDK, so it can be
 vendored as a module (`org.hl7.fhir.jekyll.{liquid,kramdown,site,util}`) or shipped as a jar.
 
 ## 3. Rollout plan

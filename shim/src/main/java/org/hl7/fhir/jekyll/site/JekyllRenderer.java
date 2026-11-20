@@ -29,8 +29,11 @@ public final class JekyllRenderer implements PageRenderer {
   Environment env;
   Map<String, Object> kramdownConfig;
   Object siteDrop;
-  /** Located include partials by name (shared, like Jekyll's site.inclusions). */
-  final Map<String, JekyllTags.Inclusion> inclusionsByName = new ConcurrentHashMap<>();
+  /** Located include partials by name (shared, like Jekyll's site.inclusions); each slot resolves once. */
+  final Map<String, JekyllTags.IncludeSlot> inclusionsByName = new ConcurrentHashMap<>();
+  /** Optional in-memory `_includes` (consulted before the disk); null = disk only, as Jekyll. */
+  org.hl7.fhir.jekyll.IncludeProvider includeProvider;
+  final java.util.concurrent.atomic.AtomicInteger includesFromProvider = new java.util.concurrent.atomic.AtomicInteger();
   private final List<String> warnings = Collections.synchronizedList(new ArrayList<>());
 
   /** Warnings for the page being rendered on this thread (Main prints them in page order). */

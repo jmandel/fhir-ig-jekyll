@@ -506,6 +506,33 @@ public final class Site {
     runParallel(jobs, ioThreads());
   }
 
+  /**
+   * Static files that appeared in the source after {@link #read} (written while pages rendered, e.g.
+   * by a lazy include provider): copied like the others and added to {@link #staticFiles}. Files with
+   * front matter are not pages this late, so they are left alone. Returns the new relative paths.
+   */
+  public List<String> copyLateStatics() throws IOException {
+    Set<String> known = new HashSet<>();
+    pages.forEach(p -> known.add(p.relativePath));
+    staticFiles.forEach(s -> known.add(s.relativePath));
+    List<String> files = new ArrayList<>();
+    listDirectory("", files);
+    List<String> late = new ArrayList<>();
+    for (String rel : files) {
+      Path p = source.resolve(rel);
+      if (known.contains(rel) || hasYamlHeader(p)) {
+        continue;
+      }
+      StaticFile s = new StaticFile(rel, p);
+      Path out = dest.resolve(s.destinationRelative);
+      Files.createDirectories(out.getParent());
+      Files.copy(p, out, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
+      staticFiles.add(s);
+      late.add(rel);
+    }
+    return late;
+  }
+
   /** Non-streaming equivalent (tests / callers that render first): prepare, write all pages, copy statics. */
   public void write() throws IOException {
     prepareOutput();

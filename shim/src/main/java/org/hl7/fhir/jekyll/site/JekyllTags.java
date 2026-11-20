@@ -122,13 +122,30 @@ final class JekyllTags {
     Inclusion locate(Context context, String f) {
       JekyllRenderer r = JekyllRenderer.renderer(context);
       // OptimizedIncludeTag: @site.inclusions[file] ||= locate_include_file(file). Resolution is
-      // shared site-wide; parsed templates are cached per thread (see Inclusion).
-      return r.inclusionsByName.computeIfAbsent(cacheKey(context, f), k -> {
-        List<Path> dirs = includesDirs(context);
+      // shared site-wide (one slot per name, resolved once even when pages render in parallel);
+      // parsed templates are cached per thread (see Inclusion).
+      List<Path> dirs = includesDirs(context);
+      IncludeSlot slot = r.inclusionsByName.computeIfAbsent(cacheKey(context, f), k -> new IncludeSlot());
+      return slot.get(() -> {
+        Site site = JekyllRenderer.site(context);
+        Path includesRoot = site.source.resolve("_includes");
         for (Path dir : dirs) {
           Path p = dir.resolve(f);
+          if (r.includeProvider != null && p.startsWith(includesRoot)) {
+            String name = includesRoot.relativize(p).toString().replace('\\', '/');
+            String content;
+            try {
+              content = r.includeProvider.include(name);
+            } catch (Exception e) {
+              throw new JekyllError("Include provider failed for '" + name + "': " + e);
+            }
+            if (content != null) {
+              r.includesFromProvider.incrementAndGet();
+              return new Inclusion(p, r, content.startsWith("\uFEFF") ? content.substring(1) : content);
+            }
+          }
           if (Files.isRegularFile(p)) {
-            return new Inclusion(p, r);
+            return new Inclusion(p, r, null);
           }
         }
         List<String> shown = new ArrayList<>();
@@ -172,34 +189,76 @@ final class JekyllTags {
   }
 
   /**
+   * site.inclusions[name]: resolved once (first use; concurrent first uses wait), then shared. A
+   * failed resolution isn't kept, so each use reports it, as Jekyll's locate would.
+   */
+  static final class IncludeSlot {
+    private volatile Inclusion inclusion;
+
+    Inclusion get(java.util.function.Supplier<Inclusion> locate) {
+      Inclusion i = inclusion;
+      if (i != null) {
+        return i;
+      }
+      synchronized (this) {
+        if (inclusion == null) {
+          inclusion = locate.get();
+        }
+        return inclusion;
+      }
+    }
+  }
+
+  /**
    * Port of Jekyll::Inclusion: a located partial rendered with render!(context). Memory policy (the
    * output is the same as always parsing): most publisher fragments are used by one page, so a
    * parsed template is cached (per render thread; port Templates aren't concurrency-safe) only
    * from its second use; fragments that are exactly "{% raw %}TEXT{% endraw %}" with no "{%" in
-   * TEXT render to TEXT, so they're never tokenized.
+   * TEXT render to TEXT, so they're never tokenized. A file is re-read on each uncached use; content
+   * from an {@link org.hl7.fhir.jekyll.IncludeProvider} is kept (it was asked for once).
    */
   static final class Inclusion {
     private static final String RAW_OPEN = "{% raw %}";
     private static final String RAW_CLOSE = "{% endraw %}";
     final Path path;
     private final JekyllRenderer renderer;
+    /** Provider content (null = read the file); for a literal raw fragment, just its text. */
+    private final String provided;
+    private final boolean providedLiteral;
     private final java.util.concurrent.atomic.AtomicInteger uses = new java.util.concurrent.atomic.AtomicInteger();
     private final ThreadLocal<Template> cached = new ThreadLocal<>();
 
-    Inclusion(Path path, JekyllRenderer renderer) {
+    Inclusion(Path path, JekyllRenderer renderer, String provided) {
       this.path = path;
       this.renderer = renderer;
+      String literal = provided == null ? null : rawLiteral(provided);
+      this.providedLiteral = literal != null;
+      this.provided = literal != null ? literal : provided;
+    }
+
+    /** TEXT when content is exactly "{% raw %}TEXT{% endraw %}" with no "{%" in TEXT, else null. */
+    private static String rawLiteral(String content) {
+      if (content.length() >= RAW_OPEN.length() + RAW_CLOSE.length() && content.startsWith(RAW_OPEN) && content.endsWith(RAW_CLOSE)) {
+        String inner = content.substring(RAW_OPEN.length(), content.length() - RAW_CLOSE.length());
+        if (!inner.contains("{%")) {
+          return inner;
+        }
+      }
+      return null;
     }
 
     Object render(Context context) {
+      if (providedLiteral) {
+        return provided;
+      }
       Template t = cached.get();
       if (t != null) {
         return t.renderStrict(context);
       }
-      String content = Site.readUtf8(path);
-      if (content.length() >= RAW_OPEN.length() + RAW_CLOSE.length() && content.startsWith(RAW_OPEN) && content.endsWith(RAW_CLOSE)) {
-        String inner = content.substring(RAW_OPEN.length(), content.length() - RAW_CLOSE.length());
-        if (!inner.contains("{%")) {
+      String content = provided != null ? provided : Site.readUtf8(path);
+      if (provided == null) {
+        String inner = rawLiteral(content);
+        if (inner != null) {
           return inner;
         }
       }

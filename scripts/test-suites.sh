@@ -10,7 +10,8 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 [ -n "${SHIM_NO_BUILD:-}" ] || shim/build.sh >/dev/null || exit 1
 SEP=":"; case "$(uname -s)" in MINGW*|MSYS*|CYGWIN*) SEP=";";; esac
-CP="shim/build/classes${SEP}shim/build/test-classes"
+B="${SHIM_BUILD:-shim/build}"   # a full build dir (BUILD_OUT=x shim/build.sh -> shim/x)
+CP="$B/classes${SEP}$B/test-classes"
 suites=(
   "shim/tests/smoke-cases.jsonl shim/tests/smoke-expected.jsonl"
   "shim/tests/liquid/cases.jsonl shim/tests/liquid/expected.jsonl"
