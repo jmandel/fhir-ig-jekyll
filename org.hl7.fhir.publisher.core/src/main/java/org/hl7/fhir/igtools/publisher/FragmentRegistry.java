@@ -1,5 +1,6 @@
 package org.hl7.fhir.igtools.publisher;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -67,7 +68,25 @@ public class FragmentRegistry implements IncludeProvider {
     return eagerBytes.get() + chars <= maxEagerBytes;
   }
 
+  /**
+   * The content as it reads back from the file fragment() would have written: FileUtilities.stringToBytes
+   * encodes with String.getBytes(UTF_8), which turns unpaired surrogates (seen in rendered content)
+   * into '?'. Without this the shim's UTF-8 page writer would fail on them.
+   */
+  static String asWrittenToFile(String s) {
+    if (s == null) {
+      return null;
+    }
+    for (int i = 0; i < s.length(); i++) {
+      if (Character.isSurrogate(s.charAt(i))) {
+        return new String(s.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
+      }
+    }
+    return s;
+  }
+
   public void put(String name, String wrappedContent) {
+    wrappedContent = asWrittenToFile(wrappedContent);
     eager.incrementAndGet();
     eagerBytes.addAndGet(wrappedContent.length());
     entries.put(name, new Entry(wrappedContent));
@@ -101,7 +120,7 @@ public class FragmentRegistry implements IncludeProvider {
         if (!e.done) {
           long t0 = System.nanoTime();
           try {
-            e.content = e.generator.generate();
+            e.content = asWrittenToFile(e.generator.generate());
           } finally {
             e.done = true;
             generationNanos.addAndGet(System.nanoTime() - t0);
