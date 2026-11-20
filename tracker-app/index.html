@@ -570,14 +570,13 @@ ol.recent .tx { min-width: 0; }
         "</div>";
     }).join("");
 
-    // plan: every other phase, in document order, collapsed by default (the current phase is shown above;
-    // the summary line's counts still show any open tasks).
+    // plan: every other phase, in document order. Finished phases start collapsed.
     var rest = [];
     phases.forEach(function (p, i) { if (i !== ci) rest.push({ p: p, i: i }); });
     $("plan-h").innerHTML = ci >= 0 ? 'Other phases <span class="muted">(' + esc(phases[ci].id || "current") + " is shown above)</span>" : "Plan";
     $("phases").innerHTML = list(rest, function (x) {
       var p = x.p, s = pstats(p), tt = splitTitle(p), key = phaseKey(p, x.i);
-      var def = false;
+      var def = p.status !== "done";
       var open = phaseOpen.hasOwnProperty(key) ? !!phaseOpen[key] : def;
       return '<details class="phase" data-key="' + esc(key) + '" data-default="' + (def ? "1" : "0") + '"' + (open ? " open" : "") + ">" +
         '<summary><span class="ttl"><span class="pid">' + esc(p.id || "") + "</span>" + md(tt[0]) +
