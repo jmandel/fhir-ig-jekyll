@@ -54,7 +54,9 @@ vendored as a module (`org.hl7.fhir.jekyll.{liquid,kramdown,site,util}`) or ship
 - Not supported (unused by IGs): Jekyll plugins, layouts, collections/posts, Sass, `smartify`,
   `sassify`/`scssify`, pagination, incremental builds, `--watch`.
 
-## 5. Performance (same machine, same load, Lima VM, output to local disk)
-US Core: Jekyll 75.6s → shim 21.7s. ITI.MHD: 10.6s → 3.5s. Rendering itself is ~3s on US Core; the rest
-is file I/O. Pathological kramdown inputs (long paragraphs with unmatched emphasis) that take tens of
-seconds in Ruby take milliseconds in the shim, with identical output (P0.12, P4.9).
+## 5. Performance (Lima VM, 16 vCPU, idle, input and output on local disk; `scripts/bench.sh`)
+Jekyll stage, Jekyll 4.4.1 → shim: ITI.MHD 2.4s → 0.8s, US Core 14.7s → 2.8s, fhir-extensions 16.3s → 3.3s,
+UTG 49.6s → 6.8s (3–7×). The shim needs 50–78% of Jekyll's peak RSS (with a heap cap); uncapped, the JVM
+grows into free memory. In-process (`-jekyll-engine shim`, branch `publisher-integration`), US Core's
+Jekyll stage drops from 16–19s to 3.1s. Pathological kramdown inputs (long paragraphs with unmatched
+emphasis) that take tens of seconds in Ruby take milliseconds in the shim, with identical output (P0.12, P4.9).

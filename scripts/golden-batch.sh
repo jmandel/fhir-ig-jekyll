@@ -69,7 +69,7 @@ one() {  # one <name>  -> runs a build, writes $LOGS/<name>.log
           case \"\$b\" in *.lock|*.tmp|*-tmp*) continue ;; esac
           [ -e '$VMDATA/fhir-cache/packages/'\"\$b\" ] && continue
           t='$VMDATA/fhir-cache/packages/.'\"\$b\".merge.\$\$
-          cp -a \"\$b\" \"\$t\" && { mv -nT \"\$t\" '$VMDATA/fhir-cache/packages/'\"\$b\" 2>/dev/null || true; }
+          cp -a \"\$b\" \"\$t\" && chmod -R a+rX \"\$t\" && { mv -nT \"\$t\" '$VMDATA/fhir-cache/packages/'\"\$b\" 2>/dev/null || true; }
           rm -rf \"\$t\"
         done" || true
     vm "rm -rf '$up'"

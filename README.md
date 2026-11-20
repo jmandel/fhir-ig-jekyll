@@ -1,7 +1,7 @@
 # fhir-ig-jekyll
 
 **A Java replacement for the Jekyll (Ruby) stage of the [FHIR IG Publisher](https://github.com/HL7/fhir-ig-publisher):
-no Ruby, same output, 3–5× faster, about half the memory.**
+no Ruby, same output, 3–7× faster.**
 
 **Get started** (Java 17+; Windows: use [`jekyll-shim.cmd`](https://github.com/jmandel/fhir-ig-jekyll/releases/latest/download/jekyll-shim.cmd)):
 
@@ -44,34 +44,38 @@ them.
 | Jekyll site behavior | 75 / 75 cases (filters, includes, `site.*`, static-file paths, collisions) |
 | Template/IG surface inventory | 79 / 79 features observed in sampled IGs covered |
 
-### Speed: 3–5× faster on the Jekyll stage
+### Speed: 3–7× faster on the Jekyll stage
 
-Same machine (Lima VM, 16 vCPU), same load, same input, both writing to local disk:
+Same machine (Lima VM, 16 vCPU, otherwise idle), same input on local disk, output to local disk, each tool
+run twice alternately and the warm run reported (`scripts/bench.sh`):
 
 | IG | Input → output files | Jekyll 4.4.1 | Shim | Speed-up |
 |---|---:|---:|---:|---:|
-| IHE ITI.MHD | 12k → 2.1k | 10.6 s | 3.5 s | 3.0× |
-| US Core | 35.5k → 16.6k | 75.6 s | 21.7 s | 3.5× |
-| UTG | 259k → 89.6k | 197.6 s | 65.9 s | 3.0× |
-| fhir-extensions | 179k → 29.8k | 571.7 s | 106.0 s | 5.4× |
+| IHE ITI.MHD | 12k → 2.1k | 2.4 s | 0.8 s | 3.0× |
+| US Core | 35.5k → 16.6k | 14.7 s | 2.8 s | 5.3× |
+| fhir-extensions | 179k → 29.8k | 16.3 s | 3.3 s | 4.9× |
+| UTG | 259k → 89.6k | 49.6 s | 6.8 s | 7.3× |
 
-Most of the shim's remaining time is **reading the input folder**: 65 s of UTG's run and 86 s of
-fhir-extensions' are file reads over the VM's shared filesystem, while rendering is 12–23 s. In-process
-integration (below) removes that round trip entirely.
+Where the input sits matters a lot: read over a VM's shared folder (virtiofs), and with other jobs running, the same
+builds took Jekyll 10.6 s / 75.6 s / 571.7 s / 197.6 s and the shim 3.5 s / 21.7 s / 106.0 s / 65.9 s.
+In-process integration (below) removes the temp/pages round trip altogether.
 
-### Memory: about half
+### Memory: less than Ruby needs, if you let it
 
-UTG, the largest IG, measured the same way for both (`scripts/peakmem.sh`, peak RSS of the whole process
-tree):
+Peak RSS of the whole process tree (`scripts/peakmem.sh`), same runs as above:
 
-| | Peak RSS | Wall time |
-|---|---:|---:|
-| Jekyll 4.4.1 (Ruby) | 4,080 MB | 197.6 s |
-| Shim (heap capped at 1.5 GB for the measurement) | 1,952 MB | 65.9 s |
+| IG | Jekyll 4.4.1 | Shim with a heap cap | Shim, wrapper default |
+|---|---:|---:|---:|
+| IHE ITI.MHD | 592 MB | 422 MB (256 MB heap) | 1,168 MB |
+| US Core | 983 MB | 767 MB (512 MB heap) | 1,969 MB |
+| fhir-extensions | 1,678 MB | 1,119 MB (1 GB heap) | 3,681 MB |
+| UTG | 4,089 MB | 1,982 MB (1.5 GB heap) | 10,179 MB |
 
-The shim's **live heap peaks at about 0.7 GB** on UTG. With no cap, the JVM grows its heap lazily
-when memory is free (6.1 GB RSS on a 94 GB VM), but it does not need that much. The wrapper therefore
-sets no `-Xmx` or `-Xss`, only `-XX:MaxRAMPercentage=75`, so big IGs don't need tuning flags.
+The shim **needs** 50–78% of Jekyll's memory, and the caps above cost no time. By default, though, the
+wrapper sets no `-Xmx` (only `-XX:MaxRAMPercentage=75`) so that big IGs never need tuning flags, and the
+JVM then grows its heap into free memory: about 2× Jekyll's RSS on this 96 GB VM. On a memory-constrained
+machine, set `SHIM_JAVA_OPTS=-Xmx1g` (enough for every IG measured but UTG, which needs 1.5 GB). In-process,
+the shim simply shares the publisher's heap.
 
 ### How much of a full build is Jekyll?
 
