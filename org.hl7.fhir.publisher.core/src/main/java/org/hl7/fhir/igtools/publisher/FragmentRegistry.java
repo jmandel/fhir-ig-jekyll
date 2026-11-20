@@ -140,6 +140,20 @@ public class FragmentRegistry implements IncludeProvider {
     return content;
   }
 
+  /** Diagnostic (-Dig.fragments.drain): generate every pending deferred fragment now; they stay registered. */
+  public void drain() throws Exception {
+    for (Entry e : entries.values()) {
+      if (e.generator != null) {
+        synchronized (generationLock) {
+          if (!e.done) {
+            e.content = asWrittenToFile(e.generator.generate());
+            e.done = true;
+          }
+        }
+      }
+    }
+  }
+
   /** One line for the log, after the build: what was registered, generated, and never needed. */
   public String summary() {
     int notGenerated = lazy.get() - generated.get();

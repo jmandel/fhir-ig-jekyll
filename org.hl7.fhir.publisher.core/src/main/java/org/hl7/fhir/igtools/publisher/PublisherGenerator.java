@@ -333,6 +333,9 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
                 pf.rapido.startRecording(f, RapidoTracker.PHASE_HTML);
               }
               generateHtmlOutputs(f, false, db, null);
+              if (pf.fragmentRegistry != null && "file".equals(System.getProperty("ig.fragments.drain"))) {
+                pf.fragmentRegistry.drain(); // diagnostic: deferred fragments generated right after their file
+              }
               if (pf.rapido != null) {
                 pf.rapido.stopRecording();
               }
@@ -343,6 +346,9 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
         }
       } finally {
         pf.sdUsageCache = null;
+      }
+      if (pf.fragmentRegistry != null && "html".equals(System.getProperty("ig.fragments.drain"))) {
+        pf.fragmentRegistry.drain(); // diagnostic: deferred fragments generated at the end of the html phase
       }
 
       logMessage("Generate Spreadsheets");
@@ -2236,44 +2242,46 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
     }
 
     StructureDefinitionRenderer sdr = structureDefinitionRenderer(sd, lrc, lang);
+    // shim-lazy: the views before -expansion render the SD as it was before the expansion (see PreExpansionView)
+    PreExpansionView pre = pf.fragmentRegistry != null && wantGen(r, "expansion") ? new PreExpansionView(sd) : null;
 
     if (wantGen(r, "summary")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-summary", () -> sdr.summary(false), f.getOutputNames(), r, vars, null, start, "summary", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-summary", preExpansion(pre, () -> sdr.summary(false)), f.getOutputNames(), r, vars, null, start, "summary", "StructureDefinition", lang);
     }
     if (wantGen(r, "summary-all")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-summary-all", () -> sdr.summary(true), f.getOutputNames(), r, vars, null, start, "summary", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-summary-all", preExpansion(pre, () -> sdr.summary(true)), f.getOutputNames(), r, vars, null, start, "summary", "StructureDefinition", lang);
     }
     if (wantGen(r, "summary-table")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-summary-table", () -> sdr.summaryTable(r, wantGen(r, "xml"), wantGen(r, "json"), wantGen(r, "ttl"), this.pf.igpkp.summaryRows()), f.getOutputNames(), r, vars, null, start, "summary-table", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-summary-table", preExpansion(pre, () -> sdr.summaryTable(r, wantGen(r, "xml"), wantGen(r, "json"), wantGen(r, "ttl"), this.pf.igpkp.summaryRows())), f.getOutputNames(), r, vars, null, start, "summary-table", "StructureDefinition", lang);
     }
     if (wantGen(r, "class-table")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-class-table", () -> sdr.classTable(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false), f.getOutputNames(), r, vars, null, start, "class-table", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-class-table", preExpansion(pre, () -> sdr.classTable(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false)), f.getOutputNames(), r, vars, null, start, "class-table", "StructureDefinition", lang);
     }
     if (wantGen(r, "header")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-header", () -> sdr.header(), f.getOutputNames(), r, vars, null, start, "header", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-header", preExpansion(pre, () -> sdr.header()), f.getOutputNames(), r, vars, null, start, "header", "StructureDefinition", lang);
     }
     if (wantGen(r, "uses")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-uses", () -> sdr.uses(), f.getOutputNames(), r, vars, null, start, "uses", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-uses", preExpansion(pre, () -> sdr.uses()), f.getOutputNames(), r, vars, null, start, "uses", "StructureDefinition", lang);
     }
     if (wantGen(r, "ctxts")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-ctxts", () -> sdr.contexts(), f.getOutputNames(), r, vars, null, start, "ctxts", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-ctxts", preExpansion(pre, () -> sdr.contexts()), f.getOutputNames(), r, vars, null, start, "ctxts", "StructureDefinition", lang);
     }
     if (wantGen(r, "experimental-warning")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-experimental-warning", () -> sdr.experimentalWarning(), f.getOutputNames(), r, vars, null, start, "experimental-warning", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-experimental-warning", preExpansion(pre, () -> sdr.experimentalWarning()), f.getOutputNames(), r, vars, null, start, "experimental-warning", "StructureDefinition", lang);
     }
 
     if (wantGen(r, "eview")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-eview", () -> sdr.eview(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false), f.getOutputNames(), r, vars, null, start, "eview", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-eview-all", () -> sdr.eview(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true), f.getOutputNames(), r, vars, null, start, "eview", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-eview", preExpansion(pre, () -> sdr.eview(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false)), f.getOutputNames(), r, vars, null, start, "eview", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-eview-all", preExpansion(pre, () -> sdr.eview(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true)), f.getOutputNames(), r, vars, null, start, "eview", "StructureDefinition", lang);
     }
     if (wantGen(r, "adl")) {
       long start = System.currentTimeMillis();
@@ -2283,53 +2291,53 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
     }
     if (wantGen(r, "diff")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff", () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false), f.getOutputNames(), r, vars, null, start, "diff", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-all", () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true), f.getOutputNames(), r, vars, null, start, "diff", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff", preExpansion(pre, () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false)), f.getOutputNames(), r, vars, null, start, "diff", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-all", preExpansion(pre, () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true)), f.getOutputNames(), r, vars, null, start, "diff", "StructureDefinition", lang);
     }
     if (wantGen(r, "snapshot")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot", () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false), f.getOutputNames(), r, vars, null, start, "snapshot", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-all", () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true), f.getOutputNames(), r, vars, null, start, "snapshot", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot", preExpansion(pre, () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false)), f.getOutputNames(), r, vars, null, start, "snapshot", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-all", preExpansion(pre, () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true)), f.getOutputNames(), r, vars, null, start, "snapshot", "StructureDefinition", lang);
     }
     if (wantGen(r, "snapshot-by-key")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key", () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false), f.getOutputNames(), r, vars, null, start, "snapshot-by-key", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-all", () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true), f.getOutputNames(), r, vars, null, start, "snapshot-by-key", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key", preExpansion(pre, () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false)), f.getOutputNames(), r, vars, null, start, "snapshot-by-key", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-all", preExpansion(pre, () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true)), f.getOutputNames(), r, vars, null, start, "snapshot-by-key", "StructureDefinition", lang);
     }
     if (wantGen(r, "snapshot-by-mustsupport")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport", () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-all", () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport", preExpansion(pre, () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, false)), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-all", preExpansion(pre, () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.SUMMARY, true)), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport", "StructureDefinition", lang);
     }
     if (wantGen(r, "diff-bindings")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-bindings", () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, false), f.getOutputNames(), r, vars, null, start, "diff-bindings", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-bindings-all", () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, true), f.getOutputNames(), r, vars, null, start, "diff-bindings", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-bindings", preExpansion(pre, () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, false)), f.getOutputNames(), r, vars, null, start, "diff-bindings", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-bindings-all", preExpansion(pre, () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, true)), f.getOutputNames(), r, vars, null, start, "diff-bindings", "StructureDefinition", lang);
     }
     if (wantGen(r, "snapshot-bindings")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-bindings", () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, false), f.getOutputNames(), r, vars, null, start, "snapshot-bindings", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-bindings-all", () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, true), f.getOutputNames(), r, vars, null, start, "snapshot-bindings", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-bindings", preExpansion(pre, () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, false)), f.getOutputNames(), r, vars, null, start, "snapshot-bindings", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-bindings-all", preExpansion(pre, () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, true)), f.getOutputNames(), r, vars, null, start, "snapshot-bindings", "StructureDefinition", lang);
     }
     if (wantGen(r, "snapshot-by-key-bindings")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-bindings", () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, false), f.getOutputNames(), r, vars, null, start, "snapshot-by-key-bindings", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-bindings-all", () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, true), f.getOutputNames(), r, vars, null, start, "snapshot-by-key-bindings", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-bindings", preExpansion(pre, () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, false)), f.getOutputNames(), r, vars, null, start, "snapshot-by-key-bindings", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-bindings-all", preExpansion(pre, () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, true)), f.getOutputNames(), r, vars, null, start, "snapshot-by-key-bindings", "StructureDefinition", lang);
     }
     if (wantGen(r, "snapshot-by-mustsupport-bindings")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-bindings", () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, false), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport-bindings", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-bindings-all", () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, true), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport-bindings", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-bindings", preExpansion(pre, () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, false)), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport-bindings", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-bindings-all", preExpansion(pre, () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.BINDINGS, true)), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport-bindings", "StructureDefinition", lang);
     }
     if (wantGen(r, "diff-obligations")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-obligations", () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, false), f.getOutputNames(), r, vars, null, start, "diff-obligations", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-obligations-all", () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, true), f.getOutputNames(), r, vars, null, start, "diff-obligations", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-obligations", preExpansion(pre, () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, false)), f.getOutputNames(), r, vars, null, start, "diff-obligations", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-diff-obligations-all", preExpansion(pre, () -> sdr.diff(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, true)), f.getOutputNames(), r, vars, null, start, "diff-obligations", "StructureDefinition", lang);
     }
     if (wantGen(r, "snapshot-obligations")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-obligations", () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, false), f.getOutputNames(), r, vars, null, start, "snapshot-obligations", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-obligations-all", () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, true), f.getOutputNames(), r, vars, null, start, "snapshot-obligations", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-obligations", preExpansion(pre, () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, false)), f.getOutputNames(), r, vars, null, start, "snapshot-obligations", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-obligations-all", preExpansion(pre, () -> sdr.snapshot(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, true)), f.getOutputNames(), r, vars, null, start, "snapshot-obligations", "StructureDefinition", lang);
     }
     if (wantGen(r, "obligations")) {
       long start = System.currentTimeMillis();
@@ -2349,13 +2357,13 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
     }
     if (wantGen(r, "snapshot-by-key-obligations")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-obligations", () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, false), f.getOutputNames(), r, vars, null, start, "snapshot-by-key-obligations", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-obligations-all", () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, true), f.getOutputNames(), r, vars, null, start, "snapshot-by-key-obligations", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-obligations", preExpansion(pre, () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, false)), f.getOutputNames(), r, vars, null, start, "snapshot-by-key-obligations", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-key-obligations-all", preExpansion(pre, () -> sdr.byKey(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, true)), f.getOutputNames(), r, vars, null, start, "snapshot-by-key-obligations", "StructureDefinition", lang);
     }
     if (wantGen(r, "snapshot-by-mustsupport-obligations")) {
       long start = System.currentTimeMillis();
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-obligations", () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, false), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport-obligations", "StructureDefinition", lang);
-      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-obligations-all", () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, true), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport-obligations", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-obligations", preExpansion(pre, () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, false)), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport-obligations", "StructureDefinition", lang);
+      lazyFragment("StructureDefinition-"+prefixForContainer+sd.getId()+"-snapshot-by-mustsupport-obligations-all", preExpansion(pre, () -> sdr.byMustSupport(this.pf.igpkp.getDefinitionsName(r), this.pf.otherFilesRun, this.pf.tabbedSnapshots, RenderingContext.StructureDefinitionRendererMode.OBLIGATIONS, true)), f.getOutputNames(), r, vars, null, start, "snapshot-by-mustsupport-obligations", "StructureDefinition", lang);
     }
     if (wantGen(r, "expansion")) {
       long start = System.currentTimeMillis();
@@ -2979,6 +2987,10 @@ public class PublisherGenerator extends PublisherBase implements BaseRenderer.Re
       return wrapLiquid(fixedContent);
     });
     registerUnsuffixedCopy(name, lang);
+  }
+
+  private static FragmentSource preExpansion(PreExpansionView pre, FragmentSource source) {
+    return pre == null ? source : () -> pre.render(source::get);
   }
 
   /** What checkMakeFile does to record an output, without writing it (the fragment is in the registry). */
