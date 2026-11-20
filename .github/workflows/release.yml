@@ -39,6 +39,7 @@ jobs:
         run: shim/build.sh
       - name: Test
         run: |
+          git submodule update --init --depth 1 third_party/yaml-test-suite   # YAML suite case data
           sudo ln -s "$GITHUB_WORKSPACE" /w
           SHIM_NO_BUILD=1 SHIM_W_SUITES=1 scripts/test-suites.sh
       - name: Package
