@@ -8,8 +8,10 @@ kramdown + Rouge) in the publisher's own JVM, and uses that to stop writing, or 
 ```
 -jekyll-engine jekyll      (default) fork `jekyll build`, unchanged
 -jekyll-engine shim        Shim.build(temp/pages -> output) in process; fragments still written to _includes
+-jekyll-engine shim-mem    in process; fragments held in memory instead of _includes files, all generated
+                           eagerly as always (same calls, same order)
 -jekyll-engine shim-lazy   in process; fragments held in memory (FragmentRegistry), the expensive ones
-                           generated only if a page includes them
+                           generated only if a page includes them  -- NOT SAFE, see "Is deferral safe?"
 ```
 
 ## Why
@@ -218,7 +220,119 @@ Correctness: `shim` vs default: identical after noise (0 files). `shim-lazy` vs 
 `fragment-usage-analysis.csv` (and its copy in `full-ig.zip`) only, by design (the 2 skipped json-html
 fragments aren't counted). A second default build vs the first: 0 files.
 
+## Is deferral safe? (investigation)
+
+**Verdict: no, not at a cost that makes sense.** Deferral can't be made rock solid without making the
+renderers provably read-only, which is an audit and redesign of the renderers in core and the publisher. The
+output is only guaranteed to be right if every deferred renderer reads only state that is frozen at its old
+render point. In this code base the renderers read, and write, four kinds of shared mutable state. Deferral
+breaks each of them, and because pages are rendered in parallel the result is also nondeterministic.
+Recommendation: drop `shim-lazy`; keep `shim` and adopt `shim-mem`, which keeps the I/O savings with no
+deferral at all.
+
+### Root cause of the QuestionnaireResponse residual (US Core)
+
+* **Object:** the copies of the QuestionnaireResponse profile's snapshot elements that the publisher's
+  `StructureDefinitionRenderer` keeps in `keyElements`. `getKeyElements()` builds them on first call
+  (`ed.copy()` + `copyUserData`) and reuses them for every key view: snapshot-by-key(-all), tx-key, inv-key,
+  dict-key.
+* **Mutation:** rendering the `-expansion` fragment calls `ElementDefinition.getTypeFirstRep()` on
+  `QuestionnaireResponse`, `.item.item` and `.item.answer.item` (contentReference elements with no type).
+  That getter adds an empty `TypeRefComponent`. The calls come from `PEBuilder.listChildren`
+  (core, `PEBuilder.java:358`) and the publisher's `StructureDefinitionRenderer.genElement`
+  (`StructureDefinitionRenderer.java:2981`). They were caught with the verifier's type-list trap, with the stack.
+* **Phase:** the html generation of that profile, at the `-expansion` call in
+  `generateOutputsStructureDefinition`. That is after the views listed before it (snapshot-by-key) and
+  before the ones listed after it (tx-key, inv-key, dict-key).
+* **Eager:** snapshot-by-key is the first caller of `getKeyElements()`, before the expansion. The copies are
+  clean, and all later key views reuse them.
+* **Lazy:** fragments are generated in page-render order, on the shim's parallel render threads.
+  `StructureDefinition-...-definitions.html` includes `-dict-key`, a view that comes after the expansion and so
+  isn't covered by PreExpansionView. That page renders before the profile page reaches `-snapshot-by-key`, so
+  the copies are made from the mutated elements. PreExpansionView hides the empty types on the original
+  elements, not on copies made from them. The rows then render with the Resource icon instead of the Element icon.
+* **Evidence:**
+  * The verifier (eager timeline, below) shows the fragments identical, because there the cache is built
+    eagerly.
+  * `SHIM_RENDER_THREADS=1` reproduces the residual deterministically: `-definitions.html` sorts before
+    `.html`.
+  * Building the cache at registration (`-Dig.fragments.primeKey=true`) under the same order removes it.
+
+### What deferred renderers read, and what goes wrong (evidence from 5 IGs)
+
+| state | example found | how it breaks deferral |
+|---|---|---|
+| the resource being rendered, changed after the eager point by side-effecting getters | `getTypeFirstRep()` during `-expansion` (US Core: 46 pages before PreExpansionView; 176 fragments with it off) | deferred views see the later state |
+| the resource, rewritten later on purpose | genomics-reporting: the Bundle entries' narrative divs lose their `<a name=...>` anchors after the Bundle's xml/json/ttl-html point (9 fragments) | same |
+| renderer-local memo caches (first call wins) | `keyElements` (above); the same renderer also has `mustSupportElements`, `diffElements`, `differentialHash`, `mustSupportHash` | result depends on which view asks first, i.e. on page order and thread timing |
+| global session state | terminology calls and caches, failed lookups remembered for the run, `qa-txservers.html` order, tbl_bck image side files | order of calls changes what is recorded or returned |
+
+Per-IG results. Each lazy or mem build is compared with a default build. Noise is filtered as
+in `residual.py`, and so are the differences two default builds also show:
+
+| IG | deferred (skipped) | verifier (eager timeline) | real `shim-lazy` build | `shim-mem` build |
+|---|---|---|---|---|
+| US Core | 6540 (3574) | 0 differ (176 with PreExpansionView off) | QR key views (order-dependent) | = default |
+| genomics-reporting | 3744 (2101) | 9 differ: Bundle xml/json/ttl-html | the 9 Bundle pages + 1 profile's key views (order-dependent) | = default (one child-profile list order: publisher set-iteration nondeterminism, unrelated) |
+| IHE ITI.MHD | 3189 (1970) | 0 differ | 3 profiles: key and snapshot-all views (order-dependent) | = default |
+| AU Core | 4818 (3657) | 0 differ | = default (117 unreferenced tbl_bck pngs missing) | = default |
+| UDAP | 2 (2) | 0 differ | = default | (not run) |
+
+Two default builds of AU Core also differ, in one profile's narrative (a tooltip on a pattern code).
+That difference is default-mode nondeterminism, not something deferral causes.
+
+### The options
+
+* **(a) Snapshot the inputs at registration** (deep-copy the SD/element tree, with its userData, per deferred
+  family). It would fix the "resource changed later" rows for the resource itself, and the memo-cache row if
+  the renderer is built on the copy. Cost: a copy of every SD (and of every element tree for
+  xml/json/ttl-html; Bundles of several MB) held until Jekyll. The cost is not the problem, though. Renderers
+  also read other resources (base SDs, value sets, the terminology cache), identity-keyed caches
+  (`sdUsageCache` is an IdentityHashMap of elements), and session state. A copy of the one resource doesn't
+  freeze any of that, so it isn't a guarantee.
+* **(b) Side-effect-free getters in core.** Scope measured in 7.0.6:
+  * **`*FirstRep()` call sites:** 64 in the core renderers (`org.hl7.fhir.services.renderers`, 70 files,
+    37k lines), 16 in `profilemodel`, 52 in `conformance/profile`, 12 in the publisher's renderers (16.5k lines).
+    By getter: `getTypeFirstRep` 50, `getElementFirstRep` 37, `getTargetFirstRep` 12, and so on.
+  * **Other auto-create getters:** every getter of a complex singleton child (`getBinding()`, `getSlicing()`,
+    `getSnapshot()`, ...) also auto-creates. `hasX()` hides most of those, but list sizes don't.
+  * **Memo caches and userData:** 2 core renderer classes have lazily built fields, and there are 19 userData
+    writes in core renderers plus 8 in the publisher's SD renderer.
+
+  Fixing the call sites removes this instance. It doesn't guarantee anything unless it is enforced, e.g.
+  with a "frozen" flag in the model that makes mutation throw while deferred renderers run. That is a change
+  to the generated model and to every renderer that legitimately builds into the resources. It is also
+  ongoing: new renderer code brings the problem back.
+* **(c) Verification as a gate** (`-Dig.fragments.verify=true`, built on this branch). It renders every
+  deferred fragment both at its eager point and deferred, and compares the bytes. It also fingerprints the
+  SDs at every phase boundary and traps type-list changes. It finds changes made after the eager point
+  (genomics, and US Core without PreExpansionView). By construction it **cannot** find the order-dependent
+  failures: in its timeline the eager renders run first and fill the caches. Those failures (US Core QR,
+  MHD, genomics) only show up when real lazy builds are compared with eager builds, in several render orders
+  (threads=1, reversed, shuffled). Even then the gate only covers the IGs and orders it was run on.
+  It is a good regression net. It is not a proof.
+* **(d) Restrict deferral to renderers proven pure.** Nothing here can be proven pure statically. They all
+  take the shared model, which has mutating getters. An empirical whitelist would only rest on "no difference
+  seen in N IGs". The families that failed (SD snapshot, key and all views; xml/json/ttl-html) are also the
+  ones worth deferring.
+
+### What not deferring costs
+
+`shim-mem` makes the same calls in the same order as the default; only where the content goes changes. It
+came out identical to the default on US Core, MHD, AU Core and genomics (beyond default-vs-default noise).
+US Core timing pairs (run two at a time, previous-version phase subtracted):
+
+| pair | A | B | A without prev-version | B without prev-version |
+|---|---|---|---|---|
+| 1 | `shim` 384.5 s | `shim-mem` 374.7 s | 255.2 s | 244.8 s (-10 s) |
+| 2 | `shim-mem` 359.7 s | `shim-lazy` 339.4 s | 235.2 s | 212.9 s (-22 s) |
+
+Deferral is worth about 20 s (about 9% of US Core's non-network build time) on top of `shim-mem`. For that
+the output can be wrong in ways that depend on thread timing. Not worth it.
+
 ## Findings / next steps
+
+(Written before the investigation above; the verdict there supersedes the lazy-related points here.)
 
 * In process alone (`shim`) removes the Jekyll stage (US Core 16-19 s -> 3 s) with output identical to a
   second default build; peak memory doesn't grow (the JVM is already large; the separate Ruby process goes).
