@@ -210,6 +210,19 @@ a case runner (`DiffRunner`) that compares against those outputs. [`shim/README.
 describes the module contracts. Golden-corpus runs use `scripts/golden-build.sh`, `scripts/corpus-run.sh`
 and `scripts/shim-all.sh`.
 
+## Work in progress: in-process publisher integration
+
+The [`publisher-integration`](https://github.com/jmandel/fhir-ig-jekyll/tree/publisher-integration)
+branch is an experimental IG Publisher (based on Release v3.0.4) with a `-jekyll-engine jekyll|shim|shim-lazy`
+switch; see its
+[`INTEGRATION-DEMO.md`](https://github.com/jmandel/fhir-ig-jekyll/blob/publisher-integration/INTEGRATION-DEMO.md).
+`shim` runs this project's `Shim.build` inside the publisher's JVM; on US Core its output matches a
+default build, and the Jekyll stage drops from 16–19 s to 3.1 s. `shim-lazy` also generates `_includes`
+fragments only when a page includes them, which cuts US Core's `_includes` from 17,605 files to 1,306.
+It is not yet reliable: deferred fragments can see publisher state that changes after the point where
+they used to be rendered, and one page still differs. We are investigating whether deferral can be made
+safe systematically; if it can't, only the in-process engine will be pursued. Not for production use.
+
 ## License
 
 BSD 3-Clause, see [`LICENSE`](LICENSE). The ported projects' notices (MIT; BSD-2-Clause for Ruby,
