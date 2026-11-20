@@ -138,8 +138,8 @@ mvn -DskipTests -Dmaven.buildNumber.revisionOnScmFailure=pubint package -pl org.
 java -jar org.hl7.fhir.publisher.cli/target/org.hl7.fhir.publisher.cli-3.0.4.jar -ig . -jekyll-engine shim-lazy
 ```
 
-`pubint/` has the scripts used for the measurements below (paths in run-mode.sh are those of the
-prototype's workspace; adjust ROOT/VMDATA): `run-mode.sh` (one build of an IG in one
+`pubint/` has the scripts used for the measurements below (run-mode.sh needs `FHIR_IG_JEKYLL_ROOT`, the
+fhir-ig-jekyll workspace; see its header for the other settings): `run-mode.sh` (one build of an IG in one
 mode, in the reference Docker image, package cache as a throw-away overlay), `treemem.sh` (peak RSS of the
 whole process tree, i.e. the JVM plus the forked Jekyll in default mode) and `residual.py` (re-checks
 the files `domdiff.py` reports as different with per-build noise removed: GUIDs, build timestamps, zip/tgz
