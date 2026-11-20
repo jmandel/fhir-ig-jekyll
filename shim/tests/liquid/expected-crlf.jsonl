@@ -1,0 +1,150 @@
+{"id":"crlf:suite-strict-381","output":"    \r\n    Print this-thing\r\n"}
+{"id":"crlf:suite-strict-397","output":"\r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not "}
+{"id":"crlf:suite-strict-409","output":"      <div>\r\n        <p>\r\n          John\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-410","output":"      <div><p>John</p></div>\r\n"}
+{"id":"crlf:suite-strict-411","output":"      <div>\r\n        <p>\r\n          John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-414","output":"      <div>\r\n        <p>John\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-415","output":"      <div>\r\n        <p>\r\n          yes\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-416","output":"      <div>\r\n        <p>\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-417","output":"      <div>\r\n        <p>\r\n          yes\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-418","output":"      <div>\r\n        <p></p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-421","output":"      <div>\r\n        <p>John30</p>\r\n        <b>\r\n          John30\r\n        </b>\r\n        <i>John\r\n          30</i>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-424","output":"      <div>\r\n        <p>John,30</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-425","output":"      <div>\r\n        <p>\r\n          \r\n          yes\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-426","output":"      <div>\r\n        <p>\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-428","output":"      <div>\r\n        \r\n          {%- if true -%}\r\n            <p>\r\n              {{- 'John' -}}\r\n            </p>\r\n          {%- endif -%}\r\n        \r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-430","output":"      <div>\r\n        <p>John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-431","output":"      <div>\r\n        <p>\r\n          yes\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-432","output":"      <div>\r\n        <p>\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-433","output":"      <div>\r\n        <p>yes</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-436","output":"      <div>\r\n        <p>yes</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-437","output":"      <div>\r\n        <p></p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-438","output":"      <div>\r\n        <p>\r\n          yes\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-439","output":"      <div>\r\n        <p>\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-442","output":"      <div>\r\n        <p>John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-strict-512","output":"foobar"}
+{"id":"crlf:suite-strict-552","output":"this shouldnt see any transformation either but has multiple lines\r\n              as you can clearly see here ..."}
+{"id":"crlf:suite-strict-564","output":"0 1 2 3"}
+{"id":"crlf:suite-strict-575","output":"\r\n  yo\r\n\r\n  yo\r\n\r\n  yo\r\n\r\n"}
+{"id":"crlf:suite-strict-604","output":"      123\r\n      next\r\n      456\r\n      next\r\n      7\r\n"}
+{"id":"crlf:suite-strict-611","output":"      123\r\n      next\r\n      456\r\n      next\r\n      789\r\n"}
+{"id":"crlf:suite-strict-613","output":"      123\r\n      next\r\n      456\r\n      next\r\n      7890\r\n"}
+{"id":"crlf:suite-strict-614","output":"123\r\n      next\r\n      456\r\n      next\r\n      "}
+{"id":"crlf:suite-strict-643","error":"Liquid::SyntaxError: Liquid syntax error (line 4): Unexpected character = in \"1 =! 2\""}
+{"id":"crlf:suite-strict-644","error":"Liquid::SyntaxError: Liquid syntax error (line 4): Tag '{%- \"cat\" | foobar -%}' was not properly terminated with regexp: /\\%\\}/"}
+{"id":"crlf:suite-strict-645","error":"Liquid::SyntaxError: Liquid syntax error (line 5): Unknown tag 'foo'"}
+{"id":"crlf:suite-strict-649","error":"Liquid::SyntaxError: Liquid syntax error (line 4): Tag '{% \"cat\" | foobar %}' was not properly terminated with regexp: /\\%\\}/"}
+{"id":"crlf:suite-strict-671","output":"worked"}
+{"id":"crlf:suite-strict-681","output":"    \r\n    Print this-thing\r\n"}
+{"id":"crlf:suite-strict-682","output":"    \r\n    \r\n    \r\n    3-3\r\n"}
+{"id":"crlf:suite-strict-683","output":"    \r\n    \r\n    \r\n    test-string\r\n"}
+{"id":"crlf:suite-lax-85","output":"      <div>\r\n        <p>John\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-88","output":"      <div>\r\n        \r\n          {%- if true -%}\r\n            <p>\r\n              {{- 'John' -}}\r\n            </p>\r\n          {%- endif -%}\r\n        \r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-89","output":"      <div>\r\n        <p>\r\n          yes\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-90","output":"      <div>\r\n        <p>\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-91","output":"      <div><p>John</p></div>\r\n"}
+{"id":"crlf:suite-lax-92","output":"      <div>\r\n        <p>John,30</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-95","output":"      <div>\r\n        <p>yes</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-96","output":"      <div>\r\n        <p></p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-97","output":"      <div>\r\n        <p>John30</p>\r\n        <b>\r\n          John30\r\n        </b>\r\n        <i>John\r\n          30</i>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-98","output":"      <div>\r\n        <p>\r\n          John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-99","output":"      <div>\r\n        <p>\r\n          yes\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-100","output":"      <div>\r\n        <p>\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-101","output":"      <div>\r\n        <p>John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-104","output":"      <div>\r\n        <p>\r\n          \r\n          yes\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-105","output":"      <div>\r\n        <p>\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-106","output":"      <div>\r\n        <p>\r\n          John\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-112","output":"      <div>\r\n        <p>\r\n          yes\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-113","output":"      <div>\r\n        <p>\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-114","output":"      <div>\r\n        <p>John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-115","output":"      <div>\r\n        <p>\r\n          yes\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-116","output":"      <div>\r\n        <p></p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-117","output":"      <div>\r\n        <p>yes</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-lax-122","output":"    \r\n    \r\n    \r\n    3-3\r\n"}
+{"id":"crlf:suite-lax-124","output":"    \r\n    \r\n    \r\n    test-string\r\n"}
+{"id":"crlf:suite-lax-125","output":"    \r\n    Print this-thing\r\n"}
+{"id":"crlf:suite-warn-381","output":"    \r\n    Print this-thing\r\n"}
+{"id":"crlf:suite-warn-397","output":"\r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not \r\n       but this is not "}
+{"id":"crlf:suite-warn-409","output":"      <div>\r\n        <p>\r\n          John\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-410","output":"      <div><p>John</p></div>\r\n"}
+{"id":"crlf:suite-warn-411","output":"      <div>\r\n        <p>\r\n          John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-414","output":"      <div>\r\n        <p>John\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-415","output":"      <div>\r\n        <p>\r\n          yes\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-416","output":"      <div>\r\n        <p>\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-417","output":"      <div>\r\n        <p>\r\n          yes\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-418","output":"      <div>\r\n        <p></p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-421","output":"      <div>\r\n        <p>John30</p>\r\n        <b>\r\n          John30\r\n        </b>\r\n        <i>John\r\n          30</i>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-424","output":"      <div>\r\n        <p>John,30</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-425","output":"      <div>\r\n        <p>\r\n          \r\n          yes\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-426","output":"      <div>\r\n        <p>\r\n          \r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-428","output":"      <div>\r\n        \r\n          {%- if true -%}\r\n            <p>\r\n              {{- 'John' -}}\r\n            </p>\r\n          {%- endif -%}\r\n        \r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-430","output":"      <div>\r\n        <p>John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-431","output":"      <div>\r\n        <p>\r\n          yes\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-432","output":"      <div>\r\n        <p>\r\n        </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-433","output":"      <div>\r\n        <p>yes</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-436","output":"      <div>\r\n        <p>yes</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-437","output":"      <div>\r\n        <p></p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-438","output":"      <div>\r\n        <p>\r\n          yes\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-439","output":"      <div>\r\n        <p>\r\n          </p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-442","output":"      <div>\r\n        <p>John</p>\r\n      </div>\r\n"}
+{"id":"crlf:suite-warn-512","output":"foobar"}
+{"id":"crlf:suite-warn-552","output":"this shouldnt see any transformation either but has multiple lines\r\n              as you can clearly see here ..."}
+{"id":"crlf:suite-warn-564","output":"0 1 2 3"}
+{"id":"crlf:suite-warn-575","output":"\r\n  yo\r\n\r\n  yo\r\n\r\n  yo\r\n\r\n"}
+{"id":"crlf:suite-warn-604","output":"      123\r\n      next\r\n      456\r\n      next\r\n      7\r\n"}
+{"id":"crlf:suite-warn-611","output":"      123\r\n      next\r\n      456\r\n      next\r\n      789\r\n"}
+{"id":"crlf:suite-warn-613","output":"      123\r\n      next\r\n      456\r\n      next\r\n      7890\r\n"}
+{"id":"crlf:suite-warn-614","output":"123\r\n      next\r\n      456\r\n      next\r\n      "}
+{"id":"crlf:suite-warn-643","warnings":["Liquid syntax error (line 4): Unexpected character = in \"1 =! 2\""],"output":"\r\n          foobar\r\n\r\n          Liquid error (line 4): Unknown operator =!\r\n\r\n          bla\r\n                ","render_errors":["Liquid::ArgumentError: Liquid error (line 4): Unknown operator =!"]}
+{"id":"crlf:suite-warn-644","error":"Liquid::SyntaxError: Liquid syntax error (line 4): Tag '{%- \"cat\" | foobar -%}' was not properly terminated with regexp: /\\%\\}/"}
+{"id":"crlf:suite-warn-645","error":"Liquid::SyntaxError: Liquid syntax error (line 5): Unknown tag 'foo'"}
+{"id":"crlf:suite-warn-649","error":"Liquid::SyntaxError: Liquid syntax error (line 4): Tag '{% \"cat\" | foobar %}' was not properly terminated with regexp: /\\%\\}/"}
+{"id":"crlf:suite-warn-671","output":"worked"}
+{"id":"crlf:suite-warn-681","output":"    \r\n    Print this-thing\r\n"}
+{"id":"crlf:suite-warn-682","output":"    \r\n    \r\n    \r\n    3-3\r\n"}
+{"id":"crlf:suite-warn-683","output":"    \r\n    \r\n    \r\n    test-string\r\n"}
+{"id":"crlf:quirk-lax-64","output":"AB,C"}
+{"id":"crlf:quirk-lax-64-bang","output":"AB,C"}
+{"id":"crlf:quirk-warn-64","output":"AB,C"}
+{"id":"crlf:quirk-warn-64-bang","output":"AB,C"}
+{"id":"crlf:quirk-strict-64","output":"AB,C"}
+{"id":"crlf:quirk-strict-64-bang","output":"AB,C"}
+{"id":"crlf:quirk-lax-131","output":"x"}
+{"id":"crlf:quirk-lax-131-bang","output":"x"}
+{"id":"crlf:quirk-warn-131","output":"x"}
+{"id":"crlf:quirk-warn-131-bang","output":"x"}
+{"id":"crlf:quirk-strict-131","output":"x"}
+{"id":"crlf:quirk-strict-131-bang","output":"x"}
+{"id":"crlf:lines-1","warnings":["Liquid syntax error (line 2): Expected id but found pipe in \"{{ a | | x }}\"","Liquid syntax error (line 4): Expected end_of_string but found id in \"a b\"","Liquid syntax error (line 7): Expected end_of_string but found comma in \"i in a, b\""],"output":"line1\r\n1\r\nline3\r\nLiquid error (line 4): Unknown operator b\r\nLiquid error (line 6): divided by 0\r\n\r\nLiquid error (line 8): invalid integer","render_errors":["Liquid::ArgumentError: Liquid error (line 4): Unknown operator b","Liquid::ZeroDivisionError: Liquid error (line 6): divided by 0","Liquid::ArgumentError: Liquid error (line 8): invalid integer"]}
+{"id":"crlf:lines-2","error":"Liquid::SyntaxError: Liquid syntax error (line 6): Unknown tag 'foo'"}
+{"id":"crlf:lines-3","output":"l1\r\n\r\n\r\n\r\nLiquid error (line 5): divided by 0","render_errors":["Liquid::ZeroDivisionError: Liquid error (line 5): divided by 0"]}
+{"id":"crlf:lines-4","warnings":["Liquid syntax error (line 3): Expected id but found pipe in \"{{ a | | }}\""],"output":"l1\r\n\r\nLiquid error (line 5): comparison of Integer with String failed","render_errors":["Liquid::ArgumentError: Liquid error (line 5): comparison of Integer with String failed"]}
+{"id":"crlf:lines-5","output":"x\nLiquid error (err line 2): divided by 0\r\nLiquid error (line 2): divided by 0","render_errors":["Liquid::ZeroDivisionError: Liquid error (err line 2): divided by 0","Liquid::ZeroDivisionError: Liquid error (line 2): divided by 0"]}
+{"id":"crlf:lines-6","output":"a\r\n\r\nLiquid error (line 3): divided by 0\r\n","render_errors":["Liquid::ZeroDivisionError: Liquid error (line 3): divided by 0"]}
+{"id":"crlf:lines-7","output":"a\r\n\r\nLiquid error (line 4): wrong number of arguments (given 2, expected 1)","render_errors":["Liquid::ArgumentError: Liquid error (line 4): wrong number of arguments (given 2, expected 1)"]}
+{"id":"crlf:lines-8","warnings":["Liquid syntax error (line 1): Expected id but found pipe in \"{{ a |\r\n|\r\n b }}\""],"output":"\r\nLiquid error (line 4): divided by 0","render_errors":["Liquid::ZeroDivisionError: Liquid error (line 4): divided by 0"]}
+{"id":"crlf:lines-9","error":"Liquid::SyntaxError: Liquid syntax error (line 3): 'if' tag was never closed"}
+{"id":"crlf:lines-10","error":"Liquid::SyntaxError: Liquid syntax error (line 3): Variable '{{' was not properly terminated with regexp: /\\}\\}/"}
+{"id":"crlf:lines-11","warnings":["Liquid syntax error (line 3): [:end_of_string] is not a valid expression in \"{{ i | foo: }}\""],"output":"x\r\n\r\n1\r\n\r\n"}
+{"id":"crlf:hand-43","output":"axby  \r\nzend"}
+{"id":"crlf:hand-43-bang","output":"axby  \r\nzend"}
+{"id":"crlf:hand-44","output":"<ul>\r\n  <li>1</li>\r\n  <li>2</li>\r\n  <li>3</li>\r\n</ul>"}
+{"id":"crlf:hand-44-bang","output":"<ul>\r\n  <li>1</li>\r\n  <li>2</li>\r\n  <li>3</li>\r\n</ul>"}
+{"id":"crlf:hand-45","output":"[1][y]"}
+{"id":"crlf:hand-45-bang","output":"[1][y]"}
+{"id":"crlf:hand-47","output":"[inner]"}
+{"id":"crlf:hand-47-bang","output":"[inner]"}
+{"id":"crlf:hand-48","output":"ay\r\nb"}
+{"id":"crlf:hand-48-bang","output":"ay\r\nb"}
+{"id":"crlf:hand-50","error":"Liquid::SyntaxError: Liquid syntax error (line 2): Tag '{%- -%}' was not properly terminated with regexp: /\\%\\}/"}
+{"id":"crlf:hand-50-bang","error":"Liquid::SyntaxError: Liquid syntax error (line 2): Tag '{%- -%}' was not properly terminated with regexp: /\\%\\}/"}
+{"id":"crlf:hand-428","output":"bd|x|xy"}
+{"id":"crlf:hand-428-bang","output":"bd|x|xy"}
+{"id":"crlf:hand-429","output":"abc\rd|a\r<br />\nb\r<br />\nc"}
+{"id":"crlf:hand-429-bang","output":"abc\rd|a\r<br />\nb\r<br />\nc"}
+{"id":"crlf:hand-430","output":"x|x  |  x|"}
+{"id":"crlf:hand-430-bang","output":"x|x  |  x|"}
+{"id":"crlf:hand-432","output":"one two...|one two three...|one...|one two--|one two|5..."}
+{"id":"crlf:hand-432-bang","output":"one two...|one two three...|one...|one two--|one two|5..."}
+{"id":"crlf:hand-696","output":"a\r\n\r\nb Liquid error (line 3): divided by 0\r\nLiquid error (line 4): comparison of Integer with String failed","render_errors":["Liquid::ZeroDivisionError: Liquid error (line 3): divided by 0","Liquid::ArgumentError: Liquid error (line 4): comparison of Integer with String failed"]}
+{"id":"crlf:hand-696-bang","error":"Liquid::ZeroDivisionError: Liquid error (line 3): divided by 0"}

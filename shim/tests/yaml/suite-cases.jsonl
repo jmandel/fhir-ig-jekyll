@@ -1,0 +1,804 @@
+{"id": "suite/229Q/text", "type": "yaml-typed", "text": "-\n  name: Mark McGwire\n  hr:   65\n  avg:  0.278\n-\n  name: Sammy Sosa\n  hr:   63\n  avg:  0.288\n", "name": "Spec Example 2.4. Sequence of Mappings"}
+{"id": "suite/229Q/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/229Q/in.yaml", "name": "Spec Example 2.4. Sequence of Mappings"}
+{"id": "suite/236B/text", "type": "yaml-typed", "text": "foo:\n  bar\ninvalid\n", "name": "Invalid value after mapping"}
+{"id": "suite/236B/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/236B/in.yaml", "name": "Invalid value after mapping"}
+{"id": "suite/26DV/text", "type": "yaml-typed", "text": "\"top1\" : \n  \"key1\" : &alias1 scalar1\n'top2' : \n  'key2' : &alias2 scalar2\ntop3: &node3 \n  *alias1 : scalar3\ntop4: \n  *alias2 : scalar4\ntop5   :    \n  scalar5\ntop6: \n  &anchor6 'key6' : scalar6\n", "name": "Whitespace around colon in mappings"}
+{"id": "suite/26DV/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/26DV/in.yaml", "name": "Whitespace around colon in mappings"}
+{"id": "suite/27NA/text", "type": "yaml-typed", "text": "%YAML 1.2\n--- text\n", "name": "Spec Example 5.9. Directive Indicator"}
+{"id": "suite/27NA/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/27NA/in.yaml", "name": "Spec Example 5.9. Directive Indicator"}
+{"id": "suite/2AUY/text", "type": "yaml-typed", "text": " - !!str a\n - b\n - !!int 42\n - d\n", "name": "Tags in Block Sequence"}
+{"id": "suite/2AUY/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2AUY/in.yaml", "name": "Tags in Block Sequence"}
+{"id": "suite/2CMS/text", "type": "yaml-typed", "text": "this\n is\n  invalid: x\n", "name": "Invalid mapping in plain multiline"}
+{"id": "suite/2CMS/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2CMS/in.yaml", "name": "Invalid mapping in plain multiline"}
+{"id": "suite/2EBW/text", "type": "yaml-typed", "text": "a!\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~: safe\n?foo: safe question mark\n:foo: safe colon\n-foo: safe dash\nthis is#not: a comment\n", "name": "Allowed characters in keys"}
+{"id": "suite/2EBW/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2EBW/in.yaml", "name": "Allowed characters in keys"}
+{"id": "suite/2G84/00/text", "type": "yaml-typed", "text": "--- |0\n", "name": "Literal modifers"}
+{"id": "suite/2G84/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2G84/00/in.yaml", "name": "Literal modifers"}
+{"id": "suite/2G84/01/text", "type": "yaml-typed", "text": "--- |10\n", "name": "Literal modifers"}
+{"id": "suite/2G84/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2G84/01/in.yaml", "name": "Literal modifers"}
+{"id": "suite/2G84/02/text", "type": "yaml-typed", "text": "--- |1-", "name": "Literal modifers"}
+{"id": "suite/2G84/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2G84/02/in.yaml", "name": "Literal modifers"}
+{"id": "suite/2G84/03/text", "type": "yaml-typed", "text": "--- |1+", "name": "Literal modifers"}
+{"id": "suite/2G84/03/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2G84/03/in.yaml", "name": "Literal modifers"}
+{"id": "suite/2JQS/text", "type": "yaml-typed", "text": ": a\n: b\n", "name": "Block Mapping with Missing Keys"}
+{"id": "suite/2JQS/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2JQS/in.yaml", "name": "Block Mapping with Missing Keys"}
+{"id": "suite/2LFX/text", "type": "yaml-typed", "text": "%FOO  bar baz # Should be ignored\n              # with a warning.\n---\n\"foo\"\n", "name": "Spec Example 6.13. Reserved Directives [1.3]"}
+{"id": "suite/2LFX/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2LFX/in.yaml", "name": "Spec Example 6.13. Reserved Directives [1.3]"}
+{"id": "suite/2SXE/text", "type": "yaml-typed", "text": "&a: key: &a value\nfoo:\n  *a:\n", "name": "Anchors With Colon in Name"}
+{"id": "suite/2SXE/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2SXE/in.yaml", "name": "Anchors With Colon in Name"}
+{"id": "suite/2XXW/text", "type": "yaml-typed", "text": "# Sets are represented as a\n# Mapping where each key is\n# associated with a null value\n--- !!set\n? Mark McGwire\n? Sammy Sosa\n? Ken Griff\n", "name": "Spec Example 2.25. Unordered Sets"}
+{"id": "suite/2XXW/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/2XXW/in.yaml", "name": "Spec Example 2.25. Unordered Sets"}
+{"id": "suite/33X3/text", "type": "yaml-typed", "text": "---\n- !!int 1\n- !!int -2\n- !!int 33\n", "name": "Three explicit integers in a block sequence"}
+{"id": "suite/33X3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/33X3/in.yaml", "name": "Three explicit integers in a block sequence"}
+{"id": "suite/35KP/text", "type": "yaml-typed", "text": "--- !!map\n? a\n: b\n--- !!seq\n- !!str c\n--- !!str\nd\ne\n", "name": "Tags for Root Objects"}
+{"id": "suite/35KP/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/35KP/in.yaml", "name": "Tags for Root Objects"}
+{"id": "suite/36F6/text", "type": "yaml-typed", "text": "---\nplain: a\n b\n\n c\n", "name": "Multiline plain scalar with empty line"}
+{"id": "suite/36F6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/36F6/in.yaml", "name": "Multiline plain scalar with empty line"}
+{"id": "suite/3ALJ/text", "type": "yaml-typed", "text": "- - s1_i1\n  - s1_i2\n- s2\n", "name": "Block Sequence in Block Sequence"}
+{"id": "suite/3ALJ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3ALJ/in.yaml", "name": "Block Sequence in Block Sequence"}
+{"id": "suite/3GZX/text", "type": "yaml-typed", "text": "First occurrence: &anchor Foo\nSecond occurrence: *anchor\nOverride anchor: &anchor Bar\nReuse anchor: *anchor\n", "name": "Spec Example 7.1. Alias Nodes"}
+{"id": "suite/3GZX/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3GZX/in.yaml", "name": "Spec Example 7.1. Alias Nodes"}
+{"id": "suite/3HFZ/text", "type": "yaml-typed", "text": "---\nkey: value\n... invalid\n", "name": "Invalid content after document end marker"}
+{"id": "suite/3HFZ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3HFZ/in.yaml", "name": "Invalid content after document end marker"}
+{"id": "suite/3MYT/text", "type": "yaml-typed", "text": "---\nk:#foo\n &a !t s\n", "name": "Plain Scalar looking like key, comment, anchor and tag"}
+{"id": "suite/3MYT/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3MYT/in.yaml", "name": "Plain Scalar looking like key, comment, anchor and tag"}
+{"id": "suite/3R3P/text", "type": "yaml-typed", "text": "&sequence\n- a\n", "name": "Single block sequence with anchor"}
+{"id": "suite/3R3P/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3R3P/in.yaml", "name": "Single block sequence with anchor"}
+{"id": "suite/3RLN/00/text", "type": "yaml-typed", "text": "\"1 leading\n    \\ttab\"\n", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3RLN/00/in.yaml", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/01/text", "type": "yaml-typed", "text": "\"2 leading\n    \\\ttab\"\n", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3RLN/01/in.yaml", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/02/text", "type": "yaml-typed", "text": "\"3 leading\n    \ttab\"\n", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3RLN/02/in.yaml", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/03/text", "type": "yaml-typed", "text": "\"4 leading\n    \\t  tab\"\n", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/03/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3RLN/03/in.yaml", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/04/text", "type": "yaml-typed", "text": "\"5 leading\n    \\\t  tab\"\n", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/04/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3RLN/04/in.yaml", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/05/text", "type": "yaml-typed", "text": "\"6 leading\n    \t  tab\"\n", "name": "Leading tabs in double quoted"}
+{"id": "suite/3RLN/05/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3RLN/05/in.yaml", "name": "Leading tabs in double quoted"}
+{"id": "suite/3UYS/text", "type": "yaml-typed", "text": "escaped slash: \"a\\/b\"\n", "name": "Escaped slash in double quotes"}
+{"id": "suite/3UYS/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/3UYS/in.yaml", "name": "Escaped slash in double quotes"}
+{"id": "suite/4ABK/text", "type": "yaml-typed", "text": "{\nunquoted : \"separate\",\nhttp://foo.com,\nomitted value:,\n}\n", "name": "Flow Mapping Separate Values"}
+{"id": "suite/4ABK/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4ABK/in.yaml", "name": "Flow Mapping Separate Values"}
+{"id": "suite/4CQQ/text", "type": "yaml-typed", "text": "plain:\n  This unquoted scalar\n  spans many lines.\n\nquoted: \"So does this\n  quoted scalar.\\n\"\n", "name": "Spec Example 2.18. Multi-line Flow Scalars"}
+{"id": "suite/4CQQ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4CQQ/in.yaml", "name": "Spec Example 2.18. Multi-line Flow Scalars"}
+{"id": "suite/4EJS/text", "type": "yaml-typed", "text": "---\na:\n\tb:\n\t\tc: value\n", "name": "Invalid tabs as indendation in a mapping"}
+{"id": "suite/4EJS/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4EJS/in.yaml", "name": "Invalid tabs as indendation in a mapping"}
+{"id": "suite/4FJ6/text", "type": "yaml-typed", "text": "---\n[\n  [ a, [ [[b,c]]: d, e]]: 23\n]\n", "name": "Nested implicit complex keys"}
+{"id": "suite/4FJ6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4FJ6/in.yaml", "name": "Nested implicit complex keys"}
+{"id": "suite/4GC6/text", "type": "yaml-typed", "text": "'here''s to \"quotes\"'\n", "name": "Spec Example 7.7. Single Quoted Characters"}
+{"id": "suite/4GC6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4GC6/in.yaml", "name": "Spec Example 7.7. Single Quoted Characters"}
+{"id": "suite/4H7K/text", "type": "yaml-typed", "text": "---\n[ a, b, c ] ]\n", "name": "Flow sequence with invalid extra closing bracket"}
+{"id": "suite/4H7K/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4H7K/in.yaml", "name": "Flow sequence with invalid extra closing bracket"}
+{"id": "suite/4HVU/text", "type": "yaml-typed", "text": "key:\n   - ok\n   - also ok\n  - wrong\n", "name": "Wrong indendation in Sequence"}
+{"id": "suite/4HVU/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4HVU/in.yaml", "name": "Wrong indendation in Sequence"}
+{"id": "suite/4JVG/text", "type": "yaml-typed", "text": "top1: &node1\n  &k1 key1: val1\ntop2: &node2\n  &v2 val2\n", "name": "Scalar value with two anchors"}
+{"id": "suite/4JVG/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4JVG/in.yaml", "name": "Scalar value with two anchors"}
+{"id": "suite/4MUZ/00/text", "type": "yaml-typed", "text": "{\"foo\"\n: \"bar\"}\n", "name": "Flow mapping colon on line after key"}
+{"id": "suite/4MUZ/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4MUZ/00/in.yaml", "name": "Flow mapping colon on line after key"}
+{"id": "suite/4MUZ/01/text", "type": "yaml-typed", "text": "{\"foo\"\n: bar}\n", "name": "Flow mapping colon on line after key"}
+{"id": "suite/4MUZ/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4MUZ/01/in.yaml", "name": "Flow mapping colon on line after key"}
+{"id": "suite/4MUZ/02/text", "type": "yaml-typed", "text": "{foo\n: bar}\n", "name": "Flow mapping colon on line after key"}
+{"id": "suite/4MUZ/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4MUZ/02/in.yaml", "name": "Flow mapping colon on line after key"}
+{"id": "suite/4Q9F/text", "type": "yaml-typed", "text": "--- >\n ab\n cd\n \n ef\n\n\n gh\n", "name": "Folded Block Scalar [1.3]"}
+{"id": "suite/4Q9F/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4Q9F/in.yaml", "name": "Folded Block Scalar [1.3]"}
+{"id": "suite/4QFQ/text", "type": "yaml-typed", "text": "- |\n detected\n- >\n \n  \n  # detected\n- |1\n  explicit\n- >\n detected\n", "name": "Spec Example 8.2. Block Indentation Indicator [1.3]"}
+{"id": "suite/4QFQ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4QFQ/in.yaml", "name": "Spec Example 8.2. Block Indentation Indicator [1.3]"}
+{"id": "suite/4RWC/text", "type": "yaml-typed", "text": "  [1, 2, 3]  \n  ", "name": "Trailing spaces after flow collection"}
+{"id": "suite/4RWC/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4RWC/in.yaml", "name": "Trailing spaces after flow collection"}
+{"id": "suite/4UYU/text", "type": "yaml-typed", "text": "\"foo: bar\\\": baz\"\n", "name": "Colon in Double Quoted String"}
+{"id": "suite/4UYU/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4UYU/in.yaml", "name": "Colon in Double Quoted String"}
+{"id": "suite/4V8U/text", "type": "yaml-typed", "text": "---\nplain\\value\\with\\backslashes\n", "name": "Plain scalar with backslashes"}
+{"id": "suite/4V8U/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4V8U/in.yaml", "name": "Plain scalar with backslashes"}
+{"id": "suite/4WA9/text", "type": "yaml-typed", "text": "- aaa: |2\n    xxx\n  bbb: |\n    xxx\n", "name": "Literal scalars"}
+{"id": "suite/4WA9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4WA9/in.yaml", "name": "Literal scalars"}
+{"id": "suite/4ZYM/text", "type": "yaml-typed", "text": "plain: text\n  lines\nquoted: \"text\n  \tlines\"\nblock: |\n  text\n   \tlines\n", "name": "Spec Example 6.4. Line Prefixes"}
+{"id": "suite/4ZYM/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/4ZYM/in.yaml", "name": "Spec Example 6.4. Line Prefixes"}
+{"id": "suite/52DL/text", "type": "yaml-typed", "text": "---\n! a\n", "name": "Explicit Non-Specific Tag [1.3]"}
+{"id": "suite/52DL/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/52DL/in.yaml", "name": "Explicit Non-Specific Tag [1.3]"}
+{"id": "suite/54T7/text", "type": "yaml-typed", "text": "{foo: you, bar: far}\n", "name": "Flow Mapping"}
+{"id": "suite/54T7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/54T7/in.yaml", "name": "Flow Mapping"}
+{"id": "suite/55WF/text", "type": "yaml-typed", "text": "---\n\"\\.\"\n", "name": "Invalid escape in double quoted string"}
+{"id": "suite/55WF/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/55WF/in.yaml", "name": "Invalid escape in double quoted string"}
+{"id": "suite/565N/text", "type": "yaml-typed", "text": "canonical: !!binary \"\\\n R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\\\n OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\\\n +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\\\n AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\"\ngeneric: !!binary |\n R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\n OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\n +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\n AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=\ndescription:\n The binary value above is a tiny arrow encoded as a gif image.\n", "name": "Construct Binary"}
+{"id": "suite/565N/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/565N/in.yaml", "name": "Construct Binary"}
+{"id": "suite/57H4/text", "type": "yaml-typed", "text": "sequence: !!seq\n- entry\n- !!seq\n - nested\nmapping: !!map\n foo: bar\n", "name": "Spec Example 8.22. Block Collection Nodes"}
+{"id": "suite/57H4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/57H4/in.yaml", "name": "Spec Example 8.22. Block Collection Nodes"}
+{"id": "suite/58MP/text", "type": "yaml-typed", "text": "{x: :x}\n", "name": "Flow mapping edge cases"}
+{"id": "suite/58MP/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/58MP/in.yaml", "name": "Flow mapping edge cases"}
+{"id": "suite/5BVJ/text", "type": "yaml-typed", "text": "literal: |\n  some\n  text\nfolded: >\n  some\n  text\n", "name": "Spec Example 5.7. Block Scalar Indicators"}
+{"id": "suite/5BVJ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5BVJ/in.yaml", "name": "Spec Example 5.7. Block Scalar Indicators"}
+{"id": "suite/5C5M/text", "type": "yaml-typed", "text": "- { one : two , three: four , }\n- {five: six,seven : eight}\n", "name": "Spec Example 7.15. Flow Mappings"}
+{"id": "suite/5C5M/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5C5M/in.yaml", "name": "Spec Example 7.15. Flow Mappings"}
+{"id": "suite/5GBF/text", "type": "yaml-typed", "text": "Folding:\n  \"Empty line\n   \t\n  as a line feed\"\nChomping: |\n  Clipped empty lines\n \n\n", "name": "Spec Example 6.5. Empty Lines"}
+{"id": "suite/5GBF/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5GBF/in.yaml", "name": "Spec Example 6.5. Empty Lines"}
+{"id": "suite/5KJE/text", "type": "yaml-typed", "text": "- [ one, two, ]\n- [three ,four]\n", "name": "Spec Example 7.13. Flow Sequence"}
+{"id": "suite/5KJE/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5KJE/in.yaml", "name": "Spec Example 7.13. Flow Sequence"}
+{"id": "suite/5LLU/text", "type": "yaml-typed", "text": "block scalar: >\n \n  \n   \n invalid\n", "name": "Block scalar with wrong indented line after spaces only"}
+{"id": "suite/5LLU/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5LLU/in.yaml", "name": "Block scalar with wrong indented line after spaces only"}
+{"id": "suite/5MUD/text", "type": "yaml-typed", "text": "---\n{ \"foo\"\n  :bar }\n", "name": "Colon and adjacent value on next line"}
+{"id": "suite/5MUD/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5MUD/in.yaml", "name": "Colon and adjacent value on next line"}
+{"id": "suite/5NYZ/text", "type": "yaml-typed", "text": "key:    # Comment\n  value\n", "name": "Spec Example 6.9. Separated Comment"}
+{"id": "suite/5NYZ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5NYZ/in.yaml", "name": "Spec Example 6.9. Separated Comment"}
+{"id": "suite/5T43/text", "type": "yaml-typed", "text": "- { \"key\":value }\n- { \"key\"::value }\n", "name": "Colon at the beginning of adjacent flow scalar"}
+{"id": "suite/5T43/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5T43/in.yaml", "name": "Colon at the beginning of adjacent flow scalar"}
+{"id": "suite/5TRB/text", "type": "yaml-typed", "text": "---\n\"\n---\n\"\n", "name": "Invalid document-start marker in doublequoted tring"}
+{"id": "suite/5TRB/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5TRB/in.yaml", "name": "Invalid document-start marker in doublequoted tring"}
+{"id": "suite/5TYM/text", "type": "yaml-typed", "text": "%TAG !m! !my-\n--- # Bulb here\n!m!light fluorescent\n...\n%TAG !m! !my-\n--- # Color here\n!m!light green\n", "name": "Spec Example 6.21. Local Tag Prefix"}
+{"id": "suite/5TYM/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5TYM/in.yaml", "name": "Spec Example 6.21. Local Tag Prefix"}
+{"id": "suite/5U3A/text", "type": "yaml-typed", "text": "key: - a\n     - b\n", "name": "Sequence on same Line as Mapping Key"}
+{"id": "suite/5U3A/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5U3A/in.yaml", "name": "Sequence on same Line as Mapping Key"}
+{"id": "suite/5WE3/text", "type": "yaml-typed", "text": "? explicit key # Empty value\n? |\n  block key\n: - one # Explicit compact\n  - two # block value\n", "name": "Spec Example 8.17. Explicit Block Mapping Entries"}
+{"id": "suite/5WE3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/5WE3/in.yaml", "name": "Spec Example 8.17. Explicit Block Mapping Entries"}
+{"id": "suite/62EZ/text", "type": "yaml-typed", "text": "---\nx: { y: z }in: valid\n", "name": "Invalid block mapping key on same line as previous key"}
+{"id": "suite/62EZ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/62EZ/in.yaml", "name": "Invalid block mapping key on same line as previous key"}
+{"id": "suite/652Z/text", "type": "yaml-typed", "text": "{ ?foo: bar,\nbar: 42\n}\n", "name": "Question mark at start of flow key"}
+{"id": "suite/652Z/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/652Z/in.yaml", "name": "Question mark at start of flow key"}
+{"id": "suite/65WH/text", "type": "yaml-typed", "text": "- foo\n", "name": "Single Entry Block Sequence"}
+{"id": "suite/65WH/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/65WH/in.yaml", "name": "Single Entry Block Sequence"}
+{"id": "suite/6BCT/text", "type": "yaml-typed", "text": "- foo:\t bar\n- - baz\n  -\tbaz\n", "name": "Spec Example 6.3. Separation Spaces"}
+{"id": "suite/6BCT/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6BCT/in.yaml", "name": "Spec Example 6.3. Separation Spaces"}
+{"id": "suite/6BFJ/text", "type": "yaml-typed", "text": "---\n&mapping\n&key [ &item a, b, c ]: value\n", "name": "Mapping, key and flow sequence item anchors"}
+{"id": "suite/6BFJ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6BFJ/in.yaml", "name": "Mapping, key and flow sequence item anchors"}
+{"id": "suite/6CA3/text", "type": "yaml-typed", "text": "\t[\n\t]\n", "name": "Tab indented top flow"}
+{"id": "suite/6CA3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6CA3/in.yaml", "name": "Tab indented top flow"}
+{"id": "suite/6CK3/text", "type": "yaml-typed", "text": "%TAG !e! tag:example.com,2000:app/\n---\n- !local foo\n- !!str bar\n- !e!tag%21 baz\n", "name": "Spec Example 6.26. Tag Shorthands"}
+{"id": "suite/6CK3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6CK3/in.yaml", "name": "Spec Example 6.26. Tag Shorthands"}
+{"id": "suite/6FWR/text", "type": "yaml-typed", "text": "--- |+\n ab\n \n  \n...\n", "name": "Block Scalar Keep"}
+{"id": "suite/6FWR/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6FWR/in.yaml", "name": "Block Scalar Keep"}
+{"id": "suite/6H3V/text", "type": "yaml-typed", "text": "'foo: bar\\': baz'\n", "name": "Backslashes in singlequotes"}
+{"id": "suite/6H3V/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6H3V/in.yaml", "name": "Backslashes in singlequotes"}
+{"id": "suite/6HB6/text", "type": "yaml-typed", "text": "  # Leading comment line spaces are\n   # neither content nor indentation.\n    \nNot indented:\n By one space: |\n    By four\n      spaces\n Flow style: [    # Leading spaces\n   By two,        # in flow style\n  Also by two,    # are neither\n  \tStill by two   # content nor\n    ]             # indentation.\n", "name": "Spec Example 6.1. Indentation Spaces"}
+{"id": "suite/6HB6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6HB6/in.yaml", "name": "Spec Example 6.1. Indentation Spaces"}
+{"id": "suite/6JQW/text", "type": "yaml-typed", "text": "# ASCII Art\n--- |\n  \\//||\\/||\n  // ||  ||__\n", "name": "Spec Example 2.13. In literals, newlines are preserved"}
+{"id": "suite/6JQW/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6JQW/in.yaml", "name": "Spec Example 2.13. In literals, newlines are preserved"}
+{"id": "suite/6JTT/text", "type": "yaml-typed", "text": "---\n[ [ a, b, c ]\n", "name": "Flow sequence without closing bracket"}
+{"id": "suite/6JTT/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6JTT/in.yaml", "name": "Flow sequence without closing bracket"}
+{"id": "suite/6JWB/text", "type": "yaml-typed", "text": "foo: !!seq\n  - !!str a\n  - !!map\n    key: !!str value\n", "name": "Tags for Block Objects"}
+{"id": "suite/6JWB/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6JWB/in.yaml", "name": "Tags for Block Objects"}
+{"id": "suite/6KGN/text", "type": "yaml-typed", "text": "---\na: &anchor\nb: *anchor\n", "name": "Anchor for empty node"}
+{"id": "suite/6KGN/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6KGN/in.yaml", "name": "Anchor for empty node"}
+{"id": "suite/6LVF/text", "type": "yaml-typed", "text": "%FOO  bar baz # Should be ignored\n              # with a warning.\n--- \"foo\"\n", "name": "Spec Example 6.13. Reserved Directives"}
+{"id": "suite/6LVF/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6LVF/in.yaml", "name": "Spec Example 6.13. Reserved Directives"}
+{"id": "suite/6M2F/text", "type": "yaml-typed", "text": "? &a a\n: &b b\n: *a\n", "name": "Aliases in Explicit Block Mapping"}
+{"id": "suite/6M2F/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6M2F/in.yaml", "name": "Aliases in Explicit Block Mapping"}
+{"id": "suite/6PBE/text", "type": "yaml-typed", "text": "---\n?\n- a\n- b\n:\n- c\n- d\n", "name": "Zero-indented sequences in explicit mapping keys"}
+{"id": "suite/6PBE/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6PBE/in.yaml", "name": "Zero-indented sequences in explicit mapping keys"}
+{"id": "suite/6S55/text", "type": "yaml-typed", "text": "key:\n - bar\n - baz\n invalid\n", "name": "Invalid scalar at the end of sequence"}
+{"id": "suite/6S55/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6S55/in.yaml", "name": "Invalid scalar at the end of sequence"}
+{"id": "suite/6SLA/text", "type": "yaml-typed", "text": "\"foo\\nbar:baz\\tx \\\\$%^&*()x\": 23\n'x\\ny:z\\tx $%^&*()x': 24\n", "name": "Allowed characters in quoted mapping key"}
+{"id": "suite/6SLA/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6SLA/in.yaml", "name": "Allowed characters in quoted mapping key"}
+{"id": "suite/6VJK/text", "type": "yaml-typed", "text": ">\n Sammy Sosa completed another\n fine season with great stats.\n\n   63 Home Runs\n   0.288 Batting Average\n\n What a year!\n", "name": "Spec Example 2.15. Folded newlines are preserved for \"more indented\" and blank lines"}
+{"id": "suite/6VJK/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6VJK/in.yaml", "name": "Spec Example 2.15. Folded newlines are preserved for \"more indented\" and blank lines"}
+{"id": "suite/6WLZ/text", "type": "yaml-typed", "text": "# Private\n---\n!foo \"bar\"\n...\n# Global\n%TAG ! tag:example.com,2000:app/\n---\n!foo \"bar\"\n", "name": "Spec Example 6.18. Primary Tag Handle [1.3]"}
+{"id": "suite/6WLZ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6WLZ/in.yaml", "name": "Spec Example 6.18. Primary Tag Handle [1.3]"}
+{"id": "suite/6WPF/text", "type": "yaml-typed", "text": "---\n\"\n  foo \n \n    bar\n\n  baz\n\"\n", "name": "Spec Example 6.8. Flow Folding [1.3]"}
+{"id": "suite/6WPF/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6WPF/in.yaml", "name": "Spec Example 6.8. Flow Folding [1.3]"}
+{"id": "suite/6XDY/text", "type": "yaml-typed", "text": "---\n---\n", "name": "Two document start markers"}
+{"id": "suite/6XDY/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6XDY/in.yaml", "name": "Two document start markers"}
+{"id": "suite/6ZKB/text", "type": "yaml-typed", "text": "Document\n---\n# Empty\n...\n%YAML 1.2\n---\nmatches %: 20\n", "name": "Spec Example 9.6. Stream"}
+{"id": "suite/6ZKB/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/6ZKB/in.yaml", "name": "Spec Example 9.6. Stream"}
+{"id": "suite/735Y/text", "type": "yaml-typed", "text": "-\n  \"flow in block\"\n- >\n Block scalar\n- !!map # Block collection\n  foo : bar\n", "name": "Spec Example 8.20. Block Node Types"}
+{"id": "suite/735Y/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/735Y/in.yaml", "name": "Spec Example 8.20. Block Node Types"}
+{"id": "suite/74H7/text", "type": "yaml-typed", "text": "!!str a: b\nc: !!int 42\ne: !!str f\ng: h\n!!str 23: !!bool false\n", "name": "Tags in Implicit Mapping"}
+{"id": "suite/74H7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/74H7/in.yaml", "name": "Tags in Implicit Mapping"}
+{"id": "suite/753E/text", "type": "yaml-typed", "text": "--- |-\n ab\n \n \n...\n", "name": "Block Scalar Strip [1.3]"}
+{"id": "suite/753E/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/753E/in.yaml", "name": "Block Scalar Strip [1.3]"}
+{"id": "suite/7A4E/text", "type": "yaml-typed", "text": "\" 1st non-empty\n\n 2nd non-empty \n\t3rd non-empty \"\n", "name": "Spec Example 7.6. Double Quoted Lines"}
+{"id": "suite/7A4E/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7A4E/in.yaml", "name": "Spec Example 7.6. Double Quoted Lines"}
+{"id": "suite/7BMT/text", "type": "yaml-typed", "text": "---\ntop1: &node1\n  &k1 key1: one\ntop2: &node2 # comment\n  key2: two\ntop3:\n  &k3 key3: three\ntop4: &node4\n  &k4 key4: four\ntop5: &node5\n  key5: five\ntop6: &val6\n  six\ntop7:\n  &val7 seven\n", "name": "Node and Mapping Key Anchors [1.3]"}
+{"id": "suite/7BMT/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7BMT/in.yaml", "name": "Node and Mapping Key Anchors [1.3]"}
+{"id": "suite/7BUB/text", "type": "yaml-typed", "text": "---\nhr:\n  - Mark McGwire\n  # Following node labeled SS\n  - &SS Sammy Sosa\nrbi:\n  - *SS # Subsequent occurrence\n  - Ken Griffey\n", "name": "Spec Example 2.10. Node for \u201cSammy Sosa\u201d appears twice in this document"}
+{"id": "suite/7BUB/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7BUB/in.yaml", "name": "Spec Example 2.10. Node for \u201cSammy Sosa\u201d appears twice in this document"}
+{"id": "suite/7FWL/text", "type": "yaml-typed", "text": "!<tag:yaml.org,2002:str> foo :\n  !<!bar> baz\n", "name": "Spec Example 6.24. Verbatim Tags"}
+{"id": "suite/7FWL/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7FWL/in.yaml", "name": "Spec Example 6.24. Verbatim Tags"}
+{"id": "suite/7LBH/text", "type": "yaml-typed", "text": "\"a\\nb\": 1\n\"c\n d\": 1\n", "name": "Multiline double quoted implicit keys"}
+{"id": "suite/7LBH/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7LBH/in.yaml", "name": "Multiline double quoted implicit keys"}
+{"id": "suite/7MNF/text", "type": "yaml-typed", "text": "top1:\n  key1: val1\ntop2\n", "name": "Missing colon"}
+{"id": "suite/7MNF/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7MNF/in.yaml", "name": "Missing colon"}
+{"id": "suite/7T8X/text", "type": "yaml-typed", "text": ">\n\n folded\n line\n\n next\n line\n   * bullet\n\n   * list\n   * lines\n\n last\n line\n\n# Comment\n", "name": "Spec Example 8.10. Folded Lines - 8.13. Final Empty Lines"}
+{"id": "suite/7T8X/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7T8X/in.yaml", "name": "Spec Example 8.10. Folded Lines - 8.13. Final Empty Lines"}
+{"id": "suite/7TMG/text", "type": "yaml-typed", "text": "---\n[ word1\n# comment\n, word2]\n", "name": "Comment in flow sequence before comma"}
+{"id": "suite/7TMG/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7TMG/in.yaml", "name": "Comment in flow sequence before comma"}
+{"id": "suite/7W2P/text", "type": "yaml-typed", "text": "? a\n? b\nc:\n", "name": "Block Mapping with Missing Values"}
+{"id": "suite/7W2P/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7W2P/in.yaml", "name": "Block Mapping with Missing Values"}
+{"id": "suite/7Z25/text", "type": "yaml-typed", "text": "---\nscalar1\n...\nkey: value\n", "name": "Bare document after document end marker"}
+{"id": "suite/7Z25/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7Z25/in.yaml", "name": "Bare document after document end marker"}
+{"id": "suite/7ZZ5/text", "type": "yaml-typed", "text": "---\nnested sequences:\n- - - []\n- - - {}\nkey1: []\nkey2: {}\n", "name": "Empty flow collections"}
+{"id": "suite/7ZZ5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/7ZZ5/in.yaml", "name": "Empty flow collections"}
+{"id": "suite/82AN/text", "type": "yaml-typed", "text": "---word1\nword2\n", "name": "Three dashes and content without space"}
+{"id": "suite/82AN/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/82AN/in.yaml", "name": "Three dashes and content without space"}
+{"id": "suite/87E4/text", "type": "yaml-typed", "text": "'implicit block key' : [\n  'implicit flow key' : value,\n ]\n", "name": "Spec Example 7.8. Single Quoted Implicit Keys"}
+{"id": "suite/87E4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/87E4/in.yaml", "name": "Spec Example 7.8. Single Quoted Implicit Keys"}
+{"id": "suite/8CWC/text", "type": "yaml-typed", "text": "---\nkey ends with two colons::: value\n", "name": "Plain mapping key ending with colon"}
+{"id": "suite/8CWC/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/8CWC/in.yaml", "name": "Plain mapping key ending with colon"}
+{"id": "suite/8G76/text", "type": "yaml-typed", "text": "  # Comment\n   \n\n\n", "name": "Spec Example 6.10. Comment Lines"}
+{"id": "suite/8G76/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/8G76/in.yaml", "name": "Spec Example 6.10. Comment Lines"}
+{"id": "suite/8KB6/text", "type": "yaml-typed", "text": "---\n- { single line, a: b}\n- { multi\n  line, a: b}\n", "name": "Multiline plain flow mapping key without value"}
+{"id": "suite/8KB6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/8KB6/in.yaml", "name": "Multiline plain flow mapping key without value"}
+{"id": "suite/8MK2/text", "type": "yaml-typed", "text": "! a\n", "name": "Explicit Non-Specific Tag"}
+{"id": "suite/8MK2/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/8MK2/in.yaml", "name": "Explicit Non-Specific Tag"}
+{"id": "suite/8QBE/text", "type": "yaml-typed", "text": "key:\n - item1\n - item2\n", "name": "Block Sequence in Block Mapping"}
+{"id": "suite/8QBE/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/8QBE/in.yaml", "name": "Block Sequence in Block Mapping"}
+{"id": "suite/8UDB/text", "type": "yaml-typed", "text": "[\n\"double\n quoted\", 'single\n           quoted',\nplain\n text, [ nested ],\nsingle: pair,\n]\n", "name": "Spec Example 7.14. Flow Sequence Entries"}
+{"id": "suite/8UDB/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/8UDB/in.yaml", "name": "Spec Example 7.14. Flow Sequence Entries"}
+{"id": "suite/8XDJ/text", "type": "yaml-typed", "text": "key: word1\n#  xxx\n  word2\n", "name": "Comment in plain multiline value"}
+{"id": "suite/8XDJ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/8XDJ/in.yaml", "name": "Comment in plain multiline value"}
+{"id": "suite/8XYN/text", "type": "yaml-typed", "text": "---\n- &\ud83d\ude01 unicode anchor\n", "name": "Anchor with unicode character"}
+{"id": "suite/8XYN/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/8XYN/in.yaml", "name": "Anchor with unicode character"}
+{"id": "suite/93JH/text", "type": "yaml-typed", "text": " - key: value\n   key2: value2\n -\n   key3: value3\n", "name": "Block Mappings in Block Sequence"}
+{"id": "suite/93JH/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/93JH/in.yaml", "name": "Block Mappings in Block Sequence"}
+{"id": "suite/93WF/text", "type": "yaml-typed", "text": "--- >-\n  trimmed\n  \n \n\n  as\n  space\n", "name": "Spec Example 6.6. Line Folding [1.3]"}
+{"id": "suite/93WF/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/93WF/in.yaml", "name": "Spec Example 6.6. Line Folding [1.3]"}
+{"id": "suite/96L6/text", "type": "yaml-typed", "text": "--- >\n  Mark McGwire's\n  year was crippled\n  by a knee injury.\n", "name": "Spec Example 2.14. In the folded scalars, newlines become spaces"}
+{"id": "suite/96L6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/96L6/in.yaml", "name": "Spec Example 2.14. In the folded scalars, newlines become spaces"}
+{"id": "suite/96NN/00/text", "type": "yaml-typed", "text": "foo: |-\n \tbar\n", "name": "Leading tab content in literals"}
+{"id": "suite/96NN/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/96NN/00/in.yaml", "name": "Leading tab content in literals"}
+{"id": "suite/96NN/01/text", "type": "yaml-typed", "text": "foo: |-\n \tbar", "name": "Leading tab content in literals"}
+{"id": "suite/96NN/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/96NN/01/in.yaml", "name": "Leading tab content in literals"}
+{"id": "suite/98YD/text", "type": "yaml-typed", "text": "# Comment only.\n", "name": "Spec Example 5.5. Comment Indicator"}
+{"id": "suite/98YD/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/98YD/in.yaml", "name": "Spec Example 5.5. Comment Indicator"}
+{"id": "suite/9BXH/text", "type": "yaml-typed", "text": "---\n- { \"single line\", a: b}\n- { \"multi\n  line\", a: b}\n", "name": "Multiline doublequoted flow mapping key without value"}
+{"id": "suite/9BXH/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9BXH/in.yaml", "name": "Multiline doublequoted flow mapping key without value"}
+{"id": "suite/9C9N/text", "type": "yaml-typed", "text": "---\nflow: [a,\nb,\nc]\n", "name": "Wrong indented flow sequence"}
+{"id": "suite/9C9N/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9C9N/in.yaml", "name": "Wrong indented flow sequence"}
+{"id": "suite/9CWY/text", "type": "yaml-typed", "text": "key:\n - item1\n - item2\ninvalid\n", "name": "Invalid scalar at the end of mapping"}
+{"id": "suite/9CWY/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9CWY/in.yaml", "name": "Invalid scalar at the end of mapping"}
+{"id": "suite/9DXL/text", "type": "yaml-typed", "text": "Mapping: Document\n---\n# Empty\n...\n%YAML 1.2\n---\nmatches %: 20\n", "name": "Spec Example 9.6. Stream [1.3]"}
+{"id": "suite/9DXL/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9DXL/in.yaml", "name": "Spec Example 9.6. Stream [1.3]"}
+{"id": "suite/9FMG/text", "type": "yaml-typed", "text": "a:\n  b:\n    c: d\n  e:\n    f: g\nh: i\n", "name": "Multi-level Mapping Indent"}
+{"id": "suite/9FMG/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9FMG/in.yaml", "name": "Multi-level Mapping Indent"}
+{"id": "suite/9HCY/text", "type": "yaml-typed", "text": "!foo \"bar\"\n%TAG ! tag:example.com,2000:app/\n---\n!foo \"bar\"\n", "name": "Need document footer before directives"}
+{"id": "suite/9HCY/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9HCY/in.yaml", "name": "Need document footer before directives"}
+{"id": "suite/9J7A/text", "type": "yaml-typed", "text": "foo:\n  bar: baz\n", "name": "Simple Mapping Indent"}
+{"id": "suite/9J7A/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9J7A/in.yaml", "name": "Simple Mapping Indent"}
+{"id": "suite/9JBA/text", "type": "yaml-typed", "text": "---\n[ a, b, c, ]#invalid\n", "name": "Invalid comment after end of flow sequence"}
+{"id": "suite/9JBA/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9JBA/in.yaml", "name": "Invalid comment after end of flow sequence"}
+{"id": "suite/9KAX/text", "type": "yaml-typed", "text": "---\n&a1\n!!str\nscalar1\n---\n!!str\n&a2\nscalar2\n---\n&a3\n!!str scalar3\n---\n&a4 !!map\n&a5 !!str key5: value4\n---\na6: 1\n&anchor6 b6: 2\n---\n!!map\n&a8 !!str key8: value7\n---\n!!map\n!!str &a10 key10: value9\n---\n!!str &a11\nvalue11\n", "name": "Various combinations of tags and anchors"}
+{"id": "suite/9KAX/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9KAX/in.yaml", "name": "Various combinations of tags and anchors"}
+{"id": "suite/9KBC/text", "type": "yaml-typed", "text": "--- key1: value1\n    key2: value2\n", "name": "Mapping starting at --- line"}
+{"id": "suite/9KBC/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9KBC/in.yaml", "name": "Mapping starting at --- line"}
+{"id": "suite/9MAG/text", "type": "yaml-typed", "text": "---\n[ , a, b, c ]\n", "name": "Flow sequence with invalid comma at the beginning"}
+{"id": "suite/9MAG/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9MAG/in.yaml", "name": "Flow sequence with invalid comma at the beginning"}
+{"id": "suite/9MMA/text", "type": "yaml-typed", "text": "%YAML 1.2\n", "name": "Directive by itself with no document"}
+{"id": "suite/9MMA/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9MMA/in.yaml", "name": "Directive by itself with no document"}
+{"id": "suite/9MMW/text", "type": "yaml-typed", "text": "- [ YAML : separate ]\n- [ \"JSON like\":adjacent ]\n- [ {JSON: like}:adjacent ]\n", "name": "Single Pair Implicit Entries"}
+{"id": "suite/9MMW/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9MMW/in.yaml", "name": "Single Pair Implicit Entries"}
+{"id": "suite/9MQT/00/text", "type": "yaml-typed", "text": "--- \"a\n...x\nb\"\n", "name": "Scalar doc with '...' in content"}
+{"id": "suite/9MQT/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9MQT/00/in.yaml", "name": "Scalar doc with '...' in content"}
+{"id": "suite/9MQT/01/text", "type": "yaml-typed", "text": "--- \"a\n... x\nb\"\n", "name": "Scalar doc with '...' in content"}
+{"id": "suite/9MQT/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9MQT/01/in.yaml", "name": "Scalar doc with '...' in content"}
+{"id": "suite/9SA2/text", "type": "yaml-typed", "text": "---\n- { \"single line\": value}\n- { \"multi\n  line\": value}\n", "name": "Multiline double quoted flow mapping key"}
+{"id": "suite/9SA2/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9SA2/in.yaml", "name": "Multiline double quoted flow mapping key"}
+{"id": "suite/9SHH/text", "type": "yaml-typed", "text": "single: 'text'\ndouble: \"text\"\n", "name": "Spec Example 5.8. Quoted Scalar Indicators"}
+{"id": "suite/9SHH/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9SHH/in.yaml", "name": "Spec Example 5.8. Quoted Scalar Indicators"}
+{"id": "suite/9TFX/text", "type": "yaml-typed", "text": "---\n\" 1st non-empty\n\n 2nd non-empty \n 3rd non-empty \"\n", "name": "Spec Example 7.6. Double Quoted Lines [1.3]"}
+{"id": "suite/9TFX/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9TFX/in.yaml", "name": "Spec Example 7.6. Double Quoted Lines [1.3]"}
+{"id": "suite/9U5K/text", "type": "yaml-typed", "text": "---\n# Products purchased\n- item    : Super Hoop\n  quantity: 1\n- item    : Basketball\n  quantity: 4\n- item    : Big Shoes\n  quantity: 1\n", "name": "Spec Example 2.12. Compact Nested Mapping"}
+{"id": "suite/9U5K/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9U5K/in.yaml", "name": "Spec Example 2.12. Compact Nested Mapping"}
+{"id": "suite/9WXW/text", "type": "yaml-typed", "text": "# Private\n!foo \"bar\"\n...\n# Global\n%TAG ! tag:example.com,2000:app/\n---\n!foo \"bar\"\n", "name": "Spec Example 6.18. Primary Tag Handle"}
+{"id": "suite/9WXW/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9WXW/in.yaml", "name": "Spec Example 6.18. Primary Tag Handle"}
+{"id": "suite/9YRD/text", "type": "yaml-typed", "text": "a\nb  \n  c\nd\n\ne\n", "name": "Multiline Scalar at Top Level"}
+{"id": "suite/9YRD/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/9YRD/in.yaml", "name": "Multiline Scalar at Top Level"}
+{"id": "suite/A2M4/text", "type": "yaml-typed", "text": "? a\n: -\tb\n  -  -\tc\n     - d\n", "name": "Spec Example 6.2. Indentation Indicators"}
+{"id": "suite/A2M4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/A2M4/in.yaml", "name": "Spec Example 6.2. Indentation Indicators"}
+{"id": "suite/A6F9/text", "type": "yaml-typed", "text": "strip: |-\n  text\nclip: |\n  text\nkeep: |+\n  text\n", "name": "Spec Example 8.4. Chomping Final Line Break"}
+{"id": "suite/A6F9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/A6F9/in.yaml", "name": "Spec Example 8.4. Chomping Final Line Break"}
+{"id": "suite/A984/text", "type": "yaml-typed", "text": "a: b\n c\nd:\n e\n  f\n", "name": "Multiline Scalar in Mapping"}
+{"id": "suite/A984/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/A984/in.yaml", "name": "Multiline Scalar in Mapping"}
+{"id": "suite/AB8U/text", "type": "yaml-typed", "text": "- single multiline\n - sequence entry\n", "name": "Sequence entry that looks like two with wrong indentation"}
+{"id": "suite/AB8U/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/AB8U/in.yaml", "name": "Sequence entry that looks like two with wrong indentation"}
+{"id": "suite/AVM7/text", "type": "yaml-typed", "text": "", "name": "Empty Stream"}
+{"id": "suite/AVM7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/AVM7/in.yaml", "name": "Empty Stream"}
+{"id": "suite/AZ63/text", "type": "yaml-typed", "text": "one:\n- 2\n- 3\nfour: 5\n", "name": "Sequence With Same Indentation as Parent Mapping"}
+{"id": "suite/AZ63/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/AZ63/in.yaml", "name": "Sequence With Same Indentation as Parent Mapping"}
+{"id": "suite/AZW3/text", "type": "yaml-typed", "text": "- bla\"keks: foo\n- bla]keks: foo\n", "name": "Lookahead test cases"}
+{"id": "suite/AZW3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/AZW3/in.yaml", "name": "Lookahead test cases"}
+{"id": "suite/B3HG/text", "type": "yaml-typed", "text": "--- >\n folded\n text\n\n\n", "name": "Spec Example 8.9. Folded Scalar [1.3]"}
+{"id": "suite/B3HG/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/B3HG/in.yaml", "name": "Spec Example 8.9. Folded Scalar [1.3]"}
+{"id": "suite/B63P/text", "type": "yaml-typed", "text": "%YAML 1.2\n...\n", "name": "Directive without document"}
+{"id": "suite/B63P/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/B63P/in.yaml", "name": "Directive without document"}
+{"id": "suite/BD7L/text", "type": "yaml-typed", "text": "- item1\n- item2\ninvalid: x\n", "name": "Invalid mapping after sequence"}
+{"id": "suite/BD7L/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/BD7L/in.yaml", "name": "Invalid mapping after sequence"}
+{"id": "suite/BEC7/text", "type": "yaml-typed", "text": "%YAML 1.3 # Attempt parsing\n          # with a warning\n---\n\"foo\"\n", "name": "Spec Example 6.14. \u201cYAML\u201d directive"}
+{"id": "suite/BEC7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/BEC7/in.yaml", "name": "Spec Example 6.14. \u201cYAML\u201d directive"}
+{"id": "suite/BF9H/text", "type": "yaml-typed", "text": "---\nplain: a\n       b # end of scalar\n       c\n", "name": "Trailing comment in multiline plain scalar"}
+{"id": "suite/BF9H/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/BF9H/in.yaml", "name": "Trailing comment in multiline plain scalar"}
+{"id": "suite/BS4K/text", "type": "yaml-typed", "text": "word1  # comment\nword2\n", "name": "Comment between plain scalar lines"}
+{"id": "suite/BS4K/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/BS4K/in.yaml", "name": "Comment between plain scalar lines"}
+{"id": "suite/BU8L/text", "type": "yaml-typed", "text": "key: &anchor\n !!map\n  a: b\n", "name": "Node Anchor and Tag on Seperate Lines"}
+{"id": "suite/BU8L/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/BU8L/in.yaml", "name": "Node Anchor and Tag on Seperate Lines"}
+{"id": "suite/C2DT/text", "type": "yaml-typed", "text": "{\n\"adjacent\":value,\n\"readable\": value,\n\"empty\":\n}\n", "name": "Spec Example 7.18. Flow Mapping Adjacent Values"}
+{"id": "suite/C2DT/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/C2DT/in.yaml", "name": "Spec Example 7.18. Flow Mapping Adjacent Values"}
+{"id": "suite/C2SP/text", "type": "yaml-typed", "text": "[23\n]: 42\n", "name": "Flow Mapping Key on two lines"}
+{"id": "suite/C2SP/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/C2SP/in.yaml", "name": "Flow Mapping Key on two lines"}
+{"id": "suite/C4HZ/text", "type": "yaml-typed", "text": "%TAG ! tag:clarkevans.com,2002:\n--- !shape\n  # Use the ! handle for presenting\n  # tag:clarkevans.com,2002:circle\n- !circle\n  center: &ORIGIN {x: 73, y: 129}\n  radius: 7\n- !line\n  start: *ORIGIN\n  finish: { x: 89, y: 102 }\n- !label\n  start: *ORIGIN\n  color: 0xFFEEBB\n  text: Pretty vector drawing.\n", "name": "Spec Example 2.24. Global Tags"}
+{"id": "suite/C4HZ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/C4HZ/in.yaml", "name": "Spec Example 2.24. Global Tags"}
+{"id": "suite/CC74/text", "type": "yaml-typed", "text": "%TAG !e! tag:example.com,2000:app/\n---\n!e!foo \"bar\"\n", "name": "Spec Example 6.20. Tag Handles"}
+{"id": "suite/CC74/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CC74/in.yaml", "name": "Spec Example 6.20. Tag Handles"}
+{"id": "suite/CFD4/text", "type": "yaml-typed", "text": "- [ : empty key ]\n- [: another empty key]\n", "name": "Empty implicit key in single pair flow sequences"}
+{"id": "suite/CFD4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CFD4/in.yaml", "name": "Empty implicit key in single pair flow sequences"}
+{"id": "suite/CML9/text", "type": "yaml-typed", "text": "key: [ word1\n#  xxx\n  word2 ]\n", "name": "Missing comma in flow"}
+{"id": "suite/CML9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CML9/in.yaml", "name": "Missing comma in flow"}
+{"id": "suite/CN3R/text", "type": "yaml-typed", "text": "&flowseq [\n a: b,\n &c c: d,\n { &e e: f },\n &g { g: h }\n]\n", "name": "Various location of anchors in flow sequence"}
+{"id": "suite/CN3R/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CN3R/in.yaml", "name": "Various location of anchors in flow sequence"}
+{"id": "suite/CPZ3/text", "type": "yaml-typed", "text": "---\ntab: \"\\tstring\"\n", "name": "Doublequoted scalar starting with a tab"}
+{"id": "suite/CPZ3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CPZ3/in.yaml", "name": "Doublequoted scalar starting with a tab"}
+{"id": "suite/CQ3W/text", "type": "yaml-typed", "text": "---\nkey: \"missing closing quote\n", "name": "Double quoted string without closing quote"}
+{"id": "suite/CQ3W/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CQ3W/in.yaml", "name": "Double quoted string without closing quote"}
+{"id": "suite/CT4Q/text", "type": "yaml-typed", "text": "[\n? foo\n bar : baz\n]\n", "name": "Spec Example 7.20. Single Pair Explicit Entry"}
+{"id": "suite/CT4Q/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CT4Q/in.yaml", "name": "Spec Example 7.20. Single Pair Explicit Entry"}
+{"id": "suite/CTN5/text", "type": "yaml-typed", "text": "---\n[ a, b, c, , ]\n", "name": "Flow sequence with invalid extra comma"}
+{"id": "suite/CTN5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CTN5/in.yaml", "name": "Flow sequence with invalid extra comma"}
+{"id": "suite/CUP7/text", "type": "yaml-typed", "text": "anchored: !local &anchor value\nalias: *anchor\n", "name": "Spec Example 5.6. Node Property Indicators"}
+{"id": "suite/CUP7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CUP7/in.yaml", "name": "Spec Example 5.6. Node Property Indicators"}
+{"id": "suite/CVW2/text", "type": "yaml-typed", "text": "---\n[ a, b, c,#invalid\n]\n", "name": "Invalid comment after comma"}
+{"id": "suite/CVW2/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CVW2/in.yaml", "name": "Invalid comment after comma"}
+{"id": "suite/CXX2/text", "type": "yaml-typed", "text": "--- &anchor a: b\n", "name": "Mapping with anchor on document start line"}
+{"id": "suite/CXX2/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/CXX2/in.yaml", "name": "Mapping with anchor on document start line"}
+{"id": "suite/D49Q/text", "type": "yaml-typed", "text": "'a\\nb': 1\n'c\n d': 1\n", "name": "Multiline single quoted implicit keys"}
+{"id": "suite/D49Q/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/D49Q/in.yaml", "name": "Multiline single quoted implicit keys"}
+{"id": "suite/D83L/text", "type": "yaml-typed", "text": "- |2-\n  explicit indent and chomp\n- |-2\n  chomp and explicit indent\n", "name": "Block scalar indicator order"}
+{"id": "suite/D83L/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/D83L/in.yaml", "name": "Block scalar indicator order"}
+{"id": "suite/D88J/text", "type": "yaml-typed", "text": "a: [b, c]\n", "name": "Flow Sequence in Block Mapping"}
+{"id": "suite/D88J/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/D88J/in.yaml", "name": "Flow Sequence in Block Mapping"}
+{"id": "suite/D9TU/text", "type": "yaml-typed", "text": "foo: bar\n", "name": "Single Pair Block Mapping"}
+{"id": "suite/D9TU/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/D9TU/in.yaml", "name": "Single Pair Block Mapping"}
+{"id": "suite/DBG4/text", "type": "yaml-typed", "text": "# Outside flow collection:\n- ::vector\n- \": - ()\"\n- Up, up, and away!\n- -123\n- http://example.com/foo#bar\n# Inside flow collection:\n- [ ::vector,\n  \": - ()\",\n  \"Up, up and away!\",\n  -123,\n  http://example.com/foo#bar ]\n", "name": "Spec Example 7.10. Plain Characters"}
+{"id": "suite/DBG4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DBG4/in.yaml", "name": "Spec Example 7.10. Plain Characters"}
+{"id": "suite/DC7X/text", "type": "yaml-typed", "text": "a: b\t\nseq:\t\n - a\t\nc: d\t#X\n", "name": "Various trailing tabs"}
+{"id": "suite/DC7X/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DC7X/in.yaml", "name": "Various trailing tabs"}
+{"id": "suite/DE56/00/text", "type": "yaml-typed", "text": "\"1 trailing\\t\n    tab\"\n", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DE56/00/in.yaml", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/01/text", "type": "yaml-typed", "text": "\"2 trailing\\t  \n    tab\"\n", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DE56/01/in.yaml", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/02/text", "type": "yaml-typed", "text": "\"3 trailing\\\t\n    tab\"\n", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DE56/02/in.yaml", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/03/text", "type": "yaml-typed", "text": "\"4 trailing\\\t  \n    tab\"\n", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/03/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DE56/03/in.yaml", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/04/text", "type": "yaml-typed", "text": "\"5 trailing\t\n    tab\"\n", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/04/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DE56/04/in.yaml", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/05/text", "type": "yaml-typed", "text": "\"6 trailing\t  \n    tab\"\n", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DE56/05/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DE56/05/in.yaml", "name": "Trailing tabs in double quoted"}
+{"id": "suite/DFF7/text", "type": "yaml-typed", "text": "{\n? explicit: entry,\nimplicit: entry,\n?\n}\n", "name": "Spec Example 7.16. Flow Mapping Entries"}
+{"id": "suite/DFF7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DFF7/in.yaml", "name": "Spec Example 7.16. Flow Mapping Entries"}
+{"id": "suite/DHP8/text", "type": "yaml-typed", "text": "[foo, bar, 42]\n", "name": "Flow Sequence"}
+{"id": "suite/DHP8/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DHP8/in.yaml", "name": "Flow Sequence"}
+{"id": "suite/DK3J/text", "type": "yaml-typed", "text": "--- >\nline1\n# no comment\nline3\n", "name": "Zero indented block scalar with line that looks like a comment"}
+{"id": "suite/DK3J/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK3J/in.yaml", "name": "Zero indented block scalar with line that looks like a comment"}
+{"id": "suite/DK4H/text", "type": "yaml-typed", "text": "---\n[ key\n  : value ]\n", "name": "Implicit key followed by newline"}
+{"id": "suite/DK4H/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK4H/in.yaml", "name": "Implicit key followed by newline"}
+{"id": "suite/DK95/00/text", "type": "yaml-typed", "text": "foo:\n \tbar\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/00/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/01/text", "type": "yaml-typed", "text": "foo: \"bar\n\tbaz\"\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/01/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/02/text", "type": "yaml-typed", "text": "foo: \"bar\n  \tbaz\"\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/02/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/03/text", "type": "yaml-typed", "text": " \t\nfoo: 1\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/03/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/03/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/04/text", "type": "yaml-typed", "text": "foo: 1\n\t\nbar: 2\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/04/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/04/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/05/text", "type": "yaml-typed", "text": "foo: 1\n \t\nbar: 2\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/05/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/05/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/06/text", "type": "yaml-typed", "text": "foo:\n  a: 1\n  \tb: 2\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/06/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/06/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/07/text", "type": "yaml-typed", "text": "%YAML 1.2\n\t\n---\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/07/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/07/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/08/text", "type": "yaml-typed", "text": "foo: \"bar\n \t \t baz \t \t \"\n", "name": "Tabs that look like indentation"}
+{"id": "suite/DK95/08/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DK95/08/in.yaml", "name": "Tabs that look like indentation"}
+{"id": "suite/DMG6/text", "type": "yaml-typed", "text": "key:\n  ok: 1\n wrong: 2\n", "name": "Wrong indendation in Map"}
+{"id": "suite/DMG6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DMG6/in.yaml", "name": "Wrong indendation in Map"}
+{"id": "suite/DWX9/text", "type": "yaml-typed", "text": "|\n \n  \n  literal\n   \n  \n  text\n\n # Comment\n", "name": "Spec Example 8.8. Literal Content"}
+{"id": "suite/DWX9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/DWX9/in.yaml", "name": "Spec Example 8.8. Literal Content"}
+{"id": "suite/E76Z/text", "type": "yaml-typed", "text": "&a a: &b b\n*b : *a\n", "name": "Aliases in Implicit Block Mapping"}
+{"id": "suite/E76Z/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/E76Z/in.yaml", "name": "Aliases in Implicit Block Mapping"}
+{"id": "suite/EB22/text", "type": "yaml-typed", "text": "---\nscalar1 # comment\n%YAML 1.2\n---\nscalar2\n", "name": "Missing document-end marker before directive"}
+{"id": "suite/EB22/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/EB22/in.yaml", "name": "Missing document-end marker before directive"}
+{"id": "suite/EHF6/text", "type": "yaml-typed", "text": "!!map {\n  k: !!seq\n  [ a, !!str b]\n}\n", "name": "Tags for Flow Objects"}
+{"id": "suite/EHF6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/EHF6/in.yaml", "name": "Tags for Flow Objects"}
+{"id": "suite/EW3V/text", "type": "yaml-typed", "text": "k1: v1\n k2: v2\n", "name": "Wrong indendation in mapping"}
+{"id": "suite/EW3V/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/EW3V/in.yaml", "name": "Wrong indendation in mapping"}
+{"id": "suite/EX5H/text", "type": "yaml-typed", "text": "---\na\nb  \n  c\nd\n\ne\n", "name": "Multiline Scalar at Top Level [1.3]"}
+{"id": "suite/EX5H/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/EX5H/in.yaml", "name": "Multiline Scalar at Top Level [1.3]"}
+{"id": "suite/EXG3/text", "type": "yaml-typed", "text": "---\n---word1\nword2\n", "name": "Three dashes and content without space [1.3]"}
+{"id": "suite/EXG3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/EXG3/in.yaml", "name": "Three dashes and content without space [1.3]"}
+{"id": "suite/F2C7/text", "type": "yaml-typed", "text": " - &a !!str a\n - !!int 2\n - !!int &c 4\n - &d d\n", "name": "Anchors and Tags"}
+{"id": "suite/F2C7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/F2C7/in.yaml", "name": "Anchors and Tags"}
+{"id": "suite/F3CP/text", "type": "yaml-typed", "text": "---\n{ a: [b, c, { d: [e, f] } ] }\n", "name": "Nested flow collections on one line"}
+{"id": "suite/F3CP/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/F3CP/in.yaml", "name": "Nested flow collections on one line"}
+{"id": "suite/F6MC/text", "type": "yaml-typed", "text": "---\na: >2\n   more indented\n  regular\nb: >2\n\n\n   more indented\n  regular\n", "name": "More indented lines at the beginning of folded block scalars"}
+{"id": "suite/F6MC/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/F6MC/in.yaml", "name": "More indented lines at the beginning of folded block scalars"}
+{"id": "suite/F8F9/text", "type": "yaml-typed", "text": " # Strip\n  # Comments:\nstrip: |-\n  # text\n  \n # Clip\n  # comments:\n\nclip: |\n  # text\n \n # Keep\n  # comments:\n\nkeep: |+\n  # text\n\n # Trail\n  # comments.\n", "name": "Spec Example 8.5. Chomping Trailing Lines"}
+{"id": "suite/F8F9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/F8F9/in.yaml", "name": "Spec Example 8.5. Chomping Trailing Lines"}
+{"id": "suite/FBC9/text", "type": "yaml-typed", "text": "safe: a!\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~\n     !\"#$%&'()*+,-./09:;<=>?@AZ[\\]^_`az{|}~\nsafe question mark: ?foo\nsafe colon: :foo\nsafe dash: -foo\n", "name": "Allowed characters in plain scalars"}
+{"id": "suite/FBC9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/FBC9/in.yaml", "name": "Allowed characters in plain scalars"}
+{"id": "suite/FH7J/text", "type": "yaml-typed", "text": "- !!str\n-\n  !!null : a\n  b: !!str\n- !!str : !!null\n", "name": "Tags on Empty Scalars"}
+{"id": "suite/FH7J/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/FH7J/in.yaml", "name": "Tags on Empty Scalars"}
+{"id": "suite/FP8R/text", "type": "yaml-typed", "text": "--- >\nline1\nline2\nline3\n", "name": "Zero indented block scalar"}
+{"id": "suite/FP8R/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/FP8R/in.yaml", "name": "Zero indented block scalar"}
+{"id": "suite/FQ7F/text", "type": "yaml-typed", "text": "- Mark McGwire\n- Sammy Sosa\n- Ken Griffey\n", "name": "Spec Example 2.1. Sequence of Scalars"}
+{"id": "suite/FQ7F/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/FQ7F/in.yaml", "name": "Spec Example 2.1. Sequence of Scalars"}
+{"id": "suite/FRK4/text", "type": "yaml-typed", "text": "{\n  ? foo :,\n  : bar,\n}\n", "name": "Spec Example 7.3. Completely Empty Flow Nodes"}
+{"id": "suite/FRK4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/FRK4/in.yaml", "name": "Spec Example 7.3. Completely Empty Flow Nodes"}
+{"id": "suite/FTA2/text", "type": "yaml-typed", "text": "--- &sequence\n- a\n", "name": "Single block sequence with anchor and explicit document start"}
+{"id": "suite/FTA2/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/FTA2/in.yaml", "name": "Single block sequence with anchor and explicit document start"}
+{"id": "suite/FUP4/text", "type": "yaml-typed", "text": "[a, [b, c]]\n", "name": "Flow Sequence in Flow Sequence"}
+{"id": "suite/FUP4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/FUP4/in.yaml", "name": "Flow Sequence in Flow Sequence"}
+{"id": "suite/G4RS/text", "type": "yaml-typed", "text": "unicode: \"Sosa did fine.\\u263A\"\ncontrol: \"\\b1998\\t1999\\t2000\\n\"\nhex esc: \"\\x0d\\x0a is \\r\\n\"\n\nsingle: '\"Howdy!\" he cried.'\nquoted: ' # Not a ''comment''.'\ntie-fighter: '|\\-*-/|'\n", "name": "Spec Example 2.17. Quoted Scalars"}
+{"id": "suite/G4RS/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/G4RS/in.yaml", "name": "Spec Example 2.17. Quoted Scalars"}
+{"id": "suite/G5U8/text", "type": "yaml-typed", "text": "---\n- [-, -]\n", "name": "Plain dashes in flow sequence"}
+{"id": "suite/G5U8/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/G5U8/in.yaml", "name": "Plain dashes in flow sequence"}
+{"id": "suite/G7JE/text", "type": "yaml-typed", "text": "a\\nb: 1\nc\n d: 1\n", "name": "Multiline implicit keys"}
+{"id": "suite/G7JE/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/G7JE/in.yaml", "name": "Multiline implicit keys"}
+{"id": "suite/G992/text", "type": "yaml-typed", "text": ">\n folded\n text\n\n\n", "name": "Spec Example 8.9. Folded Scalar"}
+{"id": "suite/G992/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/G992/in.yaml", "name": "Spec Example 8.9. Folded Scalar"}
+{"id": "suite/G9HC/text", "type": "yaml-typed", "text": "---\nseq:\n&anchor\n- a\n- b\n", "name": "Invalid anchor in zero indented sequence"}
+{"id": "suite/G9HC/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/G9HC/in.yaml", "name": "Invalid anchor in zero indented sequence"}
+{"id": "suite/GDY7/text", "type": "yaml-typed", "text": "key: value\nthis is #not a: key\n", "name": "Comment that looks like a mapping key"}
+{"id": "suite/GDY7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/GDY7/in.yaml", "name": "Comment that looks like a mapping key"}
+{"id": "suite/GH63/text", "type": "yaml-typed", "text": "? a\n: 1.3\nfifteen: d\n", "name": "Mixed Block Mapping (explicit to implicit)"}
+{"id": "suite/GH63/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/GH63/in.yaml", "name": "Mixed Block Mapping (explicit to implicit)"}
+{"id": "suite/GT5M/text", "type": "yaml-typed", "text": "- item1\n&node\n- item2\n", "name": "Node anchor in sequence"}
+{"id": "suite/GT5M/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/GT5M/in.yaml", "name": "Node anchor in sequence"}
+{"id": "suite/H2RW/text", "type": "yaml-typed", "text": "foo: 1\n\nbar: 2\n    \ntext: |\n  a\n    \n  b\n\n  c\n \n  d\n", "name": "Blank lines"}
+{"id": "suite/H2RW/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/H2RW/in.yaml", "name": "Blank lines"}
+{"id": "suite/H3Z8/text", "type": "yaml-typed", "text": "---\nwanted: love \u2665 and peace \u262e\n", "name": "Literal unicode"}
+{"id": "suite/H3Z8/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/H3Z8/in.yaml", "name": "Literal unicode"}
+{"id": "suite/H7J7/text", "type": "yaml-typed", "text": "key: &x\n!!map\n  a: b\n", "name": "Node anchor not indented"}
+{"id": "suite/H7J7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/H7J7/in.yaml", "name": "Node anchor not indented"}
+{"id": "suite/H7TQ/text", "type": "yaml-typed", "text": "%YAML 1.2 foo\n---\n", "name": "Extra words on %YAML directive"}
+{"id": "suite/H7TQ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/H7TQ/in.yaml", "name": "Extra words on %YAML directive"}
+{"id": "suite/HM87/00/text", "type": "yaml-typed", "text": "[:x]\n", "name": "Scalars in flow start with syntax char"}
+{"id": "suite/HM87/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/HM87/00/in.yaml", "name": "Scalars in flow start with syntax char"}
+{"id": "suite/HM87/01/text", "type": "yaml-typed", "text": "[?x]\n", "name": "Scalars in flow start with syntax char"}
+{"id": "suite/HM87/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/HM87/01/in.yaml", "name": "Scalars in flow start with syntax char"}
+{"id": "suite/HMK4/text", "type": "yaml-typed", "text": "name: Mark McGwire\naccomplishment: >\n  Mark set a major league\n  home run record in 1998.\nstats: |\n  65 Home Runs\n  0.278 Batting Average\n", "name": "Spec Example 2.16. Indentation determines scope"}
+{"id": "suite/HMK4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/HMK4/in.yaml", "name": "Spec Example 2.16. Indentation determines scope"}
+{"id": "suite/HMQ5/text", "type": "yaml-typed", "text": "!!str &a1 \"foo\":\n  !!str bar\n&a2 baz : *a1\n", "name": "Spec Example 6.23. Node Properties"}
+{"id": "suite/HMQ5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/HMQ5/in.yaml", "name": "Spec Example 6.23. Node Properties"}
+{"id": "suite/HRE5/text", "type": "yaml-typed", "text": "---\ndouble: \"quoted \\' scalar\"\n", "name": "Double quoted scalar with escaped single quote"}
+{"id": "suite/HRE5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/HRE5/in.yaml", "name": "Double quoted scalar with escaped single quote"}
+{"id": "suite/HS5T/text", "type": "yaml-typed", "text": "1st non-empty\n\n 2nd non-empty \n\t3rd non-empty\n", "name": "Spec Example 7.12. Plain Lines"}
+{"id": "suite/HS5T/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/HS5T/in.yaml", "name": "Spec Example 7.12. Plain Lines"}
+{"id": "suite/HU3P/text", "type": "yaml-typed", "text": "key:\n  word1 word2\n  no: key\n", "name": "Invalid Mapping in plain scalar"}
+{"id": "suite/HU3P/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/HU3P/in.yaml", "name": "Invalid Mapping in plain scalar"}
+{"id": "suite/HWV9/text", "type": "yaml-typed", "text": "...\n", "name": "Document-end marker"}
+{"id": "suite/HWV9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/HWV9/in.yaml", "name": "Document-end marker"}
+{"id": "suite/J3BT/text", "type": "yaml-typed", "text": "# Tabs and spaces\nquoted: \"Quoted \t\"\nblock:\t|\n  void main() {\n  \tprintf(\"Hello, world!\\n\");\n  }\n", "name": "Spec Example 5.12. Tabs and Spaces"}
+{"id": "suite/J3BT/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/J3BT/in.yaml", "name": "Spec Example 5.12. Tabs and Spaces"}
+{"id": "suite/J5UC/text", "type": "yaml-typed", "text": "foo: blue\nbar: arrr\nbaz: jazz\n", "name": "Multiple Pair Block Mapping"}
+{"id": "suite/J5UC/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/J5UC/in.yaml", "name": "Multiple Pair Block Mapping"}
+{"id": "suite/J7PZ/text", "type": "yaml-typed", "text": "# The !!omap tag is one of the optional types\n# introduced for YAML 1.1. In 1.2, it is not\n# part of the standard tags and should not be\n# enabled by default.\n# Ordered maps are represented as\n# A sequence of mappings, with\n# each mapping having one key\n--- !!omap\n- Mark McGwire: 65\n- Sammy Sosa: 63\n- Ken Griffy: 58\n", "name": "Spec Example 2.26. Ordered Mappings"}
+{"id": "suite/J7PZ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/J7PZ/in.yaml", "name": "Spec Example 2.26. Ordered Mappings"}
+{"id": "suite/J7VC/text", "type": "yaml-typed", "text": "one: 2\n\n\nthree: 4\n", "name": "Empty Lines Between Mapping Elements"}
+{"id": "suite/J7VC/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/J7VC/in.yaml", "name": "Empty Lines Between Mapping Elements"}
+{"id": "suite/J9HZ/text", "type": "yaml-typed", "text": "---\nhr: # 1998 hr ranking\n  - Mark McGwire\n  - Sammy Sosa\nrbi:\n  # 1998 rbi ranking\n  - Sammy Sosa\n  - Ken Griffey\n", "name": "Spec Example 2.9. Single Document with Two Comments"}
+{"id": "suite/J9HZ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/J9HZ/in.yaml", "name": "Spec Example 2.9. Single Document with Two Comments"}
+{"id": "suite/JEF9/00/text", "type": "yaml-typed", "text": "- |+\n\n\n", "name": "Trailing whitespace in streams"}
+{"id": "suite/JEF9/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JEF9/00/in.yaml", "name": "Trailing whitespace in streams"}
+{"id": "suite/JEF9/01/text", "type": "yaml-typed", "text": "- |+\n   \n", "name": "Trailing whitespace in streams"}
+{"id": "suite/JEF9/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JEF9/01/in.yaml", "name": "Trailing whitespace in streams"}
+{"id": "suite/JEF9/02/text", "type": "yaml-typed", "text": "- |+\n   ", "name": "Trailing whitespace in streams"}
+{"id": "suite/JEF9/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JEF9/02/in.yaml", "name": "Trailing whitespace in streams"}
+{"id": "suite/JHB9/text", "type": "yaml-typed", "text": "# Ranking of 1998 home runs\n---\n- Mark McGwire\n- Sammy Sosa\n- Ken Griffey\n\n# Team ranking\n---\n- Chicago Cubs\n- St Louis Cardinals\n", "name": "Spec Example 2.7. Two Documents in a Stream"}
+{"id": "suite/JHB9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JHB9/in.yaml", "name": "Spec Example 2.7. Two Documents in a Stream"}
+{"id": "suite/JKF3/text", "type": "yaml-typed", "text": "- - \"bar\nbar\": x\n", "name": "Multiline unidented double quoted block key"}
+{"id": "suite/JKF3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JKF3/in.yaml", "name": "Multiline unidented double quoted block key"}
+{"id": "suite/JQ4R/text", "type": "yaml-typed", "text": "block sequence:\n  - one\n  - two : three\n", "name": "Spec Example 8.14. Block Sequence"}
+{"id": "suite/JQ4R/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JQ4R/in.yaml", "name": "Spec Example 8.14. Block Sequence"}
+{"id": "suite/JR7V/text", "type": "yaml-typed", "text": "- a?string\n- another ? string\n- key: value?\n- [a?string]\n- [another ? string]\n- {key: value? }\n- {key: value?}\n- {key?: value }\n", "name": "Question marks in scalars"}
+{"id": "suite/JR7V/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JR7V/in.yaml", "name": "Question marks in scalars"}
+{"id": "suite/JS2J/text", "type": "yaml-typed", "text": "First occurrence: &anchor Value\nSecond occurrence: *anchor\n", "name": "Spec Example 6.29. Node Anchors"}
+{"id": "suite/JS2J/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JS2J/in.yaml", "name": "Spec Example 6.29. Node Anchors"}
+{"id": "suite/JTV5/text", "type": "yaml-typed", "text": "? a\n  true\n: null\n  d\n? e\n  42\n", "name": "Block Mapping with Multiline Scalars"}
+{"id": "suite/JTV5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JTV5/in.yaml", "name": "Block Mapping with Multiline Scalars"}
+{"id": "suite/JY7Z/text", "type": "yaml-typed", "text": "key1: \"quoted1\"\nkey2: \"quoted2\" no key: nor value\nkey3: \"quoted3\"\n", "name": "Trailing content that looks like a mapping"}
+{"id": "suite/JY7Z/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/JY7Z/in.yaml", "name": "Trailing content that looks like a mapping"}
+{"id": "suite/K3WX/text", "type": "yaml-typed", "text": "---\n{ \"foo\" # comment\n  :bar }\n", "name": "Colon and adjacent value after comment on next line"}
+{"id": "suite/K3WX/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/K3WX/in.yaml", "name": "Colon and adjacent value after comment on next line"}
+{"id": "suite/K4SU/text", "type": "yaml-typed", "text": "- foo\n- bar\n- 42\n", "name": "Multiple Entry Block Sequence"}
+{"id": "suite/K4SU/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/K4SU/in.yaml", "name": "Multiple Entry Block Sequence"}
+{"id": "suite/K527/text", "type": "yaml-typed", "text": ">-\n  trimmed\n  \n \n\n  as\n  space\n", "name": "Spec Example 6.6. Line Folding"}
+{"id": "suite/K527/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/K527/in.yaml", "name": "Spec Example 6.6. Line Folding"}
+{"id": "suite/K54U/text", "type": "yaml-typed", "text": "---\tscalar\n", "name": "Tab after document header"}
+{"id": "suite/K54U/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/K54U/in.yaml", "name": "Tab after document header"}
+{"id": "suite/K858/text", "type": "yaml-typed", "text": "strip: >-\n\nclip: >\n\nkeep: |+\n\n", "name": "Spec Example 8.6. Empty Scalar Chomping"}
+{"id": "suite/K858/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/K858/in.yaml", "name": "Spec Example 8.6. Empty Scalar Chomping"}
+{"id": "suite/KH5V/00/text", "type": "yaml-typed", "text": "\"1 inline\\ttab\"\n", "name": "Inline tabs in double quoted"}
+{"id": "suite/KH5V/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/KH5V/00/in.yaml", "name": "Inline tabs in double quoted"}
+{"id": "suite/KH5V/01/text", "type": "yaml-typed", "text": "\"2 inline\\\ttab\"\n", "name": "Inline tabs in double quoted"}
+{"id": "suite/KH5V/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/KH5V/01/in.yaml", "name": "Inline tabs in double quoted"}
+{"id": "suite/KH5V/02/text", "type": "yaml-typed", "text": "\"3 inline\ttab\"\n", "name": "Inline tabs in double quoted"}
+{"id": "suite/KH5V/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/KH5V/02/in.yaml", "name": "Inline tabs in double quoted"}
+{"id": "suite/KK5P/text", "type": "yaml-typed", "text": "complex1:\n  ? - a\ncomplex2:\n  ? - a\n  : b\ncomplex3:\n  ? - a\n  : >\n    b\ncomplex4:\n  ? >\n    a\n  :\ncomplex5:\n  ? - a\n  : - b\n", "name": "Various combinations of explicit block mappings"}
+{"id": "suite/KK5P/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/KK5P/in.yaml", "name": "Various combinations of explicit block mappings"}
+{"id": "suite/KMK3/text", "type": "yaml-typed", "text": "foo:\n  bar: 1\nbaz: 2\n", "name": "Block Submapping"}
+{"id": "suite/KMK3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/KMK3/in.yaml", "name": "Block Submapping"}
+{"id": "suite/KS4U/text", "type": "yaml-typed", "text": "---\n[\nsequence item\n]\ninvalid item\n", "name": "Invalid item after end of flow sequence"}
+{"id": "suite/KS4U/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/KS4U/in.yaml", "name": "Invalid item after end of flow sequence"}
+{"id": "suite/KSS4/text", "type": "yaml-typed", "text": "--- \"quoted\nstring\"\n--- &node foo\n", "name": "Scalars on --- line"}
+{"id": "suite/KSS4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/KSS4/in.yaml", "name": "Scalars on --- line"}
+{"id": "suite/L24T/00/text", "type": "yaml-typed", "text": "foo: |\n  x\n   \n", "name": "Trailing line of spaces"}
+{"id": "suite/L24T/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/L24T/00/in.yaml", "name": "Trailing line of spaces"}
+{"id": "suite/L24T/01/text", "type": "yaml-typed", "text": "foo: |\n  x\n   ", "name": "Trailing line of spaces"}
+{"id": "suite/L24T/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/L24T/01/in.yaml", "name": "Trailing line of spaces"}
+{"id": "suite/L383/text", "type": "yaml-typed", "text": "--- foo  # comment\n--- foo  # comment\n", "name": "Two scalar docs with trailing comments"}
+{"id": "suite/L383/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/L383/in.yaml", "name": "Two scalar docs with trailing comments"}
+{"id": "suite/L94M/text", "type": "yaml-typed", "text": "? !!str a\n: !!int 47\n? c\n: !!str d\n", "name": "Tags in Explicit Mapping"}
+{"id": "suite/L94M/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/L94M/in.yaml", "name": "Tags in Explicit Mapping"}
+{"id": "suite/L9U5/text", "type": "yaml-typed", "text": "implicit block key : [\n  implicit flow key : value,\n ]\n", "name": "Spec Example 7.11. Plain Implicit Keys"}
+{"id": "suite/L9U5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/L9U5/in.yaml", "name": "Spec Example 7.11. Plain Implicit Keys"}
+{"id": "suite/LE5A/text", "type": "yaml-typed", "text": "- !!str \"a\"\n- 'b'\n- &anchor \"c\"\n- *anchor\n- !!str\n", "name": "Spec Example 7.24. Flow Nodes"}
+{"id": "suite/LE5A/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/LE5A/in.yaml", "name": "Spec Example 7.24. Flow Nodes"}
+{"id": "suite/LHL4/text", "type": "yaml-typed", "text": "---\n!invalid{}tag scalar\n", "name": "Invalid tag"}
+{"id": "suite/LHL4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/LHL4/in.yaml", "name": "Invalid tag"}
+{"id": "suite/LP6E/text", "type": "yaml-typed", "text": "- [a, b , c ]\n- { \"a\"  : b\n   , c : 'd' ,\n   e   : \"f\"\n  }\n- [      ]\n", "name": "Whitespace After Scalars in Flow"}
+{"id": "suite/LP6E/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/LP6E/in.yaml", "name": "Whitespace After Scalars in Flow"}
+{"id": "suite/LQZ7/text", "type": "yaml-typed", "text": "\"implicit block key\" : [\n  \"implicit flow key\" : value,\n ]\n", "name": "Spec Example 7.4. Double Quoted Implicit Keys"}
+{"id": "suite/LQZ7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/LQZ7/in.yaml", "name": "Spec Example 7.4. Double Quoted Implicit Keys"}
+{"id": "suite/LX3P/text", "type": "yaml-typed", "text": "[flow]: block\n", "name": "Implicit Flow Mapping Key on one line"}
+{"id": "suite/LX3P/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/LX3P/in.yaml", "name": "Implicit Flow Mapping Key on one line"}
+{"id": "suite/M29M/text", "type": "yaml-typed", "text": "a: |\n ab\n \n cd\n ef\n \n\n...\n", "name": "Literal Block Scalar"}
+{"id": "suite/M29M/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M29M/in.yaml", "name": "Literal Block Scalar"}
+{"id": "suite/M2N8/00/text", "type": "yaml-typed", "text": "- ? : x\n", "name": "Question mark edge cases"}
+{"id": "suite/M2N8/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M2N8/00/in.yaml", "name": "Question mark edge cases"}
+{"id": "suite/M2N8/01/text", "type": "yaml-typed", "text": "? []: x\n", "name": "Question mark edge cases"}
+{"id": "suite/M2N8/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M2N8/01/in.yaml", "name": "Question mark edge cases"}
+{"id": "suite/M5C3/text", "type": "yaml-typed", "text": "literal: |2\n  value\nfolded:\n   !foo\n  >1\n value\n", "name": "Spec Example 8.21. Block Scalar Nodes"}
+{"id": "suite/M5C3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M5C3/in.yaml", "name": "Spec Example 8.21. Block Scalar Nodes"}
+{"id": "suite/M5DY/text", "type": "yaml-typed", "text": "? - Detroit Tigers\n  - Chicago cubs\n:\n  - 2001-07-23\n\n? [ New York Yankees,\n    Atlanta Braves ]\n: [ 2001-07-02, 2001-08-12,\n    2001-08-14 ]\n", "name": "Spec Example 2.11. Mapping between Sequences"}
+{"id": "suite/M5DY/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M5DY/in.yaml", "name": "Spec Example 2.11. Mapping between Sequences"}
+{"id": "suite/M6YH/text", "type": "yaml-typed", "text": "- |\n x\n-\n foo: bar\n-\n - 42\n", "name": "Block sequence indentation"}
+{"id": "suite/M6YH/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M6YH/in.yaml", "name": "Block sequence indentation"}
+{"id": "suite/M7A3/text", "type": "yaml-typed", "text": "Bare\ndocument\n...\n# No document\n...\n|\n%!PS-Adobe-2.0 # Not the first line\n", "name": "Spec Example 9.3. Bare Documents"}
+{"id": "suite/M7A3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M7A3/in.yaml", "name": "Spec Example 9.3. Bare Documents"}
+{"id": "suite/M7NX/text", "type": "yaml-typed", "text": "---\n{\n a: [\n  b, c, {\n   d: [e, f]\n  }\n ]\n}\n", "name": "Nested flow collections"}
+{"id": "suite/M7NX/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M7NX/in.yaml", "name": "Nested flow collections"}
+{"id": "suite/M9B4/text", "type": "yaml-typed", "text": "|\n literal\n \ttext\n\n\n", "name": "Spec Example 8.7. Literal Scalar"}
+{"id": "suite/M9B4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/M9B4/in.yaml", "name": "Spec Example 8.7. Literal Scalar"}
+{"id": "suite/MJS9/text", "type": "yaml-typed", "text": ">\n  foo \n \n  \t bar\n\n  baz\n", "name": "Spec Example 6.7. Block Folding"}
+{"id": "suite/MJS9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MJS9/in.yaml", "name": "Spec Example 6.7. Block Folding"}
+{"id": "suite/MUS6/00/text", "type": "yaml-typed", "text": "%YAML 1.1#...\n---\n", "name": "Directive variants"}
+{"id": "suite/MUS6/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MUS6/00/in.yaml", "name": "Directive variants"}
+{"id": "suite/MUS6/01/text", "type": "yaml-typed", "text": "%YAML 1.2\n---\n%YAML 1.2\n---\n", "name": "Directive variants"}
+{"id": "suite/MUS6/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MUS6/01/in.yaml", "name": "Directive variants"}
+{"id": "suite/MUS6/02/text", "type": "yaml-typed", "text": "%YAML  1.1\n---\n", "name": "Directive variants"}
+{"id": "suite/MUS6/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MUS6/02/in.yaml", "name": "Directive variants"}
+{"id": "suite/MUS6/03/text", "type": "yaml-typed", "text": "%YAML \t 1.1\n---\n", "name": "Directive variants"}
+{"id": "suite/MUS6/03/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MUS6/03/in.yaml", "name": "Directive variants"}
+{"id": "suite/MUS6/04/text", "type": "yaml-typed", "text": "%YAML 1.1  # comment\n---\n", "name": "Directive variants"}
+{"id": "suite/MUS6/04/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MUS6/04/in.yaml", "name": "Directive variants"}
+{"id": "suite/MUS6/05/text", "type": "yaml-typed", "text": "%YAM 1.1\n---\n", "name": "Directive variants"}
+{"id": "suite/MUS6/05/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MUS6/05/in.yaml", "name": "Directive variants"}
+{"id": "suite/MUS6/06/text", "type": "yaml-typed", "text": "%YAMLL 1.1\n---\n", "name": "Directive variants"}
+{"id": "suite/MUS6/06/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MUS6/06/in.yaml", "name": "Directive variants"}
+{"id": "suite/MXS3/text", "type": "yaml-typed", "text": "- {a: b}\n", "name": "Flow Mapping in Block Sequence"}
+{"id": "suite/MXS3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MXS3/in.yaml", "name": "Flow Mapping in Block Sequence"}
+{"id": "suite/MYW6/text", "type": "yaml-typed", "text": "|-\n ab\n \n \n...\n", "name": "Block Scalar Strip"}
+{"id": "suite/MYW6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MYW6/in.yaml", "name": "Block Scalar Strip"}
+{"id": "suite/MZX3/text", "type": "yaml-typed", "text": "- plain\n- \"double quoted\"\n- 'single quoted'\n- >\n  block\n- plain again\n", "name": "Non-Specific Tags on Scalars"}
+{"id": "suite/MZX3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/MZX3/in.yaml", "name": "Non-Specific Tags on Scalars"}
+{"id": "suite/N4JP/text", "type": "yaml-typed", "text": "map:\n  key1: \"quoted1\"\n key2: \"bad indentation\"\n", "name": "Bad indentation in mapping"}
+{"id": "suite/N4JP/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/N4JP/in.yaml", "name": "Bad indentation in mapping"}
+{"id": "suite/N782/text", "type": "yaml-typed", "text": "[\n--- ,\n...\n]\n", "name": "Invalid document markers in flow style"}
+{"id": "suite/N782/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/N782/in.yaml", "name": "Invalid document markers in flow style"}
+{"id": "suite/NAT4/text", "type": "yaml-typed", "text": "---\na: '\n  '\nb: '  \n  '\nc: \"\n  \"\nd: \"  \n  \"\ne: '\n\n  '\nf: \"\n\n  \"\ng: '\n\n\n  '\nh: \"\n\n\n  \"\n", "name": "Various empty or newline only quoted strings"}
+{"id": "suite/NAT4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/NAT4/in.yaml", "name": "Various empty or newline only quoted strings"}
+{"id": "suite/NB6Z/text", "type": "yaml-typed", "text": "key:\n  value\n  with\n  \t\n  tabs\n", "name": "Multiline plain value with tabs on empty lines"}
+{"id": "suite/NB6Z/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/NB6Z/in.yaml", "name": "Multiline plain value with tabs on empty lines"}
+{"id": "suite/NHX8/text", "type": "yaml-typed", "text": ":\n\n\n", "name": "Empty Lines at End of Document"}
+{"id": "suite/NHX8/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/NHX8/in.yaml", "name": "Empty Lines at End of Document"}
+{"id": "suite/NJ66/text", "type": "yaml-typed", "text": "---\n- { single line: value}\n- { multi\n  line: value}\n", "name": "Multiline plain flow mapping key"}
+{"id": "suite/NJ66/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/NJ66/in.yaml", "name": "Multiline plain flow mapping key"}
+{"id": "suite/NKF9/text", "type": "yaml-typed", "text": "---\nkey: value\n: empty key\n---\n{\n key: value, : empty key\n}\n---\n# empty key and value\n:\n---\n# empty key and value\n{ : }\n", "name": "Empty keys in block and flow mapping"}
+{"id": "suite/NKF9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/NKF9/in.yaml", "name": "Empty keys in block and flow mapping"}
+{"id": "suite/NP9H/text", "type": "yaml-typed", "text": "\"folded \nto a space,\t\n \nto a line feed, or \t\\\n \\ \tnon-content\"\n", "name": "Spec Example 7.5. Double Quoted Line Breaks"}
+{"id": "suite/NP9H/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/NP9H/in.yaml", "name": "Spec Example 7.5. Double Quoted Line Breaks"}
+{"id": "suite/P2AD/text", "type": "yaml-typed", "text": "- | # Empty header\u2193\n literal\n- >1 # Indentation indicator\u2193\n  folded\n- |+ # Chomping indicator\u2193\n keep\n\n- >1- # Both indicators\u2193\n  strip\n", "name": "Spec Example 8.1. Block Scalar Header"}
+{"id": "suite/P2AD/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/P2AD/in.yaml", "name": "Spec Example 8.1. Block Scalar Header"}
+{"id": "suite/P2EQ/text", "type": "yaml-typed", "text": "---\n- { y: z }- invalid\n", "name": "Invalid sequene item on same line as previous item"}
+{"id": "suite/P2EQ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/P2EQ/in.yaml", "name": "Invalid sequene item on same line as previous item"}
+{"id": "suite/P76L/text", "type": "yaml-typed", "text": "%TAG !! tag:example.com,2000:app/\n---\n!!int 1 - 3 # Interval, not integer\n", "name": "Spec Example 6.19. Secondary Tag Handle"}
+{"id": "suite/P76L/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/P76L/in.yaml", "name": "Spec Example 6.19. Secondary Tag Handle"}
+{"id": "suite/P94K/text", "type": "yaml-typed", "text": "key:    # Comment\n        # lines\n  value\n\n\n", "name": "Spec Example 6.11. Multi-Line Comments"}
+{"id": "suite/P94K/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/P94K/in.yaml", "name": "Spec Example 6.11. Multi-Line Comments"}
+{"id": "suite/PBJ2/text", "type": "yaml-typed", "text": "american:\n  - Boston Red Sox\n  - Detroit Tigers\n  - New York Yankees\nnational:\n  - New York Mets\n  - Chicago Cubs\n  - Atlanta Braves\n", "name": "Spec Example 2.3. Mapping Scalars to Sequences"}
+{"id": "suite/PBJ2/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/PBJ2/in.yaml", "name": "Spec Example 2.3. Mapping Scalars to Sequences"}
+{"id": "suite/PRH3/text", "type": "yaml-typed", "text": "' 1st non-empty\n\n 2nd non-empty \n\t3rd non-empty '\n", "name": "Spec Example 7.9. Single Quoted Lines"}
+{"id": "suite/PRH3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/PRH3/in.yaml", "name": "Spec Example 7.9. Single Quoted Lines"}
+{"id": "suite/PUW8/text", "type": "yaml-typed", "text": "---\na: b\n---\n", "name": "Document start on last line"}
+{"id": "suite/PUW8/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/PUW8/in.yaml", "name": "Document start on last line"}
+{"id": "suite/PW8X/text", "type": "yaml-typed", "text": "- &a\n- a\n-\n  &a : a\n  b: &b\n-\n  &c : &a\n-\n  ? &d\n-\n  ? &e\n  : &a\n", "name": "Anchors on Empty Scalars"}
+{"id": "suite/PW8X/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/PW8X/in.yaml", "name": "Anchors on Empty Scalars"}
+{"id": "suite/Q4CL/text", "type": "yaml-typed", "text": "key1: \"quoted1\"\nkey2: \"quoted2\" trailing content\nkey3: \"quoted3\"\n", "name": "Trailing content after quoted value"}
+{"id": "suite/Q4CL/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Q4CL/in.yaml", "name": "Trailing content after quoted value"}
+{"id": "suite/Q5MG/text", "type": "yaml-typed", "text": "\t{}\n", "name": "Tab at beginning of line followed by a flow mapping"}
+{"id": "suite/Q5MG/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Q5MG/in.yaml", "name": "Tab at beginning of line followed by a flow mapping"}
+{"id": "suite/Q88A/text", "type": "yaml-typed", "text": "- [ a, b ]\n- { a: b }\n- \"a\"\n- 'b'\n- c\n", "name": "Spec Example 7.23. Flow Content"}
+{"id": "suite/Q88A/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Q88A/in.yaml", "name": "Spec Example 7.23. Flow Content"}
+{"id": "suite/Q8AD/text", "type": "yaml-typed", "text": "---\n\"folded \nto a space,\n \nto a line feed, or \t\\\n \\ \tnon-content\"\n", "name": "Spec Example 7.5. Double Quoted Line Breaks [1.3]"}
+{"id": "suite/Q8AD/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Q8AD/in.yaml", "name": "Spec Example 7.5. Double Quoted Line Breaks [1.3]"}
+{"id": "suite/Q9WF/text", "type": "yaml-typed", "text": "{ first: Sammy, last: Sosa }:\n# Statistics:\n  hr:  # Home runs\n     65\n  avg: # Average\n   0.278\n", "name": "Spec Example 6.12. Separation Spaces"}
+{"id": "suite/Q9WF/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Q9WF/in.yaml", "name": "Spec Example 6.12. Separation Spaces"}
+{"id": "suite/QB6E/text", "type": "yaml-typed", "text": "---\nquoted: \"a\nb\nc\"\n", "name": "Wrong indented multiline quoted scalar"}
+{"id": "suite/QB6E/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/QB6E/in.yaml", "name": "Wrong indented multiline quoted scalar"}
+{"id": "suite/QF4Y/text", "type": "yaml-typed", "text": "[\nfoo: bar\n]\n", "name": "Spec Example 7.19. Single Pair Flow Mappings"}
+{"id": "suite/QF4Y/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/QF4Y/in.yaml", "name": "Spec Example 7.19. Single Pair Flow Mappings"}
+{"id": "suite/QLJ7/text", "type": "yaml-typed", "text": "%TAG !prefix! tag:example.com,2011:\n--- !prefix!A\na: b\n--- !prefix!B\nc: d\n--- !prefix!C\ne: f\n", "name": "Tag shorthand used in documents but only defined in the first"}
+{"id": "suite/QLJ7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/QLJ7/in.yaml", "name": "Tag shorthand used in documents but only defined in the first"}
+{"id": "suite/QT73/text", "type": "yaml-typed", "text": "# comment\n...\n", "name": "Comment and document-end marker"}
+{"id": "suite/QT73/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/QT73/in.yaml", "name": "Comment and document-end marker"}
+{"id": "suite/R4YG/text", "type": "yaml-typed", "text": "- |\n detected\n- >\n \n  \n  # detected\n- |1\n  explicit\n- >\n \t\n detected\n", "name": "Spec Example 8.2. Block Indentation Indicator"}
+{"id": "suite/R4YG/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/R4YG/in.yaml", "name": "Spec Example 8.2. Block Indentation Indicator"}
+{"id": "suite/R52L/text", "type": "yaml-typed", "text": "---\n{ top1: [item1, {key2: value2}, item3], top2: value2 }\n", "name": "Nested flow mapping sequence and mappings"}
+{"id": "suite/R52L/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/R52L/in.yaml", "name": "Nested flow mapping sequence and mappings"}
+{"id": "suite/RHX7/text", "type": "yaml-typed", "text": "---\nkey: value\n%YAML 1.2\n---\n", "name": "YAML directive without document end marker"}
+{"id": "suite/RHX7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/RHX7/in.yaml", "name": "YAML directive without document end marker"}
+{"id": "suite/RLU9/text", "type": "yaml-typed", "text": "foo:\n- 42\nbar:\n  - 44\n", "name": "Sequence Indent"}
+{"id": "suite/RLU9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/RLU9/in.yaml", "name": "Sequence Indent"}
+{"id": "suite/RR7F/text", "type": "yaml-typed", "text": "a: 4.2\n? d\n: 23\n", "name": "Mixed Block Mapping (implicit to explicit)"}
+{"id": "suite/RR7F/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/RR7F/in.yaml", "name": "Mixed Block Mapping (implicit to explicit)"}
+{"id": "suite/RTP8/text", "type": "yaml-typed", "text": "%YAML 1.2\n---\nDocument\n... # Suffix\n", "name": "Spec Example 9.2. Document Markers"}
+{"id": "suite/RTP8/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/RTP8/in.yaml", "name": "Spec Example 9.2. Document Markers"}
+{"id": "suite/RXY3/text", "type": "yaml-typed", "text": "---\n'\n...\n'\n", "name": "Invalid document-end marker in single quoted string"}
+{"id": "suite/RXY3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/RXY3/in.yaml", "name": "Invalid document-end marker in single quoted string"}
+{"id": "suite/RZP5/text", "type": "yaml-typed", "text": "a: \"double\n  quotes\" # lala\nb: plain\n value  # lala\nc  : #lala\n  d\n? # lala\n - seq1\n: # lala\n - #lala\n  seq2\ne: &node # lala\n - x: y\nblock: > # lala\n  abcde\n", "name": "Various Trailing Comments [1.3]"}
+{"id": "suite/RZP5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/RZP5/in.yaml", "name": "Various Trailing Comments [1.3]"}
+{"id": "suite/RZT7/text", "type": "yaml-typed", "text": "---\nTime: 2001-11-23 15:01:42 -5\nUser: ed\nWarning:\n  This is an error message\n  for the log file\n---\nTime: 2001-11-23 15:02:31 -5\nUser: ed\nWarning:\n  A slightly different error\n  message.\n---\nDate: 2001-11-23 15:03:17 -5\nUser: ed\nFatal:\n  Unknown variable \"bar\"\nStack:\n  - file: TopClass.py\n    line: 23\n    code: |\n      x = MoreObject(\"345\\n\")\n  - file: MoreClass.py\n    line: 58\n    code: |-\n      foo = bar\n", "name": "Spec Example 2.28. Log File"}
+{"id": "suite/RZT7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/RZT7/in.yaml", "name": "Spec Example 2.28. Log File"}
+{"id": "suite/S3PD/text", "type": "yaml-typed", "text": "plain key: in-line value\n: # Both empty\n\"quoted key\":\n- entry\n", "name": "Spec Example 8.18. Implicit Block Mapping Entries"}
+{"id": "suite/S3PD/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/S3PD/in.yaml", "name": "Spec Example 8.18. Implicit Block Mapping Entries"}
+{"id": "suite/S4GJ/text", "type": "yaml-typed", "text": "---\nfolded: > first line\n  second line\n", "name": "Invalid text after block scalar indicator"}
+{"id": "suite/S4GJ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/S4GJ/in.yaml", "name": "Invalid text after block scalar indicator"}
+{"id": "suite/S4JQ/text", "type": "yaml-typed", "text": "# Assuming conventional resolution:\n- \"12\"\n- 12\n- ! 12\n", "name": "Spec Example 6.28. Non-Specific Tags"}
+{"id": "suite/S4JQ/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/S4JQ/in.yaml", "name": "Spec Example 6.28. Non-Specific Tags"}
+{"id": "suite/S4T7/text", "type": "yaml-typed", "text": "aaa: bbb\n...\n", "name": "Document with footer"}
+{"id": "suite/S4T7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/S4T7/in.yaml", "name": "Document with footer"}
+{"id": "suite/S7BG/text", "type": "yaml-typed", "text": "---\n- :,\n", "name": "Colon followed by comma"}
+{"id": "suite/S7BG/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/S7BG/in.yaml", "name": "Colon followed by comma"}
+{"id": "suite/S98Z/text", "type": "yaml-typed", "text": "empty block scalar: >\n \n  \n   \n # comment\n", "name": "Block scalar with more spaces than first content line"}
+{"id": "suite/S98Z/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/S98Z/in.yaml", "name": "Block scalar with more spaces than first content line"}
+{"id": "suite/S9E8/text", "type": "yaml-typed", "text": "sequence:\n- one\n- two\nmapping:\n  ? sky\n  : blue\n  sea : green\n", "name": "Spec Example 5.3. Block Structure Indicators"}
+{"id": "suite/S9E8/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/S9E8/in.yaml", "name": "Spec Example 5.3. Block Structure Indicators"}
+{"id": "suite/SBG9/text", "type": "yaml-typed", "text": "{a: [b, c], [d, e]: f}\n", "name": "Flow Sequence in Flow Mapping"}
+{"id": "suite/SBG9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SBG9/in.yaml", "name": "Flow Sequence in Flow Mapping"}
+{"id": "suite/SF5V/text", "type": "yaml-typed", "text": "%YAML 1.2\n%YAML 1.2\n---\n", "name": "Duplicate YAML directive"}
+{"id": "suite/SF5V/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SF5V/in.yaml", "name": "Duplicate YAML directive"}
+{"id": "suite/SKE5/text", "type": "yaml-typed", "text": "---\nseq:\n &anchor\n- a\n- b\n", "name": "Anchor before zero indented sequence"}
+{"id": "suite/SKE5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SKE5/in.yaml", "name": "Anchor before zero indented sequence"}
+{"id": "suite/SM9W/00/text", "type": "yaml-typed", "text": "-", "name": "Single character streams"}
+{"id": "suite/SM9W/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SM9W/00/in.yaml", "name": "Single character streams"}
+{"id": "suite/SM9W/01/text", "type": "yaml-typed", "text": ":", "name": "Single character streams"}
+{"id": "suite/SM9W/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SM9W/01/in.yaml", "name": "Single character streams"}
+{"id": "suite/SR86/text", "type": "yaml-typed", "text": "key1: &a value\nkey2: &b *a\n", "name": "Anchor plus Alias"}
+{"id": "suite/SR86/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SR86/in.yaml", "name": "Anchor plus Alias"}
+{"id": "suite/SSW6/text", "type": "yaml-typed", "text": "---\n'here''s to \"quotes\"'\n", "name": "Spec Example 7.7. Single Quoted Characters [1.3]"}
+{"id": "suite/SSW6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SSW6/in.yaml", "name": "Spec Example 7.7. Single Quoted Characters [1.3]"}
+{"id": "suite/SU5Z/text", "type": "yaml-typed", "text": "key: \"value\"# invalid comment\n", "name": "Comment without whitespace after doublequoted scalar"}
+{"id": "suite/SU5Z/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SU5Z/in.yaml", "name": "Comment without whitespace after doublequoted scalar"}
+{"id": "suite/SU74/text", "type": "yaml-typed", "text": "key1: &alias value1\n&b *alias : value2\n", "name": "Anchor and alias as mapping key"}
+{"id": "suite/SU74/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SU74/in.yaml", "name": "Anchor and alias as mapping key"}
+{"id": "suite/SY6V/text", "type": "yaml-typed", "text": "&anchor - sequence entry\n", "name": "Anchor before sequence entry on same line"}
+{"id": "suite/SY6V/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SY6V/in.yaml", "name": "Anchor before sequence entry on same line"}
+{"id": "suite/SYW4/text", "type": "yaml-typed", "text": "hr:  65    # Home runs\navg: 0.278 # Batting average\nrbi: 147   # Runs Batted In\n", "name": "Spec Example 2.2. Mapping Scalars to Scalars"}
+{"id": "suite/SYW4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/SYW4/in.yaml", "name": "Spec Example 2.2. Mapping Scalars to Scalars"}
+{"id": "suite/T26H/text", "type": "yaml-typed", "text": "--- |\n \n  \n  literal\n   \n  \n  text\n\n # Comment\n", "name": "Spec Example 8.8. Literal Content [1.3]"}
+{"id": "suite/T26H/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/T26H/in.yaml", "name": "Spec Example 8.8. Literal Content [1.3]"}
+{"id": "suite/T4YY/text", "type": "yaml-typed", "text": "---\n' 1st non-empty\n\n 2nd non-empty \n 3rd non-empty '\n", "name": "Spec Example 7.9. Single Quoted Lines [1.3]"}
+{"id": "suite/T4YY/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/T4YY/in.yaml", "name": "Spec Example 7.9. Single Quoted Lines [1.3]"}
+{"id": "suite/T5N4/text", "type": "yaml-typed", "text": "--- |\n literal\n \ttext\n\n\n", "name": "Spec Example 8.7. Literal Scalar [1.3]"}
+{"id": "suite/T5N4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/T5N4/in.yaml", "name": "Spec Example 8.7. Literal Scalar [1.3]"}
+{"id": "suite/T833/text", "type": "yaml-typed", "text": "---\n{\n foo: 1\n bar: 2 }\n", "name": "Flow mapping missing a separating comma"}
+{"id": "suite/T833/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/T833/in.yaml", "name": "Flow mapping missing a separating comma"}
+{"id": "suite/TD5N/text", "type": "yaml-typed", "text": "- item1\n- item2\ninvalid\n", "name": "Invalid scalar after sequence"}
+{"id": "suite/TD5N/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/TD5N/in.yaml", "name": "Invalid scalar after sequence"}
+{"id": "suite/TE2A/text", "type": "yaml-typed", "text": "block mapping:\n key: value\n", "name": "Spec Example 8.16. Block Mappings"}
+{"id": "suite/TE2A/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/TE2A/in.yaml", "name": "Spec Example 8.16. Block Mappings"}
+{"id": "suite/TL85/text", "type": "yaml-typed", "text": "\"\n  foo \n \n  \t bar\n\n  baz\n\"\n", "name": "Spec Example 6.8. Flow Folding"}
+{"id": "suite/TL85/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/TL85/in.yaml", "name": "Spec Example 6.8. Flow Folding"}
+{"id": "suite/TS54/text", "type": "yaml-typed", "text": ">\n ab\n cd\n \n ef\n\n\n gh\n", "name": "Folded Block Scalar"}
+{"id": "suite/TS54/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/TS54/in.yaml", "name": "Folded Block Scalar"}
+{"id": "suite/U3C3/text", "type": "yaml-typed", "text": "%TAG !yaml! tag:yaml.org,2002:\n---\n!yaml!str \"foo\"\n", "name": "Spec Example 6.16. \u201cTAG\u201d directive"}
+{"id": "suite/U3C3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/U3C3/in.yaml", "name": "Spec Example 6.16. \u201cTAG\u201d directive"}
+{"id": "suite/U3XV/text", "type": "yaml-typed", "text": "---\ntop1: &node1\n  &k1 key1: one\ntop2: &node2 # comment\n  key2: two\ntop3:\n  &k3 key3: three\ntop4:\n  &node4\n  &k4 key4: four\ntop5:\n  &node5\n  key5: five\ntop6: &val6\n  six\ntop7:\n  &val7 seven\n", "name": "Node and Mapping Key Anchors"}
+{"id": "suite/U3XV/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/U3XV/in.yaml", "name": "Node and Mapping Key Anchors"}
+{"id": "suite/U44R/text", "type": "yaml-typed", "text": "map:\n  key1: \"quoted1\"\n   key2: \"bad indentation\"\n", "name": "Bad indentation in mapping (2)"}
+{"id": "suite/U44R/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/U44R/in.yaml", "name": "Bad indentation in mapping (2)"}
+{"id": "suite/U99R/text", "type": "yaml-typed", "text": "- !!str, xxx\n", "name": "Invalid comma in tag"}
+{"id": "suite/U99R/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/U99R/in.yaml", "name": "Invalid comma in tag"}
+{"id": "suite/U9NS/text", "type": "yaml-typed", "text": "---\ntime: 20:03:20\nplayer: Sammy Sosa\naction: strike (miss)\n...\n---\ntime: 20:03:47\nplayer: Sammy Sosa\naction: grand slam\n...\n", "name": "Spec Example 2.8. Play by Play Feed from a Game"}
+{"id": "suite/U9NS/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/U9NS/in.yaml", "name": "Spec Example 2.8. Play by Play Feed from a Game"}
+{"id": "suite/UDM2/text", "type": "yaml-typed", "text": "- { url: http://example.org }\n", "name": "Plain URL in flow mapping"}
+{"id": "suite/UDM2/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/UDM2/in.yaml", "name": "Plain URL in flow mapping"}
+{"id": "suite/UDR7/text", "type": "yaml-typed", "text": "sequence: [ one, two, ]\nmapping: { sky: blue, sea: green }\n", "name": "Spec Example 5.4. Flow Collection Indicators"}
+{"id": "suite/UDR7/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/UDR7/in.yaml", "name": "Spec Example 5.4. Flow Collection Indicators"}
+{"id": "suite/UGM3/text", "type": "yaml-typed", "text": "--- !<tag:clarkevans.com,2002:invoice>\ninvoice: 34843\ndate   : 2001-01-23\nbill-to: &id001\n    given  : Chris\n    family : Dumars\n    address:\n        lines: |\n            458 Walkman Dr.\n            Suite #292\n        city    : Royal Oak\n        state   : MI\n        postal  : 48046\nship-to: *id001\nproduct:\n    - sku         : BL394D\n      quantity    : 4\n      description : Basketball\n      price       : 450.00\n    - sku         : BL4438H\n      quantity    : 1\n      description : Super Hoop\n      price       : 2392.00\ntax  : 251.42\ntotal: 4443.52\ncomments:\n    Late afternoon is best.\n    Backup contact is Nancy\n    Billsmer @ 338-4338.\n", "name": "Spec Example 2.27. Invoice"}
+{"id": "suite/UGM3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/UGM3/in.yaml", "name": "Spec Example 2.27. Invoice"}
+{"id": "suite/UKK6/00/text", "type": "yaml-typed", "text": "- :\n", "name": "Syntax character edge cases"}
+{"id": "suite/UKK6/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/UKK6/00/in.yaml", "name": "Syntax character edge cases"}
+{"id": "suite/UKK6/01/text", "type": "yaml-typed", "text": "::\n", "name": "Syntax character edge cases"}
+{"id": "suite/UKK6/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/UKK6/01/in.yaml", "name": "Syntax character edge cases"}
+{"id": "suite/UKK6/02/text", "type": "yaml-typed", "text": "!\n", "name": "Syntax character edge cases"}
+{"id": "suite/UKK6/02/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/UKK6/02/in.yaml", "name": "Syntax character edge cases"}
+{"id": "suite/UT92/text", "type": "yaml-typed", "text": "---\n{ matches\n% : 20 }\n...\n---\n# Empty\n...\n", "name": "Spec Example 9.4. Explicit Documents"}
+{"id": "suite/UT92/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/UT92/in.yaml", "name": "Spec Example 9.4. Explicit Documents"}
+{"id": "suite/UV7Q/text", "type": "yaml-typed", "text": "x:\n - x\n  \tx\n", "name": "Legal tab after indentation"}
+{"id": "suite/UV7Q/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/UV7Q/in.yaml", "name": "Legal tab after indentation"}
+{"id": "suite/V55R/text", "type": "yaml-typed", "text": "- &a a\n- &b b\n- *a\n- *b\n", "name": "Aliases in Block Sequence"}
+{"id": "suite/V55R/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/V55R/in.yaml", "name": "Aliases in Block Sequence"}
+{"id": "suite/V9D5/text", "type": "yaml-typed", "text": "- sun: yellow\n- ? earth: blue\n  : moon: white\n", "name": "Spec Example 8.19. Compact Block Mappings"}
+{"id": "suite/V9D5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/V9D5/in.yaml", "name": "Spec Example 8.19. Compact Block Mappings"}
+{"id": "suite/VJP3/00/text", "type": "yaml-typed", "text": "k: {\nk\n:\nv\n}\n", "name": "Flow collections over many lines"}
+{"id": "suite/VJP3/00/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/VJP3/00/in.yaml", "name": "Flow collections over many lines"}
+{"id": "suite/VJP3/01/text", "type": "yaml-typed", "text": "k: {\n k\n :\n v\n }\n", "name": "Flow collections over many lines"}
+{"id": "suite/VJP3/01/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/VJP3/01/in.yaml", "name": "Flow collections over many lines"}
+{"id": "suite/W42U/text", "type": "yaml-typed", "text": "- # Empty\n- |\n block node\n- - one # Compact\n  - two # sequence\n- one: two # Compact mapping\n", "name": "Spec Example 8.15. Block Sequence Entry Types"}
+{"id": "suite/W42U/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/W42U/in.yaml", "name": "Spec Example 8.15. Block Sequence Entry Types"}
+{"id": "suite/W4TN/text", "type": "yaml-typed", "text": "%YAML 1.2\n--- |\n%!PS-Adobe-2.0\n...\n%YAML 1.2\n---\n# Empty\n...\n", "name": "Spec Example 9.5. Directives Documents"}
+{"id": "suite/W4TN/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/W4TN/in.yaml", "name": "Spec Example 9.5. Directives Documents"}
+{"id": "suite/W5VH/text", "type": "yaml-typed", "text": "a: &:@*!$\"<foo>: scalar a\nb: *:@*!$\"<foo>:\n", "name": "Allowed characters in alias"}
+{"id": "suite/W5VH/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/W5VH/in.yaml", "name": "Allowed characters in alias"}
+{"id": "suite/W9L4/text", "type": "yaml-typed", "text": "---\nblock scalar: |\n     \n  more spaces at the beginning\n  are invalid\n", "name": "Literal block scalar with more spaces in first line"}
+{"id": "suite/W9L4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/W9L4/in.yaml", "name": "Literal block scalar with more spaces in first line"}
+{"id": "suite/WZ62/text", "type": "yaml-typed", "text": "{\n  foo : !!str,\n  !!str : bar,\n}\n", "name": "Spec Example 7.2. Empty Content"}
+{"id": "suite/WZ62/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/WZ62/in.yaml", "name": "Spec Example 7.2. Empty Content"}
+{"id": "suite/X38W/text", "type": "yaml-typed", "text": "{ &a [a, &b b]: *b, *a : [c, *b, d]}\n", "name": "Aliases in Flow Objects"}
+{"id": "suite/X38W/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/X38W/in.yaml", "name": "Aliases in Flow Objects"}
+{"id": "suite/X4QW/text", "type": "yaml-typed", "text": "block: ># comment\n  scalar\n", "name": "Comment without whitespace after block scalar indicator"}
+{"id": "suite/X4QW/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/X4QW/in.yaml", "name": "Comment without whitespace after block scalar indicator"}
+{"id": "suite/X8DW/text", "type": "yaml-typed", "text": "---\n? key\n# comment\n: value\n", "name": "Explicit key and value seperated by comment"}
+{"id": "suite/X8DW/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/X8DW/in.yaml", "name": "Explicit key and value seperated by comment"}
+{"id": "suite/XLQ9/text", "type": "yaml-typed", "text": "---\nscalar\n%YAML 1.2\n", "name": "Multiline scalar that looks like a YAML directive"}
+{"id": "suite/XLQ9/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/XLQ9/in.yaml", "name": "Multiline scalar that looks like a YAML directive"}
+{"id": "suite/XV9V/text", "type": "yaml-typed", "text": "Folding:\n  \"Empty line\n\n  as a line feed\"\nChomping: |\n  Clipped empty lines\n \n\n", "name": "Spec Example 6.5. Empty Lines [1.3]"}
+{"id": "suite/XV9V/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/XV9V/in.yaml", "name": "Spec Example 6.5. Empty Lines [1.3]"}
+{"id": "suite/XW4D/text", "type": "yaml-typed", "text": "a: \"double\n  quotes\" # lala\nb: plain\n value  # lala\nc  : #lala\n  d\n? # lala\n - seq1\n: # lala\n - #lala\n  seq2\ne:\n &node # lala\n - x: y\nblock: > # lala\n  abcde\n", "name": "Various Trailing Comments"}
+{"id": "suite/XW4D/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/XW4D/in.yaml", "name": "Various Trailing Comments"}
+{"id": "suite/Y2GN/text", "type": "yaml-typed", "text": "---\nkey: &an:chor value\n", "name": "Anchor with colon in the middle"}
+{"id": "suite/Y2GN/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y2GN/in.yaml", "name": "Anchor with colon in the middle"}
+{"id": "suite/Y79Y/000/text", "type": "yaml-typed", "text": "foo: |\n\t\nbar: 1\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/000/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/000/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/001/text", "type": "yaml-typed", "text": "foo: |\n \t\nbar: 1\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/001/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/001/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/002/text", "type": "yaml-typed", "text": "- [\n\t\n foo\n ]\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/002/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/002/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/003/text", "type": "yaml-typed", "text": "- [\n\tfoo,\n foo\n ]\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/003/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/003/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/004/text", "type": "yaml-typed", "text": "-\t-\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/004/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/004/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/005/text", "type": "yaml-typed", "text": "- \t-\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/005/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/005/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/006/text", "type": "yaml-typed", "text": "?\t-\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/006/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/006/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/007/text", "type": "yaml-typed", "text": "? -\n:\t-\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/007/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/007/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/008/text", "type": "yaml-typed", "text": "?\tkey:\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/008/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/008/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/009/text", "type": "yaml-typed", "text": "? key:\n:\tkey:\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/009/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/009/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/010/text", "type": "yaml-typed", "text": "-\t-1\n", "name": "Tabs in various contexts"}
+{"id": "suite/Y79Y/010/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Y79Y/010/in.yaml", "name": "Tabs in various contexts"}
+{"id": "suite/YD5X/text", "type": "yaml-typed", "text": "- [name        , hr, avg  ]\n- [Mark McGwire, 65, 0.278]\n- [Sammy Sosa  , 63, 0.288]\n", "name": "Spec Example 2.5. Sequence of Sequences"}
+{"id": "suite/YD5X/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/YD5X/in.yaml", "name": "Spec Example 2.5. Sequence of Sequences"}
+{"id": "suite/YJV2/text", "type": "yaml-typed", "text": "[-]\n", "name": "Dash in flow sequence"}
+{"id": "suite/YJV2/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/YJV2/in.yaml", "name": "Dash in flow sequence"}
+{"id": "suite/Z67P/text", "type": "yaml-typed", "text": "literal: |2\n  value\nfolded: !foo >1\n value\n", "name": "Spec Example 8.21. Block Scalar Nodes [1.3]"}
+{"id": "suite/Z67P/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Z67P/in.yaml", "name": "Spec Example 8.21. Block Scalar Nodes [1.3]"}
+{"id": "suite/Z9M4/text", "type": "yaml-typed", "text": "%TAG !e! tag:example.com,2000:app/\n---\n- !e!foo \"bar\"\n", "name": "Spec Example 6.22. Global Tag Prefix"}
+{"id": "suite/Z9M4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/Z9M4/in.yaml", "name": "Spec Example 6.22. Global Tag Prefix"}
+{"id": "suite/ZCZ6/text", "type": "yaml-typed", "text": "a: b: c: d\n", "name": "Invalid mapping in plain single line value"}
+{"id": "suite/ZCZ6/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/ZCZ6/in.yaml", "name": "Invalid mapping in plain single line value"}
+{"id": "suite/ZF4X/text", "type": "yaml-typed", "text": "Mark McGwire: {hr: 65, avg: 0.278}\nSammy Sosa: {\n    hr: 63,\n    avg: 0.288\n  }\n", "name": "Spec Example 2.6. Mapping of Mappings"}
+{"id": "suite/ZF4X/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/ZF4X/in.yaml", "name": "Spec Example 2.6. Mapping of Mappings"}
+{"id": "suite/ZH7C/text", "type": "yaml-typed", "text": "&a a: b\nc: &d d\n", "name": "Anchors in Mapping"}
+{"id": "suite/ZH7C/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/ZH7C/in.yaml", "name": "Anchors in Mapping"}
+{"id": "suite/ZK9H/text", "type": "yaml-typed", "text": "{ key: [[[\n  value\n ]]]\n}\n", "name": "Nested top level flow mapping"}
+{"id": "suite/ZK9H/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/ZK9H/in.yaml", "name": "Nested top level flow mapping"}
+{"id": "suite/ZL4Z/text", "type": "yaml-typed", "text": "---\na: 'b': c\n", "name": "Invalid nested mapping"}
+{"id": "suite/ZL4Z/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/ZL4Z/in.yaml", "name": "Invalid nested mapping"}
+{"id": "suite/ZVH3/text", "type": "yaml-typed", "text": "- key: value\n - item1\n", "name": "Wrong indented sequence item"}
+{"id": "suite/ZVH3/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/ZVH3/in.yaml", "name": "Wrong indented sequence item"}
+{"id": "suite/ZWK4/text", "type": "yaml-typed", "text": "---\na: 1\n? b\n&anchor c: 3\n", "name": "Key with anchor after missing explicit mapping value"}
+{"id": "suite/ZWK4/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/ZWK4/in.yaml", "name": "Key with anchor after missing explicit mapping value"}
+{"id": "suite/ZXT5/text", "type": "yaml-typed", "text": "[ \"key\"\n  :value ]\n", "name": "Implicit key followed by newline and adjacent value"}
+{"id": "suite/ZXT5/file", "type": "yaml-typed-file", "path": "/w/third_party/yaml-test-suite/ZXT5/in.yaml", "name": "Implicit key followed by newline and adjacent value"}

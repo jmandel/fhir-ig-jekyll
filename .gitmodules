@@ -1,0 +1,44 @@
+[submodule "third_party/liquid"]
+	path = third_party/liquid
+	url = https://github.com/Shopify/liquid.git
+	shallow = true
+[submodule "third_party/kramdown"]
+	path = third_party/kramdown
+	url = https://github.com/gettalong/kramdown.git
+	shallow = true
+[submodule "third_party/kramdown-parser-gfm"]
+	path = third_party/kramdown-parser-gfm
+	url = https://github.com/kramdown/parser-gfm.git
+	shallow = true
+[submodule "third_party/jekyll"]
+	path = third_party/jekyll
+	url = https://github.com/jekyll/jekyll.git
+	shallow = true
+[submodule "third_party/rouge"]
+	path = third_party/rouge
+	url = https://github.com/rouge-ruby/rouge.git
+	shallow = true
+[submodule "third_party/safe_yaml"]
+	path = third_party/safe_yaml
+	url = https://github.com/dtao/safe_yaml.git
+	shallow = true
+[submodule "third_party/libyaml"]
+	path = third_party/libyaml
+	url = https://github.com/yaml/libyaml.git
+	shallow = true
+[submodule "third_party/psych"]
+	path = third_party/psych
+	url = https://github.com/ruby/psych.git
+	shallow = true
+[submodule "third_party/date"]
+	path = third_party/date
+	url = https://github.com/ruby/date.git
+	shallow = true
+[submodule "third_party/addressable"]
+	path = third_party/addressable
+	url = https://github.com/sporkmonger/addressable.git
+	shallow = true
+[submodule "third_party/yaml-test-suite"]
+	path = third_party/yaml-test-suite
+	url = https://github.com/yaml/yaml-test-suite.git
+	shallow = true

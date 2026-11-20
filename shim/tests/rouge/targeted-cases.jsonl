@@ -1,0 +1,175 @@
+{"id": "t/label/json", "type": "rouge", "lang": "json", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/JSON", "type": "rouge", "lang": "JSON", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/Json", "type": "rouge", "lang": "Json", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/jsonc", "type": "rouge", "lang": "jsonc", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/json-doc", "type": "rouge", "lang": "json-doc", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/json5", "type": "rouge", "lang": "json5", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/xml", "type": "rouge", "lang": "xml", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/XML", "type": "rouge", "lang": "XML", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/html", "type": "rouge", "lang": "html", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/xhtml", "type": "rouge", "lang": "xhtml", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/css", "type": "rouge", "lang": "css", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/js", "type": "rouge", "lang": "js", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/javascript", "type": "rouge", "lang": "javascript", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/ts", "type": "rouge", "lang": "ts", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/typescript", "type": "rouge", "lang": "typescript", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/http", "type": "rouge", "lang": "http", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/HTTP", "type": "rouge", "lang": "HTTP", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/shell", "type": "rouge", "lang": "shell", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/bash", "type": "rouge", "lang": "bash", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/sh", "type": "rouge", "lang": "sh", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/zsh", "type": "rouge", "lang": "zsh", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/ksh", "type": "rouge", "lang": "ksh", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/console", "type": "rouge", "lang": "console", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/batchfile", "type": "rouge", "lang": "batchfile", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/bat", "type": "rouge", "lang": "bat", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/batch", "type": "rouge", "lang": "batch", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/cmd", "type": "rouge", "lang": "cmd", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/sql", "type": "rouge", "lang": "sql", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/python", "type": "rouge", "lang": "python", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/py", "type": "rouge", "lang": "py", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/java", "type": "rouge", "lang": "java", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/yaml", "type": "rouge", "lang": "yaml", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/yml", "type": "rouge", "lang": "yml", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/markdown", "type": "rouge", "lang": "markdown", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/md", "type": "rouge", "lang": "md", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/mkd", "type": "rouge", "lang": "mkd", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/diff", "type": "rouge", "lang": "diff", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/patch", "type": "rouge", "lang": "patch", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/udiff", "type": "rouge", "lang": "udiff", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/sparql", "type": "rouge", "lang": "sparql", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/turtle", "type": "rouge", "lang": "turtle", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/ttl", "type": "rouge", "lang": "ttl", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/properties", "type": "rouge", "lang": "properties", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/actionscript", "type": "rouge", "lang": "actionscript", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/as", "type": "rouge", "lang": "as", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/as3", "type": "rouge", "lang": "as3", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/plaintext", "type": "rouge", "lang": "plaintext", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/text", "type": "rouge", "lang": "text", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/txt", "type": "rouge", "lang": "txt", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/mermaid", "type": "rouge", "lang": "mermaid", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/cql", "type": "rouge", "lang": "cql", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/fhirpath", "type": "rouge", "lang": "fhirpath", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/fsh", "type": "rouge", "lang": "fsh", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/none", "type": "rouge", "lang": "none", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/", "type": "rouge", "lang": "", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/c#", "type": "rouge", "lang": "c#", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/c++", "type": "rouge", "lang": "c++", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/rs,ignore", "type": "rouge", "lang": "rs,ignore", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/shell-session", "type": "rouge", "lang": "shell-session", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/json ", "type": "rouge", "lang": "json ", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/ json", "type": "rouge", "lang": " json", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/jsonp", "type": "rouge", "lang": "jsonp", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/label/application/json", "type": "rouge", "lang": "application/json", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/json?foo=bar", "type": "rouge", "lang": "json?foo=bar", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/json?", "type": "rouge", "lang": "json?", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/?", "type": "rouge", "lang": "?", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/json?a=1&a=2", "type": "rouge", "lang": "json?a=1&a=2", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/plaintext?token=Name.Tag", "type": "rouge", "lang": "plaintext?token=Name.Tag", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/plaintext?token=Bogus", "type": "rouge", "lang": "plaintext?token=Bogus", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/text?token=Comment.Single", "type": "rouge", "lang": "text?token=Comment.Single", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/http?content=json", "type": "rouge", "lang": "http?content=json", "text": "GET /x HTTP/1.1\nContent-Type: text/plain\n\n{\"a\": 1}\n", "formatter": "html"}
+{"id": "t/opt/http?content=xml", "type": "rouge", "lang": "http?content=xml", "text": "GET /x HTTP/1.1\nContent-Type: text/plain\n\n{\"a\": 1}\n", "formatter": "html"}
+{"id": "t/opt/http?content=nope", "type": "rouge", "lang": "http?content=nope", "text": "GET /x HTTP/1.1\nContent-Type: text/plain\n\n{\"a\": 1}\n", "formatter": "html"}
+{"id": "t/opt/guess?mimetype=application/json", "type": "rouge", "lang": "guess?mimetype=application/json", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/guess?mimetype=text/html", "type": "rouge", "lang": "guess?mimetype=text/html", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/guess?mimetype=nope/x", "type": "rouge", "lang": "guess?mimetype=nope/x", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/unknown?x=1", "type": "rouge", "lang": "unknown?x=1", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/json?x=%41%2", "type": "rouge", "lang": "json?x=%41%2", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/json?x=+y", "type": "rouge", "lang": "json?x=+y", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/opt/markdown?token=x", "type": "rouge", "lang": "markdown?token=x", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/guess/json", "type": "rouge", "lang": "guess", "text": "{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/guess/empty", "type": "rouge", "lang": "guess", "text": "", "formatter": "html"}
+{"id": "t/guess/bash-shebang", "type": "rouge", "lang": "guess", "text": "#!/bin/bash\necho hi\n", "formatter": "html"}
+{"id": "t/guess/env-python", "type": "rouge", "lang": "guess", "text": "#!/usr/bin/env python3\nprint(1)\n", "formatter": "html"}
+{"id": "t/guess/node", "type": "rouge", "lang": "guess", "text": "#!/usr/bin/env node\nconsole.log(1)\n", "formatter": "html"}
+{"id": "t/guess/xml-decl", "type": "rouge", "lang": "guess", "text": "<?xml version=\"1.0\"?>\n<a/>\n", "formatter": "html"}
+{"id": "t/guess/html-doctype", "type": "rouge", "lang": "guess", "text": "<!DOCTYPE html>\n<html></html>\n", "formatter": "html"}
+{"id": "t/guess/xml-doctype", "type": "rouge", "lang": "guess", "text": "<!DOCTYPE note SYSTEM \"x.dtd\">\n<note/>\n", "formatter": "html"}
+{"id": "t/guess/html-tag", "type": "rouge", "lang": "guess", "text": "<html><body>x</body></html>\n", "formatter": "html"}
+{"id": "t/guess/yaml", "type": "rouge", "lang": "guess", "text": "%YAML 1.2\n---\na: 1\n", "formatter": "html"}
+{"id": "t/guess/diff", "type": "rouge", "lang": "guess", "text": "diff --git a/x b/x\n--- a/x\n+++ b/x\n@@ -1 +1 @@\n-a\n+b\n", "formatter": "html"}
+{"id": "t/guess/index", "type": "rouge", "lang": "guess", "text": "Index: foo\n", "formatter": "html"}
+{"id": "t/guess/ruby", "type": "rouge", "lang": "guess", "text": "#!/usr/bin/ruby\nputs 1\n", "formatter": "html"}
+{"id": "t/guess/php", "type": "rouge", "lang": "guess", "text": "<?php echo 1; ?>\n", "formatter": "html"}
+{"id": "t/guess/emacs", "type": "rouge", "lang": "guess", "text": "# -*- mode: python -*-\nx = 1\n", "formatter": "html"}
+{"id": "t/guess/vim", "type": "rouge", "lang": "guess", "text": "# vim: ft=yaml\na: 1\n", "formatter": "html"}
+{"id": "t/guess/vim2", "type": "rouge", "lang": "guess", "text": "// vim: set ft=javascript :\nvar a;\n", "formatter": "html"}
+{"id": "t/guess/modeline-unknown", "type": "rouge", "lang": "guess", "text": "# vim: ft=nosuch\nx\n", "formatter": "html"}
+{"id": "t/guess/tex", "type": "rouge", "lang": "guess", "text": "\\documentclass{article}\n", "formatter": "html"}
+{"id": "t/guess/ps", "type": "rouge", "lang": "guess", "text": "%!PS\n", "formatter": "html"}
+{"id": "t/guess/racket", "type": "rouge", "lang": "guess", "text": "#lang racket\n(define x 1)\n", "formatter": "html"}
+{"id": "t/guess/compdef", "type": "rouge", "lang": "guess", "text": "#compdef foo\n", "formatter": "html"}
+{"id": "t/guess/perl", "type": "rouge", "lang": "guess", "text": "#!/usr/bin/perl\nprint 1;\n", "formatter": "html"}
+{"id": "t/guess/hack", "type": "rouge", "lang": "guess", "text": "<?hh\necho 1;\n", "formatter": "html"}
+{"id": "t/guess/bom-xml", "type": "rouge", "lang": "guess", "text": "﻿<?xml version=\"1.0\"?><a/>", "formatter": "html"}
+{"id": "t/guess/crlf", "type": "rouge", "lang": "guess", "text": "#!/bin/sh\r\necho\r\n", "formatter": "html"}
+{"id": "t/guess/ambig", "type": "rouge", "lang": "guess", "text": "#!/usr/bin/env python\n<?xml version=\"1.0\"?>\n", "formatter": "html"}
+{"id": "t/guess/xml-and-diff", "type": "rouge", "lang": "guess", "text": "<?xml version=\"1.0\"?>\n--- a\n+++ b\n", "formatter": "html"}
+{"id": "t/guess/groovy", "type": "rouge", "lang": "guess", "text": "#!/usr/bin/env groovy\nprintln 1\n", "formatter": "html"}
+{"id": "t/guess/lua", "type": "rouge", "lang": "guess", "text": "#!/usr/bin/lua\nprint(1)\n", "formatter": "html"}
+{"id": "t/http/application/json", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: application/json\n\n{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/http-resp/application/json", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: application/json\r\n\r\n{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/http/application/fhir+json", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: application/fhir+json\n\n{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/http-resp/application/fhir+json", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: application/fhir+json\r\n\r\n{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/http/application/json; charset=utf-8", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: application/json; charset=utf-8\n\n{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/http-resp/application/json; charset=utf-8", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: application/json; charset=utf-8\r\n\r\n{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/http/APPLICATION/JSON", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: APPLICATION/JSON\n\n{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/http-resp/APPLICATION/JSON", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: APPLICATION/JSON\r\n\r\n{\"a\": [1, true, null, \"x\\\"y\"]}\n", "formatter": "html"}
+{"id": "t/http/text/xml", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: text/xml\n\n<a b=\"1\">x</a>\n", "formatter": "html"}
+{"id": "t/http-resp/text/xml", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: text/xml\r\n\r\n<a b=\"1\">x</a>\n", "formatter": "html"}
+{"id": "t/http/application/xml", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: application/xml\n\n<a/>", "formatter": "html"}
+{"id": "t/http-resp/application/xml", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: application/xml\r\n\r\n<a/>", "formatter": "html"}
+{"id": "t/http/application/fhir+xml", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: application/fhir+xml\n\n<a/>", "formatter": "html"}
+{"id": "t/http-resp/application/fhir+xml", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: application/fhir+xml\r\n\r\n<a/>", "formatter": "html"}
+{"id": "t/http/text/html", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: text/html\n\n<p>hi</p>", "formatter": "html"}
+{"id": "t/http-resp/text/html", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: text/html\r\n\r\n<p>hi</p>", "formatter": "html"}
+{"id": "t/http/text/plain", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: text/plain\n\nplain", "formatter": "html"}
+{"id": "t/http-resp/text/plain", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: text/plain\r\n\r\nplain", "formatter": "html"}
+{"id": "t/http/application/x-www-form-urlencoded", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: application/x-www-form-urlencoded\n\na=1&b=2", "formatter": "html"}
+{"id": "t/http-resp/application/x-www-form-urlencoded", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\na=1&b=2", "formatter": "html"}
+{"id": "t/http/text/css", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: text/css\n\na{b:c}", "formatter": "html"}
+{"id": "t/http-resp/text/css", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: text/css\r\n\r\na{b:c}", "formatter": "html"}
+{"id": "t/http/application/javascript", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: application/javascript\n\nvar a=1;", "formatter": "html"}
+{"id": "t/http-resp/application/javascript", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: application/javascript\r\n\r\nvar a=1;", "formatter": "html"}
+{"id": "t/http/text/x-yaml", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: text/x-yaml\n\na: 1\n", "formatter": "html"}
+{"id": "t/http-resp/text/x-yaml", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: text/x-yaml\r\n\r\na: 1\n", "formatter": "html"}
+{"id": "t/http/application/x-sh", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: application/x-sh\n\necho $x", "formatter": "html"}
+{"id": "t/http-resp/application/x-sh", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: application/x-sh\r\n\r\necho $x", "formatter": "html"}
+{"id": "t/http/;", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: ;\n\nx", "formatter": "html"}
+{"id": "t/http-resp/;", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: ;\r\n\r\nx", "formatter": "html"}
+{"id": "t/http/", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: \n\nx", "formatter": "html"}
+{"id": "t/http-resp/", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: \r\n\r\nx", "formatter": "html"}
+{"id": "t/http/text/x-python", "type": "rouge", "lang": "http", "text": "POST /Patient HTTP/1.1\nHost: x\nContent-Type: text/x-python\n\ndef f(): pass", "formatter": "html"}
+{"id": "t/http-resp/text/x-python", "type": "rouge", "lang": "http", "text": "HTTP/1.1 201 Created\r\nContent-Type: text/x-python\r\n\r\ndef f(): pass", "formatter": "html"}
+{"id": "t/http/two-ct", "type": "rouge", "lang": "http", "text": "GET / HTTP/1.1\nContent-Type: text/html\ncontent-type : application/json\n\n{\"a\":1}", "formatter": "html"}
+{"id": "t/http/no-body", "type": "rouge", "lang": "http", "text": "GET /a HTTP/1.1\nAccept: application/json\n", "formatter": "html"}
+{"id": "t/http/garbage", "type": "rouge", "lang": "http", "text": "not http at all\n{\"a\": 1}", "formatter": "html"}
+{"id": "t/md-fence/json", "type": "rouge", "lang": "markdown", "text": "# T\n\n```json\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/xml", "type": "rouge", "lang": "markdown", "text": "# T\n\n```xml\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/yaml", "type": "rouge", "lang": "markdown", "text": "# T\n\n```yaml\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/bash", "type": "rouge", "lang": "markdown", "text": "# T\n\n```bash\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/http", "type": "rouge", "lang": "markdown", "text": "# T\n\n```http\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/none", "type": "rouge", "lang": "markdown", "text": "# T\n\n```\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/guess", "type": "rouge", "lang": "markdown", "text": "# T\n\n```guess\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/nosuch", "type": "rouge", "lang": "markdown", "text": "# T\n\n```nosuch\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/ruby", "type": "rouge", "lang": "markdown", "text": "# T\n\n```ruby\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/json?x=1", "type": "rouge", "lang": "markdown", "text": "# T\n\n```json?x=1\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md-fence/python", "type": "rouge", "lang": "markdown", "text": "# T\n\n```python\n{\"a\": 1}\n<b>x</b>\necho $HOME\n```\n\ntext *em* and `code` <i>html</i> &amp;\n", "formatter": "html"}
+{"id": "t/md/unclosed", "type": "rouge", "lang": "markdown", "text": "```json\n{\"a\": 1}\nmore\n", "formatter": "html"}
+{"id": "t/md/tilde", "type": "rouge", "lang": "markdown", "text": "~~~ yaml\na: 1\n~~~\n", "formatter": "html"}
+{"id": "t/md/frontmatter", "type": "rouge", "lang": "markdown", "text": "---\ntitle: x\n---\n# H\n", "formatter": "html"}
+{"id": "t/fmt/empty/html", "type": "rouge", "lang": "json", "text": "", "formatter": "html"}
+{"id": "t/fmt/nl/html", "type": "rouge", "lang": "json", "text": "\n", "formatter": "html"}
+{"id": "t/fmt/nonl/html", "type": "rouge", "lang": "json", "text": "{\"a\":1}", "formatter": "html"}
+{"id": "t/fmt/amp/html", "type": "rouge", "lang": "xml", "text": "<a>&amp; & < > \" '</a>", "formatter": "html"}
+{"id": "t/fmt/empty/html_legacy", "type": "rouge", "lang": "json", "text": "", "formatter": "html_legacy"}
+{"id": "t/fmt/nl/html_legacy", "type": "rouge", "lang": "json", "text": "\n", "formatter": "html_legacy"}
+{"id": "t/fmt/nonl/html_legacy", "type": "rouge", "lang": "json", "text": "{\"a\":1}", "formatter": "html_legacy"}
+{"id": "t/fmt/amp/html_legacy", "type": "rouge", "lang": "xml", "text": "<a>&amp; & < > \" '</a>", "formatter": "html_legacy"}
+{"id": "t/fmt/empty/html_table", "type": "rouge", "lang": "json", "text": "", "formatter": "html_table"}
+{"id": "t/fmt/nl/html_table", "type": "rouge", "lang": "json", "text": "\n", "formatter": "html_table"}
+{"id": "t/fmt/nonl/html_table", "type": "rouge", "lang": "json", "text": "{\"a\":1}", "formatter": "html_table"}
+{"id": "t/fmt/amp/html_table", "type": "rouge", "lang": "xml", "text": "<a>&amp; & < > \" '</a>", "formatter": "html_table"}
+{"id": "t/fmt/mark", "type": "rouge", "lang": "json", "text": "{\n\"a\": 1,\n\"b\": 2\n}\n", "formatter": "html", "mark_lines": [2, 4, 9]}
+{"id": "t/fmt/mark-table", "type": "rouge", "lang": "json", "text": "{\n\"a\": 1,\n\"b\": 2\n}", "formatter": "html_table", "mark_lines": [1]}

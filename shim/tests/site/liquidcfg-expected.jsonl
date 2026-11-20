@@ -1,0 +1,5 @@
+{"id":"cfg-strict-mode-error","error":"Liquid::SyntaxError: Liquid syntax error (line 1): Expected end_of_string but found id in \"{{ a | append: \",\"s }}\""}
+{"id":"cfg-lax-mode","output":"x,"}
+{"id":"cfg-strict-filters","error":"Liquid::UndefinedFilter: Liquid error (line 1): undefined filter nosuchfilter"}
+{"id":"cfg-strict-variables","error":"Liquid::UndefinedVariable: Liquid error (line 1): undefined variable missing"}
+{"id":"cfg-default","output":"[]x"}

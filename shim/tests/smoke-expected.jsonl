@@ -1,0 +1,4 @@
+{"id":"l1","output":"HI[1][2]"}
+{"id":"l2","warnings":["Liquid syntax error (line 1): Expected end_of_string but found id in \"{{x | append: \",\"s | append: y}}\""],"output":" q |A,B"}
+{"id":"l3","error":"Liquid::SyntaxError: Liquid syntax error (line 1): Tag '{%' was not properly terminated with regexp: /\\%\\}/"}
+{"id":"k1","output":"<h1 id=\"hello-world\">Hello \"world\"</h1>\n\n<ul>\n  <li>a</li>\n  <li>b</li>\n</ul>\n\n<div class=\"language-json highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"p\">{</span><span class=\"nl\">\"a\"</span><span class=\"p\">:</span><span class=\"mi\">1</span><span class=\"p\">}</span><span class=\"w\">\n</span></code></pre></div></div>\n"}

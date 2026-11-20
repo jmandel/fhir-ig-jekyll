@@ -1,0 +1,56 @@
+# Integrating the shim into the IG Publisher
+
+Status and evidence are in `../docs/TRACKER.md` (P3.7, P1.11, P6). This note is for publisher maintainers.
+
+## 1. Drop-in today (no publisher changes)
+The publisher already lets you replace the Jekyll command:
+
+    java -jar publisher.jar -ig . -jekyll /path/to/jekyll-shim
+
+`jekyll-shim` runs `java -XX:MaxRAMPercentage=75 -jar shim.jar "$@"` (no -Xss/-Xmx needed: the build runs on its own large-stack thread and the heap grows as needed). The publisher calls it exactly as it calls Jekyll
+(`<cmd> build --destination <output>` with cwd = `temp/pages`), and the shim prints Jekyll's console
+lines, including `done in N seconds.`, which `PublisherGenerator#passJekyllFilter` keys on.
+Errors print `Liquid Exception: …` and exit 1, like Jekyll.
+
+Tunables (environment): `SHIM_RENDER_THREADS` (default = CPUs), `SHIM_IO_THREADS` (default 2×CPUs,
+4–32), `SHIM_TIMING=1` (per-phase timings on stderr).
+
+## 2. In-process (recommended next step)
+Running the shim as a library inside the publisher's JVM removes the JVM startup and lets the publisher
+skip the temp/pages → output disk round trip later. Minimal change in `PublisherGenerator#runJekyll`:
+
+```java
+if (settings.isInProcessJekyll()) {          // new flag, e.g. -jekyll-in-process
+  org.hl7.fhir.jekyll.site.Site site = new org.hl7.fhir.jekyll.site.Site(Path.of(pf.tempDir), Path.of(pf.outputDir));
+  PageRenderer r = new org.hl7.fhir.jekyll.site.JekyllRenderer();
+  site.read(); r.prepare(site); Main.renderAll(site, r); site.write();   // RenderException = Jekyll failure
+  return true;
+}
+```
+(Wrap it in a small public `Shim.build(source, dest, log)` API before upstreaming; today these are
+package-level entry points used by `Main`.) The shim has no dependencies beyond the JDK, so it can be
+vendored as a module (`org.hl7.fhir.jekyll.{liquid,kramdown,site,util}`) or shipped as a jar.
+
+## 3. Rollout plan
+1. **Shadow mode (autobuilder):** build with Jekyll as today and also run the shim into a side
+   directory; normalized-DOM diff (`scripts/domdiff.py` rules, TRACKER D1/D7); report diffs; ship Jekyll's
+   output. Exit criterion: zero diffs on all builds over N weeks.
+2. **Opt-in:** `-jekyll-in-process` (or `ig.ini` `jekyll = shim`) for IG authors.
+3. **Default with fallback:** shim by default; on a shim error, log it and rerun real Jekyll if present.
+4. **Remove Ruby** from the autobuilder image (and from author setup instructions).
+
+## 4. Compatibility contract
+- Target: Jekyll 4.4.1 / Liquid 4.0.4 / kramdown 2.5.2 + kramdown-parser-gfm 1.1.0, as configured by
+  the publisher's templates (TRACKER D9). Upstream's image moved to kramdown 2.6.1 on 2026-11-19; the
+  real corpus renders identically under both (P0.11); the small delta is P4.8.
+- Equivalence: normalized-DOM equality (D1). Rouge token `<span>`s in highlighted code are not
+  reproduced (D7); wrapper markup and `language-*` classes are.
+- Liquid error mode `warn` (strict, then lax fallback with the same warning text), unknown filters
+  silently ignored, `render!` semantics: all as Jekyll does (D4).
+- Not supported (unused by IGs): Jekyll plugins, layouts, collections/posts, Sass, `smartify`,
+  `sassify`/`scssify`, pagination, incremental builds, `--watch`.
+
+## 5. Performance (same machine, same load, Lima VM, output to local disk)
+US Core: Jekyll 75.6s → shim 21.7s. ITI.MHD: 10.6s → 3.5s. Rendering itself is ~3s on US Core; the rest
+is file I/O. Pathological kramdown inputs (long paragraphs with unmatched emphasis) that take tens of
+seconds in Ruby take milliseconds in the shim, with identical output (P0.12, P4.9).

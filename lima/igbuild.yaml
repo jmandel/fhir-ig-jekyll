@@ -1,0 +1,105 @@
+# Lima VM "igbuild": big Ubuntu + rootful Docker Engine for parallel FHIR IG Publisher builds.
+# Derived from Lima's docker-rootful template, self-contained so nothing else from $HOME is mounted.
+# Create/start:  limactl start --name=igbuild ~/fhir-ig-jekyll/lima/igbuild.yaml
+# See lima/README.md.
+minimumLimaVersion: 2.0.0
+
+base:
+- template:_images/ubuntu-24.04
+
+vmType: vz
+cpus: 16
+memory: 96GiB
+disk: 300GiB
+
+mountType: virtiofs
+mounts:
+# Same absolute path inside the VM, so scripts' $ROOT-derived bind mounts work unchanged.
+- location: ~/fhir-ig-jekyll
+  mountPoint: ~/fhir-ig-jekyll
+  writable: true
+
+# Optional: trust a TLS-inspecting proxy's roo CA in the guest OS store (cloud-init ca_certs,
+# runs before any provisioning), so apt, curl, get.docker.com and dockerd registry pulls work.
+caCerts:
+  files:
+  - ~/fhir-ig-jekyll/docker/extra-ca/proxy-root.pem
+
+containerd:
+  system: false
+  user: false
+
+provision:
+- mode: system
+  script: |
+    #!/bin/sh
+    sed -i 's/host.lima.internal.*/host.lima.internal host.docker.internal/' /etc/hosts
+- mode: system
+  script: |
+    #!/bin/bash
+    set -eux -o pipefail
+    # belt and braces: make sure the CA is in the OS bundle even if cloud-init skipped it
+    if ! grep -q extra-ca /etc/ca-certificates.conf 2>/dev/null && [ ! -e /usr/local/share/ca-certificates/extra-ca.crt ]; then
+      cp ~/fhir-ig-jekyll/docker/extra-ca/proxy-root.pem /usr/local/share/ca-certificates/extra-ca.crt
+      update-ca-certificates
+    fi
+    command -v docker >/dev/null 2>&1 && exit 0
+    export DEBIAN_FRONTEND=noninteractive
+    curl -fsSL https://get.docker.com | sh
+- mode: system
+  # virtiofs on vz keeps one HOST fd open per guest-cached inode. With 96GiB RAM the guest never
+  # evicts them, so parallel builds exhaust the Mac's kern.maxfiles (ENFILE "Too many open files
+  # in system" -- which also hits Docker Desktop and every other host process). Evict unused
+  # dentries/inodes every 10s so the host fds are released.
+  script: |
+    #!/bin/bash
+    set -eu
+    cat > /etc/systemd/system/drop-inode-cache.service <<'U'
+    [Unit]
+    Description=Evict unused dentries/inodes so virtiofs releases host file descriptors
+    [Service]
+    Type=oneshot
+    ExecStart=/bin/sh -c 'echo 2 > /proc/sys/vm/drop_caches'
+    U
+    cat > /etc/systemd/system/drop-inode-cache.timer <<'U'
+    [Unit]
+    Description=Run drop-inode-cache every 10s
+    [Timer]
+    OnBootSec=30s
+    OnUnitActiveSec=10s
+    AccuracySec=1s
+    [Install]
+    WantedBy=timers.target
+    U
+    systemctl daemon-reload
+    systemctl enable --now drop-inode-cache.timer
+- mode: yq
+  path: /etc/systemd/system/docker.socket.d/override.conf
+  format: ini
+  expression: .Socket.SocketUser="{{.User}}"
+- mode: yq
+  path: "/etc/docker/daemon.json"
+  expression: |
+    .features.containerd-snapshotter = true
+
+probes:
+- script: |
+    #!/bin/bash
+    set -eux -o pipefail
+    if ! timeout 30s bash -c "until command -v docker >/dev/null 2>&1; do sleep 3; done"; then
+      echo >&2 "docker is not installed yet"
+      exit 1
+    fi
+    if ! timeout 30s bash -c "until pgrep dockerd; do sleep 3; done"; then
+      echo >&2 "dockerd is not running"
+      exit 1
+    fi
+  hint: See "/var/log/cloud-init-output.log" in the guest
+
+hostResolver:
+  hosts:
+    host.docker.internal: host.lima.internal
+
+portForwards:
+- guestSocket: "/var/run/docker.sock"
+  hostSocket: "{{.Dir}}/sock/docker.sock"

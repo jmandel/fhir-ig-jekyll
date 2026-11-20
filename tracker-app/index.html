@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Tracker</title>
+<style>
+:root {
+  --bg: #f7f7f5; --panel: #ffffff; --fg: #1d1d1f; --muted: #6b6b70; --border: #e2e2e0;
+  --code-bg: #f0f0ee;
+  --todo: #9a9aa0; --prog: #c77700; --prog-bg: #fff4e0; --done: #2e7d32; --drop: #8a8a8a; --unk: #b3261e;
+  --bar-bg: #e8e8e6; --warn-bg: #fff8e1; --warn-fg: #6d4c00; --err-bg: #fdecea; --err-fg: #8a1c14;
+  --link: #1a5fb4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161618; --panel: #1f1f22; --fg: #e8e8ea; --muted: #9a9aa2; --border: #303034;
+    --code-bg: #2a2a2e;
+    --todo: #7c7c84; --prog: #f0a531; --prog-bg: #3a2c12; --done: #66bb6a; --drop: #6f6f75; --unk: #ef6b5f;
+    --bar-bg: #2c2c30; --warn-bg: #2e2810; --warn-fg: #e9cf7a; --err-bg: #3a1714; --err-fg: #f3a69e;
+    --link: #8ab4f8;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); }
+body { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 10px; }
+a { color: var(--link); }
+code { font: 12px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; overflow-wrap: anywhere; }
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
+.muted { color: var(--muted); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid > .panel { margin-bottom: 0; }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+
+/* header */
+.head { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.pct { font-size: 34px; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1; }
+.counts { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.meta { font-size: 12px; color: var(--muted); text-align: right; }
+.meta .stale { color: var(--prog); font-weight: 600; }
+.meta .verystale { color: var(--unk); font-weight: 600; }
+.bigbar { margin-top: 12px; }
+
+/* bars */
+.bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; background: var(--bar-bg); }
+.bar span { display: block; height: 100%; }
+.bar .s-done { background: var(--done); } .bar .s-in_progress { background: var(--prog); }
+.bar .s-dropped { background: var(--drop); opacity: .5; } .bar .s-unknown { background: var(--unk); }
+
+/* phases */
+details.phase { border-top: 1px solid var(--border); }
+details.phase:first-of-type { border-top: 0; }
+details.phase > summary { list-style: none; cursor: pointer; padding: 9px 0; display: grid; grid-template-columns: minmax(0,1fr) 160px 70px; gap: 12px; align-items: center; }
+details.phase > summary::-webkit-details-marker { display: none; }
+details.phase > summary .ttl::before { content: "\25B8"; display: inline-block; width: 14px; color: var(--muted); transition: transform .1s; }
+details.phase[open] > summary .ttl::before { transform: rotate(90deg); }
+.ttl { font-weight: 600; overflow-wrap: anywhere; }
+.ttl .pid { color: var(--muted); font-weight: 500; margin-right: 4px; }
+.frac { text-align: right; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) {
+  details.phase > summary { grid-template-columns: minmax(0,1fr) 60px; }
+  details.phase > summary .bar { grid-column: 1 / -1; order: 3; }
+}
+ul.tasks { list-style: none; margin: 0 0 10px; padding: 0 0 0 14px; }
+ul.tasks li { display: grid; grid-template-columns: 18px 42px minmax(0,1fr); gap: 4px; padding: 3px 6px; border-radius: 5px; }
+ul.tasks li .tid { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; padding-top: 1px; }
+ul.tasks li.st-done .txt { color: var(--muted); }
+ul.tasks li.st-dropped .txt { color: var(--muted); text-decoration: line-through; }
+ul.tasks li.st-in_progress { background: var(--prog-bg); box-shadow: inset 3px 0 0 var(--prog); }
+ul.tasks li.st-in_progress .txt { font-weight: 550; }
+ul.tasks li .sub { grid-column: 3; font-size: 12px; color: var(--muted); margin: 2px 0 0; padding-left: 14px; }
+
+.ico { display: inline-block; width: 14px; height: 14px; border-radius: 50%; flex: none; margin-top: 2px; position: relative; }
+.ico.s-todo { border: 1.5px solid var(--todo); }
+.ico.s-in_progress { border: 1.5px solid var(--prog); background: linear-gradient(90deg, var(--prog) 50%, transparent 50%); }
+.ico.s-done { background: var(--done); }
+.ico.s-done::after { content: ""; position: absolute; left: 4.5px; top: 2px; width: 3px; height: 6px; border: solid var(--panel); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.ico.s-dropped { border: 1.5px solid var(--drop); }
+.ico.s-dropped::after { content: ""; position: absolute; left: 2px; right: 2px; top: 5px; height: 1.5px; background: var(--drop); }
+.ico.s-unknown { border: 1.5px dashed var(--unk); }
+
+/* lists */
+.item { padding: 6px 0; border-top: 1px solid var(--border); overflow-wrap: anywhere; }
+.item:first-of-type { border-top: 0; padding-top: 0; }
+.item .k { font-weight: 600; color: var(--muted); margin-right: 6px; font-variant-numeric: tabular-nums; }
+.item .date { font-size: 12px; color: var(--muted); }
+.run .what { font-weight: 600; }
+.run dl { display: grid; grid-template-columns: 70px minmax(0,1fr); gap: 2px 8px; margin: 6px 0 0; font-size: 13px; }
+.run dt { color: var(--muted); }
+.run dd { margin: 0; }
+.run .status { color: var(--prog); font-weight: 600; }
+.empty { color: var(--muted); font-style: italic; }
+.notes .date { display: inline-block; min-width: 82px; }
+.intro { font-size: 12px; color: var(--muted); margin: -4px 0 8px; }
+.acc { display: block; font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 14px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 0 6px; border-radius: 9px; border: 1px solid var(--border); color: var(--muted); margin-left: 4px; vertical-align: 1px; }
+.plogs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 12px; }
+.plog h3 { font-size: 13px; margin: 0 0 4px; display: flex; justify-content: space-between; gap: 8px; }
+.plog h3 .muted { font-weight: 400; font-size: 12px; white-space: nowrap; }
+.plog ol { list-style: none; margin: 0; padding: 0; }
+.plog li { display: grid; grid-template-columns: 74px minmax(0,1fr); gap: 6px; padding: 3px 0; font-size: 13px; overflow-wrap: anywhere; }
+.plog li:not(:first-child) { color: var(--muted); }
+.pst { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; padding-top: 2px; }
+.pst.started { color: var(--link); } .pst.milestone { color: var(--done); } .pst.blocked { color: var(--unk); }
+.pst.done { color: var(--done); } .pst.unknown { color: var(--muted); }
+.plog .when { font-size: 11px; font-weight: 400; color: var(--muted); display: block; text-transform: none; }
+
+/* warnings / errors */
+.warns { font-size: 12px; background: var(--warn-bg); color: var(--warn-fg); border-radius: 6px; padding: 6px 10px; margin-bottom: 14px; }
+.warns summary { cursor: pointer; }
+.warns ul { margin: 6px 0 2px; padding-left: 18px; }
+.warns code { background: transparent; }
+.err { background: var(--err-bg); color: var(--err-fg); border-radius: 6px; padding: 8px 12px; margin-bottom: 14px; font-size: 13px; }
+.foot { font-size: 12px; color: var(--muted); text-align: center; padding: 8px 0 24px; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="err" class="err" hidden></div>
+
+  <section class="panel">
+    <div class="head">
+      <div>
+        <h1 id="title">Tracker</h1>
+        <div class="counts" id="counts"></div>
+      </div>
+      <div style="display:flex;gap:18px;align-items:center">
+        <div class="pct" id="pct">–</div>
+        <div class="meta" id="meta"></div>
+      </div>
+    </div>
+    <div class="bar bigbar" id="bigbar"></div>
+  </section>
+
+  <div id="warns"></div>
+
+  <section class="panel" id="running-panel">
+    <h2>Running / monitoring</h2>
+    <div class="intro" id="running-intro"></div>
+    <div id="running"></div>
+  </section>
+
+  <section class="panel" id="progress-panel" hidden>
+    <h2>Agent progress</h2>
+    <div class="plogs" id="progress"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Plan</h2>
+    <div id="phases"></div>
+  </section>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>Open questions</h2>
+      <div id="questions"></div>
+    </section>
+    <section class="panel">
+      <h2>Decisions</h2>
+      <div id="decisions"></div>
+    </section>
+  </div>
+  <div style="height:14px"></div>
+
+  <section class="panel notes">
+    <h2>Notes log</h2>
+    <div id="notes"></div>
+  </section>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var REFRESH_MS = 10000;
+  var STATES = ["done", "in_progress", "todo", "dropped", "unknown"];
+  var PSTATES = ["started", "milestone", "blocked", "done"];
+  var LABELS = { done: "done", in_progress: "in progress", todo: "todo", dropped: "dropped", unknown: "unknown" };
+  var lastText = null;
+  var lastData = null;
+  var lastOk = null;
+  var openState = {}; // phase id -> bool, survives re-render
+
+  function $(id) { return document.getElementById(id); }
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  // Minimal inline Markdown: code spans, **bold**, *em*, [text](http/#anchor).
+  function md(s) {
+    if (s == null) return "";
+    var codes = [];
+    var t = String(s).replace(/`([^`]+)`/g, function (_, c) {
+      codes.push("<code>" + esc(c) + "</code>");
+      return "\u0000" + (codes.length - 1) + "\u0000";
+    });
+    t = esc(t);
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/(^|[^*\w])\*([^*\s][^*]*)\*(?!\w)/g, "$1<em>$2</em>");
+    t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (m, label, href) {
+      var raw = href.replace(/&amp;/g, "&");
+      if (/^(https?:\/\/|#)/.test(raw)) return '<a href="' + esc(raw) + '" target="_blank" rel="noopener">' + label + "</a>";
+      return label;
+    });
+    return t.replace(/\u0000(\d+)\u0000/g, function (_, i) { return codes[+i]; });
+  }
+
+  function ago(iso, now) {
+    var t = Date.parse(iso);
+    if (isNaN(t)) return null;
+    var s = Math.max(0, Math.round((now - t) / 1000));
+    if (s < 60) return s + "s ago";
+    if (s < 3600) return Math.floor(s / 60) + "m ago";
+    if (s < 86400) return Math.floor(s / 3600) + "h " + Math.floor((s % 3600) / 60) + "m ago";
+    return Math.floor(s / 86400) + "d ago";
+  }
+
+  function fmtTime(iso) {
+    var d = new Date(iso);
+    return isNaN(d) ? String(iso) : d.toLocaleString();
+  }
+
+  function bar(by, total) {
+    if (!total) return "";
+    return ["done", "in_progress", "dropped", "unknown"].map(function (k) {
+      var n = (by && by[k]) || 0;
+      return n ? '<span class="s-' + k + '" style="width:' + (100 * n / total) + '%" title="' + n + " " + LABELS[k] + '"></span>' : "";
+    }).join("");
+  }
+
+  function icon(state) {
+    var s = STATES.indexOf(state) >= 0 ? state : "unknown";
+    return '<span class="ico s-' + s + '" title="' + LABELS[s] + '"></span>';
+  }
+
+  function list(arr, fn, emptyMsg) {
+    if (!arr || !arr.length) return '<div class="empty">' + esc(emptyMsg) + "</div>";
+    return arr.map(fn).join("");
+  }
+
+  // Drop the ", delegated ...; acceptance = ..." tail from the heading when those are shown separately.
+  function shortTitle(p) {
+    var t = String(p.title || "");
+    if (p.acceptance) t = t.replace(/[,;]?\s*acceptance\s*[=:].*$/i, "");
+    if (p.delegated) t = t.replace(/[,;]?\s*delegated\b[^;]*$/i, "");
+    return t.trim() || String(p.title || "");
+  }
+
+  function counts(tasks) {
+    var by = { todo: 0, in_progress: 0, done: 0, dropped: 0, unknown: 0 };
+    (tasks || []).forEach(function (t) { by[STATES.indexOf(t.state) >= 0 ? t.state : "unknown"]++; });
+    return by;
+  }
+
+  function renderMeta() {
+    if (!lastData) return;
+    var now = Date.now();
+    var g = lastData.generatedAt, m = lastData.sourceMtime;
+    var gAge = Date.parse(g);
+    var cls = "";
+    if (!isNaN(gAge)) {
+      var mins = (now - gAge) / 60000;
+      cls = mins > 60 ? "verystale" : mins > 10 ? "stale" : "";
+    }
+    var html = 'generated <span class="' + cls + '" title="' + esc(g) + '">' + esc(ago(g, now) || g || "?") + "</span>";
+    if (m) html += '<br>source edited <span title="' + esc(m) + '">' + esc(ago(m, now) || m) + "</span>";
+    if (lastOk) html += '<br>fetched ' + esc(ago(new Date(lastOk).toISOString(), now));
+    $("meta").innerHTML = html;
+  }
+
+  function render(d) {
+    var sum = d.summary || {};
+    var by = sum.byState || counts([].concat.apply([], (d.phases || []).map(function (p) { return p.tasks || []; })));
+    var total = sum.total != null ? sum.total : STATES.reduce(function (a, k) { return a + (by[k] || 0); }, 0);
+
+    document.title = (sum.percentDone != null ? sum.percentDone + "% · " : "") + "Tracker";
+    $("title").innerHTML = md(d.title || "Tracker");
+    $("pct").textContent = sum.percentDone != null ? sum.percentDone + "%" : "–";
+    $("counts").innerHTML = STATES.filter(function (k) { return k !== "unknown" || by[k]; }).map(function (k) {
+      return '<span class="chip">' + icon(k) + "<b>" + (by[k] || 0) + "</b> " + LABELS[k] + "</span>";
+    }).join("") + '<span class="chip muted">' + total + " tasks</span>";
+    $("bigbar").innerHTML = bar(by, total);
+    renderMeta();
+
+    // parse warnings
+    var w = d.parseWarnings || [];
+    $("warns").innerHTML = w.length
+      ? '<details class="warns"><summary>' + w.length + " parse warning" + (w.length > 1 ? "s" : "") + "</summary><ul>" +
+        w.map(function (x) {
+          return "<li><b>" + esc(x.section || "?") + (x.line ? ":" + esc(x.line) : "") + "</b> " + esc(x.message || "") +
+            (x.raw ? " <code>" + esc(x.raw) + "</code>" : "") + "</li>";
+        }).join("") + "</ul></details>"
+      : "";
+
+    // running
+    $("running-intro").innerHTML = md(d.runningIntro || "");
+    $("running").innerHTML = list(d.running, function (r) {
+      return '<div class="item run"><div class="what">' + md(r.what) + "</div><dl>" +
+        (r.status ? '<dt>status</dt><dd class="status">' + md(r.status) + "</dd>" : "") +
+        (r.command ? "<dt>command</dt><dd>" + md(r.command) + "</dd>" : "") +
+        (r.output ? "<dt>output</dt><dd>" + md(r.output) + "</dd>" : "") +
+        "</dl></div>";
+    }, "Nothing running.");
+
+    // progress logs (newest entry first within each log; logs ordered by most recent activity)
+    var prog = d.progress || {};
+    var names = Object.keys(prog).sort(function (a, b) {
+      var ma = prog[a].mtime || "", mb = prog[b].mtime || "";
+      return ma === mb ? (a < b ? -1 : 1) : (ma < mb ? 1 : -1);
+    });
+    $("progress-panel").hidden = names.length === 0;
+    $("progress").innerHTML = names.map(function (n) {
+      var lg = prog[n] || {}, ents = lg.entries || [];
+      var latest = ents[0] || {};
+      var lst = PSTATES.indexOf(latest.status) >= 0 ? latest.status : "unknown";
+      return '<div class="plog"><h3><span>' + esc(n) + (latest.status ? ' <span class="pst ' + lst + '">' + esc(latest.status) + "</span>" : "") +
+        '</span><span class="muted" title="' + esc(lg.mtime || "") + '">' + esc(lg.mtime ? (ago(lg.mtime, Date.now()) || "") : "") + "</span></h3>" +
+        (ents.length ? "<ol>" + ents.map(function (e) {
+          var st = PSTATES.indexOf(e.status) >= 0 ? e.status : "unknown";
+          var hm = e.timestamp && /T(\d{2}:\d{2})/.exec(e.timestamp);
+          return '<li><span class="pst ' + st + '">' + esc(st) + '<span class="when" title="' + esc(e.timestamp || "") + '">' + esc(hm ? hm[1] + "Z" : "") +
+            "</span></span><span>" + md(e.text) + "</span></li>";
+        }).join("") + "</ol>" : '<div class="empty">No entries yet.</div>') +
+        (lg.lineCount > ents.length ? '<div class="muted" style="font-size:11px">' + esc(lg.lineCount) + " lines in " + esc(lg.file || n) + "</div>" : "") +
+        "</div>";
+    }).join("");
+
+    // phases
+    var perPhase = {};
+    (sum.perPhase || []).forEach(function (p) { perPhase[p.id] = p; });
+    $("phases").innerHTML = list(d.phases, function (p) {
+      var pc = perPhase[p.id] || {};
+      var pby = pc.byState || counts(p.tasks);
+      var pt = pc.total != null ? pc.total : (p.tasks || []).length;
+      var open = openState.hasOwnProperty(p.id) ? openState[p.id] : p.status !== "done";
+      var hasProg = (pby.in_progress || 0) > 0;
+      return '<details class="phase" data-id="' + esc(p.id) + '"' + (open ? " open" : "") + ">" +
+        '<summary><span class="ttl"><span class="pid">' + esc(p.id) + "</span>" + md(shortTitle(p)) +
+        (p.delegated ? '<span class="tag">delegated</span>' : "") +
+        (hasProg ? ' <span class="chip" style="font-weight:500;font-size:12px;color:var(--prog)">' + icon("in_progress") + pby.in_progress + " active</span>" : "") +
+        (p.acceptance ? '<span class="acc">acceptance: ' + md(p.acceptance) + "</span>" : "") +
+        '</span><span class="bar">' + bar(pby, pt) + '</span><span class="frac">' + (pby.done || 0) + "/" + (pt - (pby.dropped || 0)) +
+        (pc.percentDone != null ? " · " + pc.percentDone + "%" : "") + "</span></summary>" +
+        '<ul class="tasks">' + (p.tasks || []).map(function (t) {
+          var st = STATES.indexOf(t.state) >= 0 ? t.state : "unknown";
+          var sub = (t.notes || []).map(function (n) { return "<li>" + md(n) + "</li>"; }).join("");
+          if (t.droppedReason) sub += "<li>dropped: " + md(t.droppedReason) + "</li>";
+          if (st === "unknown" && t.marker) sub += "<li>unknown marker <code>[" + esc(t.marker) + "]</code></li>";
+          return '<li class="st-' + st + '">' + icon(st) + '<span class="tid">' + esc(t.id || "–") + '</span><span class="txt">' + md(t.text) + "</span>" +
+            (sub ? '<ul class="sub">' + sub + "</ul>" : "") + "</li>";
+        }).join("") + "</ul></details>";
+    }, "No phases.");
+
+    // questions, decisions
+    $("questions").innerHTML = list(d.openQuestions, function (q) {
+      return '<div class="item"><span class="k">' + esc(q.id) + "</span>" + md(q.text) + "</div>";
+    }, "No open questions.");
+    $("decisions").innerHTML = list(d.decisions, function (x) {
+      return '<div class="item"><span class="k">' + esc(x.id) + "</span>" + md(x.text) +
+        (x.date ? ' <span class="date">' + esc(x.date) + "</span>" : "") + "</div>";
+    }, "No decisions.");
+
+    // notes (already newest first per schema; sort defensively)
+    var notes = (d.notes || []).slice().sort(function (a, b) {
+      var da = a.date || "", db = b.date || "";
+      if (da !== db) return da < db ? 1 : -1;
+      return (b.seq || 0) - (a.seq || 0);
+    });
+    $("notes").innerHTML = list(notes, function (n) {
+      return '<div class="item"><span class="date">' + esc(n.date || "undated") + "</span> " + md(n.text) + "</div>";
+    }, "No notes.");
+
+    $("foot").textContent = "Auto-refreshes every " + (REFRESH_MS / 1000) + "s from tracker.json" +
+      (d.source && d.source.sha256 ? " · source " + d.source.sha256.slice(0, 10) : "");
+  }
+
+  // Remember which phases the user opened/closed so refreshes don't reset them.
+  document.addEventListener("toggle", function (e) {
+    var el = e.target;
+    if (el && el.classList && el.classList.contains("phase")) openState[el.getAttribute("data-id")] = el.open;
+  }, true);
+
+  function showErr(msg) {
+    var el = $("err");
+    if (msg) { el.textContent = msg; el.hidden = false; } else { el.hidden = true; }
+  }
+
+  function load() {
+    fetch("tracker.json?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.text();
+      })
+      .then(function (text) {
+        lastOk = Date.now();
+        if (text === lastText) { showErr(null); renderMeta(); return; }
+        var d = JSON.parse(text); // throws on a half-written or invalid file; we keep the last good render
+        var x = window.scrollX, y = window.scrollY;
+        render(d);
+        window.scrollTo(x, y);
+        lastText = text;
+        lastData = d;
+        renderMeta();
+        showErr(null);
+      })
+      .catch(function (e) {
+        showErr("Could not load tracker.json (" + e.message + ")" + (lastData ? "; showing last good data." : "."));
+        renderMeta();
+      });
+  }
+
+  load();
+  setInterval(load, REFRESH_MS);
+  setInterval(renderMeta, 5000);
+})();
+</script>
+</body>
+</html>

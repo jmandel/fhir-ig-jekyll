@@ -1,0 +1,6 @@
+{"id":"pure-sort","output":"A,b,c|1"}
+{"id":"pure-include","output":"[P2]"}
+{"id":"jk-include","output":"[F1]DATA"}
+{"id":"jk-markdownify","output":"<p><em>hi</em></p>\n"}
+{"id":"jk-sort-prop","output":",9,10"}
+{"id":"yaml","output":"{\"a\":true,\"b\":[1,2.0]}"}

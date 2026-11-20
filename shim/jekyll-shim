@@ -1,0 +1,6 @@
+#!/bin/bash
+# Drop-in for `jekyll` as the IG Publisher calls it (`-jekyll <this script>`): `build --destination X`,
+# run with the working directory set to temp/pages. No sizing flags: the heap may grow to 75% of the
+# machine/container's memory (like Ruby growing as needed); stack depth is handled inside the shim.
+HERE="$(cd "$(dirname "$0")" && pwd)"
+exec java -XX:MaxRAMPercentage=75 ${SHIM_JAVA_OPTS:-} -jar "$HERE/build/shim.jar" "$@"

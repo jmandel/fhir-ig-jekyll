@@ -1,0 +1,5 @@
+{"id":"cfg-strict-mode-error","type":"jekyll-liquid","template":"{{ a | append: \",\"s }}","assigns":{"a":"x"},"config":{"liquid":{"error_mode":"strict"}}}
+{"id":"cfg-lax-mode","type":"jekyll-liquid","template":"{{ a | append: \",\"s }}","assigns":{"a":"x"},"config":{"liquid":{"error_mode":"lax"}}}
+{"id":"cfg-strict-filters","type":"jekyll-liquid","template":"{{ a | nosuchfilter }}","assigns":{"a":"x"},"config":{"liquid":{"strict_filters":true}}}
+{"id":"cfg-strict-variables","type":"jekyll-liquid","template":"[{{ missing }}]","config":{"liquid":{"strict_variables":true}}}
+{"id":"cfg-default","type":"jekyll-liquid","template":"[{{ missing }}]{{ a | nosuchfilter }}","assigns":{"a":"x"}}

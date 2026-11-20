@@ -1,0 +1,804 @@
+{"id":"suite/229Q/text","output":"[\"a\",[\"h\",[[\"s\",\"name\"],[\"s\",\"Mark McGwire\"]],[[\"s\",\"hr\"],[\"i\",\"65\"]],[[\"s\",\"avg\"],[\"f\",\"0.278\"]]],[\"h\",[[\"s\",\"name\"],[\"s\",\"Sammy Sosa\"]],[[\"s\",\"hr\"],[\"i\",\"63\"]],[[\"s\",\"avg\"],[\"f\",\"0.288\"]]]]"}
+{"id":"suite/229Q/file","output":"[\"a\",[\"h\",[[\"s\",\"name\"],[\"s\",\"Mark McGwire\"]],[[\"s\",\"hr\"],[\"i\",\"65\"]],[[\"s\",\"avg\"],[\"f\",\"0.278\"]]],[\"h\",[[\"s\",\"name\"],[\"s\",\"Sammy Sosa\"]],[[\"s\",\"hr\"],[\"i\",\"63\"]],[[\"s\",\"avg\"],[\"f\",\"0.288\"]]]]"}
+{"id":"suite/236B/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 3 column 1"}
+{"id":"suite/236B/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/236B/in.yaml): could not find expected ':' while scanning a simple key at line 3 column 1"}
+{"id":"suite/26DV/text","output":"[\"h\",[[\"s\",\"top1\"],[\"h\",[[\"s\",\"key1\"],[\"s\",\"scalar1\"]]]],[[\"s\",\"top2\"],[\"h\",[[\"s\",\"key2\"],[\"s\",\"scalar2\"]]]],[[\"s\",\"top3\"],[\"h\",[[\"s\",\"scalar1\"],[\"s\",\"scalar3\"]]]],[[\"s\",\"top4\"],[\"h\",[[\"s\",\"scalar2\"],[\"s\",\"scalar4\"]]]],[[\"s\",\"top5\"],[\"s\",\"scalar5\"]],[[\"s\",\"top6\"],[\"h\",[[\"s\",\"key6\"],[\"s\",\"scalar6\"]]]]]"}
+{"id":"suite/26DV/file","output":"[\"h\",[[\"s\",\"top1\"],[\"h\",[[\"s\",\"key1\"],[\"s\",\"scalar1\"]]]],[[\"s\",\"top2\"],[\"h\",[[\"s\",\"key2\"],[\"s\",\"scalar2\"]]]],[[\"s\",\"top3\"],[\"h\",[[\"s\",\"scalar1\"],[\"s\",\"scalar3\"]]]],[[\"s\",\"top4\"],[\"h\",[[\"s\",\"scalar2\"],[\"s\",\"scalar4\"]]]],[[\"s\",\"top5\"],[\"s\",\"scalar5\"]],[[\"s\",\"top6\"],[\"h\",[[\"s\",\"key6\"],[\"s\",\"scalar6\"]]]]]"}
+{"id":"suite/27NA/text","output":"[\"s\",\"text\"]"}
+{"id":"suite/27NA/file","output":"[\"s\",\"text\"]"}
+{"id":"suite/2AUY/text","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"i\",\"42\"],[\"s\",\"d\"]]"}
+{"id":"suite/2AUY/file","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"i\",\"42\"],[\"s\",\"d\"]]"}
+{"id":"suite/2CMS/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 3 column 10"}
+{"id":"suite/2CMS/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/2CMS/in.yaml): mapping values are not allowed in this context at line 3 column 10"}
+{"id":"suite/2EBW/text","output":"[\"h\",[[\"s\",\"a!\\\"#$%&'()*+,-./09:;<=>?@AZ[\\\\]^_`az{|}~\"],[\"s\",\"safe\"]],[[\"s\",\"?foo\"],[\"s\",\"safe question mark\"]],[[\"s\",\":foo\"],[\"s\",\"safe colon\"]],[[\"s\",\"-foo\"],[\"s\",\"safe dash\"]],[[\"s\",\"this is#not\"],[\"s\",\"a comment\"]]]"}
+{"id":"suite/2EBW/file","output":"[\"h\",[[\"s\",\"a!\\\"#$%&'()*+,-./09:;<=>?@AZ[\\\\]^_`az{|}~\"],[\"s\",\"safe\"]],[[\"s\",\"?foo\"],[\"s\",\"safe question mark\"]],[[\"s\",\":foo\"],[\"s\",\"safe colon\"]],[[\"s\",\"-foo\"],[\"s\",\"safe dash\"]],[[\"s\",\"this is#not\"],[\"s\",\"a comment\"]]]"}
+{"id":"suite/2G84/00/text","output":"ERR Psych::SyntaxError: (<unknown>): found an indentation indicator equal to 0 while scanning a block scalar at line 1 column 5"}
+{"id":"suite/2G84/00/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/2G84/00/in.yaml): found an indentation indicator equal to 0 while scanning a block scalar at line 1 column 5"}
+{"id":"suite/2G84/01/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected comment or line break while scanning a block scalar at line 1 column 5"}
+{"id":"suite/2G84/01/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/2G84/01/in.yaml): did not find expected comment or line break while scanning a block scalar at line 1 column 5"}
+{"id":"suite/2G84/02/text","output":"[\"s\",\"\"]"}
+{"id":"suite/2G84/02/file","output":"[\"s\",\"\"]"}
+{"id":"suite/2G84/03/text","output":"[\"s\",\"\"]"}
+{"id":"suite/2G84/03/file","output":"[\"s\",\"\"]"}
+{"id":"suite/2JQS/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/2JQS/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/2JQS/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/2LFX/text","output":"ERR Psych::SyntaxError: (<unknown>): found unknown directive name while scanning a directive at line 1 column 1"}
+{"id":"suite/2LFX/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/2LFX/in.yaml): found unknown directive name while scanning a directive at line 1 column 1"}
+{"id":"suite/2SXE/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 1 column 8"}
+{"id":"suite/2SXE/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/2SXE/in.yaml): mapping values are not allowed in this context at line 1 column 8"}
+{"id":"suite/2XXW/text","output":"[\"h\",[[\"s\",\"Mark McGwire\"],\"n\"],[[\"s\",\"Sammy Sosa\"],\"n\"],[[\"s\",\"Ken Griff\"],\"n\"]]"}
+{"id":"suite/2XXW/file","output":"[\"h\",[[\"s\",\"Mark McGwire\"],\"n\"],[[\"s\",\"Sammy Sosa\"],\"n\"],[[\"s\",\"Ken Griff\"],\"n\"]]"}
+{"id":"suite/33X3/text","output":"[\"a\",[\"i\",\"1\"],[\"i\",\"-2\"],[\"i\",\"33\"]]"}
+{"id":"suite/33X3/file","output":"[\"a\",[\"i\",\"1\"],[\"i\",\"-2\"],[\"i\",\"33\"]]"}
+{"id":"suite/35KP/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]"}
+{"id":"suite/35KP/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]"}
+{"id":"suite/36F6/text","output":"[\"h\",[[\"s\",\"plain\"],[\"s\",\"a b\\nc\"]]]"}
+{"id":"suite/36F6/file","output":"[\"h\",[[\"s\",\"plain\"],[\"s\",\"a b\\nc\"]]]"}
+{"id":"suite/3ALJ/text","output":"[\"a\",[\"a\",[\"s\",\"s1_i1\"],[\"s\",\"s1_i2\"]],[\"s\",\"s2\"]]"}
+{"id":"suite/3ALJ/file","output":"[\"a\",[\"a\",[\"s\",\"s1_i1\"],[\"s\",\"s1_i2\"]],[\"s\",\"s2\"]]"}
+{"id":"suite/3GZX/text","output":"[\"h\",[[\"s\",\"First occurrence\"],[\"s\",\"Foo\"]],[[\"s\",\"Second occurrence\"],[\"s\",\"Foo\"]],[[\"s\",\"Override anchor\"],[\"s\",\"Bar\"]],[[\"s\",\"Reuse anchor\"],[\"s\",\"Bar\"]]]"}
+{"id":"suite/3GZX/file","output":"[\"h\",[[\"s\",\"First occurrence\"],[\"s\",\"Foo\"]],[[\"s\",\"Second occurrence\"],[\"s\",\"Foo\"]],[[\"s\",\"Override anchor\"],[\"s\",\"Bar\"]],[[\"s\",\"Reuse anchor\"],[\"s\",\"Bar\"]]]"}
+{"id":"suite/3HFZ/text","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/3HFZ/file","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/3MYT/text","output":"[\"s\",\"k:#foo &a !t s\"]"}
+{"id":"suite/3MYT/file","output":"[\"s\",\"k:#foo &a !t s\"]"}
+{"id":"suite/3R3P/text","output":"[\"a\",[\"s\",\"a\"]]"}
+{"id":"suite/3R3P/file","output":"[\"a\",[\"s\",\"a\"]]"}
+{"id":"suite/3RLN/00/text","output":"[\"s\",\"1 leading \\ttab\"]"}
+{"id":"suite/3RLN/00/file","output":"[\"s\",\"1 leading \\ttab\"]"}
+{"id":"suite/3RLN/01/text","output":"[\"s\",\"2 leading \\ttab\"]"}
+{"id":"suite/3RLN/01/file","output":"[\"s\",\"2 leading \\ttab\"]"}
+{"id":"suite/3RLN/02/text","output":"[\"s\",\"3 leading tab\"]"}
+{"id":"suite/3RLN/02/file","output":"[\"s\",\"3 leading tab\"]"}
+{"id":"suite/3RLN/03/text","output":"[\"s\",\"4 leading \\t  tab\"]"}
+{"id":"suite/3RLN/03/file","output":"[\"s\",\"4 leading \\t  tab\"]"}
+{"id":"suite/3RLN/04/text","output":"[\"s\",\"5 leading \\t  tab\"]"}
+{"id":"suite/3RLN/04/file","output":"[\"s\",\"5 leading \\t  tab\"]"}
+{"id":"suite/3RLN/05/text","output":"[\"s\",\"6 leading tab\"]"}
+{"id":"suite/3RLN/05/file","output":"[\"s\",\"6 leading tab\"]"}
+{"id":"suite/3UYS/text","output":"[\"h\",[[\"s\",\"escaped slash\"],[\"s\",\"a/b\"]]]"}
+{"id":"suite/3UYS/file","output":"[\"h\",[[\"s\",\"escaped slash\"],[\"s\",\"a/b\"]]]"}
+{"id":"suite/4ABK/text","output":"ERR Psych::SyntaxError: (<unknown>): found unexpected ':' while scanning a plain scalar at line 4 column 1"}
+{"id":"suite/4ABK/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/4ABK/in.yaml): found unexpected ':' while scanning a plain scalar at line 4 column 1"}
+{"id":"suite/4CQQ/text","output":"[\"h\",[[\"s\",\"plain\"],[\"s\",\"This unquoted scalar spans many lines.\"]],[[\"s\",\"quoted\"],[\"s\",\"So does this quoted scalar.\\n\"]]]"}
+{"id":"suite/4CQQ/file","output":"[\"h\",[[\"s\",\"plain\"],[\"s\",\"This unquoted scalar spans many lines.\"]],[[\"s\",\"quoted\"],[\"s\",\"So does this quoted scalar.\\n\"]]]"}
+{"id":"suite/4EJS/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 3 column 1"}
+{"id":"suite/4EJS/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/4EJS/in.yaml): found character that cannot start any token while scanning for the next token at line 3 column 1"}
+{"id":"suite/4FJ6/text","output":"[\"a\",[\"h\",[[\"s\",\"d\"],[\"i\",\"23\"]]]]"}
+{"id":"suite/4FJ6/file","output":"[\"a\",[\"h\",[[\"s\",\"d\"],[\"i\",\"23\"]]]]"}
+{"id":"suite/4GC6/text","output":"[\"s\",\"here's to \\\"quotes\\\"\"]"}
+{"id":"suite/4GC6/file","output":"[\"s\",\"here's to \\\"quotes\\\"\"]"}
+{"id":"suite/4H7K/text","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]"}
+{"id":"suite/4H7K/file","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]"}
+{"id":"suite/4HVU/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/4HVU/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/4HVU/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/4JVG/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/4JVG/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/4JVG/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/4MUZ/00/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 1"}
+{"id":"suite/4MUZ/00/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/4MUZ/00/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 1"}
+{"id":"suite/4MUZ/01/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 1"}
+{"id":"suite/4MUZ/01/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/4MUZ/01/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 1"}
+{"id":"suite/4MUZ/02/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 1"}
+{"id":"suite/4MUZ/02/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/4MUZ/02/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 1"}
+{"id":"suite/4Q9F/text","output":"[\"s\",\"ab cd\\nef\\n\\ngh\\n\"]"}
+{"id":"suite/4Q9F/file","output":"[\"s\",\"ab cd\\nef\\n\\ngh\\n\"]"}
+{"id":"suite/4QFQ/text","output":"[\"a\",[\"s\",\"detected\\n\"],[\"s\",\"\\n\\n# detected\\n\"],[\"s\",\" explicit\\n\"],[\"s\",\"detected\\n\"]]"}
+{"id":"suite/4QFQ/file","output":"[\"a\",[\"s\",\"detected\\n\"],[\"s\",\"\\n\\n# detected\\n\"],[\"s\",\" explicit\\n\"],[\"s\",\"detected\\n\"]]"}
+{"id":"suite/4RWC/text","output":"[\"a\",[\"i\",\"1\"],[\"i\",\"2\"],[\"i\",\"3\"]]"}
+{"id":"suite/4RWC/file","output":"[\"a\",[\"i\",\"1\"],[\"i\",\"2\"],[\"i\",\"3\"]]"}
+{"id":"suite/4UYU/text","output":"[\"s\",\"foo: bar\\\": baz\"]"}
+{"id":"suite/4UYU/file","output":"[\"s\",\"foo: bar\\\": baz\"]"}
+{"id":"suite/4V8U/text","output":"[\"s\",\"plain\\\\value\\\\with\\\\backslashes\"]"}
+{"id":"suite/4V8U/file","output":"[\"s\",\"plain\\\\value\\\\with\\\\backslashes\"]"}
+{"id":"suite/4WA9/text","output":"[\"a\",[\"h\",[[\"s\",\"aaa\"],[\"s\",\"xxx\\n\"]],[[\"s\",\"bbb\"],[\"s\",\"xxx\\n\"]]]]"}
+{"id":"suite/4WA9/file","output":"[\"a\",[\"h\",[[\"s\",\"aaa\"],[\"s\",\"xxx\\n\"]],[[\"s\",\"bbb\"],[\"s\",\"xxx\\n\"]]]]"}
+{"id":"suite/4ZYM/text","output":"[\"h\",[[\"s\",\"plain\"],[\"s\",\"text lines\"]],[[\"s\",\"quoted\"],[\"s\",\"text lines\"]],[[\"s\",\"block\"],[\"s\",\"text\\n \\tlines\\n\"]]]"}
+{"id":"suite/4ZYM/file","output":"[\"h\",[[\"s\",\"plain\"],[\"s\",\"text lines\"]],[[\"s\",\"quoted\"],[\"s\",\"text lines\"]],[[\"s\",\"block\"],[\"s\",\"text\\n \\tlines\\n\"]]]"}
+{"id":"suite/52DL/text","output":"[\"s\",\"a\"]"}
+{"id":"suite/52DL/file","output":"[\"s\",\"a\"]"}
+{"id":"suite/54T7/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"you\"]],[[\"s\",\"bar\"],[\"s\",\"far\"]]]"}
+{"id":"suite/54T7/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"you\"]],[[\"s\",\"bar\"],[\"s\",\"far\"]]]"}
+{"id":"suite/55WF/text","output":"ERR Psych::SyntaxError: (<unknown>): found unknown escape character while parsing a quoted scalar at line 2 column 1"}
+{"id":"suite/55WF/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/55WF/in.yaml): found unknown escape character while parsing a quoted scalar at line 2 column 1"}
+{"id":"suite/565N/text","output":"[\"h\",[[\"s\",\"canonical\"],[\"b\",\"4749463839610c000c00840000fffff7f5f5eee9e9e5666666000000e7e7e75e5e5ef3f3ed8e8e8ee0e0e09f9f9f939393a7a7a79e9e9e696969636363a3a3a3848484fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef921fe0e4d61646520776974682047494d50002c000000000c000c0000052c20208e81309ee34014e86910c4d18a081ccf804d247aefff308570b8b031660d1bce01c3011e102720820a01003b\"]],[[\"s\",\"generic\"],[\"b\",\"4749463839610c000c00840000fffff7f5f5eee9e9e5666666000000e7e7e75e5e5ef3f3ed8e8e8ee0e0e09f9f9f939393a7a7a79e9e9e696969636363a3a3a3848484fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef921fe0e4d61646520776974682047494d50002c000000000c000c0000052c20208e81309ee34014e86910c4d18a081ccf804d247aefff308570b8b031660d1bce01c3011e102720820a01003b\"]],[[\"s\",\"description\"],[\"s\",\"The binary value above is a tiny arrow encoded as a gif image.\"]]]"}
+{"id":"suite/565N/file","output":"[\"h\",[[\"s\",\"canonical\"],[\"b\",\"4749463839610c000c00840000fffff7f5f5eee9e9e5666666000000e7e7e75e5e5ef3f3ed8e8e8ee0e0e09f9f9f939393a7a7a79e9e9e696969636363a3a3a3848484fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef921fe0e4d61646520776974682047494d50002c000000000c000c0000052c20208e81309ee34014e86910c4d18a081ccf804d247aefff308570b8b031660d1bce01c3011e102720820a01003b\"]],[[\"s\",\"generic\"],[\"b\",\"4749463839610c000c00840000fffff7f5f5eee9e9e5666666000000e7e7e75e5e5ef3f3ed8e8e8ee0e0e09f9f9f939393a7a7a79e9e9e696969636363a3a3a3848484fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef9fffef921fe0e4d61646520776974682047494d50002c000000000c000c0000052c20208e81309ee34014e86910c4d18a081ccf804d247aefff308570b8b031660d1bce01c3011e102720820a01003b\"]],[[\"s\",\"description\"],[\"s\",\"The binary value above is a tiny arrow encoded as a gif image.\"]]]"}
+{"id":"suite/57H4/text","output":"[\"h\",[[\"s\",\"sequence\"],[\"a\",[\"s\",\"entry\"],[\"a\",[\"s\",\"nested\"]]]],[[\"s\",\"mapping\"],[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]]]]"}
+{"id":"suite/57H4/file","output":"[\"h\",[[\"s\",\"sequence\"],[\"a\",[\"s\",\"entry\"],[\"a\",[\"s\",\"nested\"]]]],[[\"s\",\"mapping\"],[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]]]]"}
+{"id":"suite/58MP/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a flow node at line 1 column 5"}
+{"id":"suite/58MP/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/58MP/in.yaml): did not find expected node content while parsing a flow node at line 1 column 5"}
+{"id":"suite/5BVJ/text","output":"[\"h\",[[\"s\",\"literal\"],[\"s\",\"some\\ntext\\n\"]],[[\"s\",\"folded\"],[\"s\",\"some text\\n\"]]]"}
+{"id":"suite/5BVJ/file","output":"[\"h\",[[\"s\",\"literal\"],[\"s\",\"some\\ntext\\n\"]],[[\"s\",\"folded\"],[\"s\",\"some text\\n\"]]]"}
+{"id":"suite/5C5M/text","output":"[\"a\",[\"h\",[[\"s\",\"one\"],[\"s\",\"two\"]],[[\"s\",\"three\"],[\"s\",\"four\"]]],[\"h\",[[\"s\",\"five\"],[\"s\",\"six\"]],[[\"s\",\"seven\"],[\"s\",\"eight\"]]]]"}
+{"id":"suite/5C5M/file","output":"[\"a\",[\"h\",[[\"s\",\"one\"],[\"s\",\"two\"]],[[\"s\",\"three\"],[\"s\",\"four\"]]],[\"h\",[[\"s\",\"five\"],[\"s\",\"six\"]],[[\"s\",\"seven\"],[\"s\",\"eight\"]]]]"}
+{"id":"suite/5GBF/text","output":"[\"h\",[[\"s\",\"Folding\"],[\"s\",\"Empty line\\nas a line feed\"]],[[\"s\",\"Chomping\"],[\"s\",\"Clipped empty lines\\n\"]]]"}
+{"id":"suite/5GBF/file","output":"[\"h\",[[\"s\",\"Folding\"],[\"s\",\"Empty line\\nas a line feed\"]],[[\"s\",\"Chomping\"],[\"s\",\"Clipped empty lines\\n\"]]]"}
+{"id":"suite/5KJE/text","output":"[\"a\",[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]],[\"a\",[\"s\",\"three\"],[\"s\",\"four\"]]]"}
+{"id":"suite/5KJE/file","output":"[\"a\",[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]],[\"a\",[\"s\",\"three\"],[\"s\",\"four\"]]]"}
+{"id":"suite/5LLU/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/5LLU/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/5LLU/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/5MUD/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 2 column 1"}
+{"id":"suite/5MUD/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/5MUD/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 2 column 1"}
+{"id":"suite/5NYZ/text","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/5NYZ/file","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/5T43/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a flow node at line 2 column 11"}
+{"id":"suite/5T43/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/5T43/in.yaml): did not find expected node content while parsing a flow node at line 2 column 11"}
+{"id":"suite/5TRB/text","output":"ERR Psych::SyntaxError: (<unknown>): found unexpected document indicator while scanning a quoted scalar at line 2 column 1"}
+{"id":"suite/5TRB/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/5TRB/in.yaml): found unexpected document indicator while scanning a quoted scalar at line 2 column 1"}
+{"id":"suite/5TYM/text","output":"[\"s\",\"fluorescent\"]"}
+{"id":"suite/5TYM/file","output":"[\"s\",\"fluorescent\"]"}
+{"id":"suite/5U3A/text","output":"ERR Psych::SyntaxError: (<unknown>): block sequence entries are not allowed in this context at line 1 column 6"}
+{"id":"suite/5U3A/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/5U3A/in.yaml): block sequence entries are not allowed in this context at line 1 column 6"}
+{"id":"suite/5WE3/text","output":"[\"h\",[[\"s\",\"explicit key\"],\"n\"],[[\"s\",\"block key\\n\"],[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]]]]"}
+{"id":"suite/5WE3/file","output":"[\"h\",[[\"s\",\"explicit key\"],\"n\"],[[\"s\",\"block key\\n\"],[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]]]]"}
+{"id":"suite/62EZ/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 2 column 1"}
+{"id":"suite/62EZ/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/62EZ/in.yaml): did not find expected key while parsing a block mapping at line 2 column 1"}
+{"id":"suite/652Z/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]],[[\"s\",\"bar\"],[\"i\",\"42\"]]]"}
+{"id":"suite/652Z/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]],[[\"s\",\"bar\"],[\"i\",\"42\"]]]"}
+{"id":"suite/65WH/text","output":"[\"a\",[\"s\",\"foo\"]]"}
+{"id":"suite/65WH/file","output":"[\"a\",[\"s\",\"foo\"]]"}
+{"id":"suite/6BCT/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 3 column 4"}
+{"id":"suite/6BCT/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/6BCT/in.yaml): found character that cannot start any token while scanning for the next token at line 3 column 4"}
+{"id":"suite/6BFJ/text","output":"[\"h\",[[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]],[\"s\",\"value\"]]]"}
+{"id":"suite/6BFJ/file","output":"[\"h\",[[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]],[\"s\",\"value\"]]]"}
+{"id":"suite/6CA3/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 1 column 1"}
+{"id":"suite/6CA3/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/6CA3/in.yaml): found character that cannot start any token while scanning for the next token at line 1 column 1"}
+{"id":"suite/6CK3/text","output":"[\"a\",[\"s\",\"foo\"],[\"s\",\"bar\"],[\"s\",\"baz\"]]"}
+{"id":"suite/6CK3/file","output":"[\"a\",[\"s\",\"foo\"],[\"s\",\"bar\"],[\"s\",\"baz\"]]"}
+{"id":"suite/6FWR/text","output":"[\"s\",\"ab\\n\\n \\n\"]"}
+{"id":"suite/6FWR/file","output":"[\"s\",\"ab\\n\\n \\n\"]"}
+{"id":"suite/6H3V/text","output":"[\"h\",[[\"s\",\"foo: bar\\\\\"],[\"s\",\"baz'\"]]]"}
+{"id":"suite/6H3V/file","output":"[\"h\",[[\"s\",\"foo: bar\\\\\"],[\"s\",\"baz'\"]]]"}
+{"id":"suite/6HB6/text","output":"[\"h\",[[\"s\",\"Not indented\"],[\"h\",[[\"s\",\"By one space\"],[\"s\",\"By four\\n  spaces\\n\"]],[[\"s\",\"Flow style\"],[\"a\",[\"s\",\"By two\"],[\"s\",\"Also by two\"],[\"s\",\"Still by two\"]]]]]]"}
+{"id":"suite/6HB6/file","output":"[\"h\",[[\"s\",\"Not indented\"],[\"h\",[[\"s\",\"By one space\"],[\"s\",\"By four\\n  spaces\\n\"]],[[\"s\",\"Flow style\"],[\"a\",[\"s\",\"By two\"],[\"s\",\"Also by two\"],[\"s\",\"Still by two\"]]]]]]"}
+{"id":"suite/6JQW/text","output":"[\"s\",\"\\\\//||\\\\/||\\n// ||  ||__\\n\"]"}
+{"id":"suite/6JQW/file","output":"[\"s\",\"\\\\//||\\\\/||\\n// ||  ||__\\n\"]"}
+{"id":"suite/6JTT/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or ']' while parsing a flow sequence at line 2 column 1"}
+{"id":"suite/6JTT/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/6JTT/in.yaml): did not find expected ',' or ']' while parsing a flow sequence at line 2 column 1"}
+{"id":"suite/6JWB/text","output":"[\"h\",[[\"s\",\"foo\"],[\"a\",[\"s\",\"a\"],[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]]]]"}
+{"id":"suite/6JWB/file","output":"[\"h\",[[\"s\",\"foo\"],[\"a\",[\"s\",\"a\"],[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]]]]"}
+{"id":"suite/6KGN/text","output":"[\"h\",[[\"s\",\"a\"],\"n\"],[[\"s\",\"b\"],\"n\"]]"}
+{"id":"suite/6KGN/file","output":"[\"h\",[[\"s\",\"a\"],\"n\"],[[\"s\",\"b\"],\"n\"]]"}
+{"id":"suite/6LVF/text","output":"ERR Psych::SyntaxError: (<unknown>): found unknown directive name while scanning a directive at line 1 column 1"}
+{"id":"suite/6LVF/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/6LVF/in.yaml): found unknown directive name while scanning a directive at line 1 column 1"}
+{"id":"suite/6M2F/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/6M2F/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/6M2F/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/6PBE/text","output":"[\"h\",[[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]],[\"a\",[\"s\",\"c\"],[\"s\",\"d\"]]]]"}
+{"id":"suite/6PBE/file","output":"[\"h\",[[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]],[\"a\",[\"s\",\"c\"],[\"s\",\"d\"]]]]"}
+{"id":"suite/6S55/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 4 column 2"}
+{"id":"suite/6S55/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/6S55/in.yaml): could not find expected ':' while scanning a simple key at line 4 column 2"}
+{"id":"suite/6SLA/text","output":"[\"h\",[[\"s\",\"foo\\nbar:baz\\tx \\\\$%^&*()x\"],[\"i\",\"23\"]],[[\"s\",\"x\\\\ny:z\\\\tx $%^&*()x\"],[\"i\",\"24\"]]]"}
+{"id":"suite/6SLA/file","output":"[\"h\",[[\"s\",\"foo\\nbar:baz\\tx \\\\$%^&*()x\"],[\"i\",\"23\"]],[[\"s\",\"x\\\\ny:z\\\\tx $%^&*()x\"],[\"i\",\"24\"]]]"}
+{"id":"suite/6VJK/text","output":"[\"s\",\"Sammy Sosa completed another fine season with great stats.\\n\\n  63 Home Runs\\n  0.288 Batting Average\\n\\nWhat a year!\\n\"]"}
+{"id":"suite/6VJK/file","output":"[\"s\",\"Sammy Sosa completed another fine season with great stats.\\n\\n  63 Home Runs\\n  0.288 Batting Average\\n\\nWhat a year!\\n\"]"}
+{"id":"suite/6WLZ/text","output":"[\"s\",\"bar\"]"}
+{"id":"suite/6WLZ/file","output":"[\"s\",\"bar\"]"}
+{"id":"suite/6WPF/text","output":"[\"s\",\" foo\\nbar\\nbaz \"]"}
+{"id":"suite/6WPF/file","output":"[\"s\",\" foo\\nbar\\nbaz \"]"}
+{"id":"suite/6XDY/text","output":"\"n\""}
+{"id":"suite/6XDY/file","output":"\"n\""}
+{"id":"suite/6ZKB/text","output":"[\"s\",\"Document\"]"}
+{"id":"suite/6ZKB/file","output":"[\"s\",\"Document\"]"}
+{"id":"suite/735Y/text","output":"[\"a\",[\"s\",\"flow in block\"],[\"s\",\"Block scalar\\n\"],[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]]]"}
+{"id":"suite/735Y/file","output":"[\"a\",[\"s\",\"flow in block\"],[\"s\",\"Block scalar\\n\"],[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]]]"}
+{"id":"suite/74H7/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"c\"],[\"i\",\"42\"]],[[\"s\",\"e\"],[\"s\",\"f\"]],[[\"s\",\"g\"],[\"s\",\"h\"]],[[\"i\",\"23\"],\"F\"]]"}
+{"id":"suite/74H7/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"c\"],[\"i\",\"42\"]],[[\"s\",\"e\"],[\"s\",\"f\"]],[[\"s\",\"g\"],[\"s\",\"h\"]],[[\"i\",\"23\"],\"F\"]]"}
+{"id":"suite/753E/text","output":"[\"s\",\"ab\"]"}
+{"id":"suite/753E/file","output":"[\"s\",\"ab\"]"}
+{"id":"suite/7A4E/text","output":"[\"s\",\" 1st non-empty\\n2nd non-empty 3rd non-empty \"]"}
+{"id":"suite/7A4E/file","output":"[\"s\",\" 1st non-empty\\n2nd non-empty 3rd non-empty \"]"}
+{"id":"suite/7BMT/text","output":"[\"h\",[[\"s\",\"top1\"],[\"h\",[[\"s\",\"key1\"],[\"s\",\"one\"]]]],[[\"s\",\"top2\"],[\"h\",[[\"s\",\"key2\"],[\"s\",\"two\"]]]],[[\"s\",\"top3\"],[\"h\",[[\"s\",\"key3\"],[\"s\",\"three\"]]]],[[\"s\",\"top4\"],[\"h\",[[\"s\",\"key4\"],[\"s\",\"four\"]]]],[[\"s\",\"top5\"],[\"h\",[[\"s\",\"key5\"],[\"s\",\"five\"]]]],[[\"s\",\"top6\"],[\"s\",\"six\"]],[[\"s\",\"top7\"],[\"s\",\"seven\"]]]"}
+{"id":"suite/7BMT/file","output":"[\"h\",[[\"s\",\"top1\"],[\"h\",[[\"s\",\"key1\"],[\"s\",\"one\"]]]],[[\"s\",\"top2\"],[\"h\",[[\"s\",\"key2\"],[\"s\",\"two\"]]]],[[\"s\",\"top3\"],[\"h\",[[\"s\",\"key3\"],[\"s\",\"three\"]]]],[[\"s\",\"top4\"],[\"h\",[[\"s\",\"key4\"],[\"s\",\"four\"]]]],[[\"s\",\"top5\"],[\"h\",[[\"s\",\"key5\"],[\"s\",\"five\"]]]],[[\"s\",\"top6\"],[\"s\",\"six\"]],[[\"s\",\"top7\"],[\"s\",\"seven\"]]]"}
+{"id":"suite/7BUB/text","output":"[\"h\",[[\"s\",\"hr\"],[\"a\",[\"s\",\"Mark McGwire\"],[\"s\",\"Sammy Sosa\"]]],[[\"s\",\"rbi\"],[\"a\",[\"s\",\"Sammy Sosa\"],[\"s\",\"Ken Griffey\"]]]]"}
+{"id":"suite/7BUB/file","output":"[\"h\",[[\"s\",\"hr\"],[\"a\",[\"s\",\"Mark McGwire\"],[\"s\",\"Sammy Sosa\"]]],[[\"s\",\"rbi\"],[\"a\",[\"s\",\"Sammy Sosa\"],[\"s\",\"Ken Griffey\"]]]]"}
+{"id":"suite/7FWL/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"baz\"]]]"}
+{"id":"suite/7FWL/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"baz\"]]]"}
+{"id":"suite/7LBH/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/7LBH/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/7LBH/in.yaml): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/7MNF/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 3 column 1"}
+{"id":"suite/7MNF/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/7MNF/in.yaml): could not find expected ':' while scanning a simple key at line 3 column 1"}
+{"id":"suite/7T8X/text","output":"[\"s\",\"\\nfolded line\\nnext line\\n  * bullet\\n\\n  * list\\n  * lines\\n\\nlast line\\n\"]"}
+{"id":"suite/7T8X/file","output":"[\"s\",\"\\nfolded line\\nnext line\\n  * bullet\\n\\n  * list\\n  * lines\\n\\nlast line\\n\"]"}
+{"id":"suite/7TMG/text","output":"[\"a\",[\"s\",\"word1\"],[\"s\",\"word2\"]]"}
+{"id":"suite/7TMG/file","output":"[\"a\",[\"s\",\"word1\"],[\"s\",\"word2\"]]"}
+{"id":"suite/7W2P/text","output":"[\"h\",[[\"s\",\"a\"],\"n\"],[[\"s\",\"b\"],\"n\"],[[\"s\",\"c\"],\"n\"]]"}
+{"id":"suite/7W2P/file","output":"[\"h\",[[\"s\",\"a\"],\"n\"],[[\"s\",\"b\"],\"n\"],[[\"s\",\"c\"],\"n\"]]"}
+{"id":"suite/7Z25/text","output":"[\"s\",\"scalar1\"]"}
+{"id":"suite/7Z25/file","output":"[\"s\",\"scalar1\"]"}
+{"id":"suite/7ZZ5/text","output":"[\"h\",[[\"s\",\"nested sequences\"],[\"a\",[\"a\",[\"a\",[\"a\"]]],[\"a\",[\"a\",[\"h\"]]]]],[[\"s\",\"key1\"],[\"a\"]],[[\"s\",\"key2\"],[\"h\"]]]"}
+{"id":"suite/7ZZ5/file","output":"[\"h\",[[\"s\",\"nested sequences\"],[\"a\",[\"a\",[\"a\",[\"a\"]]],[\"a\",[\"a\",[\"h\"]]]]],[[\"s\",\"key1\"],[\"a\"]],[[\"s\",\"key2\"],[\"h\"]]]"}
+{"id":"suite/82AN/text","output":"[\"s\",\"---word1 word2\"]"}
+{"id":"suite/82AN/file","output":"[\"s\",\"---word1 word2\"]"}
+{"id":"suite/87E4/text","output":"[\"h\",[[\"s\",\"implicit block key\"],[\"a\",[\"h\",[[\"s\",\"implicit flow key\"],[\"s\",\"value\"]]]]]]"}
+{"id":"suite/87E4/file","output":"[\"h\",[[\"s\",\"implicit block key\"],[\"a\",[\"h\",[[\"s\",\"implicit flow key\"],[\"s\",\"value\"]]]]]]"}
+{"id":"suite/8CWC/text","output":"[\"h\",[[\"s\",\"key ends with two colons::\"],[\"s\",\"value\"]]]"}
+{"id":"suite/8CWC/file","output":"[\"h\",[[\"s\",\"key ends with two colons::\"],[\"s\",\"value\"]]]"}
+{"id":"suite/8G76/text","output":"\"F\""}
+{"id":"suite/8G76/file","output":"\"F\""}
+{"id":"suite/8KB6/text","output":"[\"a\",[\"h\",[[\"s\",\"single line\"],\"n\"],[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\",[[\"s\",\"multi line\"],\"n\"],[[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/8KB6/file","output":"[\"a\",[\"h\",[[\"s\",\"single line\"],\"n\"],[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\",[[\"s\",\"multi line\"],\"n\"],[[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/8MK2/text","output":"[\"s\",\"a\"]"}
+{"id":"suite/8MK2/file","output":"[\"s\",\"a\"]"}
+{"id":"suite/8QBE/text","output":"[\"h\",[[\"s\",\"key\"],[\"a\",[\"s\",\"item1\"],[\"s\",\"item2\"]]]]"}
+{"id":"suite/8QBE/file","output":"[\"h\",[[\"s\",\"key\"],[\"a\",[\"s\",\"item1\"],[\"s\",\"item2\"]]]]"}
+{"id":"suite/8UDB/text","output":"[\"a\",[\"s\",\"double quoted\"],[\"s\",\"single quoted\"],[\"s\",\"plain text\"],[\"a\",[\"s\",\"nested\"]],[\"h\",[[\"s\",\"single\"],[\"s\",\"pair\"]]]]"}
+{"id":"suite/8UDB/file","output":"[\"a\",[\"s\",\"double quoted\"],[\"s\",\"single quoted\"],[\"s\",\"plain text\"],[\"a\",[\"s\",\"nested\"]],[\"h\",[[\"s\",\"single\"],[\"s\",\"pair\"]]]]"}
+{"id":"suite/8XDJ/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/8XDJ/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/8XDJ/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/8XYN/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected alphabetic or numeric character while scanning an anchor at line 2 column 3"}
+{"id":"suite/8XYN/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/8XYN/in.yaml): did not find expected alphabetic or numeric character while scanning an anchor at line 2 column 3"}
+{"id":"suite/93JH/text","output":"[\"a\",[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]],[[\"s\",\"key2\"],[\"s\",\"value2\"]]],[\"h\",[[\"s\",\"key3\"],[\"s\",\"value3\"]]]]"}
+{"id":"suite/93JH/file","output":"[\"a\",[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]],[[\"s\",\"key2\"],[\"s\",\"value2\"]]],[\"h\",[[\"s\",\"key3\"],[\"s\",\"value3\"]]]]"}
+{"id":"suite/93WF/text","output":"[\"s\",\"trimmed\\n\\n\\nas space\"]"}
+{"id":"suite/93WF/file","output":"[\"s\",\"trimmed\\n\\n\\nas space\"]"}
+{"id":"suite/96L6/text","output":"[\"s\",\"Mark McGwire's year was crippled by a knee injury.\\n\"]"}
+{"id":"suite/96L6/file","output":"[\"s\",\"Mark McGwire's year was crippled by a knee injury.\\n\"]"}
+{"id":"suite/96NN/00/text","output":"ERR Psych::SyntaxError: (<unknown>): found a tab character where an indentation space is expected while scanning a block scalar at line 1 column 6"}
+{"id":"suite/96NN/00/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/96NN/00/in.yaml): found a tab character where an indentation space is expected while scanning a block scalar at line 1 column 6"}
+{"id":"suite/96NN/01/text","output":"ERR Psych::SyntaxError: (<unknown>): found a tab character where an indentation space is expected while scanning a block scalar at line 1 column 6"}
+{"id":"suite/96NN/01/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/96NN/01/in.yaml): found a tab character where an indentation space is expected while scanning a block scalar at line 1 column 6"}
+{"id":"suite/98YD/text","output":"\"F\""}
+{"id":"suite/98YD/file","output":"\"F\""}
+{"id":"suite/9BXH/text","output":"[\"a\",[\"h\",[[\"s\",\"single line\"],\"n\"],[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\",[[\"s\",\"multi line\"],\"n\"],[[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/9BXH/file","output":"[\"a\",[\"h\",[[\"s\",\"single line\"],\"n\"],[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\",[[\"s\",\"multi line\"],\"n\"],[[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/9C9N/text","output":"[\"h\",[[\"s\",\"flow\"],[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]]]"}
+{"id":"suite/9C9N/file","output":"[\"h\",[[\"s\",\"flow\"],[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]]]"}
+{"id":"suite/9CWY/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 4 column 1"}
+{"id":"suite/9CWY/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/9CWY/in.yaml): could not find expected ':' while scanning a simple key at line 4 column 1"}
+{"id":"suite/9DXL/text","output":"[\"h\",[[\"s\",\"Mapping\"],[\"s\",\"Document\"]]]"}
+{"id":"suite/9DXL/file","output":"[\"h\",[[\"s\",\"Mapping\"],[\"s\",\"Document\"]]]"}
+{"id":"suite/9FMG/text","output":"[\"h\",[[\"s\",\"a\"],[\"h\",[[\"s\",\"b\"],[\"h\",[[\"s\",\"c\"],[\"s\",\"d\"]]]],[[\"s\",\"e\"],[\"h\",[[\"s\",\"f\"],[\"s\",\"g\"]]]]]],[[\"s\",\"h\"],[\"s\",\"i\"]]]"}
+{"id":"suite/9FMG/file","output":"[\"h\",[[\"s\",\"a\"],[\"h\",[[\"s\",\"b\"],[\"h\",[[\"s\",\"c\"],[\"s\",\"d\"]]]],[[\"s\",\"e\"],[\"h\",[[\"s\",\"f\"],[\"s\",\"g\"]]]]]],[[\"s\",\"h\"],[\"s\",\"i\"]]]"}
+{"id":"suite/9HCY/text","output":"[\"s\",\"bar\"]"}
+{"id":"suite/9HCY/file","output":"[\"s\",\"bar\"]"}
+{"id":"suite/9J7A/text","output":"[\"h\",[[\"s\",\"foo\"],[\"h\",[[\"s\",\"bar\"],[\"s\",\"baz\"]]]]]"}
+{"id":"suite/9J7A/file","output":"[\"h\",[[\"s\",\"foo\"],[\"h\",[[\"s\",\"bar\"],[\"s\",\"baz\"]]]]]"}
+{"id":"suite/9JBA/text","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]"}
+{"id":"suite/9JBA/file","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]"}
+{"id":"suite/9KAX/text","output":"[\"s\",\"scalar1\"]"}
+{"id":"suite/9KAX/file","output":"[\"s\",\"scalar1\"]"}
+{"id":"suite/9KBC/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 1 column 9"}
+{"id":"suite/9KBC/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/9KBC/in.yaml): mapping values are not allowed in this context at line 1 column 9"}
+{"id":"suite/9MAG/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a flow node at line 2 column 3"}
+{"id":"suite/9MAG/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/9MAG/in.yaml): did not find expected node content while parsing a flow node at line 2 column 3"}
+{"id":"suite/9MMA/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected <document start> at line 1 column 1"}
+{"id":"suite/9MMA/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/9MMA/in.yaml): did not find expected <document start> at line 1 column 1"}
+{"id":"suite/9MMW/text","output":"[\"a\",[\"a\",[\"h\",[[\"s\",\"YAML\"],[\"s\",\"separate\"]]]],[\"a\",[\"h\",[[\"s\",\"JSON like\"],[\"s\",\"adjacent\"]]]],[\"a\",[\"h\",[[\"s\",\"like\"],[\"s\",\"adjacent\"]]]]]"}
+{"id":"suite/9MMW/file","output":"[\"a\",[\"a\",[\"h\",[[\"s\",\"YAML\"],[\"s\",\"separate\"]]]],[\"a\",[\"h\",[[\"s\",\"JSON like\"],[\"s\",\"adjacent\"]]]],[\"a\",[\"h\",[[\"s\",\"like\"],[\"s\",\"adjacent\"]]]]]"}
+{"id":"suite/9MQT/00/text","output":"[\"s\",\"a ...x b\"]"}
+{"id":"suite/9MQT/00/file","output":"[\"s\",\"a ...x b\"]"}
+{"id":"suite/9MQT/01/text","output":"ERR Psych::SyntaxError: (<unknown>): found unexpected document indicator while scanning a quoted scalar at line 1 column 5"}
+{"id":"suite/9MQT/01/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/9MQT/01/in.yaml): found unexpected document indicator while scanning a quoted scalar at line 1 column 5"}
+{"id":"suite/9SA2/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 3 column 3"}
+{"id":"suite/9SA2/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/9SA2/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 3 column 3"}
+{"id":"suite/9SHH/text","output":"[\"h\",[[\"s\",\"single\"],[\"s\",\"text\"]],[[\"s\",\"double\"],[\"s\",\"text\"]]]"}
+{"id":"suite/9SHH/file","output":"[\"h\",[[\"s\",\"single\"],[\"s\",\"text\"]],[[\"s\",\"double\"],[\"s\",\"text\"]]]"}
+{"id":"suite/9TFX/text","output":"[\"s\",\" 1st non-empty\\n2nd non-empty 3rd non-empty \"]"}
+{"id":"suite/9TFX/file","output":"[\"s\",\" 1st non-empty\\n2nd non-empty 3rd non-empty \"]"}
+{"id":"suite/9U5K/text","output":"[\"a\",[\"h\",[[\"s\",\"item\"],[\"s\",\"Super Hoop\"]],[[\"s\",\"quantity\"],[\"i\",\"1\"]]],[\"h\",[[\"s\",\"item\"],[\"s\",\"Basketball\"]],[[\"s\",\"quantity\"],[\"i\",\"4\"]]],[\"h\",[[\"s\",\"item\"],[\"s\",\"Big Shoes\"]],[[\"s\",\"quantity\"],[\"i\",\"1\"]]]]"}
+{"id":"suite/9U5K/file","output":"[\"a\",[\"h\",[[\"s\",\"item\"],[\"s\",\"Super Hoop\"]],[[\"s\",\"quantity\"],[\"i\",\"1\"]]],[\"h\",[[\"s\",\"item\"],[\"s\",\"Basketball\"]],[[\"s\",\"quantity\"],[\"i\",\"4\"]]],[\"h\",[[\"s\",\"item\"],[\"s\",\"Big Shoes\"]],[[\"s\",\"quantity\"],[\"i\",\"1\"]]]]"}
+{"id":"suite/9WXW/text","output":"[\"s\",\"bar\"]"}
+{"id":"suite/9WXW/file","output":"[\"s\",\"bar\"]"}
+{"id":"suite/9YRD/text","output":"[\"s\",\"a b c d\\ne\"]"}
+{"id":"suite/9YRD/file","output":"[\"s\",\"a b c d\\ne\"]"}
+{"id":"suite/A2M4/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 2 column 4"}
+{"id":"suite/A2M4/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/A2M4/in.yaml): found character that cannot start any token while scanning for the next token at line 2 column 4"}
+{"id":"suite/A6F9/text","output":"[\"h\",[[\"s\",\"strip\"],[\"s\",\"text\"]],[[\"s\",\"clip\"],[\"s\",\"text\\n\"]],[[\"s\",\"keep\"],[\"s\",\"text\\n\"]]]"}
+{"id":"suite/A6F9/file","output":"[\"h\",[[\"s\",\"strip\"],[\"s\",\"text\"]],[[\"s\",\"clip\"],[\"s\",\"text\\n\"]],[[\"s\",\"keep\"],[\"s\",\"text\\n\"]]]"}
+{"id":"suite/A984/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b c\"]],[[\"s\",\"d\"],[\"s\",\"e f\"]]]"}
+{"id":"suite/A984/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b c\"]],[[\"s\",\"d\"],[\"s\",\"e f\"]]]"}
+{"id":"suite/AB8U/text","output":"[\"a\",[\"s\",\"single multiline - sequence entry\"]]"}
+{"id":"suite/AB8U/file","output":"[\"a\",[\"s\",\"single multiline - sequence entry\"]]"}
+{"id":"suite/AVM7/text","output":"\"F\""}
+{"id":"suite/AVM7/file","output":"\"F\""}
+{"id":"suite/AZ63/text","output":"[\"h\",[[\"s\",\"one\"],[\"a\",[\"i\",\"2\"],[\"i\",\"3\"]]],[[\"s\",\"four\"],[\"i\",\"5\"]]]"}
+{"id":"suite/AZ63/file","output":"[\"h\",[[\"s\",\"one\"],[\"a\",[\"i\",\"2\"],[\"i\",\"3\"]]],[[\"s\",\"four\"],[\"i\",\"5\"]]]"}
+{"id":"suite/AZW3/text","output":"[\"a\",[\"h\",[[\"s\",\"bla\\\"keks\"],[\"s\",\"foo\"]]],[\"h\",[[\"s\",\"bla]keks\"],[\"s\",\"foo\"]]]]"}
+{"id":"suite/AZW3/file","output":"[\"a\",[\"h\",[[\"s\",\"bla\\\"keks\"],[\"s\",\"foo\"]]],[\"h\",[[\"s\",\"bla]keks\"],[\"s\",\"foo\"]]]]"}
+{"id":"suite/B3HG/text","output":"[\"s\",\"folded text\\n\"]"}
+{"id":"suite/B3HG/file","output":"[\"s\",\"folded text\\n\"]"}
+{"id":"suite/B63P/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected <document start> at line 1 column 1"}
+{"id":"suite/B63P/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/B63P/in.yaml): did not find expected <document start> at line 1 column 1"}
+{"id":"suite/BD7L/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected '-' indicator while parsing a block collection at line 1 column 1"}
+{"id":"suite/BD7L/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/BD7L/in.yaml): did not find expected '-' indicator while parsing a block collection at line 1 column 1"}
+{"id":"suite/BEC7/text","output":"ERR Psych::SyntaxError: (<unknown>): found incompatible YAML document at line 1 column 1"}
+{"id":"suite/BEC7/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/BEC7/in.yaml): found incompatible YAML document at line 1 column 1"}
+{"id":"suite/BF9H/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 2 column 1"}
+{"id":"suite/BF9H/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/BF9H/in.yaml): did not find expected key while parsing a block mapping at line 2 column 1"}
+{"id":"suite/BS4K/text","output":"[\"s\",\"word1\"]"}
+{"id":"suite/BS4K/file","output":"[\"s\",\"word1\"]"}
+{"id":"suite/BU8L/text","output":"[\"h\",[[\"s\",\"key\"],[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]]]"}
+{"id":"suite/BU8L/file","output":"[\"h\",[[\"s\",\"key\"],[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]]]"}
+{"id":"suite/C2DT/text","output":"[\"h\",[[\"s\",\"adjacent\"],[\"s\",\"value\"]],[[\"s\",\"readable\"],[\"s\",\"value\"]],[[\"s\",\"empty\"],\"n\"]]"}
+{"id":"suite/C2DT/file","output":"[\"h\",[[\"s\",\"adjacent\"],[\"s\",\"value\"]],[[\"s\",\"readable\"],[\"s\",\"value\"]],[[\"s\",\"empty\"],\"n\"]]"}
+{"id":"suite/C2SP/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 2 column 2"}
+{"id":"suite/C2SP/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/C2SP/in.yaml): mapping values are not allowed in this context at line 2 column 2"}
+{"id":"suite/C4HZ/text","output":"[\"a\",[\"h\",[[\"s\",\"center\"],[\"h\",[[\"s\",\"x\"],[\"i\",\"73\"]],[[\"s\",\"y\"],[\"i\",\"129\"]]]],[[\"s\",\"radius\"],[\"i\",\"7\"]]],[\"h\",[[\"s\",\"start\"],[\"h\",[[\"s\",\"x\"],[\"i\",\"73\"]],[[\"s\",\"y\"],[\"i\",\"129\"]]]],[[\"s\",\"finish\"],[\"h\",[[\"s\",\"x\"],[\"i\",\"89\"]],[[\"s\",\"y\"],[\"i\",\"102\"]]]]],[\"h\",[[\"s\",\"start\"],[\"h\",[[\"s\",\"x\"],[\"i\",\"73\"]],[[\"s\",\"y\"],[\"i\",\"129\"]]]],[[\"s\",\"color\"],[\"i\",\"16772795\"]],[[\"s\",\"text\"],[\"s\",\"Pretty vector drawing.\"]]]]"}
+{"id":"suite/C4HZ/file","output":"[\"a\",[\"h\",[[\"s\",\"center\"],[\"h\",[[\"s\",\"x\"],[\"i\",\"73\"]],[[\"s\",\"y\"],[\"i\",\"129\"]]]],[[\"s\",\"radius\"],[\"i\",\"7\"]]],[\"h\",[[\"s\",\"start\"],[\"h\",[[\"s\",\"x\"],[\"i\",\"73\"]],[[\"s\",\"y\"],[\"i\",\"129\"]]]],[[\"s\",\"finish\"],[\"h\",[[\"s\",\"x\"],[\"i\",\"89\"]],[[\"s\",\"y\"],[\"i\",\"102\"]]]]],[\"h\",[[\"s\",\"start\"],[\"h\",[[\"s\",\"x\"],[\"i\",\"73\"]],[[\"s\",\"y\"],[\"i\",\"129\"]]]],[[\"s\",\"color\"],[\"i\",\"16772795\"]],[[\"s\",\"text\"],[\"s\",\"Pretty vector drawing.\"]]]]"}
+{"id":"suite/CC74/text","output":"[\"s\",\"bar\"]"}
+{"id":"suite/CC74/file","output":"[\"s\",\"bar\"]"}
+{"id":"suite/CFD4/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a flow node at line 1 column 5"}
+{"id":"suite/CFD4/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/CFD4/in.yaml): did not find expected node content while parsing a flow node at line 1 column 5"}
+{"id":"suite/CML9/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or ']' while parsing a flow sequence at line 1 column 6"}
+{"id":"suite/CML9/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/CML9/in.yaml): did not find expected ',' or ']' while parsing a flow sequence at line 1 column 6"}
+{"id":"suite/CN3R/text","output":"[\"a\",[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\",[[\"s\",\"c\"],[\"s\",\"d\"]]],[\"h\",[[\"s\",\"e\"],[\"s\",\"f\"]]],[\"h\",[[\"s\",\"g\"],[\"s\",\"h\"]]]]"}
+{"id":"suite/CN3R/file","output":"[\"a\",[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\",[[\"s\",\"c\"],[\"s\",\"d\"]]],[\"h\",[[\"s\",\"e\"],[\"s\",\"f\"]]],[\"h\",[[\"s\",\"g\"],[\"s\",\"h\"]]]]"}
+{"id":"suite/CPZ3/text","output":"[\"h\",[[\"s\",\"tab\"],[\"s\",\"\\tstring\"]]]"}
+{"id":"suite/CPZ3/file","output":"[\"h\",[[\"s\",\"tab\"],[\"s\",\"\\tstring\"]]]"}
+{"id":"suite/CQ3W/text","output":"ERR Psych::SyntaxError: (<unknown>): found unexpected end of stream while scanning a quoted scalar at line 2 column 6"}
+{"id":"suite/CQ3W/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/CQ3W/in.yaml): found unexpected end of stream while scanning a quoted scalar at line 2 column 6"}
+{"id":"suite/CT4Q/text","output":"[\"a\",[\"h\",[[\"s\",\"foo bar\"],[\"s\",\"baz\"]]]]"}
+{"id":"suite/CT4Q/file","output":"[\"a\",[\"h\",[[\"s\",\"foo bar\"],[\"s\",\"baz\"]]]]"}
+{"id":"suite/CTN5/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a flow node at line 2 column 12"}
+{"id":"suite/CTN5/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/CTN5/in.yaml): did not find expected node content while parsing a flow node at line 2 column 12"}
+{"id":"suite/CUP7/text","output":"[\"h\",[[\"s\",\"anchored\"],[\"s\",\"value\"]],[[\"s\",\"alias\"],[\"s\",\"value\"]]]"}
+{"id":"suite/CUP7/file","output":"[\"h\",[[\"s\",\"anchored\"],[\"s\",\"value\"]],[[\"s\",\"alias\"],[\"s\",\"value\"]]]"}
+{"id":"suite/CVW2/text","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]"}
+{"id":"suite/CVW2/file","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]"}
+{"id":"suite/CXX2/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 1 column 14"}
+{"id":"suite/CXX2/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/CXX2/in.yaml): mapping values are not allowed in this context at line 1 column 14"}
+{"id":"suite/D49Q/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/D49Q/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/D49Q/in.yaml): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/D83L/text","output":"[\"a\",[\"s\",\"explicit indent and chomp\"],[\"s\",\"chomp and explicit indent\"]]"}
+{"id":"suite/D83L/file","output":"[\"a\",[\"s\",\"explicit indent and chomp\"],[\"s\",\"chomp and explicit indent\"]]"}
+{"id":"suite/D88J/text","output":"[\"h\",[[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"]]]]"}
+{"id":"suite/D88J/file","output":"[\"h\",[[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"]]]]"}
+{"id":"suite/D9TU/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]]"}
+{"id":"suite/D9TU/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]]"}
+{"id":"suite/DBG4/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a flow node at line 8 column 5"}
+{"id":"suite/DBG4/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/DBG4/in.yaml): did not find expected node content while parsing a flow node at line 8 column 5"}
+{"id":"suite/DC7X/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"seq\"],[\"a\",[\"s\",\"a\"]]],[[\"s\",\"c\"],[\"s\",\"d\"]]]"}
+{"id":"suite/DC7X/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"seq\"],[\"a\",[\"s\",\"a\"]]],[[\"s\",\"c\"],[\"s\",\"d\"]]]"}
+{"id":"suite/DE56/00/text","output":"[\"s\",\"1 trailing\\t tab\"]"}
+{"id":"suite/DE56/00/file","output":"[\"s\",\"1 trailing\\t tab\"]"}
+{"id":"suite/DE56/01/text","output":"[\"s\",\"2 trailing\\t tab\"]"}
+{"id":"suite/DE56/01/file","output":"[\"s\",\"2 trailing\\t tab\"]"}
+{"id":"suite/DE56/02/text","output":"[\"s\",\"3 trailing\\t tab\"]"}
+{"id":"suite/DE56/02/file","output":"[\"s\",\"3 trailing\\t tab\"]"}
+{"id":"suite/DE56/03/text","output":"[\"s\",\"4 trailing\\t tab\"]"}
+{"id":"suite/DE56/03/file","output":"[\"s\",\"4 trailing\\t tab\"]"}
+{"id":"suite/DE56/04/text","output":"[\"s\",\"5 trailing tab\"]"}
+{"id":"suite/DE56/04/file","output":"[\"s\",\"5 trailing tab\"]"}
+{"id":"suite/DE56/05/text","output":"[\"s\",\"6 trailing tab\"]"}
+{"id":"suite/DE56/05/file","output":"[\"s\",\"6 trailing tab\"]"}
+{"id":"suite/DFF7/text","output":"[\"h\",[[\"s\",\"explicit\"],[\"s\",\"entry\"]],[[\"s\",\"implicit\"],[\"s\",\"entry\"]]]"}
+{"id":"suite/DFF7/file","output":"[\"h\",[[\"s\",\"explicit\"],[\"s\",\"entry\"]],[[\"s\",\"implicit\"],[\"s\",\"entry\"]]]"}
+{"id":"suite/DHP8/text","output":"[\"a\",[\"s\",\"foo\"],[\"s\",\"bar\"],[\"i\",\"42\"]]"}
+{"id":"suite/DHP8/file","output":"[\"a\",[\"s\",\"foo\"],[\"s\",\"bar\"],[\"i\",\"42\"]]"}
+{"id":"suite/DK3J/text","output":"[\"s\",\"\"]"}
+{"id":"suite/DK3J/file","output":"[\"s\",\"\"]"}
+{"id":"suite/DK4H/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or ']' while parsing a flow sequence at line 2 column 1"}
+{"id":"suite/DK4H/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/DK4H/in.yaml): did not find expected ',' or ']' while parsing a flow sequence at line 2 column 1"}
+{"id":"suite/DK95/00/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 2 column 2"}
+{"id":"suite/DK95/00/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/DK95/00/in.yaml): found character that cannot start any token while scanning for the next token at line 2 column 2"}
+{"id":"suite/DK95/01/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar baz\"]]]"}
+{"id":"suite/DK95/01/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar baz\"]]]"}
+{"id":"suite/DK95/02/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar baz\"]]]"}
+{"id":"suite/DK95/02/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar baz\"]]]"}
+{"id":"suite/DK95/03/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/DK95/03/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/DK95/03/in.yaml): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/DK95/04/text","output":"ERR Psych::SyntaxError: (<unknown>): found a tab character that violates indentation while scanning a plain scalar at line 1 column 6"}
+{"id":"suite/DK95/04/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/DK95/04/in.yaml): found a tab character that violates indentation while scanning a plain scalar at line 1 column 6"}
+{"id":"suite/DK95/05/text","output":"[\"h\",[[\"s\",\"foo\"],[\"i\",\"1\"]],[[\"s\",\"bar\"],[\"i\",\"2\"]]]"}
+{"id":"suite/DK95/05/file","output":"[\"h\",[[\"s\",\"foo\"],[\"i\",\"1\"]],[[\"s\",\"bar\"],[\"i\",\"2\"]]]"}
+{"id":"suite/DK95/06/text","output":"ERR Psych::SyntaxError: (<unknown>): found a tab character that violates indentation while scanning a plain scalar at line 2 column 6"}
+{"id":"suite/DK95/06/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/DK95/06/in.yaml): found a tab character that violates indentation while scanning a plain scalar at line 2 column 6"}
+{"id":"suite/DK95/07/text","output":"\"n\""}
+{"id":"suite/DK95/07/file","output":"\"n\""}
+{"id":"suite/DK95/08/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar baz \\t \\t \"]]]"}
+{"id":"suite/DK95/08/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar baz \\t \\t \"]]]"}
+{"id":"suite/DMG6/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/DMG6/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/DMG6/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/DWX9/text","output":"[\"s\",\"\\n\\nliteral\\n \\n\\ntext\\n\"]"}
+{"id":"suite/DWX9/file","output":"[\"s\",\"\\n\\nliteral\\n \\n\\ntext\\n\"]"}
+{"id":"suite/E76Z/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"b\"],[\"s\",\"a\"]]]"}
+{"id":"suite/E76Z/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"b\"],[\"s\",\"a\"]]]"}
+{"id":"suite/EB22/text","output":"[\"s\",\"scalar1\"]"}
+{"id":"suite/EB22/file","output":"[\"s\",\"scalar1\"]"}
+{"id":"suite/EHF6/text","output":"[\"h\",[[\"s\",\"k\"],[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/EHF6/file","output":"[\"h\",[[\"s\",\"k\"],[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/EW3V/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 2 column 4"}
+{"id":"suite/EW3V/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/EW3V/in.yaml): mapping values are not allowed in this context at line 2 column 4"}
+{"id":"suite/EX5H/text","output":"[\"s\",\"a b c d\\ne\"]"}
+{"id":"suite/EX5H/file","output":"[\"s\",\"a b c d\\ne\"]"}
+{"id":"suite/EXG3/text","output":"[\"s\",\"---word1 word2\"]"}
+{"id":"suite/EXG3/file","output":"[\"s\",\"---word1 word2\"]"}
+{"id":"suite/F2C7/text","output":"[\"a\",[\"s\",\"a\"],[\"i\",\"2\"],[\"i\",\"4\"],[\"s\",\"d\"]]"}
+{"id":"suite/F2C7/file","output":"[\"a\",[\"s\",\"a\"],[\"i\",\"2\"],[\"i\",\"4\"],[\"s\",\"d\"]]"}
+{"id":"suite/F3CP/text","output":"[\"h\",[[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"],[\"h\",[[\"s\",\"d\"],[\"a\",[\"s\",\"e\"],[\"s\",\"f\"]]]]]]]"}
+{"id":"suite/F3CP/file","output":"[\"h\",[[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"],[\"h\",[[\"s\",\"d\"],[\"a\",[\"s\",\"e\"],[\"s\",\"f\"]]]]]]]"}
+{"id":"suite/F6MC/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\" more indented\\nregular\\n\"]],[[\"s\",\"b\"],[\"s\",\"\\n\\n more indented\\nregular\\n\"]]]"}
+{"id":"suite/F6MC/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\" more indented\\nregular\\n\"]],[[\"s\",\"b\"],[\"s\",\"\\n\\n more indented\\nregular\\n\"]]]"}
+{"id":"suite/F8F9/text","output":"[\"h\",[[\"s\",\"strip\"],[\"s\",\"# text\"]],[[\"s\",\"clip\"],[\"s\",\"# text\\n\"]],[[\"s\",\"keep\"],[\"s\",\"# text\\n\\n\"]]]"}
+{"id":"suite/F8F9/file","output":"[\"h\",[[\"s\",\"strip\"],[\"s\",\"# text\"]],[[\"s\",\"clip\"],[\"s\",\"# text\\n\"]],[[\"s\",\"keep\"],[\"s\",\"# text\\n\\n\"]]]"}
+{"id":"suite/FBC9/text","output":"[\"h\",[[\"s\",\"safe\"],[\"s\",\"a!\\\"#$%&'()*+,-./09:;<=>?@AZ[\\\\]^_`az{|}~ !\\\"#$%&'()*+,-./09:;<=>?@AZ[\\\\]^_`az{|}~\"]],[[\"s\",\"safe question mark\"],[\"s\",\"?foo\"]],[[\"s\",\"safe colon\"],[\"s\",\":foo\"]],[[\"s\",\"safe dash\"],[\"s\",\"-foo\"]]]"}
+{"id":"suite/FBC9/file","output":"[\"h\",[[\"s\",\"safe\"],[\"s\",\"a!\\\"#$%&'()*+,-./09:;<=>?@AZ[\\\\]^_`az{|}~ !\\\"#$%&'()*+,-./09:;<=>?@AZ[\\\\]^_`az{|}~\"]],[[\"s\",\"safe question mark\"],[\"s\",\"?foo\"]],[[\"s\",\"safe colon\"],[\"s\",\":foo\"]],[[\"s\",\"safe dash\"],[\"s\",\"-foo\"]]]"}
+{"id":"suite/FH7J/text","output":"[\"a\",\"n\",[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\"]]"}
+{"id":"suite/FH7J/file","output":"[\"a\",\"n\",[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\"]]"}
+{"id":"suite/FP8R/text","output":"[\"s\",\"\"]"}
+{"id":"suite/FP8R/file","output":"[\"s\",\"\"]"}
+{"id":"suite/FQ7F/text","output":"[\"a\",[\"s\",\"Mark McGwire\"],[\"s\",\"Sammy Sosa\"],[\"s\",\"Ken Griffey\"]]"}
+{"id":"suite/FQ7F/file","output":"[\"a\",[\"s\",\"Mark McGwire\"],[\"s\",\"Sammy Sosa\"],[\"s\",\"Ken Griffey\"]]"}
+{"id":"suite/FRK4/text","output":"ERR Psych::SyntaxError: (<unknown>): found unexpected ':' while scanning a plain scalar at line 2 column 5"}
+{"id":"suite/FRK4/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/FRK4/in.yaml): found unexpected ':' while scanning a plain scalar at line 2 column 5"}
+{"id":"suite/FTA2/text","output":"[\"a\",[\"s\",\"a\"]]"}
+{"id":"suite/FTA2/file","output":"[\"a\",[\"s\",\"a\"]]"}
+{"id":"suite/FUP4/text","output":"[\"a\",[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"]]]"}
+{"id":"suite/FUP4/file","output":"[\"a\",[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"]]]"}
+{"id":"suite/G4RS/text","output":"[\"h\",[[\"s\",\"unicode\"],[\"s\",\"Sosa did fine.☺\"]],[[\"s\",\"control\"],[\"s\",\"\\b1998\\t1999\\t2000\\n\"]],[[\"s\",\"hex esc\"],[\"s\",\"\\r\\n is \\r\\n\"]],[[\"s\",\"single\"],[\"s\",\"\\\"Howdy!\\\" he cried.\"]],[[\"s\",\"quoted\"],[\"s\",\" # Not a 'comment'.\"]],[[\"s\",\"tie-fighter\"],[\"s\",\"|\\\\-*-/|\"]]]"}
+{"id":"suite/G4RS/file","output":"[\"h\",[[\"s\",\"unicode\"],[\"s\",\"Sosa did fine.☺\"]],[[\"s\",\"control\"],[\"s\",\"\\b1998\\t1999\\t2000\\n\"]],[[\"s\",\"hex esc\"],[\"s\",\"\\r\\n is \\r\\n\"]],[[\"s\",\"single\"],[\"s\",\"\\\"Howdy!\\\" he cried.\"]],[[\"s\",\"quoted\"],[\"s\",\" # Not a 'comment'.\"]],[[\"s\",\"tie-fighter\"],[\"s\",\"|\\\\-*-/|\"]]]"}
+{"id":"suite/G5U8/text","output":"[\"a\",[\"a\",[\"s\",\"-\"],[\"s\",\"-\"]]]"}
+{"id":"suite/G5U8/file","output":"[\"a\",[\"a\",[\"s\",\"-\"],[\"s\",\"-\"]]]"}
+{"id":"suite/G7JE/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/G7JE/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/G7JE/in.yaml): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/G992/text","output":"[\"s\",\"folded text\\n\"]"}
+{"id":"suite/G992/file","output":"[\"s\",\"folded text\\n\"]"}
+{"id":"suite/G9HC/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 3 column 1"}
+{"id":"suite/G9HC/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/G9HC/in.yaml): could not find expected ':' while scanning a simple key at line 3 column 1"}
+{"id":"suite/GDY7/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/GDY7/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/GDY7/in.yaml): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/GH63/text","output":"[\"h\",[[\"s\",\"a\"],[\"f\",\"1.3\"]],[[\"s\",\"fifteen\"],[\"s\",\"d\"]]]"}
+{"id":"suite/GH63/file","output":"[\"h\",[[\"s\",\"a\"],[\"f\",\"1.3\"]],[[\"s\",\"fifteen\"],[\"s\",\"d\"]]]"}
+{"id":"suite/GT5M/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/GT5M/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/GT5M/in.yaml): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/H2RW/text","output":"[\"h\",[[\"s\",\"foo\"],[\"i\",\"1\"]],[[\"s\",\"bar\"],[\"i\",\"2\"]],[[\"s\",\"text\"],[\"s\",\"a\\n  \\nb\\n\\nc\\n\\nd\\n\"]]]"}
+{"id":"suite/H2RW/file","output":"[\"h\",[[\"s\",\"foo\"],[\"i\",\"1\"]],[[\"s\",\"bar\"],[\"i\",\"2\"]],[[\"s\",\"text\"],[\"s\",\"a\\n  \\nb\\n\\nc\\n\\nd\\n\"]]]"}
+{"id":"suite/H3Z8/text","output":"[\"h\",[[\"s\",\"wanted\"],[\"s\",\"love ♥ and peace ☮\"]]]"}
+{"id":"suite/H3Z8/file","output":"[\"h\",[[\"s\",\"wanted\"],[\"s\",\"love ♥ and peace ☮\"]]]"}
+{"id":"suite/H7J7/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/H7J7/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/H7J7/in.yaml): could not find expected ':' while scanning a simple key at line 2 column 1"}
+{"id":"suite/H7TQ/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected comment or line break while scanning a directive at line 1 column 1"}
+{"id":"suite/H7TQ/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/H7TQ/in.yaml): did not find expected comment or line break while scanning a directive at line 1 column 1"}
+{"id":"suite/HM87/00/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a flow node at line 1 column 2"}
+{"id":"suite/HM87/00/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/HM87/00/in.yaml): did not find expected node content while parsing a flow node at line 1 column 2"}
+{"id":"suite/HM87/01/text","output":"[\"a\",[\"h\",[[\"s\",\"x\"],\"n\"]]]"}
+{"id":"suite/HM87/01/file","output":"[\"a\",[\"h\",[[\"s\",\"x\"],\"n\"]]]"}
+{"id":"suite/HMK4/text","output":"[\"h\",[[\"s\",\"name\"],[\"s\",\"Mark McGwire\"]],[[\"s\",\"accomplishment\"],[\"s\",\"Mark set a major league home run record in 1998.\\n\"]],[[\"s\",\"stats\"],[\"s\",\"65 Home Runs\\n0.278 Batting Average\\n\"]]]"}
+{"id":"suite/HMK4/file","output":"[\"h\",[[\"s\",\"name\"],[\"s\",\"Mark McGwire\"]],[[\"s\",\"accomplishment\"],[\"s\",\"Mark set a major league home run record in 1998.\\n\"]],[[\"s\",\"stats\"],[\"s\",\"65 Home Runs\\n0.278 Batting Average\\n\"]]]"}
+{"id":"suite/HMQ5/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]],[[\"s\",\"baz\"],[\"s\",\"foo\"]]]"}
+{"id":"suite/HMQ5/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]],[[\"s\",\"baz\"],[\"s\",\"foo\"]]]"}
+{"id":"suite/HRE5/text","output":"ERR Psych::SyntaxError: (<unknown>): found unknown escape character while parsing a quoted scalar at line 2 column 9"}
+{"id":"suite/HRE5/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/HRE5/in.yaml): found unknown escape character while parsing a quoted scalar at line 2 column 9"}
+{"id":"suite/HS5T/text","output":"[\"s\",\"1st non-empty\\n2nd non-empty 3rd non-empty\"]"}
+{"id":"suite/HS5T/file","output":"[\"s\",\"1st non-empty\\n2nd non-empty 3rd non-empty\"]"}
+{"id":"suite/HU3P/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 3 column 5"}
+{"id":"suite/HU3P/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/HU3P/in.yaml): mapping values are not allowed in this context at line 3 column 5"}
+{"id":"suite/HWV9/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a block node at line 1 column 1"}
+{"id":"suite/HWV9/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/HWV9/in.yaml): did not find expected node content while parsing a block node at line 1 column 1"}
+{"id":"suite/J3BT/text","output":"[\"h\",[[\"s\",\"quoted\"],[\"s\",\"Quoted \\t\"]],[[\"s\",\"block\"],[\"s\",\"void main() {\\n\\tprintf(\\\"Hello, world!\\\\n\\\");\\n}\\n\"]]]"}
+{"id":"suite/J3BT/file","output":"[\"h\",[[\"s\",\"quoted\"],[\"s\",\"Quoted \\t\"]],[[\"s\",\"block\"],[\"s\",\"void main() {\\n\\tprintf(\\\"Hello, world!\\\\n\\\");\\n}\\n\"]]]"}
+{"id":"suite/J5UC/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"blue\"]],[[\"s\",\"bar\"],[\"s\",\"arrr\"]],[[\"s\",\"baz\"],[\"s\",\"jazz\"]]]"}
+{"id":"suite/J5UC/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"blue\"]],[[\"s\",\"bar\"],[\"s\",\"arrr\"]],[[\"s\",\"baz\"],[\"s\",\"jazz\"]]]"}
+{"id":"suite/J7PZ/text","output":"[\"a\",[\"h\",[[\"s\",\"Mark McGwire\"],[\"i\",\"65\"]]],[\"h\",[[\"s\",\"Sammy Sosa\"],[\"i\",\"63\"]]],[\"h\",[[\"s\",\"Ken Griffy\"],[\"i\",\"58\"]]]]"}
+{"id":"suite/J7PZ/file","output":"[\"a\",[\"h\",[[\"s\",\"Mark McGwire\"],[\"i\",\"65\"]]],[\"h\",[[\"s\",\"Sammy Sosa\"],[\"i\",\"63\"]]],[\"h\",[[\"s\",\"Ken Griffy\"],[\"i\",\"58\"]]]]"}
+{"id":"suite/J7VC/text","output":"[\"h\",[[\"s\",\"one\"],[\"i\",\"2\"]],[[\"s\",\"three\"],[\"i\",\"4\"]]]"}
+{"id":"suite/J7VC/file","output":"[\"h\",[[\"s\",\"one\"],[\"i\",\"2\"]],[[\"s\",\"three\"],[\"i\",\"4\"]]]"}
+{"id":"suite/J9HZ/text","output":"[\"h\",[[\"s\",\"hr\"],[\"a\",[\"s\",\"Mark McGwire\"],[\"s\",\"Sammy Sosa\"]]],[[\"s\",\"rbi\"],[\"a\",[\"s\",\"Sammy Sosa\"],[\"s\",\"Ken Griffey\"]]]]"}
+{"id":"suite/J9HZ/file","output":"[\"h\",[[\"s\",\"hr\"],[\"a\",[\"s\",\"Mark McGwire\"],[\"s\",\"Sammy Sosa\"]]],[[\"s\",\"rbi\"],[\"a\",[\"s\",\"Sammy Sosa\"],[\"s\",\"Ken Griffey\"]]]]"}
+{"id":"suite/JEF9/00/text","output":"[\"a\",[\"s\",\"\\n\\n\"]]"}
+{"id":"suite/JEF9/00/file","output":"[\"a\",[\"s\",\"\\n\\n\"]]"}
+{"id":"suite/JEF9/01/text","output":"[\"a\",[\"s\",\"\\n\"]]"}
+{"id":"suite/JEF9/01/file","output":"[\"a\",[\"s\",\"\\n\"]]"}
+{"id":"suite/JEF9/02/text","output":"[\"a\",[\"s\",\"\"]]"}
+{"id":"suite/JEF9/02/file","output":"[\"a\",[\"s\",\"\"]]"}
+{"id":"suite/JHB9/text","output":"[\"a\",[\"s\",\"Mark McGwire\"],[\"s\",\"Sammy Sosa\"],[\"s\",\"Ken Griffey\"]]"}
+{"id":"suite/JHB9/file","output":"[\"a\",[\"s\",\"Mark McGwire\"],[\"s\",\"Sammy Sosa\"],[\"s\",\"Ken Griffey\"]]"}
+{"id":"suite/JKF3/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 2 column 5"}
+{"id":"suite/JKF3/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/JKF3/in.yaml): mapping values are not allowed in this context at line 2 column 5"}
+{"id":"suite/JQ4R/text","output":"[\"h\",[[\"s\",\"block sequence\"],[\"a\",[\"s\",\"one\"],[\"h\",[[\"s\",\"two\"],[\"s\",\"three\"]]]]]]"}
+{"id":"suite/JQ4R/file","output":"[\"h\",[[\"s\",\"block sequence\"],[\"a\",[\"s\",\"one\"],[\"h\",[[\"s\",\"two\"],[\"s\",\"three\"]]]]]]"}
+{"id":"suite/JR7V/text","output":"[\"a\",[\"s\",\"a?string\"],[\"s\",\"another ? string\"],[\"h\",[[\"s\",\"key\"],[\"s\",\"value?\"]]],[\"a\",[\"s\",\"a?string\"]],[\"a\",[\"s\",\"another ? string\"]],[\"h\",[[\"s\",\"key\"],[\"s\",\"value?\"]]],[\"h\",[[\"s\",\"key\"],[\"s\",\"value?\"]]],[\"h\",[[\"s\",\"key?\"],[\"s\",\"value\"]]]]"}
+{"id":"suite/JR7V/file","output":"[\"a\",[\"s\",\"a?string\"],[\"s\",\"another ? string\"],[\"h\",[[\"s\",\"key\"],[\"s\",\"value?\"]]],[\"a\",[\"s\",\"a?string\"]],[\"a\",[\"s\",\"another ? string\"]],[\"h\",[[\"s\",\"key\"],[\"s\",\"value?\"]]],[\"h\",[[\"s\",\"key\"],[\"s\",\"value?\"]]],[\"h\",[[\"s\",\"key?\"],[\"s\",\"value\"]]]]"}
+{"id":"suite/JS2J/text","output":"[\"h\",[[\"s\",\"First occurrence\"],[\"s\",\"Value\"]],[[\"s\",\"Second occurrence\"],[\"s\",\"Value\"]]]"}
+{"id":"suite/JS2J/file","output":"[\"h\",[[\"s\",\"First occurrence\"],[\"s\",\"Value\"]],[[\"s\",\"Second occurrence\"],[\"s\",\"Value\"]]]"}
+{"id":"suite/JTV5/text","output":"[\"h\",[[\"s\",\"a true\"],[\"s\",\"null d\"]],[[\"s\",\"e 42\"],\"n\"]]"}
+{"id":"suite/JTV5/file","output":"[\"h\",[[\"s\",\"a true\"],[\"s\",\"null d\"]],[[\"s\",\"e 42\"],\"n\"]]"}
+{"id":"suite/JY7Z/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/JY7Z/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/JY7Z/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/K3WX/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 2 column 1"}
+{"id":"suite/K3WX/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/K3WX/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 2 column 1"}
+{"id":"suite/K4SU/text","output":"[\"a\",[\"s\",\"foo\"],[\"s\",\"bar\"],[\"i\",\"42\"]]"}
+{"id":"suite/K4SU/file","output":"[\"a\",[\"s\",\"foo\"],[\"s\",\"bar\"],[\"i\",\"42\"]]"}
+{"id":"suite/K527/text","output":"[\"s\",\"trimmed\\n\\n\\nas space\"]"}
+{"id":"suite/K527/file","output":"[\"s\",\"trimmed\\n\\n\\nas space\"]"}
+{"id":"suite/K54U/text","output":"[\"s\",\"scalar\"]"}
+{"id":"suite/K54U/file","output":"[\"s\",\"scalar\"]"}
+{"id":"suite/K858/text","output":"[\"h\",[[\"s\",\"strip\"],[\"s\",\"\"]],[[\"s\",\"clip\"],[\"s\",\"\"]],[[\"s\",\"keep\"],[\"s\",\"\\n\"]]]"}
+{"id":"suite/K858/file","output":"[\"h\",[[\"s\",\"strip\"],[\"s\",\"\"]],[[\"s\",\"clip\"],[\"s\",\"\"]],[[\"s\",\"keep\"],[\"s\",\"\\n\"]]]"}
+{"id":"suite/KH5V/00/text","output":"[\"s\",\"1 inline\\ttab\"]"}
+{"id":"suite/KH5V/00/file","output":"[\"s\",\"1 inline\\ttab\"]"}
+{"id":"suite/KH5V/01/text","output":"[\"s\",\"2 inline\\ttab\"]"}
+{"id":"suite/KH5V/01/file","output":"[\"s\",\"2 inline\\ttab\"]"}
+{"id":"suite/KH5V/02/text","output":"[\"s\",\"3 inline\\ttab\"]"}
+{"id":"suite/KH5V/02/file","output":"[\"s\",\"3 inline\\ttab\"]"}
+{"id":"suite/KK5P/text","output":"[\"h\",[[\"s\",\"complex1\"],[\"h\",[[\"a\",[\"s\",\"a\"]],\"n\"]]],[[\"s\",\"complex2\"],[\"h\",[[\"a\",[\"s\",\"a\"]],[\"s\",\"b\"]]]],[[\"s\",\"complex3\"],[\"h\",[[\"a\",[\"s\",\"a\"]],[\"s\",\"b\\n\"]]]],[[\"s\",\"complex4\"],[\"h\",[[\"s\",\"a\\n\"],\"n\"]]],[[\"s\",\"complex5\"],[\"h\",[[\"a\",[\"s\",\"a\"]],[\"a\",[\"s\",\"b\"]]]]]]"}
+{"id":"suite/KK5P/file","output":"[\"h\",[[\"s\",\"complex1\"],[\"h\",[[\"a\",[\"s\",\"a\"]],\"n\"]]],[[\"s\",\"complex2\"],[\"h\",[[\"a\",[\"s\",\"a\"]],[\"s\",\"b\"]]]],[[\"s\",\"complex3\"],[\"h\",[[\"a\",[\"s\",\"a\"]],[\"s\",\"b\\n\"]]]],[[\"s\",\"complex4\"],[\"h\",[[\"s\",\"a\\n\"],\"n\"]]],[[\"s\",\"complex5\"],[\"h\",[[\"a\",[\"s\",\"a\"]],[\"a\",[\"s\",\"b\"]]]]]]"}
+{"id":"suite/KMK3/text","output":"[\"h\",[[\"s\",\"foo\"],[\"h\",[[\"s\",\"bar\"],[\"i\",\"1\"]]]],[[\"s\",\"baz\"],[\"i\",\"2\"]]]"}
+{"id":"suite/KMK3/file","output":"[\"h\",[[\"s\",\"foo\"],[\"h\",[[\"s\",\"bar\"],[\"i\",\"1\"]]]],[[\"s\",\"baz\"],[\"i\",\"2\"]]]"}
+{"id":"suite/KS4U/text","output":"[\"a\",[\"s\",\"sequence item\"]]"}
+{"id":"suite/KS4U/file","output":"[\"a\",[\"s\",\"sequence item\"]]"}
+{"id":"suite/KSS4/text","output":"[\"s\",\"quoted string\"]"}
+{"id":"suite/KSS4/file","output":"[\"s\",\"quoted string\"]"}
+{"id":"suite/L24T/00/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"x\\n \\n\"]]]"}
+{"id":"suite/L24T/00/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"x\\n \\n\"]]]"}
+{"id":"suite/L24T/01/text","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"x\\n \"]]]"}
+{"id":"suite/L24T/01/file","output":"[\"h\",[[\"s\",\"foo\"],[\"s\",\"x\\n \"]]]"}
+{"id":"suite/L383/text","output":"[\"s\",\"foo\"]"}
+{"id":"suite/L383/file","output":"[\"s\",\"foo\"]"}
+{"id":"suite/L94M/text","output":"[\"h\",[[\"s\",\"a\"],[\"i\",\"47\"]],[[\"s\",\"c\"],[\"s\",\"d\"]]]"}
+{"id":"suite/L94M/file","output":"[\"h\",[[\"s\",\"a\"],[\"i\",\"47\"]],[[\"s\",\"c\"],[\"s\",\"d\"]]]"}
+{"id":"suite/L9U5/text","output":"[\"h\",[[\"s\",\"implicit block key\"],[\"a\",[\"h\",[[\"s\",\"implicit flow key\"],[\"s\",\"value\"]]]]]]"}
+{"id":"suite/L9U5/file","output":"[\"h\",[[\"s\",\"implicit block key\"],[\"a\",[\"h\",[[\"s\",\"implicit flow key\"],[\"s\",\"value\"]]]]]]"}
+{"id":"suite/LE5A/text","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"],[\"s\",\"c\"],\"n\"]"}
+{"id":"suite/LE5A/file","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"],[\"s\",\"c\"],\"n\"]"}
+{"id":"suite/LHL4/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected whitespace or line break while scanning a tag at line 2 column 1"}
+{"id":"suite/LHL4/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/LHL4/in.yaml): did not find expected whitespace or line break while scanning a tag at line 2 column 1"}
+{"id":"suite/LP6E/text","output":"[\"a\",[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]],[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"c\"],[\"s\",\"d\"]],[[\"s\",\"e\"],[\"s\",\"f\"]]],[\"a\"]]"}
+{"id":"suite/LP6E/file","output":"[\"a\",[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]],[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"c\"],[\"s\",\"d\"]],[[\"s\",\"e\"],[\"s\",\"f\"]]],[\"a\"]]"}
+{"id":"suite/LQZ7/text","output":"[\"h\",[[\"s\",\"implicit block key\"],[\"a\",[\"h\",[[\"s\",\"implicit flow key\"],[\"s\",\"value\"]]]]]]"}
+{"id":"suite/LQZ7/file","output":"[\"h\",[[\"s\",\"implicit block key\"],[\"a\",[\"h\",[[\"s\",\"implicit flow key\"],[\"s\",\"value\"]]]]]]"}
+{"id":"suite/LX3P/text","output":"[\"h\",[[\"a\",[\"s\",\"flow\"]],[\"s\",\"block\"]]]"}
+{"id":"suite/LX3P/file","output":"[\"h\",[[\"a\",[\"s\",\"flow\"]],[\"s\",\"block\"]]]"}
+{"id":"suite/M29M/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"ab\\n\\ncd\\nef\\n\"]]]"}
+{"id":"suite/M29M/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"ab\\n\\ncd\\nef\\n\"]]]"}
+{"id":"suite/M2N8/00/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 5"}
+{"id":"suite/M2N8/00/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/M2N8/00/in.yaml): did not find expected key while parsing a block mapping at line 1 column 5"}
+{"id":"suite/M2N8/01/text","output":"[\"h\",[[\"s\",\"x\"],\"n\"]]"}
+{"id":"suite/M2N8/01/file","output":"[\"h\",[[\"s\",\"x\"],\"n\"]]"}
+{"id":"suite/M5C3/text","output":"[\"h\",[[\"s\",\"literal\"],[\"s\",\"value\\n\"]],[[\"s\",\"folded\"],[\"s\",\"value\\n\"]]]"}
+{"id":"suite/M5C3/file","output":"[\"h\",[[\"s\",\"literal\"],[\"s\",\"value\\n\"]],[[\"s\",\"folded\"],[\"s\",\"value\\n\"]]]"}
+{"id":"suite/M5DY/text","output":"[\"h\",[[\"a\",[\"s\",\"Detroit Tigers\"],[\"s\",\"Chicago cubs\"]],[\"a\",[\"d\",\"2001-07-23\",2452114]]],[[\"a\",[\"s\",\"New York Yankees\"],[\"s\",\"Atlanta Braves\"]],[\"a\",[\"d\",\"2001-07-02\",2452093],[\"d\",\"2001-08-12\",2452134],[\"d\",\"2001-08-14\",2452136]]]]"}
+{"id":"suite/M5DY/file","output":"[\"h\",[[\"a\",[\"s\",\"Detroit Tigers\"],[\"s\",\"Chicago cubs\"]],[\"a\",[\"d\",\"2001-07-23\",2452114]]],[[\"a\",[\"s\",\"New York Yankees\"],[\"s\",\"Atlanta Braves\"]],[\"a\",[\"d\",\"2001-07-02\",2452093],[\"d\",\"2001-08-12\",2452134],[\"d\",\"2001-08-14\",2452136]]]]"}
+{"id":"suite/M6YH/text","output":"[\"a\",[\"s\",\"x\\n\"],[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]],[\"a\",[\"i\",\"42\"]]]"}
+{"id":"suite/M6YH/file","output":"[\"a\",[\"s\",\"x\\n\"],[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]],[\"a\",[\"i\",\"42\"]]]"}
+{"id":"suite/M7A3/text","output":"[\"s\",\"Bare document\"]"}
+{"id":"suite/M7A3/file","output":"[\"s\",\"Bare document\"]"}
+{"id":"suite/M7NX/text","output":"[\"h\",[[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"],[\"h\",[[\"s\",\"d\"],[\"a\",[\"s\",\"e\"],[\"s\",\"f\"]]]]]]]"}
+{"id":"suite/M7NX/file","output":"[\"h\",[[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"],[\"h\",[[\"s\",\"d\"],[\"a\",[\"s\",\"e\"],[\"s\",\"f\"]]]]]]]"}
+{"id":"suite/M9B4/text","output":"[\"s\",\"literal\\n\\ttext\\n\"]"}
+{"id":"suite/M9B4/file","output":"[\"s\",\"literal\\n\\ttext\\n\"]"}
+{"id":"suite/MJS9/text","output":"[\"s\",\"foo \\n\\n\\t bar\\n\\nbaz\\n\"]"}
+{"id":"suite/MJS9/file","output":"[\"s\",\"foo \\n\\n\\t bar\\n\\nbaz\\n\"]"}
+{"id":"suite/MUS6/00/text","output":"\"n\""}
+{"id":"suite/MUS6/00/file","output":"\"n\""}
+{"id":"suite/MUS6/01/text","output":"\"n\""}
+{"id":"suite/MUS6/01/file","output":"\"n\""}
+{"id":"suite/MUS6/02/text","output":"\"n\""}
+{"id":"suite/MUS6/02/file","output":"\"n\""}
+{"id":"suite/MUS6/03/text","output":"\"n\""}
+{"id":"suite/MUS6/03/file","output":"\"n\""}
+{"id":"suite/MUS6/04/text","output":"\"n\""}
+{"id":"suite/MUS6/04/file","output":"\"n\""}
+{"id":"suite/MUS6/05/text","output":"ERR Psych::SyntaxError: (<unknown>): found unknown directive name while scanning a directive at line 1 column 1"}
+{"id":"suite/MUS6/05/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/MUS6/05/in.yaml): found unknown directive name while scanning a directive at line 1 column 1"}
+{"id":"suite/MUS6/06/text","output":"ERR Psych::SyntaxError: (<unknown>): found unknown directive name while scanning a directive at line 1 column 1"}
+{"id":"suite/MUS6/06/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/MUS6/06/in.yaml): found unknown directive name while scanning a directive at line 1 column 1"}
+{"id":"suite/MXS3/text","output":"[\"a\",[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/MXS3/file","output":"[\"a\",[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/MYW6/text","output":"[\"s\",\"ab\"]"}
+{"id":"suite/MYW6/file","output":"[\"s\",\"ab\"]"}
+{"id":"suite/MZX3/text","output":"[\"a\",[\"s\",\"plain\"],[\"s\",\"double quoted\"],[\"s\",\"single quoted\"],[\"s\",\"block\\n\"],[\"s\",\"plain again\"]]"}
+{"id":"suite/MZX3/file","output":"[\"a\",[\"s\",\"plain\"],[\"s\",\"double quoted\"],[\"s\",\"single quoted\"],[\"s\",\"block\\n\"],[\"s\",\"plain again\"]]"}
+{"id":"suite/N4JP/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/N4JP/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/N4JP/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/N782/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a flow node at line 2 column 1"}
+{"id":"suite/N782/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/N782/in.yaml): did not find expected node content while parsing a flow node at line 2 column 1"}
+{"id":"suite/NAT4/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\" \"]],[[\"s\",\"b\"],[\"s\",\" \"]],[[\"s\",\"c\"],[\"s\",\" \"]],[[\"s\",\"d\"],[\"s\",\" \"]],[[\"s\",\"e\"],[\"s\",\"\\n\"]],[[\"s\",\"f\"],[\"s\",\"\\n\"]],[[\"s\",\"g\"],[\"s\",\"\\n\\n\"]],[[\"s\",\"h\"],[\"s\",\"\\n\\n\"]]]"}
+{"id":"suite/NAT4/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\" \"]],[[\"s\",\"b\"],[\"s\",\" \"]],[[\"s\",\"c\"],[\"s\",\" \"]],[[\"s\",\"d\"],[\"s\",\" \"]],[[\"s\",\"e\"],[\"s\",\"\\n\"]],[[\"s\",\"f\"],[\"s\",\"\\n\"]],[[\"s\",\"g\"],[\"s\",\"\\n\\n\"]],[[\"s\",\"h\"],[\"s\",\"\\n\\n\"]]]"}
+{"id":"suite/NB6Z/text","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value with\\ntabs\"]]]"}
+{"id":"suite/NB6Z/file","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value with\\ntabs\"]]]"}
+{"id":"suite/NHX8/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/NHX8/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/NHX8/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/NJ66/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 3 column 3"}
+{"id":"suite/NJ66/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/NJ66/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 3 column 3"}
+{"id":"suite/NKF9/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 2 column 1"}
+{"id":"suite/NKF9/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/NKF9/in.yaml): did not find expected key while parsing a block mapping at line 2 column 1"}
+{"id":"suite/NP9H/text","output":"[\"s\",\"folded to a space,\\nto a line feed, or \\t \\tnon-content\"]"}
+{"id":"suite/NP9H/file","output":"[\"s\",\"folded to a space,\\nto a line feed, or \\t \\tnon-content\"]"}
+{"id":"suite/P2AD/text","output":"[\"a\",[\"s\",\"literal\\n\"],[\"s\",\" folded\\n\"],[\"s\",\"keep\\n\\n\"],[\"s\",\" strip\"]]"}
+{"id":"suite/P2AD/file","output":"[\"a\",[\"s\",\"literal\\n\"],[\"s\",\" folded\\n\"],[\"s\",\"keep\\n\\n\"],[\"s\",\" strip\"]]"}
+{"id":"suite/P2EQ/text","output":"ERR Psych::SyntaxError: (<unknown>): block sequence entries are not allowed in this context at line 2 column 11"}
+{"id":"suite/P2EQ/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/P2EQ/in.yaml): block sequence entries are not allowed in this context at line 2 column 11"}
+{"id":"suite/P76L/text","output":"[\"s\",\"1 - 3\"]"}
+{"id":"suite/P76L/file","output":"[\"s\",\"1 - 3\"]"}
+{"id":"suite/P94K/text","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/P94K/file","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/PBJ2/text","output":"[\"h\",[[\"s\",\"american\"],[\"a\",[\"s\",\"Boston Red Sox\"],[\"s\",\"Detroit Tigers\"],[\"s\",\"New York Yankees\"]]],[[\"s\",\"national\"],[\"a\",[\"s\",\"New York Mets\"],[\"s\",\"Chicago Cubs\"],[\"s\",\"Atlanta Braves\"]]]]"}
+{"id":"suite/PBJ2/file","output":"[\"h\",[[\"s\",\"american\"],[\"a\",[\"s\",\"Boston Red Sox\"],[\"s\",\"Detroit Tigers\"],[\"s\",\"New York Yankees\"]]],[[\"s\",\"national\"],[\"a\",[\"s\",\"New York Mets\"],[\"s\",\"Chicago Cubs\"],[\"s\",\"Atlanta Braves\"]]]]"}
+{"id":"suite/PRH3/text","output":"[\"s\",\" 1st non-empty\\n2nd non-empty 3rd non-empty \"]"}
+{"id":"suite/PRH3/file","output":"[\"s\",\" 1st non-empty\\n2nd non-empty 3rd non-empty \"]"}
+{"id":"suite/PUW8/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]"}
+{"id":"suite/PUW8/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]"}
+{"id":"suite/PW8X/text","output":"[\"a\",\"n\",[\"s\",\"a\"],[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\"],[\"h\"],[\"h\"]]"}
+{"id":"suite/PW8X/file","output":"[\"a\",\"n\",[\"s\",\"a\"],[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"h\"],[\"h\"],[\"h\"]]"}
+{"id":"suite/Q4CL/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/Q4CL/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Q4CL/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/Q5MG/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 1 column 1"}
+{"id":"suite/Q5MG/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Q5MG/in.yaml): found character that cannot start any token while scanning for the next token at line 1 column 1"}
+{"id":"suite/Q88A/text","output":"[\"a\",[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]],[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]"}
+{"id":"suite/Q88A/file","output":"[\"a\",[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]],[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]],[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"c\"]]"}
+{"id":"suite/Q8AD/text","output":"[\"s\",\"folded to a space,\\nto a line feed, or \\t \\tnon-content\"]"}
+{"id":"suite/Q8AD/file","output":"[\"s\",\"folded to a space,\\nto a line feed, or \\t \\tnon-content\"]"}
+{"id":"suite/Q9WF/text","output":"[\"h\",[[\"s\",\"Sosa\"],[\"h\",[[\"s\",\"hr\"],[\"i\",\"65\"]],[[\"s\",\"avg\"],[\"f\",\"0.278\"]]]]]"}
+{"id":"suite/Q9WF/file","output":"[\"h\",[[\"s\",\"Sosa\"],[\"h\",[[\"s\",\"hr\"],[\"i\",\"65\"]],[[\"s\",\"avg\"],[\"f\",\"0.278\"]]]]]"}
+{"id":"suite/QB6E/text","output":"[\"h\",[[\"s\",\"quoted\"],[\"s\",\"a b c\"]]]"}
+{"id":"suite/QB6E/file","output":"[\"h\",[[\"s\",\"quoted\"],[\"s\",\"a b c\"]]]"}
+{"id":"suite/QF4Y/text","output":"[\"a\",[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]]]"}
+{"id":"suite/QF4Y/file","output":"[\"a\",[\"h\",[[\"s\",\"foo\"],[\"s\",\"bar\"]]]]"}
+{"id":"suite/QLJ7/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]"}
+{"id":"suite/QLJ7/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]]]"}
+{"id":"suite/QT73/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected node content while parsing a block node at line 2 column 1"}
+{"id":"suite/QT73/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/QT73/in.yaml): did not find expected node content while parsing a block node at line 2 column 1"}
+{"id":"suite/R4YG/text","output":"ERR Psych::SyntaxError: (<unknown>): found a tab character where an indentation space is expected while scanning a block scalar at line 9 column 3"}
+{"id":"suite/R4YG/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/R4YG/in.yaml): found a tab character where an indentation space is expected while scanning a block scalar at line 9 column 3"}
+{"id":"suite/R52L/text","output":"[\"h\",[[\"s\",\"top1\"],[\"a\",[\"s\",\"item1\"],[\"h\",[[\"s\",\"key2\"],[\"s\",\"value2\"]]],[\"s\",\"item3\"]]],[[\"s\",\"top2\"],[\"s\",\"value2\"]]]"}
+{"id":"suite/R52L/file","output":"[\"h\",[[\"s\",\"top1\"],[\"a\",[\"s\",\"item1\"],[\"h\",[[\"s\",\"key2\"],[\"s\",\"value2\"]]],[\"s\",\"item3\"]]],[[\"s\",\"top2\"],[\"s\",\"value2\"]]]"}
+{"id":"suite/RHX7/text","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/RHX7/file","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/RLU9/text","output":"[\"h\",[[\"s\",\"foo\"],[\"a\",[\"i\",\"42\"]]],[[\"s\",\"bar\"],[\"a\",[\"i\",\"44\"]]]]"}
+{"id":"suite/RLU9/file","output":"[\"h\",[[\"s\",\"foo\"],[\"a\",[\"i\",\"42\"]]],[[\"s\",\"bar\"],[\"a\",[\"i\",\"44\"]]]]"}
+{"id":"suite/RR7F/text","output":"[\"h\",[[\"s\",\"a\"],[\"f\",\"4.2\"]],[[\"s\",\"d\"],[\"i\",\"23\"]]]"}
+{"id":"suite/RR7F/file","output":"[\"h\",[[\"s\",\"a\"],[\"f\",\"4.2\"]],[[\"s\",\"d\"],[\"i\",\"23\"]]]"}
+{"id":"suite/RTP8/text","output":"[\"s\",\"Document\"]"}
+{"id":"suite/RTP8/file","output":"[\"s\",\"Document\"]"}
+{"id":"suite/RXY3/text","output":"ERR Psych::SyntaxError: (<unknown>): found unexpected document indicator while scanning a quoted scalar at line 2 column 1"}
+{"id":"suite/RXY3/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/RXY3/in.yaml): found unexpected document indicator while scanning a quoted scalar at line 2 column 1"}
+{"id":"suite/RZP5/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"double quotes\"]],[[\"s\",\"b\"],[\"s\",\"plain value\"]],[[\"s\",\"c\"],[\"s\",\"d\"]],[[\"a\",[\"s\",\"seq1\"]],[\"a\",[\"s\",\"seq2\"]]],[[\"s\",\"e\"],[\"a\",[\"h\",[[\"s\",\"x\"],[\"s\",\"y\"]]]]],[[\"s\",\"block\"],[\"s\",\"abcde\\n\"]]]"}
+{"id":"suite/RZP5/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"double quotes\"]],[[\"s\",\"b\"],[\"s\",\"plain value\"]],[[\"s\",\"c\"],[\"s\",\"d\"]],[[\"a\",[\"s\",\"seq1\"]],[\"a\",[\"s\",\"seq2\"]]],[[\"s\",\"e\"],[\"a\",[\"h\",[[\"s\",\"x\"],[\"s\",\"y\"]]]]],[[\"s\",\"block\"],[\"s\",\"abcde\\n\"]]]"}
+{"id":"suite/RZT7/text","output":"[\"h\",[[\"s\",\"Time\"],[\"t\",\"2001-11-23 15:01:42.000000000 -0500\",false]],[[\"s\",\"User\"],[\"s\",\"ed\"]],[[\"s\",\"Warning\"],[\"s\",\"This is an error message for the log file\"]]]"}
+{"id":"suite/RZT7/file","output":"[\"h\",[[\"s\",\"Time\"],[\"t\",\"2001-11-23 15:01:42.000000000 -0500\",false]],[[\"s\",\"User\"],[\"s\",\"ed\"]],[[\"s\",\"Warning\"],[\"s\",\"This is an error message for the log file\"]]]"}
+{"id":"suite/S3PD/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/S3PD/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/S3PD/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/S4GJ/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected comment or line break while scanning a block scalar at line 2 column 9"}
+{"id":"suite/S4GJ/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/S4GJ/in.yaml): did not find expected comment or line break while scanning a block scalar at line 2 column 9"}
+{"id":"suite/S4JQ/text","output":"[\"a\",[\"s\",\"12\"],[\"i\",\"12\"],[\"i\",\"12\"]]"}
+{"id":"suite/S4JQ/file","output":"[\"a\",[\"s\",\"12\"],[\"i\",\"12\"],[\"i\",\"12\"]]"}
+{"id":"suite/S4T7/text","output":"[\"h\",[[\"s\",\"aaa\"],[\"s\",\"bbb\"]]]"}
+{"id":"suite/S4T7/file","output":"[\"h\",[[\"s\",\"aaa\"],[\"s\",\"bbb\"]]]"}
+{"id":"suite/S7BG/text","output":"[\"a\",[\"s\",\":,\"]]"}
+{"id":"suite/S7BG/file","output":"[\"a\",[\"s\",\":,\"]]"}
+{"id":"suite/S98Z/text","output":"[\"h\",[[\"s\",\"empty block scalar\"],[\"s\",\"\"]]]"}
+{"id":"suite/S98Z/file","output":"[\"h\",[[\"s\",\"empty block scalar\"],[\"s\",\"\"]]]"}
+{"id":"suite/S9E8/text","output":"[\"h\",[[\"s\",\"sequence\"],[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]]],[[\"s\",\"mapping\"],[\"h\",[[\"s\",\"sky\"],[\"s\",\"blue\"]],[[\"s\",\"sea\"],[\"s\",\"green\"]]]]]"}
+{"id":"suite/S9E8/file","output":"[\"h\",[[\"s\",\"sequence\"],[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]]],[[\"s\",\"mapping\"],[\"h\",[[\"s\",\"sky\"],[\"s\",\"blue\"]],[[\"s\",\"sea\"],[\"s\",\"green\"]]]]]"}
+{"id":"suite/SBG9/text","output":"[\"h\",[[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"]]],[[\"a\",[\"s\",\"d\"],[\"s\",\"e\"]],[\"s\",\"f\"]]]"}
+{"id":"suite/SBG9/file","output":"[\"h\",[[\"s\",\"a\"],[\"a\",[\"s\",\"b\"],[\"s\",\"c\"]]],[[\"a\",[\"s\",\"d\"],[\"s\",\"e\"]],[\"s\",\"f\"]]]"}
+{"id":"suite/SF5V/text","output":"ERR Psych::SyntaxError: (<unknown>): found duplicate %YAML directive at line 1 column 1"}
+{"id":"suite/SF5V/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/SF5V/in.yaml): found duplicate %YAML directive at line 1 column 1"}
+{"id":"suite/SKE5/text","output":"[\"h\",[[\"s\",\"seq\"],[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/SKE5/file","output":"[\"h\",[[\"s\",\"seq\"],[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]]]]"}
+{"id":"suite/SM9W/00/text","output":"[\"a\",\"n\"]"}
+{"id":"suite/SM9W/00/file","output":"[\"a\",\"n\"]"}
+{"id":"suite/SM9W/01/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/SM9W/01/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/SM9W/01/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/SR86/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/SR86/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/SR86/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/SSW6/text","output":"[\"s\",\"here's to \\\"quotes\\\"\"]"}
+{"id":"suite/SSW6/file","output":"[\"s\",\"here's to \\\"quotes\\\"\"]"}
+{"id":"suite/SU5Z/text","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/SU5Z/file","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/SU74/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/SU74/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/SU74/in.yaml): did not find expected key while parsing a block mapping at line 1 column 1"}
+{"id":"suite/SY6V/text","output":"ERR Psych::SyntaxError: (<unknown>): block sequence entries are not allowed in this context at line 1 column 9"}
+{"id":"suite/SY6V/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/SY6V/in.yaml): block sequence entries are not allowed in this context at line 1 column 9"}
+{"id":"suite/SYW4/text","output":"[\"h\",[[\"s\",\"hr\"],[\"i\",\"65\"]],[[\"s\",\"avg\"],[\"f\",\"0.278\"]],[[\"s\",\"rbi\"],[\"i\",\"147\"]]]"}
+{"id":"suite/SYW4/file","output":"[\"h\",[[\"s\",\"hr\"],[\"i\",\"65\"]],[[\"s\",\"avg\"],[\"f\",\"0.278\"]],[[\"s\",\"rbi\"],[\"i\",\"147\"]]]"}
+{"id":"suite/T26H/text","output":"[\"s\",\"\\n\\nliteral\\n \\n\\ntext\\n\"]"}
+{"id":"suite/T26H/file","output":"[\"s\",\"\\n\\nliteral\\n \\n\\ntext\\n\"]"}
+{"id":"suite/T4YY/text","output":"[\"s\",\" 1st non-empty\\n2nd non-empty 3rd non-empty \"]"}
+{"id":"suite/T4YY/file","output":"[\"s\",\" 1st non-empty\\n2nd non-empty 3rd non-empty \"]"}
+{"id":"suite/T5N4/text","output":"[\"s\",\"literal\\n\\ttext\\n\"]"}
+{"id":"suite/T5N4/file","output":"[\"s\",\"literal\\n\\ttext\\n\"]"}
+{"id":"suite/T833/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 2 column 1"}
+{"id":"suite/T833/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/T833/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 2 column 1"}
+{"id":"suite/TD5N/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 3 column 1"}
+{"id":"suite/TD5N/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/TD5N/in.yaml): could not find expected ':' while scanning a simple key at line 3 column 1"}
+{"id":"suite/TE2A/text","output":"[\"h\",[[\"s\",\"block mapping\"],[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]]]"}
+{"id":"suite/TE2A/file","output":"[\"h\",[[\"s\",\"block mapping\"],[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]]]"}
+{"id":"suite/TL85/text","output":"[\"s\",\" foo\\nbar\\nbaz \"]"}
+{"id":"suite/TL85/file","output":"[\"s\",\" foo\\nbar\\nbaz \"]"}
+{"id":"suite/TS54/text","output":"[\"s\",\"ab cd\\nef\\n\\ngh\\n\"]"}
+{"id":"suite/TS54/file","output":"[\"s\",\"ab cd\\nef\\n\\ngh\\n\"]"}
+{"id":"suite/U3C3/text","output":"[\"s\",\"foo\"]"}
+{"id":"suite/U3C3/file","output":"[\"s\",\"foo\"]"}
+{"id":"suite/U3XV/text","output":"[\"h\",[[\"s\",\"top1\"],[\"h\",[[\"s\",\"key1\"],[\"s\",\"one\"]]]],[[\"s\",\"top2\"],[\"h\",[[\"s\",\"key2\"],[\"s\",\"two\"]]]],[[\"s\",\"top3\"],[\"h\",[[\"s\",\"key3\"],[\"s\",\"three\"]]]],[[\"s\",\"top4\"],[\"h\",[[\"s\",\"key4\"],[\"s\",\"four\"]]]],[[\"s\",\"top5\"],[\"h\",[[\"s\",\"key5\"],[\"s\",\"five\"]]]],[[\"s\",\"top6\"],[\"s\",\"six\"]],[[\"s\",\"top7\"],[\"s\",\"seven\"]]]"}
+{"id":"suite/U3XV/file","output":"[\"h\",[[\"s\",\"top1\"],[\"h\",[[\"s\",\"key1\"],[\"s\",\"one\"]]]],[[\"s\",\"top2\"],[\"h\",[[\"s\",\"key2\"],[\"s\",\"two\"]]]],[[\"s\",\"top3\"],[\"h\",[[\"s\",\"key3\"],[\"s\",\"three\"]]]],[[\"s\",\"top4\"],[\"h\",[[\"s\",\"key4\"],[\"s\",\"four\"]]]],[[\"s\",\"top5\"],[\"h\",[[\"s\",\"key5\"],[\"s\",\"five\"]]]],[[\"s\",\"top6\"],[\"s\",\"six\"]],[[\"s\",\"top7\"],[\"s\",\"seven\"]]]"}
+{"id":"suite/U44R/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 2 column 3"}
+{"id":"suite/U44R/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/U44R/in.yaml): did not find expected key while parsing a block mapping at line 2 column 3"}
+{"id":"suite/U99R/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected whitespace or line break while scanning a tag at line 1 column 3"}
+{"id":"suite/U99R/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/U99R/in.yaml): did not find expected whitespace or line break while scanning a tag at line 1 column 3"}
+{"id":"suite/U9NS/text","output":"[\"h\",[[\"s\",\"time\"],[\"f\",\"72200.0\"]],[[\"s\",\"player\"],[\"s\",\"Sammy Sosa\"]],[[\"s\",\"action\"],[\"s\",\"strike (miss)\"]]]"}
+{"id":"suite/U9NS/file","output":"[\"h\",[[\"s\",\"time\"],[\"f\",\"72200.0\"]],[[\"s\",\"player\"],[\"s\",\"Sammy Sosa\"]],[[\"s\",\"action\"],[\"s\",\"strike (miss)\"]]]"}
+{"id":"suite/UDM2/text","output":"[\"a\",[\"h\",[[\"s\",\"url\"],[\"s\",\"http://example.org\"]]]]"}
+{"id":"suite/UDM2/file","output":"[\"a\",[\"h\",[[\"s\",\"url\"],[\"s\",\"http://example.org\"]]]]"}
+{"id":"suite/UDR7/text","output":"[\"h\",[[\"s\",\"sequence\"],[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]]],[[\"s\",\"mapping\"],[\"h\",[[\"s\",\"sky\"],[\"s\",\"blue\"]],[[\"s\",\"sea\"],[\"s\",\"green\"]]]]]"}
+{"id":"suite/UDR7/file","output":"[\"h\",[[\"s\",\"sequence\"],[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]]],[[\"s\",\"mapping\"],[\"h\",[[\"s\",\"sky\"],[\"s\",\"blue\"]],[[\"s\",\"sea\"],[\"s\",\"green\"]]]]]"}
+{"id":"suite/UGM3/text","output":"[\"h\",[[\"s\",\"invoice\"],[\"i\",\"34843\"]],[[\"s\",\"date\"],[\"d\",\"2001-01-23\",2451933]],[[\"s\",\"bill-to\"],[\"h\",[[\"s\",\"given\"],[\"s\",\"Chris\"]],[[\"s\",\"family\"],[\"s\",\"Dumars\"]],[[\"s\",\"address\"],[\"h\",[[\"s\",\"lines\"],[\"s\",\"458 Walkman Dr.\\nSuite #292\\n\"]],[[\"s\",\"city\"],[\"s\",\"Royal Oak\"]],[[\"s\",\"state\"],[\"s\",\"MI\"]],[[\"s\",\"postal\"],[\"i\",\"48046\"]]]]]],[[\"s\",\"ship-to\"],[\"h\",[[\"s\",\"given\"],[\"s\",\"Chris\"]],[[\"s\",\"family\"],[\"s\",\"Dumars\"]],[[\"s\",\"address\"],[\"h\",[[\"s\",\"lines\"],[\"s\",\"458 Walkman Dr.\\nSuite #292\\n\"]],[[\"s\",\"city\"],[\"s\",\"Royal Oak\"]],[[\"s\",\"state\"],[\"s\",\"MI\"]],[[\"s\",\"postal\"],[\"i\",\"48046\"]]]]]],[[\"s\",\"product\"],[\"a\",[\"h\",[[\"s\",\"sku\"],[\"s\",\"BL394D\"]],[[\"s\",\"quantity\"],[\"i\",\"4\"]],[[\"s\",\"description\"],[\"s\",\"Basketball\"]],[[\"s\",\"price\"],[\"f\",\"450.0\"]]],[\"h\",[[\"s\",\"sku\"],[\"s\",\"BL4438H\"]],[[\"s\",\"quantity\"],[\"i\",\"1\"]],[[\"s\",\"description\"],[\"s\",\"Super Hoop\"]],[[\"s\",\"price\"],[\"f\",\"2392.0\"]]]]],[[\"s\",\"tax\"],[\"f\",\"251.42\"]],[[\"s\",\"total\"],[\"f\",\"4443.52\"]],[[\"s\",\"comments\"],[\"s\",\"Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.\"]]]"}
+{"id":"suite/UGM3/file","output":"[\"h\",[[\"s\",\"invoice\"],[\"i\",\"34843\"]],[[\"s\",\"date\"],[\"d\",\"2001-01-23\",2451933]],[[\"s\",\"bill-to\"],[\"h\",[[\"s\",\"given\"],[\"s\",\"Chris\"]],[[\"s\",\"family\"],[\"s\",\"Dumars\"]],[[\"s\",\"address\"],[\"h\",[[\"s\",\"lines\"],[\"s\",\"458 Walkman Dr.\\nSuite #292\\n\"]],[[\"s\",\"city\"],[\"s\",\"Royal Oak\"]],[[\"s\",\"state\"],[\"s\",\"MI\"]],[[\"s\",\"postal\"],[\"i\",\"48046\"]]]]]],[[\"s\",\"ship-to\"],[\"h\",[[\"s\",\"given\"],[\"s\",\"Chris\"]],[[\"s\",\"family\"],[\"s\",\"Dumars\"]],[[\"s\",\"address\"],[\"h\",[[\"s\",\"lines\"],[\"s\",\"458 Walkman Dr.\\nSuite #292\\n\"]],[[\"s\",\"city\"],[\"s\",\"Royal Oak\"]],[[\"s\",\"state\"],[\"s\",\"MI\"]],[[\"s\",\"postal\"],[\"i\",\"48046\"]]]]]],[[\"s\",\"product\"],[\"a\",[\"h\",[[\"s\",\"sku\"],[\"s\",\"BL394D\"]],[[\"s\",\"quantity\"],[\"i\",\"4\"]],[[\"s\",\"description\"],[\"s\",\"Basketball\"]],[[\"s\",\"price\"],[\"f\",\"450.0\"]]],[\"h\",[[\"s\",\"sku\"],[\"s\",\"BL4438H\"]],[[\"s\",\"quantity\"],[\"i\",\"1\"]],[[\"s\",\"description\"],[\"s\",\"Super Hoop\"]],[[\"s\",\"price\"],[\"f\",\"2392.0\"]]]]],[[\"s\",\"tax\"],[\"f\",\"251.42\"]],[[\"s\",\"total\"],[\"f\",\"4443.52\"]],[[\"s\",\"comments\"],[\"s\",\"Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.\"]]]"}
+{"id":"suite/UKK6/00/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 3"}
+{"id":"suite/UKK6/00/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/UKK6/00/in.yaml): did not find expected key while parsing a block mapping at line 1 column 3"}
+{"id":"suite/UKK6/01/text","output":"[\"h\",[[\"s\",\":\"],\"n\"]]"}
+{"id":"suite/UKK6/01/file","output":"[\"h\",[[\"s\",\":\"],\"n\"]]"}
+{"id":"suite/UKK6/02/text","output":"\"n\""}
+{"id":"suite/UKK6/02/file","output":"\"n\""}
+{"id":"suite/UT92/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 2 column 1"}
+{"id":"suite/UT92/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/UT92/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 2 column 1"}
+{"id":"suite/UV7Q/text","output":"[\"h\",[[\"s\",\"x\"],[\"a\",[\"s\",\"x x\"]]]]"}
+{"id":"suite/UV7Q/file","output":"[\"h\",[[\"s\",\"x\"],[\"a\",[\"s\",\"x x\"]]]]"}
+{"id":"suite/V55R/text","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"a\"],[\"s\",\"b\"]]"}
+{"id":"suite/V55R/file","output":"[\"a\",[\"s\",\"a\"],[\"s\",\"b\"],[\"s\",\"a\"],[\"s\",\"b\"]]"}
+{"id":"suite/V9D5/text","output":"[\"a\",[\"h\",[[\"s\",\"sun\"],[\"s\",\"yellow\"]]],[\"h\",[[\"s\",\"blue\"],[\"h\",[[\"s\",\"moon\"],[\"s\",\"white\"]]]]]]"}
+{"id":"suite/V9D5/file","output":"[\"a\",[\"h\",[[\"s\",\"sun\"],[\"s\",\"yellow\"]]],[\"h\",[[\"s\",\"blue\"],[\"h\",[[\"s\",\"moon\"],[\"s\",\"white\"]]]]]]"}
+{"id":"suite/VJP3/00/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 4"}
+{"id":"suite/VJP3/00/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/VJP3/00/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 4"}
+{"id":"suite/VJP3/01/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 4"}
+{"id":"suite/VJP3/01/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/VJP3/01/in.yaml): did not find expected ',' or '}' while parsing a flow mapping at line 1 column 4"}
+{"id":"suite/W42U/text","output":"[\"a\",\"n\",[\"s\",\"block node\\n\"],[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]],[\"h\",[[\"s\",\"one\"],[\"s\",\"two\"]]]]"}
+{"id":"suite/W42U/file","output":"[\"a\",\"n\",[\"s\",\"block node\\n\"],[\"a\",[\"s\",\"one\"],[\"s\",\"two\"]],[\"h\",[[\"s\",\"one\"],[\"s\",\"two\"]]]]"}
+{"id":"suite/W4TN/text","output":"ERR Psych::SyntaxError: (<unknown>): could not find expected directive name while scanning a directive at line 3 column 1"}
+{"id":"suite/W4TN/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/W4TN/in.yaml): could not find expected directive name while scanning a directive at line 3 column 1"}
+{"id":"suite/W5VH/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected alphabetic or numeric character while scanning an anchor at line 1 column 4"}
+{"id":"suite/W5VH/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/W5VH/in.yaml): did not find expected alphabetic or numeric character while scanning an anchor at line 1 column 4"}
+{"id":"suite/W9L4/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected key while parsing a block mapping at line 2 column 1"}
+{"id":"suite/W9L4/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/W9L4/in.yaml): did not find expected key while parsing a block mapping at line 2 column 1"}
+{"id":"suite/WZ62/text","output":"[\"h\",[[\"s\",\"foo\"],\"n\"]]"}
+{"id":"suite/WZ62/file","output":"[\"h\",[[\"s\",\"foo\"],\"n\"]]"}
+{"id":"suite/X38W/text","output":"[\"h\",[[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]],[\"a\",[\"s\",\"c\"],[\"s\",\"b\"],[\"s\",\"d\"]]]]"}
+{"id":"suite/X38W/file","output":"[\"h\",[[\"a\",[\"s\",\"a\"],[\"s\",\"b\"]],[\"a\",[\"s\",\"c\"],[\"s\",\"b\"],[\"s\",\"d\"]]]]"}
+{"id":"suite/X4QW/text","output":"[\"h\",[[\"s\",\"block\"],[\"s\",\"scalar\\n\"]]]"}
+{"id":"suite/X4QW/file","output":"[\"h\",[[\"s\",\"block\"],[\"s\",\"scalar\\n\"]]]"}
+{"id":"suite/X8DW/text","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/X8DW/file","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\"value\"]]]"}
+{"id":"suite/XLQ9/text","output":"[\"s\",\"scalar %YAML 1.2\"]"}
+{"id":"suite/XLQ9/file","output":"[\"s\",\"scalar %YAML 1.2\"]"}
+{"id":"suite/XV9V/text","output":"[\"h\",[[\"s\",\"Folding\"],[\"s\",\"Empty line\\nas a line feed\"]],[[\"s\",\"Chomping\"],[\"s\",\"Clipped empty lines\\n\"]]]"}
+{"id":"suite/XV9V/file","output":"[\"h\",[[\"s\",\"Folding\"],[\"s\",\"Empty line\\nas a line feed\"]],[[\"s\",\"Chomping\"],[\"s\",\"Clipped empty lines\\n\"]]]"}
+{"id":"suite/XW4D/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"double quotes\"]],[[\"s\",\"b\"],[\"s\",\"plain value\"]],[[\"s\",\"c\"],[\"s\",\"d\"]],[[\"a\",[\"s\",\"seq1\"]],[\"a\",[\"s\",\"seq2\"]]],[[\"s\",\"e\"],[\"a\",[\"h\",[[\"s\",\"x\"],[\"s\",\"y\"]]]]],[[\"s\",\"block\"],[\"s\",\"abcde\\n\"]]]"}
+{"id":"suite/XW4D/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"double quotes\"]],[[\"s\",\"b\"],[\"s\",\"plain value\"]],[[\"s\",\"c\"],[\"s\",\"d\"]],[[\"a\",[\"s\",\"seq1\"]],[\"a\",[\"s\",\"seq2\"]]],[[\"s\",\"e\"],[\"a\",[\"h\",[[\"s\",\"x\"],[\"s\",\"y\"]]]]],[[\"s\",\"block\"],[\"s\",\"abcde\\n\"]]]"}
+{"id":"suite/Y2GN/text","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\":chor value\"]]]"}
+{"id":"suite/Y2GN/file","output":"[\"h\",[[\"s\",\"key\"],[\"s\",\":chor value\"]]]"}
+{"id":"suite/Y79Y/000/text","output":"ERR Psych::SyntaxError: (<unknown>): found a tab character where an indentation space is expected while scanning a block scalar at line 1 column 6"}
+{"id":"suite/Y79Y/000/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/000/in.yaml): found a tab character where an indentation space is expected while scanning a block scalar at line 1 column 6"}
+{"id":"suite/Y79Y/001/text","output":"ERR Psych::SyntaxError: (<unknown>): found a tab character where an indentation space is expected while scanning a block scalar at line 1 column 6"}
+{"id":"suite/Y79Y/001/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/001/in.yaml): found a tab character where an indentation space is expected while scanning a block scalar at line 1 column 6"}
+{"id":"suite/Y79Y/002/text","output":"[\"a\",[\"a\",[\"s\",\"foo\"]]]"}
+{"id":"suite/Y79Y/002/file","output":"[\"a\",[\"a\",[\"s\",\"foo\"]]]"}
+{"id":"suite/Y79Y/003/text","output":"[\"a\",[\"a\",[\"s\",\"foo\"],[\"s\",\"foo\"]]]"}
+{"id":"suite/Y79Y/003/file","output":"[\"a\",[\"a\",[\"s\",\"foo\"],[\"s\",\"foo\"]]]"}
+{"id":"suite/Y79Y/004/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/Y79Y/004/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/004/in.yaml): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/Y79Y/005/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 1 column 3"}
+{"id":"suite/Y79Y/005/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/005/in.yaml): found character that cannot start any token while scanning for the next token at line 1 column 3"}
+{"id":"suite/Y79Y/006/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/Y79Y/006/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/006/in.yaml): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/Y79Y/007/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 2 column 2"}
+{"id":"suite/Y79Y/007/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/007/in.yaml): found character that cannot start any token while scanning for the next token at line 2 column 2"}
+{"id":"suite/Y79Y/008/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/Y79Y/008/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/008/in.yaml): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/Y79Y/009/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 2 column 2"}
+{"id":"suite/Y79Y/009/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/009/in.yaml): found character that cannot start any token while scanning for the next token at line 2 column 2"}
+{"id":"suite/Y79Y/010/text","output":"ERR Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/Y79Y/010/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/Y79Y/010/in.yaml): found character that cannot start any token while scanning for the next token at line 1 column 2"}
+{"id":"suite/YD5X/text","output":"[\"a\",[\"a\",[\"s\",\"name\"],[\"s\",\"hr\"],[\"s\",\"avg\"]],[\"a\",[\"s\",\"Mark McGwire\"],[\"i\",\"65\"],[\"f\",\"0.278\"]],[\"a\",[\"s\",\"Sammy Sosa\"],[\"i\",\"63\"],[\"f\",\"0.288\"]]]"}
+{"id":"suite/YD5X/file","output":"[\"a\",[\"a\",[\"s\",\"name\"],[\"s\",\"hr\"],[\"s\",\"avg\"]],[\"a\",[\"s\",\"Mark McGwire\"],[\"i\",\"65\"],[\"f\",\"0.278\"]],[\"a\",[\"s\",\"Sammy Sosa\"],[\"i\",\"63\"],[\"f\",\"0.288\"]]]"}
+{"id":"suite/YJV2/text","output":"[\"a\",[\"s\",\"-\"]]"}
+{"id":"suite/YJV2/file","output":"[\"a\",[\"s\",\"-\"]]"}
+{"id":"suite/Z67P/text","output":"[\"h\",[[\"s\",\"literal\"],[\"s\",\"value\\n\"]],[[\"s\",\"folded\"],[\"s\",\"value\\n\"]]]"}
+{"id":"suite/Z67P/file","output":"[\"h\",[[\"s\",\"literal\"],[\"s\",\"value\\n\"]],[[\"s\",\"folded\"],[\"s\",\"value\\n\"]]]"}
+{"id":"suite/Z9M4/text","output":"[\"a\",[\"s\",\"bar\"]]"}
+{"id":"suite/Z9M4/file","output":"[\"a\",[\"s\",\"bar\"]]"}
+{"id":"suite/ZCZ6/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 1 column 5"}
+{"id":"suite/ZCZ6/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/ZCZ6/in.yaml): mapping values are not allowed in this context at line 1 column 5"}
+{"id":"suite/ZF4X/text","output":"[\"h\",[[\"s\",\"Mark McGwire\"],[\"h\",[[\"s\",\"hr\"],[\"i\",\"65\"]],[[\"s\",\"avg\"],[\"f\",\"0.278\"]]]],[[\"s\",\"Sammy Sosa\"],[\"h\",[[\"s\",\"hr\"],[\"i\",\"63\"]],[[\"s\",\"avg\"],[\"f\",\"0.288\"]]]]]"}
+{"id":"suite/ZF4X/file","output":"[\"h\",[[\"s\",\"Mark McGwire\"],[\"h\",[[\"s\",\"hr\"],[\"i\",\"65\"]],[[\"s\",\"avg\"],[\"f\",\"0.278\"]]]],[[\"s\",\"Sammy Sosa\"],[\"h\",[[\"s\",\"hr\"],[\"i\",\"63\"]],[[\"s\",\"avg\"],[\"f\",\"0.288\"]]]]]"}
+{"id":"suite/ZH7C/text","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"c\"],[\"s\",\"d\"]]]"}
+{"id":"suite/ZH7C/file","output":"[\"h\",[[\"s\",\"a\"],[\"s\",\"b\"]],[[\"s\",\"c\"],[\"s\",\"d\"]]]"}
+{"id":"suite/ZK9H/text","output":"[\"h\",[[\"s\",\"key\"],[\"a\",[\"a\",[\"a\",[\"s\",\"value\"]]]]]]"}
+{"id":"suite/ZK9H/file","output":"[\"h\",[[\"s\",\"key\"],[\"a\",[\"a\",[\"a\",[\"s\",\"value\"]]]]]]"}
+{"id":"suite/ZL4Z/text","output":"ERR Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 2 column 7"}
+{"id":"suite/ZL4Z/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/ZL4Z/in.yaml): mapping values are not allowed in this context at line 2 column 7"}
+{"id":"suite/ZVH3/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected '-' indicator while parsing a block collection at line 1 column 1"}
+{"id":"suite/ZVH3/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/ZVH3/in.yaml): did not find expected '-' indicator while parsing a block collection at line 1 column 1"}
+{"id":"suite/ZWK4/text","output":"[\"h\",[[\"s\",\"a\"],[\"i\",\"1\"]],[[\"s\",\"b\"],\"n\"],[[\"s\",\"c\"],[\"i\",\"3\"]]]"}
+{"id":"suite/ZWK4/file","output":"[\"h\",[[\"s\",\"a\"],[\"i\",\"1\"]],[[\"s\",\"b\"],\"n\"],[[\"s\",\"c\"],[\"i\",\"3\"]]]"}
+{"id":"suite/ZXT5/text","output":"ERR Psych::SyntaxError: (<unknown>): did not find expected ',' or ']' while parsing a flow sequence at line 1 column 1"}
+{"id":"suite/ZXT5/file","output":"ERR Psych::SyntaxError: (/w/third_party/yaml-test-suite/ZXT5/in.yaml): did not find expected ',' or ']' while parsing a flow sequence at line 1 column 1"}
