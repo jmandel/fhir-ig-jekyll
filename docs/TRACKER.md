@@ -46,7 +46,7 @@ Subagents append milestone lines to `progress/<name>.log` (`<ISO time> | started
 | What | Command | Output | Status |
 |------|---------|--------|--------|
 | Dashboard server | `PORT=8766 tracker-app/serve.sh` | http://127.0.0.1:8766/ | serving |
-| Subagent: tracker.json watcher | background agent following `tracker-app/watcher-prompt.md` | `tracker-app/tracker.json` | running |
+| tracker.json watcher (script, replaced the agent) | `tracker-app/watch.sh` (gen.py + check.py on every change, polled every 5 s) | `tracker-app/tracker.json`, log `work/tracker-watch.log` | running |
 | Subagent: P7.1 determinism harness + baseline (Opus) | background agent | `scripts/determinism.sh`, `work/determinism/`, `progress/determinism.log` | running |
 | Subagent: P7.3a ordered collections (Opus) | worktree set `ordered`, branch `determinism/ordered` | `work/determinism/fixes/ordered.md`, `progress/det-ordered.log` | running |
 | Subagent: P7.3b build clock + archives (Opus) | worktree set `clock`, branch `determinism/clock` | `work/determinism/fixes/clock.md`, `progress/det-clock.log` | running |
