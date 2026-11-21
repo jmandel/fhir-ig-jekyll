@@ -50,12 +50,7 @@ Earlier decisions (D1–D12, the shim effort) are in the archive; these still co
 
 ## Running / monitoring
 
-**PAUSED 2026-11-20 ~20:15Z (laptop offline).** All agents were asked to checkpoint and then stopped; each wrote `progress/<log-name>-checkpoint.md` (combined, kitchen-sink, f1-serializers, f2-scratch, f3-caches, f4-alloc, jitverify). Nothing was pushed except this repo's main. To resume:
-1. `limactl start igbuild` (docker context `igbuild`), check `df -h /srv/ig`; `PORT=8766 tracker-app/serve.sh` and `tracker-app/watch.sh` (dashboard + watcher, background).
-2. Relaunch one agent per checkpoint file, briefed with that file plus the workstream's original goal (P8.2 F1–F4, P8.9 verifier, P8.10 kitchen sink, P7.3 combined write-up); the limits: ≤1 IG build each, -Xmx ≤ 8g, kitchen sink for iteration.
-3. Then: kitchen sink → create `jmandel/fhir-ig-kitchen-sink` with `ghp` and push after review; F1–F4 results into the P8.9 verifier; the doc conversation with the publisher maintainer (Chromium with CDP on 9222, profile `work/chromium-profile`, launch flags as in the notes) to check for new comments.
-
-Subagents append milestone lines to `progress/<name>.log` (`<ISO time> | started|milestone|blocked|done | text`); the main agent watches those files and folds them into this tracker.
+Resumed 2026-11-20 after a pause (laptop offline ~20:15Z); agents relaunched from their `progress/*-checkpoint.md` files.
 
 | What | Command | Output | Status |
 |------|---------|--------|--------|
